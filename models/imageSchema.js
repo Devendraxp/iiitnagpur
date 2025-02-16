@@ -1,0 +1,19 @@
+import mongoose, { Schema } from "mongoose";
+import { v4 as uuidv4 } from "uuid";
+
+const imageSchema = new Schema(
+  {
+    filename: {
+      type: String,
+      default: uuidv4(),
+    },
+    imageUrl: {
+      type: String,
+      default: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f",
+    },
+  },
+  { timestamps: true }
+);
+
+const ImageSchema = mongoose.model("ImageSchema", imageSchema);
+export default ImageSchema;

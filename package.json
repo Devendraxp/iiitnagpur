@@ -1,0 +1,19 @@
+{
+  "name": "iiitn",
+  "module": "app.js",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongo": "^0.1.0",
+    "mongod": "^2.0.0",
+    "mongodb": "^6.13.0",
+    "mongoose": "^8.10.1",
+    "uuid": "^11.0.5"
+  }
+}
