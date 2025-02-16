@@ -1,6 +1,6 @@
-## iiitn
+## IIITN Web
 
-#Steps to run on local :
+Steps to run on local :
 
 Clone to local :
 ```bash
