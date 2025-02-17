@@ -1,0 +1,21 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+<body>
+    <div class="container mt-4">
+        <h2 class="mb-4">Add New Photo Carousel Item</h2>
+        <form action="/admin/photo-carousel" method="POST">
+            <div class="mb-3">
+                <label for="image" class="form-label">Image URL*</label>
+                <input type="text" class="form-control" id="image" name="data[image]" required>
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Title*</label>
+                <input type="text" class="form-control" id="title" name="data[title]" required>
+            </div>
+            <div class="mb-3">
+                <label for="link" class="form-label">Link</label>
+                <input type="text" class="form-control" id="link" name="data[link]">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
