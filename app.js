@@ -6,10 +6,18 @@ import Achievement from "./models/achievements.model.js";
 import Notice from "./models/notice.model.js";
 import Notification from "./models/notification.model.js";
 import StudentTestimonial from "./models/studentTestimonial.model.js";
+import Faculty from "./models/faculty.model.js";
+import Department from "./models/department.model.js";
 import path from "path";
 import ejsMate from "ejs-mate";
+import { error } from "console";
+
 
 const app = express();
+
+
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
 
 app.set("view engine", "ejs");
 app.engine("ejs", ejsMate);
@@ -108,6 +116,71 @@ app.post("/admin/notice", async (req, res) => {
 app.get("/admin/notice/new", async (_, res) => {
   res.render("admin/notice/new.ejs");
 });
+
+// Route to list all faculties
+app.get("/admin/faculty", async (req, res) => {
+  try {
+    const faculties = await Faculty.find({});
+    res.render("admin/faculty/index.ejs", { faculties }); // Pass the faculties list to the view
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// Route to render the form for adding a new faculty
+app.get("/admin/faculty/new", async (_, res) => {
+  res.render("admin/faculty/new.ejs");
+});
+
+// Route to add a new faculty
+app.post("/admin/faculty", async (req, res) => {
+  try {
+    const { data } = req.body;
+    const newFaculty = new Faculty(data);
+    await newFaculty.save();
+    
+    res.redirect("/admin/faculty"); // Redirect to faculty list after successful addition
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+
+//edit
+
+app.get("/admin/faculty/edit/:id", async (req, res) => {
+  const { id } = req.params; // Extract ID from URL
+
+  try {
+    const faculty = await Faculty.findById(id);
+    if (!faculty) {
+      return res.status(404).send("Faculty not found.");
+    }
+
+    res.render("admin/faculty/update.ejs", { faculty });
+  } catch (error) {
+    res.status(500).send("Server error: " + error.message);
+  }
+});
+
+app.patch("/admin/faculty/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  const { data } = req.body;
+
+  try {
+    const updatedFaculty = await Faculty.findByIdAndUpdate(id, data, { new: true });
+
+    if (!updatedFaculty) {
+      return res.status(404).send("Faculty not found.");
+    }
+
+    res.redirect("/admin/faculty"); // Redirect to faculty list
+  } catch (error) {
+    res.status(500).send("Error updating faculty: " + error.message);
+  }
+});
+
+
 
 // routes for notification
 
