@@ -1,0 +1,33 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+<body>
+    <div class="container mt-4">
+        <h2 class="mb-4">Add New Student Testimonial</h2>
+        <form action="/admin/student-testimonials" method="POST" enctype="multipart/form-data"></form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name*</label>
+                <input type="text" class="form-control" id="name" name="data[name]" required>
+            </div>
+            <div class="mb-3">
+                <label for="registrationNumber" class="form-label">Registration Number*</label>
+                <input type="text" class="form-control" id="registrationNumber" name="data[registrationNumber]" required>
+            </div>
+            <div class="mb-3">
+                <label for="mobileNumber" class="form-label">Mobile Number*</label>
+                <input type="number" class="form-control" id="mobileNumber" name="data[mobileNumber]" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email*</label>
+                <input type="email" class="form-control" id="email" name="data[email]" required>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Student Image*</label>
+                <input type="text" class="form-control" id="image" name="data[image]"required>
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Content*</label>
+                <textarea class="form-control" id="content" name="data[content]" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>

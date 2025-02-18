@@ -1,0 +1,28 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+<body>
+    <div class="container mt-4">
+        <h2 class="mb-4">Update notice</h2>
+        <form action="/admin/notice?_method=PATCH" method="POST"></form>
+            <div class="mb-3">
+                <label for="title" class="form-label">Title*</label>
+                <input type="text" class="form-control" id="title" name="data[title]" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description*</label>
+                <textarea class="form-control" id="description" name="data[description]" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">Type*</label>
+                <select class="form-control" id="type" name="data[type]" required>
+                    <option value="faculty">Faculty</option>
+                    <option value="student">Student</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="link" class="form-label">Link</label>
+                <input type="text" class="form-control" id="link" name="data[link]">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
