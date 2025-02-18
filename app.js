@@ -77,6 +77,11 @@ app.post("/admin/achievements", async (req, res) => {
   }
 });
 
+
+app.get("/admin/achievements/new", async (_, res) => {
+  res.render("admin/achievements/new.ejs");
+});
+
 // routes for notice
 
 app.get("/admin/notice", async (req, res) => {
@@ -97,6 +102,11 @@ app.post("/admin/notice", async (req, res) => {
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
+});
+
+
+app.get("/admin/notice/new", async (_, res) => {
+  res.render("admin/notice/new.ejs");
 });
 
 // routes for notification
@@ -121,6 +131,10 @@ app.post("/admin/notification", async (req, res) => {
   }
 });
 
+app.get("/admin/notification/new", async (_, res) => {
+  res.render("admin/notification/new.ejs");
+});
+
 //route for student testimonial
 
 app.get("/admin/student-testimonial", async (req, res) => {
@@ -141,6 +155,10 @@ app.post("/admin/student-testimonial", async (req, res) => {
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
+});
+
+app.get("/admin/student-testimonial/new", async (_, res) => {
+  res.render("admin/studentTestimonials/new.ejs");
 });
 
 app.listen(PORT, () =>
