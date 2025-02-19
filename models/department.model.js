@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
-import Faculty from "./faculty.model";
+import Faculty from "./faculty.model.js";
 
 const departmentSchema=new Schema({
     name:{
