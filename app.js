@@ -41,7 +41,7 @@ app.get("/admin", (_, res) => {
 app.get("/admin/photo-carousel", async (_, res) => {
   try {
     const result = await PhotoCarousel.find({});
-    res.json({ message: "Data fetched successfully", data: result });
+    res.render("admin/photoCarousel/index.ejs", {data : result});
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
@@ -62,15 +62,51 @@ app.post("/admin/photo-carousel", async (req, res) => {
   }
 });
 
-// achievements route
+app.get("/admin/photo-carousel/edit/:id", async (req, res) => {
+  const {id} = req.params;
+  const result = await PhotoCarousel.findById(id);
+  res.render("admin/photoCarousel/update.ejs",{data : result});
+});
 
+app.patch("/admin/photo-carousel/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  const { data } = req.body;
+
+  try {
+    const updatedCarousel = await PhotoCarousel.findByIdAndUpdate(id, data, { new: true });
+    if (!updatedCarousel) {
+      return res.status(404).json({ error: "Photo carousel not found" });
+    }
+    res.redirect("/admin/photo-carousel");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.delete("/admin/photo-carousel/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const deletedCarousel = await PhotoCarousel.findByIdAndDelete(id);
+    if (!deletedCarousel) {
+      return res.status(404).json({ error: "Photo carousel not found" });
+    }
+    res.redirect("/admin/photo-carousel");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+// achievements route
 app.get("/admin/achievements", async (req, res) => {
   try {
     const result = await Achievement.find({});
-    res.json({ message: "Data fetched successfully", data: result });
+    res.render("admin/achievements/index.ejs", { data: result });
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
+});
+
+app.get("/admin/achievements/new", async (_, res) => {
+  res.render("admin/achievements/new.ejs");
 });
 
 app.post("/admin/achievements", async (req, res) => {
@@ -78,26 +114,51 @@ app.post("/admin/achievements", async (req, res) => {
     const { data } = req.body;
     const newData = new Achievement(data);
     await newData.save();
-    res.json({ message: "Data saved successfully", data: newData });
+    res.redirect("/admin/achievements");
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
 });
 
+app.get("/admin/achievements/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  const result = await Achievement.findById(id);
+  res.render("admin/achievements/update.ejs", { data: result });
+});
 
-app.get("/admin/achievements/new", async (_, res) => {
-  res.render("admin/achievements/new.ejs");
+app.patch("/admin/achievements/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  const { data } = req.body;
+  try {
+    await Achievement.findByIdAndUpdate(id, data, { new: true });
+    res.redirect("/admin/achievements");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.delete("/admin/achievements/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    await Achievement.findByIdAndDelete(id);
+    res.redirect("/admin/achievements");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
 // routes for notice
-
 app.get("/admin/notice", async (req, res) => {
   try {
     const result = await Notice.find({});
-    res.json({ message: "Data fetched successfully", data: result });
+    res.render("admin/notice/index.ejs", { data: result });
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
+});
+
+app.get("/admin/notice/new", async (_, res) => {
+  res.render("admin/notice/new.ejs");
 });
 
 app.post("/admin/notice", async (req, res) => {
@@ -105,16 +166,144 @@ app.post("/admin/notice", async (req, res) => {
     const { data } = req.body;
     const newData = new Notice(data);
     await newData.save();
-    res.json({ message: "Data saved successfully", data: newData });
+    res.redirect("/admin/notice");
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
 });
 
-
-app.get("/admin/notice/new", async (_, res) => {
-  res.render("admin/notice/new.ejs");
+app.get("/admin/notice/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  const result = await Notice.findById(id);
+  res.render("admin/notice/update.ejs", { data: result });
 });
+
+app.patch("/admin/notice/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  const { data } = req.body;
+  try {
+    await Notice.findByIdAndUpdate(id, data, { new: true });
+    res.redirect("/admin/notice");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.delete("/admin/notice/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    await Notice.findByIdAndDelete(id);
+    res.redirect("/admin/notice");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// routes for notification
+app.get("/admin/notification", async (req, res) => {
+  try {
+    const result = await Notification.find({});
+    res.render("admin/notification/index.ejs", { data: result });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.get("/admin/notification/new", async (_, res) => {
+  res.render("admin/notification/new.ejs");
+});
+
+app.post("/admin/notification", async (req, res) => {
+  try {
+    const { data } = req.body;
+    const newData = new Notification(data);
+    await newData.save();
+    res.redirect("/admin/notification");
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.get("/admin/notification/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  const result = await Notification.findById(id);
+  res.render("admin/notification/update.ejs", { data: result });
+});
+
+app.patch("/admin/notification/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  const { data } = req.body;
+  try {
+    await Notification.findByIdAndUpdate(id, data, { new: true });
+    res.redirect("/admin/notification");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.delete("/admin/notification/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    await Notification.findByIdAndDelete(id);
+    res.redirect("/admin/notification");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+//route for student testimonial
+app.get("/admin/student-testimonial", async (req, res) => {
+  try {
+    const result = await StudentTestimonial.find({});
+    res.render("admin/studentTestimonials/index.ejs", { data: result });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.get("/admin/student-testimonial/new", async (_, res) => {
+  res.render("admin/studentTestimonials/new.ejs");
+});
+
+app.post("/admin/student-testimonial", async (req, res) => {
+  try {
+    const { data } = req.body;
+    const newData = new StudentTestimonial(data);
+    await newData.save();
+    res.redirect("/admin/student-testimonial");
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+app.get("/admin/student-testimonial/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  const result = await StudentTestimonial.findById(id);
+  res.render("admin/studentTestimonials/update.ejs", { data: result });
+});
+
+app.patch("/admin/student-testimonial/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  const { data } = req.body;
+  try {
+    await StudentTestimonial.findByIdAndUpdate(id, data, { new: true });
+    res.redirect("/admin/student-testimonial");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.delete("/admin/student-testimonial/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    await StudentTestimonial.findByIdAndDelete(id);
+    res.redirect("/admin/student-testimonial");
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+
 
 // Route to list all faculties
 app.get("/admin/faculty", async (req, res) => {
@@ -125,6 +314,7 @@ app.get("/admin/faculty", async (req, res) => {
     res.status(500).json({ error: e.message });
   }
 });
+
 
 // Route to render the form for adding a new faculty
 app.get("/admin/faculty/new", async (_, res) => {
@@ -177,60 +367,6 @@ app.patch("/admin/faculty/edit/:id", async (req, res) => {
   } catch (error) {
     res.status(500).send("Error updating faculty: " + error.message);
   }
-});
-
-
-
-// routes for notification
-
-app.get("/admin/notification", async (req, res) => {
-  try {
-    const result = await Notification.find({});
-    res.json({ message: "Data fetched successfully", data: result });
-  } catch (e) {
-    res.status(500).json({ error: e.message });
-  }
-});
-
-app.post("/admin/notification", async (req, res) => {
-  try {
-    const { data } = req.body;
-    const newData = new Notification(data);
-    await newData.save();
-    res.json({ message: "Data saved successfully", data: newData });
-  } catch (e) {
-    res.status(500).json({ error: e.message });
-  }
-});
-
-app.get("/admin/notification/new", async (_, res) => {
-  res.render("admin/notification/new.ejs");
-});
-
-//route for student testimonial
-
-app.get("/admin/student-testimonial", async (req, res) => {
-  try {
-    const result = await StudentTestimonial.find({});
-    res.json({ message: "Data fetched successfully", data: result });
-  } catch (e) {
-    res.status(500).json({ error: e.message });
-  }
-});
-
-app.post("/admin/student-testimonial", async (req, res) => {
-  try {
-    const { data } = req.body;
-    const newData = new StudentTestimonial(data);
-    await newData.save();
-    res.json({ message: "Data saved successfully", data: newData });
-  } catch (e) {
-    res.status(500).json({ error: e.message });
-  }
-});
-
-app.get("/admin/student-testimonial/new", async (_, res) => {
-  res.render("admin/studentTestimonials/new.ejs");
 });
 
 app.listen(PORT, () =>
