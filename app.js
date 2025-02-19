@@ -46,7 +46,6 @@ app.get("/admin/photo-carousel/new", async (_, res) => {
 app.post("/admin/photo-carousel", async (req, res) => {
   try {
     const { data } = req.body;
-    console.log(req.body);
     const newData = new PhotoCarousel(data);
     await newData.save();
     res.json({ message: "Data saved successfully", data: newData });
