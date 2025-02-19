@@ -11,12 +11,12 @@ import Department from "./models/department.model.js";
 import path from "path";
 import ejsMate from "ejs-mate";
 import { error } from "console";
+import methodOverride from "method-override";
 
 
 const app = express();
 
 
-const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
 app.set("view engine", "ejs");
@@ -54,7 +54,6 @@ app.get("/admin/photo-carousel/new", async (_, res) => {
 app.post("/admin/photo-carousel", async (req, res) => {
   try {
     const { data } = req.body;
-    console.log(req.body);
     const newData = new PhotoCarousel(data);
     await newData.save();
     res.json({ message: "Data saved successfully", data: newData });
