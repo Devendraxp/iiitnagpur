@@ -11,7 +11,7 @@ const notificationSchema = Schema(
     },
     type: {
       type: String,
-      enum: ["faculty", "student"],
+      enum: ["news", "event", "update"],
     },
     image: {
       type: String,

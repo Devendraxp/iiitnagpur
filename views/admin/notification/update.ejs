@@ -5,29 +5,29 @@
         <form action="/admin/notification?_method=PATCH" method="POST"></form>
             <div class="mb-3">
                 <label for="title" class="form-label">Title*</label>
-                <input type="text" class="form-control" id="title" name="data[title]" required>
+                <input type="text" class="form-control" value="<%= data.title %>" id="title" name="data[title]" required>
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Description*</label>
-                <textarea class="form-control" id="description" name="data[description]" required></textarea>
+                <textarea class="form-control" id="description" name="data[description]" required><%= data.description %></textarea>
             </div>
             <div class="mb-3">
                 <label for="type" class="form-label">Type*</label>
                 <select class="form-control" id="type" name="data[type]" required>
-                    <option value="news">News</option>
-                    <option value="event">Event</option>
-                    <option value="updates">Updates</option>
+                    <option value="news" <%=data.type==='news' ? 'selected' : '' %>  >News</option>
+                    <option value="event" <%=data.type==='event' ? 'selected' : '' %> >Event</option>
+                    <option value="update" <%=data.type==='update' ? 'selected' : '' %> >Update</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Image URL</label>
-                <input type="text" class="form-control" id="image" name="data[image]">
+                <input type="text" value="<%= data.image %>"class="form-control" id="image" name="data[image]">
             </div>
             <div class="mb-3">
                 <label for="link" class="form-label">Link</label>
-                <input type="text" class="form-control" id="link" name="data[link]">
+                <input type="text" value="<%= data.link %>" class="form-control" id="link" name="data[link]">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>
 </body>

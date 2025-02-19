@@ -2,20 +2,20 @@
 <body>
     <div class="container mt-4">
         <h2 class="mb-4">Update A Photo Carousel Item</h2>
-        <form action="/admin/photo-carousel?_method=PATCH" method="POST">
+        <form action="/admin/photo-carousel/edit/<%= data._id %>?_method=PATCH" method="POST">
             <div class="mb-3">
                 <label for="image" class="form-label">Image URL*</label>
-                <input type="text" class="form-control" id="image" name="data[image]" required>
+                <input type="text" value="<%= data.image %>" class="form-control" id="image" name="data[image]" required>
             </div>
             <div class="mb-3">
                 <label for="title" class="form-label">Title*</label>
-                <input type="text" class="form-control" id="title" name="data[title]" required>
+                <input type="text" value="<%= data.title %>" class="form-control" id="title" name="data[title]" required>
             </div>
             <div class="mb-3">
                 <label for="link" class="form-label">Link</label>
-                <input type="text" class="form-control" id="link" name="data[link]">
+                <input type="text" value="<%= data.link %>" class="form-control" id="link" name="data[link]">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Edit</button>
         </form>
     </div>
 </body>
