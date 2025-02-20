@@ -22,7 +22,7 @@
                         <td><%= faculty.position %></td>
                         <td>
                             <a href="/admin/faculty/edit/<%= faculty._id %>" class="btn btn-warning">Edit</a>
-                            <form action="/admin/faculty/delete/<%= faculty._id %>?_method=DELETE" method="POST" style="display:inline;">
+                            <form action="/admin/faculty/<%= faculty._id %>?_method=DELETE" method="POST" style="display:inline;">
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
                         </td>

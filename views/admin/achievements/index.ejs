@@ -1,0 +1,29 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+
+<body>
+    <div class="container mt-4"></div>
+        <h2 class="p-4">Notices</h2>
+        <div class="d-flex justify-content-end p-4">
+                <a href="/admin/achievements/new" class="btn btn-primary">Add New Notice</a>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <% data.forEach(item => { %>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2"><%= item.type %></span>
+                        <h5 class="card-title"><%= item.title %></h5>
+                        <p class="card-text"><%= item.description %></p>
+                        <div class="d-flex gap-2">
+                            <a href="/admin/achievements/edit/<%= item._id %>" class="btn btn-success">Edit</a>
+                            <form action="/admin/achievements/<%= item._id %>?_method=DELETE" method="POST" class="d-inline">
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this achievement?')">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</body>
