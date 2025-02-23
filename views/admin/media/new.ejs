@@ -1,0 +1,17 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+
+<body>
+    <h2 class="mb-3">Upload Image</h2>
+    <form action="/admin/media" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="title" id="title" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="file" class="form-label">Image</label>
+            <input type="file" name="file" id="file" class="form-control" accept=".jpg, .png, .pdf"  required>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+    <a href="/admin/media" class="btn btn-secondary mt-3">Back to List</a>
+</body></div>

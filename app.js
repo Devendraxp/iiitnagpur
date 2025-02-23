@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import multer from "multer";
 import connectDB from "./database/index.db.js";
 import PhotoCarousel from "./models/photoCarousel.model.js";
 import Achievement from "./models/achievements.model.js";
@@ -7,6 +8,7 @@ import Notice from "./models/notice.model.js";
 import Notification from "./models/notification.model.js";
 import StudentTestimonial from "./models/studentTestimonial.model.js";
 import Faculty from "./models/faculty.model.js";
+import Image from "./models/imageSchema.js";
 import path from "path";
 import ejsMate from "ejs-mate";
 import { error } from "console";
@@ -23,8 +25,24 @@ const PORT = 8080;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/files', express.static('uploads'));
 
 connectDB();
+
+
+//=============== Multer configuration ===============//
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '-' + file.originalname);
+  }
+});
+const upload = multer({ storage });
+
+
+
 
 app.get("/", (_, res) => {
   res.send("Server running properly 🚀!!! ");
@@ -371,6 +389,82 @@ app.patch("/admin/faculty/edit/:id", async (req, res) => {
     res.status(500).send("Error updating faculty: " + error.message);
   }
 });
+
+
+
+//=============== Media Routes ===============//
+app.get('/admin/media', async (_, res) => {
+  const data = await Image.find({});
+  res.render('admin/media/index.ejs', { data });
+})
+
+app.get('/admin/media/new', async (_, res) => {
+  res.render('admin/media/new.ejs')
+})
+
+app.post('/admin/media', upload.single('file'), async (req, res) => {
+  const image = new Image({
+    title: req.body.title,
+    filename: req.file.filename,
+    path: `/uploads/${req.file.filename}`,
+    imageUrl: `http://localhost:${PORT}/files/${req.file.filename}`
+  });
+  await image.save();
+  res.redirect('/admin/media');
+});
+
+app.get('/admin/media/edit/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const data = await Image.findById(id);
+    res.render('admin/media/update.ejs', { data });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+})
+
+app.patch('/admin/media/edit/:id', upload.single('file'), async (req, res) => {
+  const { id } = req.params;
+  try {
+    const updateData = {
+      title: req.body.title
+    };
+    
+    if (req.file) {
+      updateData.filename = req.file.filename;
+      updateData.path = `/uploads/${req.file.filename}`;
+      updateData.imageUrl = `http://localhost:${PORT}/files/${req.file.filename}`;
+    }
+
+    await Image.findByIdAndUpdate(id, updateData, { new: true });
+    res.redirect('/admin/media');
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+app.delete('/admin/media/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const image = await Image.findById(id);
+    if (image && image.filename) {
+      // Delete file from uploads folder
+      const fs = await import('fs/promises');
+      const filePath = `uploads/${image.filename}`;
+      try {
+        await fs.access(filePath);
+        await fs.unlink(filePath);
+      } catch (err) {
+        console.log('File does not exist, continuing with deletion');
+      }
+      // Delete from database
+      await Image.findByIdAndDelete(id);
+    }
+    res.redirect('/admin/media');
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 
 app.listen(PORT, () =>
   console.log(`server running on -> http://localhost:${PORT}`)

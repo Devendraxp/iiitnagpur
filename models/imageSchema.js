@@ -3,9 +3,16 @@ import { v4 as uuidv4 } from "uuid";
 
 const imageSchema = new Schema(
   {
+    title: {
+      type: String,
+      required: true,
+    },
     filename: {
       type: String,
       default: uuidv4(),
+    },
+    path: {
+      String,
     },
     imageUrl: {
       type: String,
@@ -15,5 +22,5 @@ const imageSchema = new Schema(
   { timestamps: true }
 );
 
-const ImageSchema = mongoose.model("ImageSchema", imageSchema);
-export default ImageSchema;
+const Image = mongoose.model("ImageSchema", imageSchema);
+export default Image;

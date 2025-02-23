@@ -15,20 +15,13 @@
     <%- include("./navbar.ejs") %>
     <div class="container-fluid ps-4 mt-3">
       <button onclick="handleBack()" class="btn btn-light shadow" 
-       style="transition: all 0.3s ease; border: none;" 
-       onmouseover="this.style.cssText='transform:scale(1.1); transition:all 0.3s ease; box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075)!important;'" 
-       onmouseout="this.style.cssText='transform:scale(1); transition:all 0.3s ease; box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15)!important;'">
-      <i class="bi bi-arrow-left fs-4"></i> 
+       style="transition: all 0.3s ease; border: none;">
+       <i class="bi bi-arrow-left fs-4"></i>
       </button>
     </div>
-
     <script>
       function handleBack() {
-      const btn = event.currentTarget;
-      btn.style.transform = 'scale(0.85)';
-      setTimeout(() => {
-        history.back();
-      }, 800);
+        window.history.back();
       }
     </script>
     <div class="container">

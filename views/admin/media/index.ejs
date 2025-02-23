@@ -1,0 +1,44 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+<script>
+    function copyToClipboard(link) {
+        navigator.clipboard.writeText(link);
+        alert("Copied: " + link);
+    }
+</script>
+<body>
+    <h2 class="mb-3">Media</h2>
+
+    <div class="col-12 mb-4 text-end">
+        <a href="/admin/media/new" class="btn btn-primary">Upload New items</a>
+    </div>
+    <div class="row">
+        <% data.forEach(file => { %>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    
+                    <%if (file.filename.endsWith('.pdf')) { %>
+                        <embed src="<%= file.imageUrl %>" type="application/pdf" width="100%" height="200px" toolbar="0" menubar="0" />
+                    <% } else {%>
+                        <img src="<%= file.imageUrl %>" class="card-img-top" alt="Image">
+                    <% } %>
+                    <div class="card-body">
+                        <h5 class="card-title"><b><%= file.title%></b></h5>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" value="<%= file.imageUrl %>" readonly>
+                            <button class="btn btn-outline-secondary" onclick="copyToClipboard('<%= file.imageUrl %>')">
+                                <i class="bi bi-clipboard"></i>
+                            </button>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <a href="/admin/media/edit/<%= file._id %>" class="btn btn-success flex-grow-1">Edit</a>
+                            <form action="/admin/media/<%= file._id %>?_method=DELETE" method="POST" class="flex-grow-1">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-secondary w-100">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</body>
