@@ -1,69 +1,80 @@
 <% layout('./admin/layout/boilerplate.ejs') -%>
 <body>
     <div class="container mt-4">
-        <h2 class="mb-4">Update Faculty Member</h2>
-        <form action="/admin/faculty/edit/<%= faculty._id %>?_method=PATCH" method="POST">
-        
+        <h2 class="mb-4">Update Faculty</h2>
+        <form action="/admin/faculty/<%= data._id %>?_method=PATCH" method="POST" >
             <div class="mb-3">
                 <label for="name" class="form-label">Name*</label>
-                <input type="text" class="form-control" id="name" name="data[name]" value="<%= faculty.name %>" required>
+                <input type="text" class="form-control" id="name" name="name" value="<%= data.name %>" required>
             </div>
             <div class="mb-3">
                 <label for="department" class="form-label">Department*</label>
-                <input type="text" class="form-control" id="department" name="data[department]" value="<%= faculty.department %>" required>
+                <select class="form-control" id="department" name="department" required>
+                    <option value="cse" <%= data.department === 'cse' ? 'selected' : '' %>>CSE</option>
+                    <option value="ece" <%= data.department === 'ece' ? 'selected' : '' %>>ECE</option>
+                    <option value="bs" <%= data.department === 'bs' ? 'selected' : '' %>>BS</option>
+                </select>
             </div>
             <div class="mb-3">
                 <label for="position" class="form-label">Position*</label>
-                <input type="text" class="form-control" id="position" name="data[position]" value="<%= faculty.position %>" required>
+                <select class="form-control" id="position" name="position" required>
+                    <option value="hod" <%= data.position === 'hod' ? 'selected' : '' %>>HOD</option>
+                    <option value="faculty-member" <%= data.position === 'faculty-member' ? 'selected' : '' %>>Faculty Member</option>
+                    <option value="staff" <%= data.position === 'staff' ? 'selected' : '' %>>Staff</option>
+                </select>
             </div>
             <div class="mb-3">
-                <label for="image" class="form-label">Profile Image URL</label>
-                <input type="text" class="form-control" id="image" name="data[image]" value="<%= faculty.image %>">
+                <label for="image" class="form-label">Profile Image</label>
+                <input type="text" class="form-control" id="image" name="image">
             </div>
             <div class="mb-3">
-                <label for="education" class="form-label">Education (Comma Separated)</label>
-                <input type="text" class="form-control" id="education" name="data[education]" value="<%= faculty.education ? faculty.education.join(', ') : '' %>">
+                <label for="education" class="form-label">Education (One per line)</label>
+                <textarea class="form-control" id="education" name="education" rows="3"><%= data.education %></textarea>
             </div>
             <div class="mb-3">
-                <label for="experience" class="form-label">Experience (Comma Separated)</label>
-                <input type="text" class="form-control" id="experience" name="data[experience]" value="<%= faculty.experience ? faculty.experience.join(', ') : '' %>">
+                <label for="experience" class="form-label">Experience (One per line)</label>
+                <textarea class="form-control" id="experience" name="experience" rows="3"><%= data.experience %></textarea>
             </div>
             <div class="mb-3">
-                <label for="teaching" class="form-label">Teaching Areas (Comma Separated)</label>
-                <input type="text" class="form-control" id="teaching" name="data[teaching]" value="<%= faculty.teaching ? faculty.teaching.join(', ') : '' %>">
+                <label for="teaching" class="form-label">Teaching (One per line)</label>
+                <textarea class="form-control" id="teaching" name="teaching" rows="3"><%= data.teaching %></textarea>
             </div>
             <div class="mb-3">
-                <label for="research" class="form-label">Research Areas (Comma Separated)</label>
-                <input type="text" class="form-control" id="research" name="data[research]" value="<%= faculty.research ? faculty.research.join(', ') : '' %>">
+                <label for="research" class="form-label">Research (One per line)</label>
+                <textarea class="form-control" id="research" name="research" rows="3"><%= data.research %></textarea>
             </div>
             <div class="mb-3">
                 <label for="supervision" class="form-label">Supervision</label>
-                <input type="text" class="form-control" id="supervision" name="data[supervision]" value="<%= faculty.supervision %>">
+                <input type="text" class="form-control" id="supervision" name="supervision" value="<%= data.supervision %>">
             </div>
             <div class="mb-3">
-                <label for="publication" class="form-label">Publications (Comma Separated)</label>
-                <input type="text" class="form-control" id="publication" name="data[publication]" value="<%= faculty.publication ? faculty.publication.join(', ') : '' %>">
+                <label for="publication" class="form-label">Publications (One per line)</label>
+                <textarea class="form-control" id="publication" name="publication" rows="3"><%= data.publication %></textarea>
             </div>
             <div class="mb-3">
-                <label for="responsibility" class="form-label">Responsibilities (Comma Separated)</label>
-                <input type="text" class="form-control" id="responsibility" name="data[responsibility]" value="<%= faculty.responsibility ? faculty.responsibility.join(', ') : '' %>">
+                <label for="responsibility" class="form-label">Responsibilities (One per line)</label>
+                <textarea class="form-control" id="responsibility" name="responsibility" rows="3"><%= data.responsibility %></textarea>
             </div>
             <div class="mb-3">
-                <label for="socialLinks" class="form-label">Social Links</label>
-                <input type="text" class="form-control" id="twitter" name="data[socialLinks][twitter]" placeholder="Twitter URL" value="<%= faculty.socialLinks.twitter %>">
-                <input type="text" class="form-control mt-2" id="linkedin" name="data[socialLinks][linkedin]" placeholder="LinkedIn URL" value="<%= faculty.socialLinks.linkedin %>">
-                <input type="text" class="form-control mt-2" id="github" name="data[socialLinks][github]" placeholder="GitHub URL" value="<%= faculty.socialLinks.github %>">
-                <input type="text" class="form-control mt-2" id="facebook" name="data[socialLinks][facebook]" placeholder="Facebook URL" value="<%= faculty.socialLinks.facebook %>">
+                <label for="anyOther" class="form-label">Any Other Information (One per line)</label>
+                <textarea class="form-control" id="anyOther" name="anyOther" rows="3"><%= data.anyOther %></textarea>
             </div>
             <div class="mb-3">
                 <label for="username" class="form-label">Username*</label>
-                <input type="text" class="form-control" id="username" name="data[username]" value="<%= faculty.username %>" required>
+                <input type="text" class="form-control" id="username" name="username" value="<%= data.username %>" required>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email*</label>
-                <input type="email" class="form-control" id="email" name="data[email]" value="<%= faculty.email %>" required>
+                <input type="email" class="form-control" id="email" name="email" value="<%= data.email %>" required>
             </div>
-            <button type="submit" class="btn btn-primary">Update</button>
+            <div class="mb-3">
+                <label class="form-label">Social Links</label>
+                <input type="url" class="form-control mb-2" id="twitter" name="socialLinks[twitter]" placeholder="Twitter URL" value="<%= data.socialLinks?.twitter %>">
+                <input type="url" class="form-control mb-2" id="linkedin" name="socialLinks[linkedin]" placeholder="LinkedIn URL" value="<%= data.socialLinks?.linkedin %>">
+                <input type="url" class="form-control mb-2" id="github" name="socialLinks[github]" placeholder="GitHub URL" value="<%= data.socialLinks?.github %>">
+                <input type="url" class="form-control" id="facebook" name="socialLinks[facebook]" placeholder="Facebook URL" value="<%= data.socialLinks?.facebook %>">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 </body>

@@ -3,32 +3,48 @@
     <div class="container mt-4">
         <h2 class="mb-4">Faculty List</h2>
         <a href="/admin/faculty/new" class="btn btn-primary mb-3">Add New Faculty</a>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Department</th>
-                    <th>Email</th>
-                    <th>Position</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% faculties.forEach(faculty => { %>
-                    <tr>
-                        <td><%= faculty.name %></td>
-                        <td><%= faculty.department %></td>
-                        <td><%= faculty.email %></td>
-                        <td><%= faculty.position %></td>
-                        <td>
-                            <a href="/admin/faculty/edit/<%= faculty._id %>" class="btn btn-warning">Edit</a>
-                            <form action="/admin/faculty/<%= faculty._id %>?_method=DELETE" method="POST" style="display:inline;">
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                <% }); %>
-            </tbody>
-        </table>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <% faculties.forEach(faculty => { %>
+                <div class="col">
+                    <div class="card h-100">
+                        <% if (faculty.image) { %>
+                            <img src="<%= faculty.image %>" class="card-img-top" alt="<%= faculty.name %>" style="max-height: 200px; object-fit: cover;">
+                        <% } else { %>
+                            <img src="/images/default-faculty.jpg" class="card-img-top" alt="Default Faculty Image" style="max-height: 200px; object-fit: cover;">
+                        <% } %>
+                        <div class="card-body">
+                            <h5 class="card-title"><%= faculty.name %></h5>
+                            <span class="badge bg-primary mb-2"><%= faculty.position %></span>
+                            <span class="badge bg-secondary mb-2"><%= faculty.department %></span>
+                            <p class="card-text">
+                                <strong>Email:</strong> <%= faculty.email %><br>
+                                <strong>Phone:</strong> <%= faculty.phone || 'N/A' %><br>
+                                <strong>Education:</strong> <%= faculty.education || 'N/A' %><br>
+                                <strong>Specialization:</strong> <%= faculty.specialization || 'N/A' %><br>
+                                <strong>Research Interests:</strong> <%= faculty.researchInterests || 'N/A' %><br>
+                                <strong>Office:</strong> <%= faculty.office || 'N/A' %>
+                            </p>
+                            <div class="social-links mb-3">
+                                <% if (faculty.socialLinks?.linkedin) { %>
+                                    <a href="<%= faculty.socialLinks.linkedin %>" class="btn btn-outline-primary btn-sm"><i class="bi bi-linkedin"></i></a>
+                                <% } %>
+                                <% if (faculty.socialLinks?.twitter) { %>
+                                    <a href="<%= faculty.socialLinks.twitter %>" class="btn btn-outline-info btn-sm"><i class="bi bi-twitter"></i></a>
+                                <% } %>
+                                <% if (faculty.socialLinks?.github) { %>
+                                    <a href="<%= faculty.socialLinks.github %>" class="btn btn-outline-dark btn-sm"><i class="bi bi-github"></i></a>
+                                <% } %>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <a href="/admin/faculty/edit/<%= faculty._id %>" class="btn btn-warning">Edit</a>
+                                <form action="/admin/faculty/<%= faculty._id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
     </div>
 </body>

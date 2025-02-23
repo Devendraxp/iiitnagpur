@@ -7,17 +7,14 @@ import Notice from "./models/notice.model.js";
 import Notification from "./models/notification.model.js";
 import StudentTestimonial from "./models/studentTestimonial.model.js";
 import Faculty from "./models/faculty.model.js";
-import Department from "./models/department.model.js";
 import path from "path";
 import ejsMate from "ejs-mate";
 import { error } from "console";
 import methodOverride from "method-override";
 
-
 const app = express();
 
-
-app.use(methodOverride('_method'));
+app.use(methodOverride("_method"));
 
 app.set("view engine", "ejs");
 app.engine("ejs", ejsMate);
@@ -36,12 +33,12 @@ app.get("/admin", (_, res) => {
   res.render("admin/index.ejs");
 });
 
-//photo-carousel routes
+//=============== photo-carousel Routes ===============//
 
 app.get("/admin/photo-carousel", async (_, res) => {
   try {
     const result = await PhotoCarousel.find({});
-    res.render("admin/photoCarousel/index.ejs", {data : result});
+    res.render("admin/photoCarousel/index.ejs", { data: result });
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
@@ -63,9 +60,9 @@ app.post("/admin/photo-carousel", async (req, res) => {
 });
 
 app.get("/admin/photo-carousel/edit/:id", async (req, res) => {
-  const {id} = req.params;
+  const { id } = req.params;
   const result = await PhotoCarousel.findById(id);
-  res.render("admin/photoCarousel/update.ejs",{data : result});
+  res.render("admin/photoCarousel/update.ejs", { data: result });
 });
 
 app.patch("/admin/photo-carousel/edit/:id", async (req, res) => {
@@ -73,7 +70,9 @@ app.patch("/admin/photo-carousel/edit/:id", async (req, res) => {
   const { data } = req.body;
 
   try {
-    const updatedCarousel = await PhotoCarousel.findByIdAndUpdate(id, data, { new: true });
+    const updatedCarousel = await PhotoCarousel.findByIdAndUpdate(id, data, {
+      new: true,
+    });
     if (!updatedCarousel) {
       return res.status(404).json({ error: "Photo carousel not found" });
     }
@@ -95,7 +94,9 @@ app.delete("/admin/photo-carousel/:id", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-// achievements route
+
+//=============== Achievements Routes ===============//
+
 app.get("/admin/achievements", async (req, res) => {
   try {
     const result = await Achievement.find({});
@@ -147,7 +148,9 @@ app.delete("/admin/achievements/:id", async (req, res) => {
   }
 });
 
-// routes for notice
+
+//=============== Notice Routes ===============//
+
 app.get("/admin/notice", async (req, res) => {
   try {
     const result = await Notice.find({});
@@ -199,7 +202,8 @@ app.delete("/admin/notice/:id", async (req, res) => {
   }
 });
 
-// routes for notification
+
+//=============== Notification Routes ===============//
 app.get("/admin/notification", async (req, res) => {
   try {
     const result = await Notification.find({});
@@ -305,7 +309,6 @@ app.delete("/admin/student-testimonial/:id", async (req, res) => {
 
 
 
-// Route to list all faculties
 app.get("/admin/faculty", async (req, res) => {
   try {
     const faculties = await Faculty.find({});
@@ -314,7 +317,6 @@ app.get("/admin/faculty", async (req, res) => {
     res.status(500).json({ error: e.message });
   }
 });
-
 
 // Route to render the form for adding a new faculty
 app.get("/admin/faculty/new", async (_, res) => {
@@ -327,13 +329,12 @@ app.post("/admin/faculty", async (req, res) => {
     const { data } = req.body;
     const newFaculty = new Faculty(data);
     await newFaculty.save();
-    
+
     res.redirect("/admin/faculty"); // Redirect to faculty list after successful addition
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
 });
-
 
 //edit
 
@@ -341,12 +342,12 @@ app.get("/admin/faculty/edit/:id", async (req, res) => {
   const { id } = req.params; // Extract ID from URL
 
   try {
-    const faculty = await Faculty.findById(id);
-    if (!faculty) {
+    const data = await Faculty.findById(id);
+    if (!data) {
       return res.status(404).send("Faculty not found.");
     }
 
-    res.render("admin/faculty/update.ejs", { faculty });
+    res.render("admin/faculty/update.ejs", { data });
   } catch (error) {
     res.status(500).send("Server error: " + error.message);
   }
@@ -357,7 +358,9 @@ app.patch("/admin/faculty/edit/:id", async (req, res) => {
   const { data } = req.body;
 
   try {
-    const updatedFaculty = await Faculty.findByIdAndUpdate(id, data, { new: true });
+    const updatedFaculty = await Faculty.findByIdAndUpdate(id, data, {
+      new: true,
+    });
 
     if (!updatedFaculty) {
       return res.status(404).send("Faculty not found.");

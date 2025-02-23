@@ -5,14 +5,16 @@ const facultySchema = new Schema(
     {
         name: {
             type: String,
-            // required: true
+            required: true
         },
         department: {
             type: String,
-            // required: true
+            required: true,
+            enum : ["cse","ece","bs"]
         },
         position: { 
             type: String,
+            enum: ["hod","faculty-member","staff"], 
         },
         image: {
             type: String,
@@ -43,13 +45,13 @@ const facultySchema = new Schema(
         },
         username: {
             type: String,
-            // unique: true,
-            // required: true
+            unique: true,
+            required: true
         },
         email: {
             type: String,
-            // unique: true,
-            // required: true
+            unique: true,
+            required: true
         },
         socialLinks: {
             twitter: { type: String },
