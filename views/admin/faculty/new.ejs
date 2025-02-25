@@ -1,8 +1,12 @@
 <% layout('./admin/layout/boilerplate.ejs') -%>
+
 <body>
     <div class="container mt-4">
         <h2 class="mb-4">Add New Faculty</h2>
         <form action="/admin/faculty" method="POST">
+            
+            <!-- Basic Details -->
+            <h4>Basic Information</h4>
             <div class="mb-3">
                 <label for="name" class="form-label">Name*</label>
                 <input type="text" class="form-control" id="name" name="data[name]" required>
@@ -24,9 +28,16 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label for="image" class="form-label">Profile Image</label>
+                <label for="image" class="form-label">Profile Image URL</label>
                 <input type="text" class="form-control" id="image" name="data[image]">
             </div>
+            <div class="mb-3">
+                <label for="designation" class="form-label">designation</label>
+                <input type="text" class="form-control" id="designation" name="data[designation]">
+            </div>
+
+            <!-- Education & Experience -->
+            <h4>Education & Experience</h4>
             <div class="mb-3">
                 <label for="education" class="form-label">Education (One per line)</label>
                 <textarea class="form-control" id="education" name="data[education]" rows="3"></textarea>
@@ -36,21 +47,103 @@
                 <textarea class="form-control" id="experience" name="data[experience]" rows="3"></textarea>
             </div>
             <div class="mb-3">
-                <label for="teaching" class="form-label">Teaching (One per line)</label>
+                <label for="teaching" class="form-label">Teaching Subjects (One per line)</label>
                 <textarea class="form-control" id="teaching" name="data[teaching]" rows="3"></textarea>
             </div>
+
+            <!-- Research Section -->
+            <h4>Research</h4>
             <div class="mb-3">
-                <label for="research" class="form-label">Research (One per line)</label>
-                <textarea class="form-control" id="research" name="data[research]" rows="3"></textarea>
+                <label for="researchLink" class="form-label">Research Link</label>
+                <input type="text" class="form-control" id="researchLink" name="data[research][link]">
             </div>
             <div class="mb-3">
-                <label for="supervision" class="form-label">Supervision</label>
-                <input type="text" class="form-control" id="supervision" name="data[supervision]">
+                <label for="researchAreas" class="form-label">Research Areas (One per line)</label>
+                <textarea class="form-control" id="researchAreas" name="data[research][areaofResearch]" rows="2"></textarea>
             </div>
+
+            <!-- Dynamic Research Projects -->
+            <!-- <h5>Research Projects</h5> -->
+         
+            <div id="researchProjects">
+                <div class="mb-3">
+                    <label for="patent" class="form-label">Patent  (One per line)</label>
+                    <textarea class="form-control" id="patent" name="data[research][patent]" rows="2"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="fundedProject" class="form-label">Funded Project  (One per line)</label>
+                    <textarea class="form-control" id="fundedProject" name="data[research][fundedProject]" rows="2"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="reviewerofJournal" class="form-label">Reviewer of Journal  (One per line)</label>
+                    <textarea class="form-control" id="reviewerofJournal" name="data[research][reviewerofJournal]" rows="2"></textarea>
+                </div>
+                <h5>Research Project</h5>
+                <div class="input-group mb-2">
+                    <input type="number" name="data[research][researchProject][0][year]" class="form-control" placeholder="Year" >
+                    <input type="text" name="data[research][researchProject][0][title]" class="form-control" placeholder="Title" >
+                    <input type="text" name="data[research][researchProject][0][duration]" class="form-control" placeholder="Duration" >
+                    <button type="button" class="btn btn-danger btn-sm" onclick="removeResearchProject(0)">Remove</button>
+
+                </div>
+            </div>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="addResearchProject()">+ Add Research Project</button>
+            <br><br>
+            <!-- Supervision -->
+            <h4>Supervision</h4>
+            <!-- <h5>MTech Supervision</h5> -->
+           
+            <h5>PhD Supervision</h5>
+            <div id="phdSupervision">
+                <div class="input-group mb-2 phd-entry" id="phd-entry-0">
+                    <input type="number" name="data[supervision][phd][0][year]" class="form-control" placeholder="Year">
+                    <input type="text" name="data[supervision][phd][0][studentName]" class="form-control" placeholder="Student Name">
+                    <input type="text" name="data[supervision][phd][0][workDetails]" class="form-control" placeholder="Work Details">
+                    <input type="text" name="data[supervision][phd][0][status]" class="form-control" placeholder="Status">
+                    <button type="button" class="btn btn-danger btn-sm" onclick="removePhDSupervision(0)">Remove</button>
+                </div>
+            </div>
+            
+            </div>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="addPhDSupervision()">+ Add PhD Supervision</button>
+            <br><br>
+                   <!-- MTech Supervision -->
+                   <!-- <h5>MTech Supervision</h5> -->
+                   <div class="mb-3">
+                       <label for="mtechSupervision" class="form-label">MTech Students (One per line)</label>
+                       <textarea class="form-control" id="mtechSupervision" name="data[supervision][MTech]" rows="3" ></textarea>
+                   </div>
+       
+                   <!-- BTech Supervision -->
+                   <!-- <h5>BTech Supervision</h5> -->
+                   <div class="mb-3">
+                       <label for="btechSupervision" class="form-label">BTech Students (One per line)</label>
+                       <textarea class="form-control" id="btechSupervision" name="data[supervision][BTech]" rows="3" ></textarea>
+                   </div>
+            <!-- Publications -->
+            <h4>Publications</h4>
+
+            <!-- Journals -->
             <div class="mb-3">
-                <label for="publication" class="form-label">Publications (One per line)</label>
-                <textarea class="form-control" id="publication" name="data[publication]" rows="3"></textarea>
+                <label for="journals" class="form-label">Journals (Year & Papers)</label>
+                <textarea class="form-control" id="journals" name="data[publication][journals]" rows="5" placeholder="Year first, then papers. Example:&#10;2023&#10;- Paper 1&#10;- Paper 2"></textarea>
             </div>
+            
+            <!-- Conferences -->
+            <div class="mb-3">
+                <label for="conferences" class="form-label">Conferences (Year & Papers)</label>
+                <textarea class="form-control" id="conferences" name="data[publication][conferences]" rows="5" placeholder="Year first, then conference papers. Example:&#10;2022&#10;- Conference Paper 1&#10;- Conference Paper 2"></textarea>
+            </div>
+            
+            <!-- Books -->
+            <!-- <div class="mb-3">
+                <label for="books" class="form-label">Books (Year & Titles)</label>
+                <textarea class="form-control" id="books" name="data[publication][books]" rows="5" placeholder="Year first, then book titles. Example:&#10;2021&#10;- Book 1&#10;- Book 2"></textarea>
+            </div>
+             -->
+
+            <!-- Other Information -->
+            <h4>Additional Responsibilities & Info</h4>
             <div class="mb-3">
                 <label for="responsibility" class="form-label">Responsibilities (One per line)</label>
                 <textarea class="form-control" id="responsibility" name="data[responsibility]" rows="3"></textarea>
@@ -59,22 +152,86 @@
                 <label for="anyOther" class="form-label">Any Other Information (One per line)</label>
                 <textarea class="form-control" id="anyOther" name="data[anyOther]" rows="3"></textarea>
             </div>
+
+            <!-- Contact Details -->
+            <h4>Contact Information</h4>
             <div class="mb-3">
                 <label for="username" class="form-label">Username*</label>
-                <input type="text" class="form-control" id="username" name="data[username]" required>
+                <input type="text" class="form-control" id="username" name="data[username]" >
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email*</label>
-                <input type="email" class="form-control" id="email" name="data[email]" required>
+                <input type="email" class="form-control" id="email" name="data[email]" >
             </div>
+
+            <!-- Social Links -->
+            <h4>Social Links</h4>
             <div class="mb-3">
-                <label class="form-label">Social Links</label>
                 <input type="url" class="form-control mb-2" id="twitter" name="data[socialLinks][twitter]" placeholder="Twitter URL">
                 <input type="url" class="form-control mb-2" id="linkedin" name="data[socialLinks][linkedin]" placeholder="LinkedIn URL">
                 <input type="url" class="form-control mb-2" id="github" name="data[socialLinks][github]" placeholder="GitHub URL">
                 <input type="url" class="form-control" id="facebook" name="data[socialLinks][facebook]" placeholder="Facebook URL">
             </div>
+
+            <!-- Submit Button -->
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+    <script>
+        // let phdIndex = 1; // Index to keep track of dynamically added PhD supervision entries
+        let researchIndex = 1; // Index to keep track of dynamically added Research Project entries
+        
+
+         function removeResearchProject(index) {
+            const entryToRemove = document.getElementById(`research-entry-${index}`);
+            if (entryToRemove) {
+                entryToRemove.remove();
+            }
+        }
+        
+        // Function to add Research Project dynamically
+        function addResearchProject() {
+            const researchSection = document.getElementById('researchProjects');
+            const newResearchEntry = `
+                <div class="input-group mb-2 research-entry" id="research-entry-${researchIndex}">
+                    <input type="text" name="data[research][researchProject][${researchIndex}][year]" class="form-control" placeholder="Year" >
+                    <input type="text" name="data[research][researchProject][${researchIndex}][title]" class="form-control" placeholder="Project Title" >
+                    <input type="text" name="data[research][researchProject][${researchIndex}][duration]" class="form-control" placeholder="Duration" >
+                    <button type="button" class="btn btn-danger btn-sm" onclick="removeResearchProject(${researchIndex})">Remove</button>
+                </div>
+            `;
+            researchSection.insertAdjacentHTML('beforeend', newResearchEntry);
+            researchIndex++; // Increment the index for the next Research Project
+        }
+    
+        // Initialize phdIndex based on the number of existing PhD supervision entries
+let phdIndex = document.querySelectorAll('.phd-entry').length || 1; 
+
+// Function to remove a PhD Supervision entry
+function removePhDSupervision(index) {
+    const entryToRemove = document.getElementById(`phd-entry-${index}`);
+    if (entryToRemove) {
+        entryToRemove.remove();
+    }
+}
+
+// Function to add a new PhD Supervision entry dynamically
+function addPhDSupervision() {
+    const phdSupervisionSection = document.getElementById('phdSupervision');
+    const newPhDEntry = `
+        <div class="input-group mb-2 phd-entry" id="phd-entry-${phdIndex}">
+            <input type="number" name="data[supervision][phd][${phdIndex}][year]" class="form-control" placeholder="Year">
+            <input type="text" name="data[supervision][phd][${phdIndex}][studentName]" class="form-control" placeholder="Student Name">
+            <input type="text" name="data[supervision][phd][${phdIndex}][workDetails]" class="form-control" placeholder="Work Details">
+            <input type="text" name="data[supervision][phd][${phdIndex}][status]" class="form-control" placeholder="Status">
+            <button type="button" class="btn btn-danger btn-sm" onclick="removePhDSupervision(${phdIndex})">Remove</button>
+        </div>
+    `;
+    phdSupervisionSection.insertAdjacentHTML('beforeend', newPhDEntry);
+    phdIndex++; // Increment the index for the next entry
+}
+
+        
+       
+    </script>
 </body>

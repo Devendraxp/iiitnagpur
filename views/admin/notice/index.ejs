@@ -10,6 +10,7 @@
             <% data.forEach(item => { %>
             <div class="col">
                 <div class="card h-100">
+                    <img src="<%= item.image %>" class="card-img-top" alt="Notice Image">
                     <div class="card-body">
                         <span class="badge bg-primary mb-2"><%= item.type %></span>
                         <h5 class="card-title"><%= item.title %></h5>

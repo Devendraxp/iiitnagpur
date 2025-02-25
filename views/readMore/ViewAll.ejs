@@ -1,0 +1,113 @@
+<%- include('../partials/head2') %> 
+  <body>
+    <%- include('../partials/nav') %> 
+    <div class="main w-full min-h-screen bg-white text-black">
+      <div class="img w-full overflow-hidden">
+        <img
+          class="w-full h-48 md:h-64 lg:h-76 object-cover object-center"
+          src="https://iiitn.ac.in/images/Slide2.jpg"
+          alt="Campus banner"
+        />
+      </div>
+
+      <div class="mainContent w-full">
+        <div class="routes w-full px-4 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#f6f6f6] py-3 md:py-5">
+          <a class="text-xs md:text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500" href="#">
+            Home <i class="ri-arrow-right-s-line text-md"></i>
+          </a>
+          <a class="text-xs md:text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500" href="#">
+            All news
+          </a>
+        </div>
+
+        <div class="content px-4 md:px-20 lg:px-44 mt-8 md:mt-16 mb-8 md:mb-10">
+          <div class="max-w-5xl mx-auto p-4">
+            <nav class="bg-gray-900 text-white p-4 flex flex-wrap justify-center md:justify-start space-x-4 md:space-x-8">
+              <a href="#" onclick="showContent('news')" class="tab-btn" id="newsBtn">News</a>
+              <a href="#" onclick="showContent('facultyNotice')" class="tab-btn">Faculty Notices</a>
+              <a href="#" onclick="showContent('studentNotice')" class="tab-btn">Student Notices</a>
+              <a href="#" onclick="showContent('facultyAchievement')" class="tab-btn">Faculty Achievement</a>
+              <a href="#" onclick="showContent('studentAchievement')" class="tab-btn">Student Achievement</a>
+              <a href="#" onclick="showContent('event')" class="tab-btn">Events</a>
+              <a href="#" onclick="showContent('update')" class="tab-btn">Latest Updates</a>
+            </nav>
+
+            <div class="bg-white p-6 mt-4 shadow-lg rounded-lg">
+              <div id="news" class="content-div">
+                <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 mb-4">Latest News</h2>
+                <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+                  <% news.forEach(function(item) { %>
+                    <li><a href="<%= item.link %>" class="hover:text-blue-600"><%= item.title %></a></li>
+                  <% }); %>
+                </ol>
+              </div>
+
+              <div id="facultyNotice" class="content-div hidden">
+                <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 mb-4">Faculty Notices</h2>
+                <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+                  <% facultyNotice.forEach(function(item) { %>
+                    <li><a href="<%= item.link %>" class="hover:text-blue-600"><%= item.title %></a></li>
+                  <% }); %>
+                </ol>
+              </div>
+
+              <div id="studentNotice" class="content-div hidden">
+                <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 mb-4">Student Notices</h2>
+                <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+                  <% studentNotice.forEach(function(item) { %>
+                    <li><a href="<%= item.link %>" class="hover:text-blue-600"><%= item.title %></a></li>
+                  <% }); %>
+                </ol>
+              </div>
+
+              <div id="facultyAchievement" class="content-div hidden">
+                <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 mb-4">Faculty Achievements</h2>
+                <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+                  <% facultyAchievement.forEach(function(item) { %>
+                    <li><a href="<%= item.link %>" class="hover:text-blue-600"><%= item.title %></a></li>
+                  <% }); %>
+                </ol>
+              </div>
+
+              <div id="studentAchievement" class="content-div hidden">
+                <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 mb-4">Student Achievements</h2>
+                <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+                  <% studentAchievement.forEach(function(item) { %>
+                    <li><a href="<%= item.link %>" class="hover:text-blue-600"><%= item.title %></a></li>
+                  <% }); %>
+                </ol>
+              </div>
+
+              <div id="event" class="content-div hidden">
+                <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 mb-4">Events</h2>
+                <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+                  <% event.forEach(function(item) { %>
+                    <li><a href="<%= item.link %>" class="hover:text-blue-600"><%= item.title %></a></li>
+                  <% }); %>
+                </ol>
+              </div>
+
+              <div id="update" class="content-div hidden">
+                <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 mb-4">Latest Updates</h2>
+                <ol class="list-decimal pl-6 space-y-2 text-gray-700">
+                  <% update.forEach(function(item) { %>
+                    <li><a href="<%= item.link %>" class="hover:text-blue-600"><%= item.title %></a></li>
+                  <% }); %>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        
+      </style>
+
+      <script>
+        
+      </script>
+    </div>
+    <%- include('../partials/footer') %> 
+  </body>
+  <%- include('../partials/tail2') %> 

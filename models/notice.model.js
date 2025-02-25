@@ -13,6 +13,9 @@ const noticeSchema = Schema(
       type: String,
       enum: ["faculty", "student"],
     },
+    image :{
+      type : String
+    },
     link: {
       type: String,
       default: "https://iiitn.ac.in",

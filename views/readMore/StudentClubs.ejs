@@ -1,0 +1,102 @@
+<%- include('../partials/head2') %> 
+  <body>
+    <%- include('../partials/nav') %> 
+    <div class="main w-full min-h-screen bg-white text-black">
+      <!-- Banner Image -->
+      <div class="img w-full overflow-hidden">
+        <img
+          class="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover object-center"
+          src="/About_us/images/ImageBanner.jpg"
+          alt="Campus banner"
+        />
+      </div>
+
+      <!-- Breadcrumb Navigation -->
+      <div class="mainContent w-full">
+        <div
+          class="routes w-full px-4 sm:px-6 md:px-12 lg:px-24 xl:px-44 flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 bg-[#f6f6f6] py-3 md:py-4"
+        >
+          <a
+            class="text-xs sm:text-sm md:text-base font-medium hover:text-blue-400 uppercase text-zinc-500"
+            href="#"
+            >Home <i class="ri-arrow-right-s-line"></i>
+          </a>
+          <a
+            class="text-xs sm:text-sm md:text-base font-medium hover:text-blue-400 uppercase text-zinc-500"
+            href="#"
+            >Placements <i class="ri-arrow-right-s-line"></i>
+          </a>
+          <a
+            class="text-xs sm:text-sm md:text-base font-medium hover:text-blue-400 uppercase text-zinc-500"
+            href="#"
+            >Student Club
+          </a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content px-4 sm:px-6 md:px-8 lg:px-12 xl:px-44 mt-6 md:mt-10 mb-6 md:mb-8">
+          <!-- Student Club Section -->
+          <h2 class="text-lg sm:text-xl md:text-2xl uppercase font-bold text-black">
+            Student Club
+          </h2>
+          <div class="w-full h-px bg-zinc-300 mt-2"></div>
+          
+          <!-- About SAC -->
+          <div class="pl-2 sm:pl-4 md:pl-5 mt-4 md:mt-5 pb-4 md:pb-6">
+            <ol class="list-decimal space-y-3">
+              <li class="text-lg sm:text-xl font-bold">About SAC</li>
+            </ol>
+            <p class="text-base sm:text-lg mt-3 md:mt-4 leading-relaxed">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit...
+            </p>
+          </div>
+
+          <!-- Club List Table -->
+          <h3 class="text-lg sm:text-xl font-bold mt-8 md:mt-12 underline">
+            List of clubs under the Student Activity Committee (SAC):
+          </h3>
+          
+          <div class="mt-6 md:mt-10">
+            <div class="max-w-6xl mx-auto bg-white p-4 sm:p-6 rounded-lg shadow-lg overflow-x-auto">
+              <h2 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-center">Club List</h2>
+              <table class="w-full border border-gray-300">
+                <thead>
+                  <tr class="bg-gray-200">
+                    <th class="border p-2 sm:p-3 text-left text-sm sm:text-base">S. No.</th>
+                    <th class="border p-2 sm:p-3 text-left text-sm sm:text-base">Club Name</th>
+                    <th class="border p-2 sm:p-3 text-left text-sm sm:text-base">Club Category</th>
+                    <th class="border p-2 sm:p-3 text-left text-sm sm:text-base">Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Table Rows -->
+                  <tr class="border">
+                    <td class="border p-2 sm:p-3 text-sm sm:text-base">1</td>
+                    <td class="border p-2 sm:p-3 text-sm sm:text-base">Dot Slash (Coding Wing)</td>
+                    <td class="border p-2 sm:p-3 text-sm sm:text-base">Technical Club</td>
+                    <td class="border border-zinc-800 p-2 sm:p-3 text-sky-700 hover:underline">
+                      <a href="#" class="text-sm sm:text-base">Link</a>
+                    </td>
+                  </tr>
+                  <!-- Repeat other table rows with same pattern -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- About ELC Section -->
+          <div class="mt-8 md:mt-16">
+            <h2 class="text-lg sm:text-xl font-bold">2. About ELC</h2>
+            <p class="text-base sm:text-lg mt-3 md:mt-5 leading-relaxed">
+              Electoral literacy is essential if democracy is to reach its pinnacle...
+            </p>
+            <p class="text-base sm:text-lg mt-4 md:mt-6">
+              For more details <a class="text-sky-600 hover:underline" href="#">Click Here</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include('../partials/footer') %> 
+  </body>
+  <%- include('../partials/tail2') %> 

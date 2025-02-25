@@ -3,16 +3,18 @@
 <body>
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
+            <div class="col-md-4">
+                <div class="card" style="min-height: 400px;">
                     <div class="card-body">
-                        <h3 class="card-title text-center mb-4">Admin Login</h3>
+                        <h3 class="card-title text-center mb-4">
+                            <i class="bi bi-person-circle me-2"></i>Admin Login
+                        </h3>
                         <form action="/admin/login" method="POST">
-                            <div class="mb-3">
+                            <div class="mb-4">
                                 <label for="username" class="form-label">Username</label>
                                 <input type="text" class="form-control" id="username" name="username" required>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-4">
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="password" name="password" required>
                             </div>
