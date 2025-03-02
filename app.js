@@ -18,7 +18,7 @@ import MongoStore from "connect-mongo";
 import passport from "passport";
 import passportLocal from "passport-local";
 
-const PORT = 8000;
+const PORT = 8080;
 const app = express();
 
 // Define __dirname and __filename for ES modules

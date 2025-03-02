@@ -1,10 +1,14 @@
 <% layout('./admin/layout/boilerplate.ejs') -%>
 
-<body class="container mt-5">
+<body>
     <h2 class="mb-3">Update Image</h2>
-    <form action="/update/<%= file._id %>" method="POST" enctype="multipart/form-data">
-        <img src="<%= file.url %>" class="img-fluid mb-3" alt="Current Image">
-        <input type="file" name="file" class="form-control mb-3" required>
+    <form action="/admin/media/edit/<%= data._id %>?_method=PATCH" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" value="<%= data.title %>" name="title" id="title" class="form-control" required>
+        </div>
+        <img src="<%= data.imageUrl %>" class="img-fluid mb-3" alt="Current Image">
+        <input type="file" name="file" class="form-control mb-3" >
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
     <a href="/list" class="btn btn-secondary mt-3">Back to List</a>
