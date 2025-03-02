@@ -1,10 +1,10 @@
 <nav
-class="w-full banner lg:h-[100px] md:h-[80px] px-4 py-[1px] flex items-center justify-between fixed top-0 left-0 z-[998]"
->
+class="w-full banner lg:h-[100px] md:h-[80px] pl-4 py-[4px] flex items-center justify-between fixed top-0 left-0 z-[998] "
+pb-4>
 <div class="flex h-full items-center gap-4">
   <img
     class="lg:h-full h-12 object-cover"
-    src="../images/logos/logo-removebg-preview.png"
+    src="../images/logos/Logo1.svg"
     alt="" onclick="window.location.href='/'"
   />
   <div class="flex flex-col">
@@ -20,11 +20,6 @@ class="w-full banner lg:h-[100px] md:h-[80px] px-4 py-[1px] flex items-center ju
       >
       भारतीय सूचना प्रौद्योगिकी संस्थान, नागपुर
     </h1>
-    <h1
-    class="leading-none title font-bold font-[font2] lg:text-[2vw] md:text-[3vw] text-[3vw] text-[#00457b] tracking-tighter"
-    >
-    An Institute of Esteem
-  </h1>
   <h1
   class="leading-none title font-bold font-[font2] lg:text-[2vw] md:text-[3vw] text-[3vw] text-[#00457b] tracking-tighter"
   >
@@ -39,91 +34,99 @@ class="w-full banner lg:h-[100px] md:h-[80px] px-4 py-[1px] flex items-center ju
     </h1>
   </div>
 </div>
-<i
-  class="ri-menu-line text-white lg:text-[1.8vw] md:text-[3vw] open my-[20px] mr-[20px] translate-x-[10px]"
-></i>
+<div class="icons">
+  <form id="searchForm" class="search-form" action="/search" method="GET">
+    <input type="text" name="q" placeholder="Search..." class="search-input" />
+  </form>
+  <!-- Search Icon -->
+  <i id="searchIcon" class="ri-search-line icon text-[#00457b] lg:text-[1.8vw] md:text-[3vw] my-[20px] mr-[20px] translate-x-[10px]"></i>
+  <!-- Menu Icon -->
+  <i class="ri-menu-line text-[#00457b] lg:text-[1.8vw] md:text-[3vw] open my-[20px] mr-[20px] translate-x-[10px]"></i>
+  
+</div>
+
 </nav>
 <div
-class="w-full overlay pl-4 py-[1px] items-center fixed top-0 left-0 z-[999] lg:h-[100px] md:h-[80px] bg-[#00457b] text-white uppercase md:flex hidden"
+class="w-full overlay pl-4 py-[4px] items-center fixed top-0 left-0 z-[999] lg:h-[100px] md:h-[80px] bg-white text-[#00457b] uppercase md:flex hidden border-b-2 border-[#00508a]"
 id="firstBox"
 >
 <img
   class="lg:h-full h-12 object-cover"
-  src="../images/logos/logo-removebg-preview.png"
+  src="../images/logos/Logo1.svg"
   alt="Logo" onclick="window.location.href='/'"
 />
 <div class="flex md:flex-row justify-evenly w-full font-medium">
+<a href="/aboutUs">  <h1
+  class="menu-item lg:text-[1.2vw] font-medium md:text-[1.5vw] text-[1.5vw] cursor-pointer"
+  data-menu="about"
+>
+  About Us
+</h1></a>
   <h1
-    class="menu-item lg:text-[1vw] md:text-[1.5vw] text-[1.5vw] cursor-pointer"
-    data-menu="about"
+    class="menu-item lg:text-[1.2vw] font-medium md:text-[1.5vw] text-[1.5vw] cursor-pointer"
+    data-menu="explore"
   >
-    About Us
+    Explore
   </h1>
   <h1
-    class="menu-item lg:text-[1vw] md:text-[1.5vw] text-[1.5vw] cursor-pointer"
-    data-menu="academics"
-  >
-    Academics
-  </h1>
-  <h1
-    class="menu-item lg:text-[1vw] md:text-[1.5vw] text-[1.5vw] cursor-pointer"
+    class="menu-item lg:text-[1.2vw] font-medium md:text-[1.5vw] text-[1.5vw] cursor-pointer"
     data-menu="governance"
   >
     Governance
   </h1>
   <h1
-    class="menu-item lg:text-[1vw] md:text-[1.5vw] text-[1.5vw] cursor-pointer"
+    class="menu-item lg:text-[1.2vw] font-medium md:text-[1.5vw] text-[1.5vw] cursor-pointer"
     data-menu="department"
   >
     Department
   </h1>
   <h1
-    class="menu-item lg:text-[1vw] md:text-[1.5vw] text-[1.5vw] cursor-pointer"
+    class="menu-item lg:text-[1.2vw] font-medium md:text-[1.5vw] text-[1.5vw] cursor-pointer"
     data-menu="admissions"
   >
     Admissions
   </h1>
   <h1
-    class="menu-item lg:text-[1vw] md:text-[1.5vw] text-[1.5vw] cursor-pointer"
+    class="menu-item lg:text-[1.2vw] font-medium md:text-[1.5vw] text-[1.5vw] cursor-pointer"
     data-menu="alumni"
   >
     Alumni
   </h1>
   <h1
-    class="menu-item lg:text-[1vw] md:text-[1.5vw] text-[1.5vw] cursor-pointer"
+    class="menu-item lg:text-[1.2vw] font-medium md:text-[1.5vw] text-[1.5vw] cursor-pointer"
     data-menu="placements"
   >
     Placements
   </h1>
   <h1
-    class="menu-item lg:text-[1vw] md:text-[1.5vw] text-[1.5vw] cursor-pointer"
+    class="menu-item lg:text-[1.2vw] font-medium md:text-[1.5vw] text-[1.5vw] cursor-pointer"
     data-menu="student"
   >
     Student
   </h1>
   <h1
-    class="menu-item lg:text-[1vw] md:text-[1.5vw] text-[1.5vw] cursor-pointer"
+    class="menu-item lg:text-[1.2vw] font-medium md:text-[1.5vw] text-[1.5vw] cursor-pointer"
     data-menu="nirf"
   >
     NIRF
   </h1>
   <h1
-    class="menu-item lg:text-[1vw] md:text-[1.5vw] text-[1.5vw] cursor-pointer"
+    class="menu-item lg:text-[1.2vw] font-medium md:text-[1.5vw] text-[1.5vw] cursor-pointer"
     data-menu="others"
   >
     Others
   </h1>
 </div>
 <i
-  class="ri-menu-line text-white lg:text-[1.8vw] md:text-[3vw] close my-[20px] mr-[20px] -translate-x-[5px]"
+  class="ri-menu-line text-[#00457b] lg:text-[1.8vw] md:text-[3vw] close my-[20px] mr-[20px] -translate-x-[5px]"
 ></i>
 </div>
 <div
-class="w-full h-screen pl-4 py-[3px] pb-20 fixed top-0 left-0 z-[999] lg:h-[100px] md:h-[80px] bg-[#00457b] text-white  md:hidden overflow-y-auto overlay2">
+class="w-full h-screen pl-4 py-[3px] pb-20 fixed top-0 left-0 z-[999] lg:h-[100px] md:h-[80px] bg-[#00508a] text-white  md:hidden overflow-y-auto overlay2">
 <div class="flex justify-between items-center">
   <img
     class="lg:h-full h-12 object-cover"
-    src="../images/logos/logo-removebg-preview.png"
+    src="../images/logos/Logo1.svg"
     alt="Logo" onclick="window.location.href='/'"
   />
   <div class="flex flex-col mx-4">
@@ -151,45 +154,89 @@ class="w-full h-screen pl-4 py-[3px] pb-20 fixed top-0 left-0 z-[999] lg:h-[100p
       <h1 class="text-[5vw]">About Us</h1>
       <i class="ri-add-line text-[6vw]"></i>
     </div>
-    <div class="accordion-content">
-      <p class="text-[4vw] bg-white text-[#00457b] border-[1px] border-[#00457b]/20 py-2 px-2">
-        <a href="/aboutUs/Act">Act (PPP)</a>
-      </p>
-      <p class="text-[4vw] bg-white text-[#00457b] border-[1px] border-[#00457b]/20 py-2 px-2">
-        <a href="/aboutUs/Status">Statute</a>
-      </p>
-      <p class="text-[4vw] bg-white text-[#00457b] border-[1px] border-[#00457b]/20 py-2 px-2">
-        <a href="/aboutUs/institute">Institute Profile</a>
-      </p>
-      <p class="text-[4vw] bg-white text-[#00457b] border-[1px] border-[#00457b]/20 py-2 px-2">
-        <a href="/aboutUs/Facilities">Facilities</a>
-      </p>
-      <p class="text-[4vw] bg-white text-[#00457b] border-[1px] border-[#00457b]/20 py-2 px-2">
-        <a href="/aboutUs/Annual">Annual Report</a>
-      </p>
-      <p class="text-[4vw] bg-white text-[#00457b] border-[1px] border-[#00457b]/20 py-2 px-2">
-        <a href="/aboutUs/MOU">MoU</a>
-      </p>
-    </div>
   </div>
-  <!-- Academics Accordion -->
+  <!-- Explore Accordion -->
   <div class="accordion-item">
     <div class="flex justify-between items-center accordion-header cursor-pointer">
-      <h1 class="text-[5vw]">Academics</h1>
+      <h1 class="text-[5vw]">Explore</h1>
       <i class="ri-add-line text-[6vw]"></i>
     </div>
     <div class="accordion-content">
-      <p class="text-[4vw] bg-white text-[#00457b] border-[1px] border-[#00457b]/20 py-2 px-2">
-        <a href="/academics/undergraduate">Undergraduate</a>
-      </p>
-      <p class="text-[4vw] bg-white text-[#00457b] border-[1px] border-[#00457b]/20 py-2 px-2">
-        <a href="/academics/postgraduate">Postgraduate</a>
-      </p>
-      <p class="text-[4vw] bg-white text-[#00457b] border-[1px] border-[#00457b]/20 py-2 px-2">
-        <a href="/academics/research">Research</a>
-      </p>
+      <div class="swiper mySwiper2">
+        <div class="swiper-wrapper">
+          <!-- Technical Clubs -->
+          <div class="swiper-slide">
+            <p class="text-[4vw] bg-[#CF5A24] text-white border border-[#00457b]/20 py-2 px-2">
+              <a href="#">Technical Clubs</a>
+            </p>
+            <p class="text-[4vw] bg-white text-[#00457b] border border-[#00457b]/20 py-2 px-2">
+              <a href="/clubs/dotslash">Dotslash</a>
+            </p>
+            <p class="text-[4vw] bg-white text-[#00457b] border border-[#00457b]/20 py-2 px-2">
+              <a href="/clubs/elevate">Elevate</a>
+            </p>
+            <p class="text-[4vw] bg-white text-[#00457b] border border-[#00457b]/20 py-2 px-2">
+              <a href="/clubs/cripsr">Crispr</a>
+            </p>
+            <p class="text-[4vw] bg-white text-[#00457b] border border-[#00457b]/20 py-2 px-2">
+              <a href="/clubs/udhyam">Udhyam</a>
+            </p>
+            <p class="text-[4vw] bg-white text-[#00457b] border border-[#00457b]/20 py-2 px-2">
+              <a href="/clubs/iotics">Iotics</a>
+            </p>
+            <p class="text-[4vw] bg-white text-[#00457b] border border-[#00457b]/20 py-2 px-2">
+              <a href="/clubs/strokes">Strokes</a>
+            </p>
+            <p class="text-[4vw] bg-white text-[#00457b] border border-[#00457b]/20 py-2 px-2">
+              <a href="/clubs/dimensions">Dimensions</a>
+            </p>
+          </div>
+  
+          <!-- Cultural Clubs -->
+          <div class="swiper-slide">
+            <p class="text-[4vw] bg-[#CF5A24] text-white border border-[#00457b]/20 py-2 px-2">
+              <a href="#">Cultural Clubs</a>
+            </p>
+            <p class="text-[4vw] bg-white text-[#00457b] border border-[#00457b]/20 py-2 px-2">
+              <a href="/clubs/crescendo">Crescendo</a>
+            </p>
+            <p class="text-[4vw] bg-white text-[#00457b] border border-[#00457b]/20 py-2 px-2">
+              <a href="/clubs/dtraxia">Dtraxia</a>
+            </p>
+            <p class="text-[4vw] bg-white text-[#00457b] border border-[#00457b]/20 py-2 px-2">
+              <a href="/clubs/estoria">Estoria</a>
+            </p>
+            <p class="text-[4vw] bg-white text-[#00457b] border border-[#00457b]/20 py-2 px-2">
+              <a href="/clubs/orator">Orator</a>
+            </p>
+            <p class="text-[4vw] bg-white text-[#00457b] border border-[#00457b]/20 py-2 px-2">
+              <a href="/clubs/probe">Probe</a>
+            </p>
+            <p class="text-[4vw] bg-white text-[#00457b] border border-[#00457b]/20 py-2 px-2">
+              <a href="/clubs/eklavya">Eklavya</a>
+            </p>
+          </div>
+  
+          <!-- Events -->
+          <div class="swiper-slide">
+            <p class="text-[4vw] bg-[#CF5A24] text-white border border-[#00457b]/20 py-2 px-2">
+              <a href="#">Events</a>
+            </p>
+            <p class="text-[4vw] bg-white text-[#00457b] border border-[#00457b]/20 py-2 px-2">
+              <a href="/events/tantrafiesta">Tantrafiesta</a>
+            </p>
+            <p class="text-[4vw] bg-white text-[#00457b] border border-[#00457b]/20 py-2 px-2">
+              <a href="/events/abhivyakti">Abhivyakti</a>
+            </p>
+            <p class="text-[4vw] bg-white text-[#00457b] border border-[#00457b]/20 py-2 px-2">
+              <a href="/events/kshitij">Kshitij</a>
+            </p>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
     </div>
-  </div>
+  </div> 
   <!-- Governance Accordion -->
   <div class="accordion-item">
     <div class="flex justify-between items-center accordion-header cursor-pointer">

@@ -33,8 +33,9 @@
 * {
   box-sizing: border-box;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 *::-webkit-scrollbar {
@@ -52,23 +53,25 @@ html {
   width: 100%;
   height: 100%;
 }
-.main{
+
+.main {
   font-family: font6;
 }
- .overlay {
+
+.overlay {
   -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-          clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 }
 
 .dets-box {
   -webkit-clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
-          clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+  clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
   transition: all 0.5s ease;
 }
 
 .dets-box.active {
   -webkit-clip-path: polygon(100% 100%, 100% 0, 0 0, 0 100%);
-          clip-path: polygon(100% 100%, 100% 0, 0 0, 0 100%);
+  clip-path: polygon(100% 100%, 100% 0, 0 0, 0 100%);
 }
 
 .dets {
@@ -92,10 +95,10 @@ html {
 .page2b {
   width: 100%;
   background-image: url(../images/index/bg1.png);
-  background: linear-gradient(rgba(255, 255, 255, 0.99), rgba(255, 255, 255, 0)), url(../images/index/bg1.png);
+  background: linear-gradient(#F6F6F7, rgba(255, 255, 255, 0)), url(../images/index/bg1.png);
 }
 
-#page4,#page6 {
+#page4, #page6, #page3b, #page7, #page7b, #page7b2 {
   background-image: url("../images/index/bg2.avif");
   background-color: rgba(240, 241, 241, 0.9215686275);
   background-blend-mode: color;
@@ -106,12 +109,8 @@ footer h2:hover, footer i:hover {
   transition: all ease-in-out 0.5s;
 }
 
-.marquee {
-  animation: marquee 10s linear infinite;
-}
-
 .marquee2 {
-  animation: marquee2 10s linear infinite;
+  transform: translateX(-380px);
 }
 
 @keyframes marquee {
@@ -148,45 +147,92 @@ footer h2:hover, footer i:hover {
 
 .overlay2 {
   -webkit-clip-path: circle(0% at 100% 0);
-          clip-path: circle(0% at 100% 0);
+  clip-path: circle(0% at 100% 0);
 }
 
 .overlay2::-webkit-scrollbar {
   display: none;
-}/*# sourceMappingURL=style.css.map */
-
+} 
 .tab-btn.active {
   color: #f97316; /* Orange color */
 }
+
 .content-div {
   display: none;
 }
+
 .content-div.active {
   display: block;
 }
 
 .lang {
-  clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0% 100%);
+  transition: -webkit-clip-path 0.4s ease-in-out;
   transition: clip-path 0.4s ease-in-out;
+  transition: clip-path 0.4s ease-in-out, -webkit-clip-path 0.4s ease-in-out;
 }
 
-.ann1::after{
+.ann1::after {
   content: "";
   position: absolute;
   top: 0%;
   right: 0%;
   width: 1px;
   height: 100%;
-  background-color: #0000002a;
+  background-color: rgba(0, 0, 0, 0.1647058824);
 }
-.page7b{
+
+#page7c {
   width: 100%;
-    background-image: url(../images/index/bg1.png);
-    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.99)), url(../images/index/bg1.png);
+  background-image: url(../images/index/bg1.png);
+  background: linear-gradient(rgba(255, 255, 255, 0), #F6F6F7), url(../images/index/bg1.png);
 }
+
 .glow:hover {
   box-shadow: 0 0 50px rgba(0, 69, 123, 0.5); /* Blue glow effect */
   transform: scale(1.01); /* Scale up */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+#map {
+  width: 30vw !important; /* Default for tablets and laptops */
+}
+
+@media (max-width: 768px) { /* For mobile screens */
+  #map {
+    width: 85vw !important;
+    margin-left: auto;
+  }
+}
+#page4 img:hover {
+  scale: 1.01;
+  transition: all ease-in-out 0.3s;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  cursor: pointer;
+  /* You can keep your Tailwind-like classes here or override as needed */
+}
+
+/* Hide the search form by default */
+.search-form {
+  display: none;
+}
+
+/* When active, show the form */
+.search-form.active {
+  display: inline-block;
+}
+
+.search-input {
+  padding: 5px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}/*# sourceMappingURL=style.css.map */

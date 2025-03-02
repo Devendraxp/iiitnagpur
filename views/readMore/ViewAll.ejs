@@ -1,28 +1,22 @@
 <%- include('../partials/head2') %> 
   <body>
     <%- include('../partials/nav') %> 
-    <div class="main w-full min-h-screen bg-white text-black">
-      <div class="img w-full overflow-hidden">
-        <img
-          class="w-full h-48 md:h-64 lg:h-76 object-cover object-center"
-          src="https://iiitn.ac.in/images/Slide2.jpg"
-          alt="Campus banner"
-        />
-      </div>
+    <div class=" w-full min-h-screen bg-white text-black">
+      <div class="w-full lg:h-[100px] md:h-[80px]"></div>
 
       <div class="mainContent w-full">
-        <div class="routes w-full px-4 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#f6f6f6] py-3 md:py-5">
-          <a class="text-xs md:text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500" href="#">
+        <div class="routes w-full px-4 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#00457b] py-3 md:py-5">
+          <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white" href="#">
             Home <i class="ri-arrow-right-s-line text-md"></i>
           </a>
-          <a class="text-xs md:text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500" href="#">
+          <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white" href="#">
             All news
           </a>
         </div>
 
-        <div class="content px-4 md:px-20 lg:px-44 mt-8 md:mt-16 mb-8 md:mb-10">
+        <div class="contentNews px-4 md:px-20 lg:px-44 pt-8 md:pt-16 pb-8 md:pb-10 h-screen">
           <div class="max-w-5xl mx-auto p-4">
-            <nav class="bg-gray-900 text-white p-4 flex flex-wrap justify-center md:justify-start space-x-4 md:space-x-8">
+            <nav class="bg-[#00457b] text-white p-4 flex flex-wrap justify-center md:justify-start space-x-4 md:space-x-8">
               <a href="#" onclick="showContent('news')" class="tab-btn" id="newsBtn">News</a>
               <a href="#" onclick="showContent('facultyNotice')" class="tab-btn">Faculty Notices</a>
               <a href="#" onclick="showContent('studentNotice')" class="tab-btn">Student Notices</a>

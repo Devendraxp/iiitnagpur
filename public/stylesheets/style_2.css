@@ -56,11 +56,11 @@
     font-family: font6;
   }
   .banner{
-    background-color: #00457b;
-    color: white;
+    background-color: white;
+    color: #00457b;
   }
   .title{
-    color: white;
+    color: #00457b;
   }
    .overlay {
     -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
@@ -186,3 +186,56 @@
     height: 100%;
     background-color: #0000002a;
   }
+  .clip-right-slant {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
+}
+
+.clip-left-slant {
+    clip-path: polygon(0% 30%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.text-glow1{
+    color: #e6bb5f;
+}
+
+
+.text-glow {
+    color: #e6bb5f;
+    text-shadow: 0 0 2px #e6bb5f, 0 0 3px #cfa14a, 0 0 4px #b78c38;
+    animation: flicker 3s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { text-shadow: 0 0 3px #d8b874, 0 0 5px #cfa14a, 0 0 7px #fdc451; }
+    50% { text-shadow: 0 0 4px #e0c184, 0 0 6px #cfa14a, 0 0 8px #f7b646; }
+    100% { text-shadow: 0 0 3px #d8b874, 0 0 5px #cfa14a, 0 0 7px #f8bb41; }
+}
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  cursor: pointer;
+  /* You can keep your Tailwind-like classes here or override as needed */
+}
+
+/* Hide the search form by default */
+.search-form {
+  display: none;
+}
+
+/* When active, show the form */
+.search-form.active {
+  display: inline-block;
+}
+
+.search-input {
+  padding: 5px 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}/*# sourceMappingURL=style.css.map */
+.contentNews{
+  background-image: url(../images/index/white-abstract-background_23-2148831511.jpg);
+}

@@ -1,0 +1,679 @@
+<%- include('./partialsRed/head') %>
+
+  <body>
+    <div id="main">
+      <div id="languageSwitcher"
+        class="cursor-pointer fixed bottom-[20px] left-[20px] z-[99] px-[10px] py-[8px] space-y-4 lang bg-white">
+        <div class="md:text-[1vw] text-[3.5vw] flex items-center gap-[5px]">
+          English
+        </div>
+        <div class="md:text-[1vw] text-[3.5vw] flex items-center gap-[5px]">
+          <a href="https://iiitn-ac-in.translate.goog/?_x_tr_sl=auto&_x_tr_tl=hi&_x_tr_hl=en">Hindi</a>
+        </div>
+        <div class="md:text-[1vw] text-[3.5vw] flex items-center gap-[5px]">
+          <a href="https://iiitn-ac-in.translate.goog/?_x_tr_sl=auto&_x_tr_tl=bn&_x_tr_hl=en">Bengali</a>
+        </div>
+        <div id="mainLang" class="md:text-[1vw] text-[3.5vw] flex items-center gap-[5px]" onclick="toggleLanguages()">
+          Languages <i id="arrow" class="ri-arrow-up-s-line font-[18px] transition-transform"></i>
+        </div>
+      </div>
+
+      <div id="page1" class="w-full h-screen">
+        <%- include('./partialsRed/nav') %>
+
+          <div class="hero w-full h-full">
+            <div
+              class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[200px] h-[200px] absolute bottom-[40px] right-[50px] z-[99] text-white p-[10px]">
+              <p class="md:py-4 py-2 lg:text-[16px] text-[10px]">
+                We're delighted to have you here! Explore our vibrant campus, academic programs, research initiatives,
+                and student life. Whether you're a prospective student, alumni, or just curious, we invite you to
+                discover what makes IIIT Nagpur a hub of learning, innovation, and excellence.
+              </p>
+            </div>
+            <div
+              class="dets flex items-center justify-center w-[60px] h-[60px] rounded-full bg-[black]/90 absolute bottom-[30px] right-[40px] z-[100] text-white">
+              <i class="ri-lightbulb-line bulb text-white text-[25px]"></i>
+            </div>
+            <img class="w-full h-full object-cover" src="../images/index/4.webp" alt="" />
+          </div>
+      </div>
+
+      <div id="announcements" class="w-full pt-10 md:pb-24 pb-16 bg-[#F2E7D5]">
+        <h1 class="md:text-[2vw] text-[6vw] md:pl-[6vw] pl-[12vw] text-[#393E46] font-medium">Announcements</h1>
+        <div class="flex md:flex-row flex-col justify-evenly w-full mx-auto md:px-12 px-2 md:my-2">
+          <!-- first 2 from studentNotice -->
+          <div class="ann1 md:w-[32%] px-2 w-full relative">
+            <% studentNotice.slice(0,2).forEach(function(item){ %>
+              <div class="flex items-center py-2 md:gap-4 gap-2">
+                <i class="ri-arrow-right-s-fill md:text-[2vw] text-[6vw] text-[#8C1515]"></i>
+                <a href="<%= item.link %>" class="md:text-[1.2vw] text-[4.5vw]" target="_blank">
+                  <%= item.title %>
+                </a>
+              </div>
+              <% }) %>
+          </div>
+          <!-- next 2 from studentNotice -->
+          <div class="ann1 md:w-[32%] px-2 w-full relative">
+            <% studentNotice.slice(2,4).forEach(function(item){ %>
+              <div class="flex items-center py-2 md:gap-4 gap-2">
+                <i class="ri-arrow-right-s-fill md:text-[2vw] text-[6vw] text-[#8C1515]"></i>
+                <a href="<%= item.link %>" class="md:text-[1.2vw] text-[4.5vw]" target="_blank">
+                  <%= item.title %>
+                </a>
+              </div>
+              <% }) %>
+          </div>
+          <!-- last 2 from facultyNotice -->
+          <div class=" md:w-[32%] px-2 w-full relative">
+            <% facultyNotice.slice(0,2).forEach(function(item){ %>
+              <div class="flex items-center py-2 md:gap-4 gap-2">
+                <i class="ri-arrow-right-s-fill md:text-[2vw] text-[6vw] text-[#8C1515]"></i>
+                <a href="<%= item.link %>" class="md:text-[1.2vw] text-[4.5vw]" target="_blank">
+                  <%= item.title %>
+                </a>
+              </div>
+              <% }) %>
+          </div>
+        </div>
+
+        <div class="flex justify-center items-center mt-12">
+          <a href="/readMore">
+            <button
+            class="px-10 py-2 text-[#8C1515] bg-[#F2E7D5] font-semibold border-2 border-[#8C1515] hover:bg-[#8C1515] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
+            Read More
+          </button>
+          </a>
+        </div>
+      </div>
+
+      <div id="page3" class="page2b md:px-8 px-4 md:pb-24 pb-12">
+        <h1 class="main font-bold text-[#393E46] text-center lg:text-[2.5vw] md:text-[3vw] text-[5vw] mb-8">
+          STATS & FIGURES
+        </h1>
+        <div class="container w-full mx-auto flex justify-between items-center">
+          <div class="tab text-center">
+            <h1 class="num text-[#8C1515] font-bold text-[2vw]" data-target="2">
+              0
+            </h1>
+            <h1 class="desc text-[#393E46] lg:text-[1.5vw] text-[2vw] font-semibold">
+              DEPARTMENTS
+            </h1>
+          </div>
+          <div class="tab text-center">
+            <h1 class="num text-[#8C1515] font-bold text-[2vw]" data-target="1500">
+              0
+            </h1>
+            <h1 class="desc text-[#393E46] lg:text-[1.5vw] text-[2vw] font-semibold">
+              STUDENTS
+            </h1>
+          </div>
+          <div class="tab text-center">
+            <h1 class="num text-[#8C1515] font-bold text-[2vw]" data-target="50">
+              0
+            </h1>
+            <h1 class="desc text-[#393E46] lg:text-[1.5vw] text-[2vw] font-semibold">
+              FACULTIES
+            </h1>
+          </div>
+          <div class="tab text-center">
+            <h1 class="num text-[#8C1515] font-bold text-[2vw]" data-target="23">
+              0
+            </h1>
+            <h1 class="desc text-[#393E46] lg:text-[1.5vw] text-[2vw] font-semibold">
+              PUBLICATIONS
+            </h1>
+          </div>
+          <div class="tab text-center">
+            <h1 class="num text-[#8C1515] font-bold text-[2vw]" data-target="13">
+              0
+            </h1>
+            <h1 class="desc text-[#393E46] lg:text-[1.5vw] text-[2vw] font-semibold">
+              PATENTS
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <div id="page3b" class="w-full h-full  pb-10">
+        <div class="page7b">
+          <h1
+          class="main font-bold text-[#393E46] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
+          Academics</h1>
+        <p class="text-center lg:text-[1.5vw] md:text-[2vw] text-[3vw] leading-none px-4 pb-10">
+          Enhance intellectual growth via seminars, study groups, and debates that deepen subject knowledge.
+        </p>
+        </div>
+          <div class="swiper mySwiper6">
+            <div class="swiper-wrapper">
+              <% research.forEach(function(item) { %>
+                <div class="swiper-slide">
+                  <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                    <div class="bg-zinc-200 w-full md:h-64 h-24">
+                      <img src="<%= item.image %>" alt="<%= item.title %>" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="w-full h-fit">
+                      <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                        <%= item.title %>
+                      </h1>
+                      <p class="md:text-[1.2vw] text-[3vw] leading-none md:pb-6 pb-2">
+                        <%= item.description %>
+                      </p>
+                      <p class="text-[#8C1515] md:text-[1.2vw] text-[3vw]">
+                        <a href="<%= item.link %>" target="_blank">checkout</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <% }) %>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="flex justify-center items-center mt-12">
+            <a href="/readMore">
+              <button
+              class="px-10 py-2 text-[#8C1515] bg-[#F2E7D5] font-semibold border-2 border-[#8C1515] hover:bg-[#8C1515] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
+              Read More
+            </button>
+            </a>
+          </div>
+        </div>
+
+      <div id="page4" class="w-full h-fit md:pb-24 py-8 lg:pb-20">
+        <h1
+          class="main font-bold text-[#393E46] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-5">
+          Campus Life
+        </h1>
+        <div class="lg:w-[90vw] lg:h-[95vh] w-[95%] h-[50%] mx-auto">
+          <div class="swiper mySwiper5 relative">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div
+                  class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
+                  <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
+                    Library : Our library houses an extensive collection of books, research papers, and academic
+                    journals, providing students with access to valuable resources for their studies. The serene
+                    environment encourages focused reading and research.
+                  </p>
+                </div>
+                <div
+                  class="dets flex items-center justify-center lg:w-[60px] w-[40px] lg:h-[60px] h-[40px] rounded-full bg-[black]/90 absolute lg:bottom-[30px] md:bottom-[15px] bottom-[10px] lg:right-[40px] md:right-[15px] right-[10px] z-[100] text-white">
+                  <i class="ri-lightbulb-line bulb text-white lg:text-[25px] text-[15px]"></i>
+                </div>
+                <img class="w-full h-full object-fit" src="../images/index/IIIT13.webp" alt="" />
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
+                  <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
+                    Electronics Lab : Our well-furnished electronics lab provides students with all necessary
+                    components, oscilloscopes, circuit boards, and even a 3D printer for innovation and experimentation
+                    in electronics and robotics.
+
+                  </p>
+                </div>
+                <div
+                  class="dets flex items-center justify-center lg:w-[60px] w-[40px] lg:h-[60px] h-[40px] rounded-full bg-[black]/90 absolute lg:bottom-[30px] md:bottom-[15px] bottom-[10px] lg:right-[40px] md:right-[15px] right-[10px] z-[100] text-white">
+                  <i class="ri-lightbulb-line bulb text-white lg:text-[25px] text-[15px]"></i>
+                </div>
+                <img class="w-full h-full object-fit" src="../images/index/IIIT3.webp" alt="" loading="lazy" />
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
+                  <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
+                    Reading Room : The dedicated reading room offers a quiet and comfortable space for students to
+                    concentrate on their studies. With ample seating and proper lighting, it is an ideal place for
+                    uninterrupted learning.
+
+                  </p>
+                </div>
+                <div
+                  class="dets flex items-center justify-center lg:w-[60px] w-[40px] lg:h-[60px] h-[40px] rounded-full bg-[black]/90 absolute lg:bottom-[30px] md:bottom-[15px] bottom-[10px] lg:right-[40px] md:right-[15px] right-[10px] z-[100] text-white">
+                  <i class="ri-lightbulb-line bulb text-white lg:text-[25px] text-[15px]"></i>
+                </div>
+                <img class="w-full h-full object-fit" src="../images/index/IIIT11.webp" alt="" loading="lazy" />
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
+                  <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
+                    Computer Lab : The computer lab is equipped with high-performance systems, advanced software, and
+                    high-speed internet. It ensures students get hands-on experience with the latest technologies and
+                    programming tools.
+
+                  </p>
+                </div>
+                <div
+                  class="dets flex items-center justify-center lg:w-[60px] w-[40px] lg:h-[60px] h-[40px] rounded-full bg-[black]/90 absolute lg:bottom-[30px] md:bottom-[15px] bottom-[10px] lg:right-[40px] md:right-[15px] right-[10px] z-[100] text-white">
+                  <i class="ri-lightbulb-line bulb text-white lg:text-[25px] text-[15px]"></i>
+                </div>
+                <img class="w-full h-full object-fit" src="../images/index/IIIT18.webp" alt="" loading="lazy" />
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
+                  <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
+                    Gym : It’s time to push limits, break a sweat, and unleash your inner strength! Whether you're lifting, running, or stretching, this is your space to grow, challenge yourself, and stay fit. 
+                  </p>
+                </div>
+                <div
+                  class="dets flex items-center justify-center lg:w-[60px] w-[40px] lg:h-[60px] h-[40px] rounded-full bg-[black]/90 absolute lg:bottom-[30px] md:bottom-[15px] bottom-[10px] lg:right-[40px] md:right-[15px] right-[10px] z-[100] text-white">
+                  <i class="ri-lightbulb-line bulb text-white lg:text-[25px] text-[15px]"></i>
+                </div>
+                <img class="w-full h-full object-fit" src="../images/index/IIIT19.webp" alt="" loading="lazy" />
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
+                  <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
+                    Indoor Games : Students can relax and socialize in the indoor games area, which includes facilities
+                    for carrom, table tennis, and other recreational activities, fostering a balance between academics
+                    and leisure.
+
+                  </p>
+                </div>
+                <div
+                  class="dets flex items-center justify-center lg:w-[60px] w-[40px] lg:h-[60px] h-[40px] rounded-full bg-[black]/90 absolute lg:bottom-[30px] md:bottom-[15px] bottom-[10px] lg:right-[40px] md:right-[15px] right-[10px] z-[100] text-white">
+                  <i class="ri-lightbulb-line bulb text-white lg:text-[25px] text-[15px]"></i>
+                </div>
+                <img class="w-full h-full object-fit" src="../images/index/IIIT22.webp" alt="" loading="lazy" />
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
+                  <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
+                    Badminton Court : The dedicated badminton court offers students a chance to engage in competitive
+                    and recreational play, promoting physical fitness and sportsmanship on campus.
+
+                  </p>
+                </div>
+                <div
+                  class="dets flex items-center justify-center lg:w-[60px] w-[40px] lg:h-[60px] h-[40px] rounded-full bg-[black]/90 absolute lg:bottom-[30px] md:bottom-[15px] bottom-[10px] lg:right-[40px] md:right-[15px] right-[10px] z-[100] text-white">
+                  <i class="ri-lightbulb-line bulb text-white lg:text-[25px] text-[15px]"></i>
+                </div>
+                <img class="w-full h-full object-fit" src="../images/index/IIIT21.webp" alt="" loading="lazy" />
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
+                  <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
+                    Hostel Mess : Get ready to fuel up with delicious meals, fresh flavors, and great company! Whether it's a hearty breakfast to kickstart your day or a comforting dinner after classes, we're here to serve you with love and energy! 
+                  </p>
+                </div>
+                <div
+                  class="dets flex items-center justify-center lg:w-[60px] w-[40px] lg:h-[60px] h-[40px] rounded-full bg-[black]/90 absolute lg:bottom-[30px] md:bottom-[15px] bottom-[10px] lg:right-[40px] md:right-[15px] right-[10px] z-[100] text-white">
+                  <i class="ri-lightbulb-line bulb text-white lg:text-[25px] text-[15px]"></i>
+                </div>
+                <img class="w-full h-full object-fit" src="../images/index/IIIT17.webp" alt="" loading="lazy" />
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
+                  <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
+                    Conference Room : A space for ideas to spark, discussions to thrive, and decisions to shape the future! Whether it’s a brainstorming session, a key meeting, or a collaborative event, let innovation and productivity take center stage. 
+                  </p>
+                </div>
+                <div
+                  class="dets flex items-center justify-center lg:w-[60px] w-[40px] lg:h-[60px] h-[40px] rounded-full bg-[black]/90 absolute lg:bottom-[30px] md:bottom-[15px] bottom-[10px] lg:right-[40px] md:right-[15px] right-[10px] z-[100] text-white">
+                  <i class="ri-lightbulb-line bulb text-white lg:text-[25px] text-[15px]"></i>
+                </div>
+                <img class="w-full h-full object-fit" src="../images/index/IIIT23.webp" alt="" loading="lazy" />
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
+                  <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
+                    Amphitheater : Get ready for an experience like no other! From inspiring talks to electrifying performances, this is where creativity meets the spotlight. Sit back, engage, and let the magic unfold! 
+                  </p>
+                </div>
+                <div
+                  class="dets flex items-center justify-center lg:w-[60px] w-[40px] lg:h-[60px] h-[40px] rounded-full bg-[black]/90 absolute lg:bottom-[30px] md:bottom-[15px] bottom-[10px] lg:right-[40px] md:right-[15px] right-[10px] z-[100] text-white">
+                  <i class="ri-lightbulb-line bulb text-white lg:text-[25px] text-[15px]"></i>
+                </div>
+                <img class="w-full h-full object-fit" src="../images/index/12.webp" alt="" loading="lazy" />
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
+                  <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
+                    3D Printer : Where imagination turns into reality—layer by layer! Whether you're prototyping, experimenting, or creating something groundbreaking, this is your space to innovate and bring ideas to life.  
+                  </p>
+                </div>
+                <div
+                  class="dets flex items-center justify-center lg:w-[60px] w-[40px] lg:h-[60px] h-[40px] rounded-full bg-[black]/90 absolute lg:bottom-[30px] md:bottom-[15px] bottom-[10px] lg:right-[40px] md:right-[15px] right-[10px] z-[100] text-white">
+                  <i class="ri-lightbulb-line bulb text-white lg:text-[25px] text-[15px]"></i>
+                </div>
+                <img class="w-full h-full object-fit" src="../images/index/7.webp" alt="" loading="lazy" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="page7" class="w-full h-full  lg:pb-24 md:pb-16 pb-10">
+      <div class="page7b">
+        <h1
+        class="main font-bold text-[#393E46] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
+        Research</h1>
+      <p class="text-center lg:text-[1.5vw] md:text-[2vw] text-[3vw] leading-none px-4 mb-10">
+        Advancing discoveries that shape our world, well-being, and knowledge.
+      </p>
+      </div>
+
+      <div
+      class="flex md:flex-row flex-col justify-evenly border-b-2 border-t-2 border-black w-[90%] mx-auto py-10 my-10">
+      <div class=" pb-8 text-center">
+      <div class="flex text-center w-fit mx-auto">
+        <h1 class="text-[#8C1515] font-bold md:text-[2vw] text-[6vw] num" data-target="50">0</h1>
+        <h1 class="text-[#8C1515] font-bold md:text-[2vw] text-[6vw] " >+ Workshops</h1>
+      </div>
+        <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
+          Hands-on learning experiences to enhance skills.
+        </p>
+      </div>
+      <div class=" pb-8 text-center">
+        <div class="flex text-center w-fit mx-auto">
+          <h1 class="text-[#8C1515] font-bold md:text-[2vw] text-[6vw] num" data-target="30">0</h1>
+          <h1 class="text-[#8C1515] font-bold md:text-[2vw] text-[6vw] " >+ Seminars</h1>
+        </div>
+          <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
+            Insights from experts across various domains.
+          </p>
+        </div>
+        <div class=" pb-8 text-center">
+          <div class="flex text-center w-fit mx-auto">
+            <h1 class="text-[#8C1515] font-bold md:text-[2vw] text-[6vw] num" data-target="100">0</h1>
+            <h1 class="text-[#8C1515] font-bold md:text-[2vw] text-[6vw] " >+ Papers</h1>
+          </div>
+            <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
+              Advancing knowledge through groundbreaking research.
+            </p>
+            </p>
+          </div>
+    </div>
+    
+        <div class="swiper mySwiper6">
+          <div class="swiper-wrapper">
+            <% research.forEach(function(item) { %>
+              <div class="swiper-slide">
+                <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                  <div class="bg-zinc-200 w-full md:h-64 h-24">
+                    <img src="<%= item.image %>" alt="<%= item.title %>" class="w-full h-full object-cover" />
+                  </div>
+                  <div class="w-full h-fit">
+                    <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                      <%= item.title %>
+                    </h1>
+                    <p class="text-[#8C1515] md:text-[1.2vw] text-[3vw]">
+                      <a href="<%= item.link %>" target="_blank">checkout</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="flex justify-center items-center mt-12">
+          <a href="/readMore">
+            <button
+            class="px-10 py-2 text-[#8C1515] bg-[#F2E7D5] font-semibold border-2 border-[#8C1515] hover:bg-[#8C1515] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
+            Read More
+          </button>
+          </a>
+        </div>
+      </div>
+
+      <div id="page7b" class="w-full h-full  lg:pb-12 md:pb-16 pb-10">
+        <div class="page7b">
+          <h1
+          class="main font-bold text-[#393E46] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
+          Technical Clubs</h1>
+        </div>
+          <div class="swiper mySwiper6">
+            <div class="swiper-wrapper">
+              <% research.forEach(function(item) { %>
+                <div class="swiper-slide">
+                  <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                    <div class="bg-zinc-200 w-full md:h-64 h-24">
+                      <img src="<%= item.image %>" alt="<%= item.title %>" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="w-full h-fit">
+                      <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                        <%= item.title %>
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+                <% }) %>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div id="page7b2" class="w-full h-full  lg:pb-12 md:pb-16 pb-10">
+          <div class="page7b">
+            <h1
+            class="main font-bold text-[#393E46] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
+            Cultural Clubs</h1>
+          </div>
+            <div class="swiper mySwiper6">
+              <div class="swiper-wrapper">
+                <% research.forEach(function(item) { %>
+                  <div class="swiper-slide">
+                    <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                      <div class="bg-zinc-200 w-full md:h-64 h-24">
+                        <img src="<%= item.image %>" alt="<%= item.title %>" class="w-full h-full object-cover" />
+                      </div>
+                      <div class="w-full h-fit">
+                        <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                          <%= item.title %>
+                        </h1>
+                      </div>
+                    </div>
+                  </div>
+                  <% }) %>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+        <div id="page7c" class="w-full h-full lg:pb-24 md:pb-16 pb-10">
+          <div class="page7c">
+            <h1
+            class="main font-bold text-[#393E46] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
+            Our Events</h1>
+          </div>
+            <div class="swiper mySwiper6">
+              <div class="swiper-wrapper">
+                <% research.forEach(function(item) { %>
+                  <div class="swiper-slide">
+                    <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                      <div class="bg-zinc-200 w-full md:h-64 h-24">
+                        <img src="<%= item.image %>" alt="<%= item.title %>" class="w-full h-full object-cover" />
+                      </div>
+                      <div class="w-full h-fit">
+                        <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                          <%= item.title %>
+                        </h1>
+                      </div>
+                    </div>
+                  </div>
+                  <% }) %>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+  
+
+          <div id="page9" class="w-full px-4 pb-20 bg-[#F2E7D5]">
+            <h1
+              class="main font-bold text-[#393E46] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-5">
+              Campus News
+            </h1>
+    
+            <div class="swiper mySwiper4">
+              <div class="swiper-wrapper">
+                <% notification.forEach(notification=> { %>
+                  <div class="swiper-slide">
+                    <div class="bg-[#F2E7D5] w-full h-full mb-10 overflow-hidden rounded-md event-box">
+                      <div class="w-full h-72">
+                        <img class="w-full h-full object-cover" src="<%= notification.image %>" alt="Notification Image" />
+                      </div>
+                      <h1 class="text-[#393E46] font-semibold lg:text-[1.2vw] md:text-[2vw] text-[5vw] pt-2">
+                        <%= notification.title %>
+                      </h1>
+                      <h1 class="px-4 text-white">
+                        <%= notification.date %>
+                      </h1>
+                      <% if (notification.link) { %>
+                        <div class=" pb-2">
+                          <a href="<%= notification.link %>" target="_blank" class="text-blue-500 hover:underline">
+                            Read Full Notification
+                          </a>
+                        </div>
+                        <% } %>
+                    </div>
+                  </div>
+                  <% }); %>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+    
+            <div class="flex justify-center items-center mt-12">
+              <a href="/readMore">
+                <button
+                class="px-10 py-2 text-[#8C1515] bg-[#F2E7D5] font-semibold border-2 border-[#8C1515] hover:bg-[#8C1515] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
+                Read More
+              </button>
+              </a>
+            </div>
+          </div>
+
+      <div id="page8" class="page6b w-full lg:pb-30 pb-10 bg-[#F2E7D5]">
+        <h1 class="main font-bold text-[#393E46] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] uppercase pt-2">
+          Placements at Campus
+        </h1>
+        <p class="text-center lg:text-[1vw] md:text-[2vw] text-[3vw] leading-none px-4 mb-10">
+          About or Nearly 200 students from the campus sit for placements every
+          semester, of these almost 100% succeed in securing a job.
+        </p>
+        <div class="marquee-container overflow-hidden w-full">
+          <div class="marquee flex mb-10 flex lg:w-[200%] md:w-[300%] w-[600%] justify-evenly whitespace-nowrap">
+            <div class="marquee-content flex justify-evenly w-full">
+              <img class="h-12 object-contain" src="../images/logos/Accenture-Logo-3969515967.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Byju's_logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Infosys_logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Cisco-logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/nvidia-logo-vert.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Zscaler-Logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Network-18-logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Gold_Intuit.jpg" alt="" />
+            </div>
+
+            <div class="marquee-content flex justify-evenly w-full">
+              <img class="h-12 object-contain" src="../images/logos/Accenture-Logo-3969515967.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Byju's_logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Infosys_logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Cisco-logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/nvidia-logo-vert.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Zscaler-Logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Network-18-logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Gold_Intuit.jpg" alt="" />
+            </div>
+          </div>
+          <div class="marquee2 flex lg:w-[200%] md:w-[300%] w-[600%] justify-evenly whitespace-nowrap">
+            <div class="marquee-content flex justify-evenly w-full">
+              <img class="h-12 object-contain" src="../images/logos/Accenture-Logo-3969515967.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Byju's_logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Infosys_logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Cisco-logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/nvidia-logo-vert.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Zscaler-Logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Network-18-logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Gold_Intuit.jpg" alt="" />
+            </div>
+
+            <div class="marquee-content flex justify-evenly w-full">
+              <img class="h-12 object-contain" src="../images/logos/Accenture-Logo-3969515967.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Byju's_logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Infosys_logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Cisco-logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/nvidia-logo-vert.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Zscaler-Logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Network-18-logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Gold_Intuit.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="page10" class="w-full pb-20 bg-[#F2E7D5]">
+        <h1
+          class="main font-bold text-[#393E46] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-5">
+          OUR PARTNERS
+        </h1>
+        <div class="flex md:flex-row flex-col items-center justify-center gap-4">
+          <img class="w-50 object-fit translate-y-5 drop-shadow-2xl" src="../images/logos/unnamed-removebg-preview.png"
+            alt="" />
+          <img class="w-50 object-fit drop-shadow-2xl"
+            src="../images/logos/eba0b3f922fd6ab7e48e4ca07e727252-removebg-preview.png" alt="" />
+          <img class="w-84 object-fit drop-shadow-2xl" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png"
+            alt="" />
+        </div>
+      </div>
+
+      
+      <div id="page11" class="w-full h-full px-4 lg:pb-20 pb-12 bg-[#F2E7D5]">
+        <h1
+          class="main font-bold text-[#393E46] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-10">
+          STUDENT'S TESTIMONIAL
+        </h1>
+
+        <div class="swiper mySwiper2">
+          <div class="swiper-wrapper">
+            <% studentTestimonial.forEach(testimonial=> { %>
+              <div class="swiper-slide">
+                <div class="bg-[#8C1515] w-full h-full flex items-center justify-evenly mb-10 rounded-md px-2 text-[#F2E7D5]">
+                  <div class="w-16 h-16 rounded-full overflow-hidden">
+                    <img class="w-full h-full object-cover" src="  <%= testimonial.image %>" alt="" />
+                  </div>
+                  <div class="py-10 w-[75%]">
+                    <h1 class="lg:text-[2vw] md:text-[2.5vw] text-[4vw] leading-none font-bold">
+                      <%= testimonial.name %>
+                    </h1>
+                    <p class="lg:text-[1vw] md:text-[1.6vw] text-[3vw] leading-none">
+                      <%= testimonial.content %>
+                    </p>
+                    <% if (testimonial.link) { %>
+                      <a href="<%= testimonial.link %>" target="_blank" class="text-blue-600 hover:underline">
+                        Read Full Testimonial
+                      </a>
+                      <% } %>
+                  </div>
+                </div>
+              </div>
+              <% }); %>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="flex justify-center items-center mt-12">
+          <a href="/readMore">
+            <button
+            class="px-10 py-2 text-[#8C1515] bg-[#F2E7D5] font-semibold border-2 border-[#8C1515] hover:bg-[#8C1515] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
+            Read More
+          </button>
+          </a>
+        </div>
+      </div>
+
+    <%- include('./partialsRed/footer') %>
+      </div>
+  </body>
+
+  <%- include('./partialsRed/tail') %>

@@ -1,0 +1,211 @@
+@font-face {
+    font-family: "font1";
+    src: url("./fonts/AtlassianSans-latin.woff2");
+  }
+  @font-face {
+    font-family: "font2";
+    src: url("./fonts/AvenirLTStdMedium_0.woff2");
+  }
+  @font-face {
+    font-family: "font3";
+    src: url("./fonts/fontawesome-webfont.woff2");
+  }
+  @font-face {
+    font-family: "font4";
+    src: url("./fonts/o-0bIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjc5a7duw.woff2");
+  }
+  @font-face {
+    font-family: "font5";
+    src: url("./fonts/o-0bIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjc5a_du2ui.woff2");
+  }
+  @font-face {
+    font-family: "font6";
+    src: url("./fonts/poetsenone-regular_0-webfont (1).woff2");
+  }
+  @font-face {
+    font-family: "font6";
+    src: url("./fonts/t5t7IRoeKYORG0WNMgnC3seB1YXqupymfw.woff2");
+  }
+  @font-face {
+    font-family: "font7";
+    src: url("./fonts/u-440qyriQwlOrhSvowK_l5-fCZM.woff2");
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  *::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: #F2E7D5 !important;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #393E46;
+    border-radius: 10px;
+  }
+  
+  body,
+  html {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .main {
+    font-family: font6;
+  }
+  
+  .overlay {
+    -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
+  
+  .dets-box {
+    -webkit-clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+    clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+    transition: all 0.5s ease;
+  }
+  
+  .dets-box.active {
+    -webkit-clip-path: polygon(100% 100%, 100% 0, 0 0, 0 100%);
+    clip-path: polygon(100% 100%, 100% 0, 0 0, 0 100%);
+  }
+  
+  .dets {
+    animation: pulse 2s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+  }
+  .page2b {
+    width: 100%;
+    background-color: #F2E7D5;
+  }
+  
+  #page4, #page6, #page3b, #page7, #page7b, #page7b2 {
+    background-color: #F2E7D5;
+    background-blend-mode: multiply;
+  }
+  
+  footer h2:hover, footer i:hover {
+    color: #f26e32;
+    transition: all ease-in-out 0.5s;
+  }
+  
+  .marquee {
+    animation: marquee 10s linear infinite;
+  }
+  
+  .marquee2 {
+    animation: marquee2 10s linear infinite;
+  }
+  
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes marquee2 {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+  .swiper {
+    width: 100%;
+    height: 100%;
+    z-index: auto !important;
+  }
+  
+  .main {
+    filter: drop-shadow(5px 5px 60px);
+  }
+  
+  .accordion-content {
+    overflow: hidden;
+    height: 0;
+    display: none;
+  }
+  
+  .overlay2 {
+    -webkit-clip-path: circle(0% at 100% 0);
+    clip-path: circle(0% at 100% 0);
+  }
+  
+  .overlay2::-webkit-scrollbar {
+    display: none;
+  } 
+  .tab-btn.active {
+    color: #f97316; /* Orange color */
+  }
+  
+  .content-div {
+    display: none;
+  }
+  
+  .content-div.active {
+    display: block;
+  }
+  
+  .lang {
+    -webkit-clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0% 100%);
+            clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0% 100%);
+    transition: -webkit-clip-path 0.4s ease-in-out;
+    transition: clip-path 0.4s ease-in-out;
+    transition: clip-path 0.4s ease-in-out, -webkit-clip-path 0.4s ease-in-out;
+  }
+  
+  .ann1::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1647058824);
+  }
+  
+  #page7c {
+    width: 100%;
+    background-color: #F2E7D5;
+  }
+  
+  .glow:hover {
+    box-shadow: 0 0 50px rgba(0, 69, 123, 0.5); /* Blue glow effect */
+    transform: scale(1.01); /* Scale up */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #map {
+    width: 30vw !important; /* Default for tablets and laptops */
+  }
+  
+  @media (max-width: 768px) { /* For mobile screens */
+    #map {
+      width: 85vw !important;
+      margin-left: auto;
+    }
+  }
+  #page4 img:hover {
+    scale: 1.01;
+    transition: all ease-in-out 0.3s;
+  }/*# sourceMappingURL=style.css.map */

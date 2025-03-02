@@ -3,7 +3,7 @@
     <div
       class="w-full flex md:flex-row flex-col justify-between container mx-auto"
     >
-      <div class="md:w-1/4 w-full">
+      <div class="md:w-[45%] w-full">
         <h1 class="font-medium lg:text-[2vw] md:text-[2.5vw] text-[8vw]">
           Important Links
         </h1>
@@ -47,7 +47,7 @@
           <i class="ri-arrow-right-s-line"></i> Equal Opportunity Cell
         </h2>
       </div>
-      <div class="md:w-1/4 w-full">
+      <div class="md:w-[25%] w-full">
         <h1 class="font-medium lg:text-[2vw] md:text-[2.5vw] text-[8vw]">
           Quick Links
         </h1>
@@ -87,7 +87,7 @@
           <i class="ri-arrow-right-s-line"></i> Guest House
         </h2>
       </div>
-      <div class="md:w-[40%] w-full">
+      <div class="md:w-[30%] w-full">
         <h1 class="font-medium lg:text-[2vw] md:text-[2.5vw] text-[8vw]">
           Contact Us
         </h1>
@@ -128,8 +128,94 @@
             <i class="lg:text-[2.5vw] md:text-[3.2vw] text-[10vw] pr-4 ri-twitter-x-fill"></i>
           </a>
         </div>
+
+        
         
       </div>
+      <div id="map" class="h-[40vh] rounded"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoiZGV2ZW5kcmFkaHV2YW4iLCJhIjoiY2x6YmttcWliMDFwdTJqcHZsYTY1dWl5dyJ9.Yb6KzLAw_DqrOiwxBJeFRg';
+    const map = new mapboxgl.Map({
+      container: 'map', 
+      center: [79.026355, 20.951059], 
+      zoom: 11,
+      style: 'mapbox://styles/mapbox/streets-v12'
+    });
+      // IIIT Nagpur marker
+      const iiitPopup = new mapboxgl.Popup({ offset: 25 })
+        .setHTML('<div style="font-weight:bold;">IIIT Nagpur</div><p>Survey No. 140,141/1 behind Br. Sheshrao Wankhade Shetkari Sahkari Soot Girni, Village - Waranga, PO - Dongargaon (Butibori), Tahsil - Nagpur (Rural), District Nagpur</p>');
+
+      const iiitEl = document.createElement('div');
+      iiitEl.className = 'marker';
+      iiitEl.style.backgroundImage = 'url(https://cdn-icons-png.flaticon.com/512/8074/8074794.png)';
+      iiitEl.style.width = '34px';
+      iiitEl.style.height = '34px';
+      iiitEl.style.backgroundSize = 'contain';
+
+      new mapboxgl.Marker(iiitEl)
+        .setLngLat([79.0264, 20.9511])
+        .setPopup(iiitPopup)
+        .addTo(map);
+
+      // Railway station marker
+      const stationPopup = new mapboxgl.Popup({ offset: 25 })
+        .setHTML('<div style="font-weight:bold;">Nagpur Railway Station</div>');
+
+      const stationEl = document.createElement('div');
+      stationEl.className = 'marker';
+      stationEl.style.backgroundImage = 'url(https://cdn-icons-png.flaticon.com/512/724/724080.png)';
+      stationEl.style.width = '32px';
+      stationEl.style.height = '32px';
+      stationEl.style.backgroundSize = 'contain';
+
+      new mapboxgl.Marker(stationEl)
+        .setLngLat([79.0882, 21.1523])
+        .setPopup(stationPopup)
+        .addTo(map);
+
+      // Airport marker
+      const airportPopup = new mapboxgl.Popup({ offset: 25 })
+        .setHTML('<div style="font-weight:bold;">Dr. Babasaheb Ambedkar International Airport</div><p>International airport serving Nagpur.</p>');
+
+      const airportEl = document.createElement('div');
+      airportEl.className = 'marker';
+      airportEl.style.backgroundImage = 'url(https://cdn-icons-png.flaticon.com/512/870/870143.png)';
+      airportEl.style.width = '32px';
+      airportEl.style.height = '32px';
+      airportEl.style.backgroundSize = 'contain';
+
+      new mapboxgl.Marker(airportEl)
+        .setLngLat([79.0509, 21.0921])
+        .setPopup(airportPopup)
+        .addTo(map);
+
+      // Bus stand marker
+      const busStandPopup = new mapboxgl.Popup({ offset: 25 })
+        .setHTML('<div style="font-weight:bold;">Nagpur Central Bus Stand</div><p>Major bus terminal in Nagpur.</p>');
+
+      const busStandEl = document.createElement('div');
+      busStandEl.className = 'marker';
+      busStandEl.style.backgroundImage = 'url(https://cdn-icons-png.flaticon.com/512/1023/1023464.png)';
+      busStandEl.style.width = '32px';
+      busStandEl.style.height = '32px';
+      busStandEl.style.backgroundSize = 'contain';
+
+      new mapboxgl.Marker(busStandEl)
+        .setLngLat([79.0806, 21.1498])
+        .setPopup(busStandPopup)
+        .addTo(map);
+
+    // Fit bounds
+    const bounds = new mapboxgl.LngLatBounds()
+      .extend([79.0264, 20.9511])
+      .extend([79.0889, 21.1534])
+      .extend([79.0509, 21.0921])
+      .extend([79.0836, 21.1520]);
+
+    map.fitBounds(bounds, { padding: 70 });
+
+</script>
+
     </div>
   </footer>
 

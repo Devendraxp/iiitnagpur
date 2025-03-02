@@ -161,7 +161,7 @@ function swiper() {
   
   function nav() {
     gsap.to(".banner", {
-      backgroundColor: "#00508a",
+      backgroundColor: "#fff",
       // backdropFilter: "blur(10px)",
       duration: 0.5,
       height: "70px",
@@ -177,7 +177,7 @@ function swiper() {
   
     const title = document.querySelector(".title");
     gsap.to(".title", {
-      color: "white",
+      color: "#00508a",
       duration: 0.5,
       scrollTrigger: {
         trigger: ".banner",
@@ -190,7 +190,7 @@ function swiper() {
     });
   
     gsap.to(".overlay", {
-      backgroundColor: "#00508a",
+      backgroundColor: "#fff",
       // backdropFilter: "blur(10px)",
       duration: 0.5,
       height: "70px",
@@ -224,7 +224,20 @@ function swiper() {
           console.log("fef");
           menuAnimation.play();
         });
-  
+        document.addEventListener("click", (event) => {
+          // Check if the clicked element is NOT inside secondBox, secondBox2, or a menu item
+          if (
+            !secondBox.contains(event.target) &&
+            !secondBox2.contains(event.target) &&
+            !event.target.closest(".menu-item") &&
+            !event.target.closest(".open") &&
+            !event.target.closest(".overlay")
+          ) {
+            secondBox.style.display = "none";
+            secondBox2.style.display = "none";
+            currentMenu = null;
+          }
+        });
         // When closing the nav, also hide the subheading div.
         closeBtn.addEventListener("click", () => {
           menuAnimation.reverse();
@@ -244,36 +257,76 @@ function swiper() {
         // -----------------------------------
         const menuContent = {
           about: `
-            <h1 class="lg:py-2 md:py-[2.5px] lg:text-[1vw] md:text-[1.2vw] px-4 font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/aboutUs/Act">Act (PPP)</a>
-            </h1>
-            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/aboutUs/Status">Statute</a>
-            </h1>
-            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/aboutUs/institute">Institute Profile</a>
-            </h1>
-            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/aboutUs/Facilities">Facilities</a>
-            </h1>
-            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/aboutUs/Annual">Annual Report</a>
-            </h1>
-            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/aboutUs/MOU">MoU</a>
-            </h1>
           `,
-          academics: `
-            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/academics/undergraduate">Undergraduate</a>
-            </h1>
-            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/academics/postgraduate">Postgraduate</a>
-            </h1>
-            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/academics/research">Research</a>
-            </h1>
-          `,
+          explore: `
+    <div class="flex justify-between py-2">
+        <div class="w-[30%]">
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
+            <a href="#">Technical Clubs</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+            <a href="/clubs/technical/dotslash">Dotslash</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+            <a href="/clubs/technical/elevate">Elevate</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+            <a href="/clubs/technical/crispr">Crispr</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+            <a href="/clubs/technical/udhyam">Udhyam</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+            <a href="/clubs/technical/iotics">Iotics</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+            <a href="/clubs/technical/strokes">Strokes</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+            <a href="/clubs/technical/dimensions">Dimensions</a>
+          </h1>
+        </div>
+      
+        <div class="w-[30%]">
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white border-b-2 border-[#00457b]/20">
+            <a href="#">Cultural Clubs</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+            <a href="/clubs/cultural/crescendo">Crescendo</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+            <a href="/clubs/cultural/dtraxia">Dtraxia</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+            <a href="/clubs/cultural/estoria">Estoria</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+            <a href="/clubs/cultural/orator">Orator</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+            <a href="/clubs/cultural/probe">Probe</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+            <a href="/clubs/cultural/eklavya">Eklavya</a>
+          </h1>
+        </div>
+      
+        <div class="w-[30%]">
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
+            <a href="#">Events</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+            <a href="/events/tantrafiesta">Tantrafiesta</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+            <a href="/events/abhivyakti">Abhivyakti</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+            <a href="/events/kshitij">Kshitij</a>
+          </h1>
+        </div>
+      </div>
+        `,
           governance: `
             <div class="flex justify-between py-2">
               <div class="w-[48%]">
@@ -648,7 +701,7 @@ function swiper() {
             }
   
             // Otherwise, show the proper box
-            if (menuKey === "governance" || menuKey === "department") {
+            if (menuKey === "governance" || menuKey === "department" || menuKey === "explore") {
               secondBox2.innerHTML =
                 menuContent[menuKey] || "<p>No content available.</p>";
               // For governance, position is full width so we don't adjust left offset
@@ -763,23 +816,17 @@ function swiper() {
     gsap
       .timeline({ repeat: -1 }) // Infinite loop
       .to(".text-container", {
-        y: "-30%",
+        y: "-35%",
         duration: 1,
         ease: "power2.inOut",
         delay: 2,
       }) // Move 2nd h1 up
       .to(".text-container", {
-        y: "-56%",
+        y: "-75%",
         duration: 1,
         ease: "power2.inOut",
         delay: 2,
       }) // Move 3rd h1 up
-      .to(".text-container", {
-        y: "-81%",
-        duration: 1,
-        ease: "power2.inOut",
-        delay: 2,
-      }) // Loop back to 1st
   }
   title();
   
@@ -834,3 +881,25 @@ function swiper() {
   
   // Listen for window resize events
   window.addEventListener('resize', handleResponsiveClass);
+
+
+  const searchIcon = document.getElementById('searchIcon');
+    const searchForm = document.getElementById('searchForm');
+    const searchInput = searchForm.querySelector('input[name="q"]');
+
+    searchIcon.addEventListener('click', function() {
+      // Toggle the active class to show or hide the search form
+      if (searchForm.classList.contains('active')) {
+        searchForm.classList.remove('active');
+      } else {
+        searchForm.classList.add('active');
+        searchInput.focus();
+      }
+    });
+
+    // Optionally, hide the search field if it loses focus and is empty
+    searchInput.addEventListener('blur', function() {
+      if (searchInput.value.trim() === '') {
+        searchForm.classList.remove('active');
+      }
+    });

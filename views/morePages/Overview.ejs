@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>College About Section Status</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-  </head>
+<%- include('../partials/head2') %> 
   <body>
-    <div class="main w-full min-h-screen bg-white text-black">
+    <%- include('../partials/nav') %> 
+    <div class="main2 w-full min-h-screen bg-white text-black">
       <div class="img w-full overflow-hidden">
         <img
           class="w-full h-48 md:h-64 lg:h-76 object-cover object-center"
@@ -209,6 +199,6 @@
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+    <%- include('../partials/footer') %> 
   </body>
-</html>
+  <%- include('../partials/tail2') %> 
