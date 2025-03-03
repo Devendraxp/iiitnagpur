@@ -28,7 +28,7 @@ function swiper() {
     },
     breakpoints: {
       320: {
-        slidesPerView: 2,
+        slidesPerView: 3,
         spaceBetween: 20,
       },
       768: {
@@ -42,7 +42,65 @@ function swiper() {
     },
   });
 
+  var swiper = new Swiper(".mySwiper6b", {
+    slidesPerView: 5,
+    spaceBetween: 30,
+    loop: true,
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 30,
+      },
+    },
+  });
+
   
+  var swiper = new Swiper(".mySwiper6c", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    loop: true,
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+    },
+  });
+
   var swiper = new Swiper(".mySwiper2", {
     slidesPerView: 3,
     spaceBetween: 30,
@@ -104,8 +162,21 @@ function swiper() {
   var swiper = new Swiper(".mySwiper5", {
     loop: true,
     autoplay: {
-      delay: 3000,
+      delay: 5000,
       disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      dynamicBullets: true,
+      clickable: true,
+    },
+  });
+  
+  var swiper = new Swiper(".mySwiper8", {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true,
     },
     pagination: {
       el: ".swiper-pagination",
@@ -188,6 +259,20 @@ function nav() {
       scrub: 1,
     },
   });
+  const icons = document.querySelector(".icons2");
+  gsap.to(".icons2 i", {
+    color: "#00508a",
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: ".banner",
+      scroller: "body",
+      // markers:true,
+      start: "top -10%",
+      end: "top -11%",
+      scrub: 1,
+    },
+  });
+
 
   gsap.to(".overlay", {
     backgroundColor: "#fff",
@@ -366,153 +451,6 @@ function nav() {
           </div>
         `,
         department: `
-          <div class="flex justify-between py-2">
-            <div class="w-[18%]">
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
-                <a href="#">Basic Sciences</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/about-department">About Department</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/bos">BoS</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/achievements">Achievements</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/research">Research</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/faculty">Faculty</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/staff">Staff</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/projects">Projects</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/laboratory">Laboratory</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/events">Events</a>
-              </h1>
-            </div>
-            <div class="w-[18%]">
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white border-b-2 border-[#00457b]/20">
-                <a href="#">Computer Science & Eng...</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/about-department">About Department</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/bos">BoS</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/achievements">Achievements</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/research">Research</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/faculty">Faculty</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/staff">Staff</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/projects">Projects</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/laboratory">Laboratory</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/events">Events</a>
-              </h1>
-            </div>
-            <div class="w-[18%]">
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
-                <a href="#">Electronics & Communication Eng...</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/about-department">About Department</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/bos">BoS</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/achievements">Achievements</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/research">Research</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/faculty">Faculty</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/staff">Staff</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/projects">Projects</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/laboratory">Laboratory</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/events">Events</a>
-              </h1>
-            </div>
-            <div class="w-[18%]">
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
-                <a href="#">Doctoral Programme</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/doctoral-programme/overview">Overview of PhD Programmee</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/doctoral-programme/features">Doctoral Programme Features</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/doctoral-programme/research-areas">Research Areas</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/doctoral-programme/operational-details">Operational Details</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/doctoral-programme/proformas">Important Proformas</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/doctoral-programme/checklists">Checklists</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/doctoral-programme/contact-us">Contact Us</a>
-              </h1>
-            </div>
-            <div class="w-[18%]">
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
-                <a href="#">Programs</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/programs/btech">B.Tech</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/programs/pg-diploma">PG Diploma</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/programs/phd">PHD</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/programs/mtech">M.Tech</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/programs/curriculum">Curriculum</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/programs/reports">Reports</a>
-              </h1>
-            </div>
-          </div>
         `,
         admissions: `
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
@@ -911,3 +849,65 @@ const searchIcon = document.getElementById('searchIcon');
 
     // Note: Pressing Enter when the input is focused will naturally submit the form,
     // sending a GET request to /search?q=your_search_value.
+
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      let slides = document.querySelectorAll(".swiper-slide5");
+      let currentIndex = 0;
+      const nextButton = document.querySelector(".swiper-button-next");
+      const prevButton = document.querySelector(".swiper-button-prev");
+      let slideInterval;
+
+      // Function to show a specific slide
+      function showSlide(index) {
+          slides.forEach((slide, i) => {
+              slide.style.opacity = i === index ? "1" : "0";
+              slide.style.zIndex = i === index ? "1" : "-1";
+          });
+      }
+
+      // Function to show the next slide
+      function nextSlide() {
+          currentIndex = (currentIndex + 1) % slides.length;
+          showSlide(currentIndex);
+      }
+
+      // Function to show the previous slide
+      function prevSlide() {
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          showSlide(currentIndex);
+      }
+
+      // Auto-slide every 3 seconds
+      function startAutoSlide() {
+          slideInterval = setInterval(nextSlide, 6000);
+      }
+
+      // Stop auto-slide on hover
+      function stopAutoSlide() {
+          clearInterval(slideInterval);
+      }
+
+      // Event listeners for navigation buttons
+      nextButton.addEventListener("click", () => {
+          nextSlide();
+          stopAutoSlide(); // Stop auto-slide when user interacts
+          startAutoSlide(); // Restart auto-slide
+      });
+
+      prevButton.addEventListener("click", () => {
+          prevSlide();
+          stopAutoSlide();
+          startAutoSlide();
+      });
+
+      // Pause auto-slide when hovering over the container
+      document.querySelector(".swiper-container").addEventListener("mouseenter", stopAutoSlide);
+      document.querySelector(".swiper-container").addEventListener("mouseleave", startAutoSlide);
+
+      // Initialize the slider
+      showSlide(currentIndex);
+      startAutoSlide();
+  });

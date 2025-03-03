@@ -235,4 +235,145 @@ footer h2:hover, footer i:hover {
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.alumini {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.alumini-head {
+  font-size: 40px;
+  text-transform: capitalize;
+  color: #003153;
+}
+
+.alumini-head-underline {
+  height: 4px;
+  background: linear-gradient(to right, #b96969, #ffa502);
+  width: 20%;
+  margin-bottom: 2rem;
+}
+
+.alumini-container {
+  width: 100%;
+  height: 80%;
+  background-image: url("grad12.avif");
+  background-size: 100% 100%;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.alumini-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: blur(4px);
+  z-index: 1;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.alumini-content {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.alumini-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid white;
+}
+
+.alumini-name {
+  margin-top: 20px;
+  color: rgb(255, 255, 255);
+  font-weight: 900;
+  font-size: 1.7rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.alumini-branch {
+  color: orange;
+  font-size: 1.3rem;
+  font-weight: 550;
+  font-style: italic;
+}
+
+.alumini-speaks {
+  padding: 1rem;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 24px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  position: absolute;
+  margin: 10px;
+}
+
+.swiper-button-next {
+  right: 0;
+  top: 50%;
+}
+
+.swiper-button-prev {
+  left: 0;
+  top: 50%;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.5rem;
+}
+
+.swiper-slide:first-child {
+  position: relative;
+}
+
+.alumini {
+  background-image: url("../images/index/grad12.avif");
 }/*# sourceMappingURL=style.css.map */

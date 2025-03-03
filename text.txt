@@ -1,84 +1,22 @@
-<div class="swiper mySwiper relative">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div
-                class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[200px] h-[200px] absolute bottom-[40px] right-[50px] z-[99] text-white p-[10px]"
-              >
-                <p class="md:py-4 py-2 lg:text-[16px] text-[10px]">
-                  Tablet Banner (Cinematic Shot) – A sleek, well-framed shot capturing a tablet displaying the institution’s name. The cinematic angle adds depth and professionalism, making the image visually engaging and highlighting the branding.
-                </p>
+   <div class="swiper-wrapper">
+            <div class="swiper-slide relative text-white">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[99]  text-center w-full">
+                <div class="w-30 h-30 bg-black rounded-full mx-auto mb-10"></div>
+                <h1 class="text-[2.5vw] w-[70%] mx-auto leading-[1.1] mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem magni recusandae ut similique laboriosam ipsa doloremque repudiandae eius quos itaque?</h1>
+              <h1 class="font-bold text-[1.8vw] \">Yammy Tan</h1>
+              <p class="text-[1.2vw] leading-[1.1] italic">Class 2024</p>
+              <span class="font-bold text-[1.4vw]">More ></span>
               </div>
-              <div
-                class="dets flex items-center justify-center w-[60px] h-[60px] rounded-full bg-[black]/90 absolute bottom-[30px] right-[40px] z-[100] text-white"
-              >
-                <i class="ri-lightbulb-line bulb text-white text-[25px]"></i>
-              </div>
-              <img
-                class="w-full h-full object-cover"
-                src="../images/index/8.webp"
-                alt=""
-              />
+              <img class="w-full h-full object-fit blur-sm" src="../images/index/IIIT13.webp" alt="" />
             </div>
-            <div class="swiper-slide">
-              <div
-                class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[200px] h-[200px] absolute bottom-[40px] right-[50px] z-[99] text-white p-[10px]"
-              >
-                <p class="md:py-4 py-2 text-[16px] text-[10px]">
-                  
-Academic Building (Front View) – A grand, symmetrical building with a modern architectural design, featuring clean lines and a structured facade. The entrance stands as a gateway to education, with an inviting yet formal appearance that reflects the institute’s prestige.
-                </p>
+            <div class="swiper-slide relative text-white">
+              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[99]  text-center w-full">
+                <div class="w-30 h-30 bg-black rounded-full mx-auto mb-10"></div>
+                <h1 class="text-[2.5vw] w-[70%] mx-auto leading-[1.1] mb-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem magni recusandae ut similique laboriosam ipsa doloremque repudiandae eius quos itaque?</h1>
+              <h1 class="font-bold text-[1.8vw] \">Yammy Tan</h1>
+              <p class="text-[1.2vw] leading-[1.1] italic">Class 2024</p>
+              <span class="font-bold text-[1.4vw]">More ></span>
               </div>
-              <div
-                class="dets flex items-center justify-center w-[60px] h-[60px] rounded-full bg-[black]/90 absolute bottom-[30px] right-[40px] z-[100] text-white"
-              >
-                <i class="ri-lightbulb-line bulb text-white text-[25px]"></i>
-              </div>
-              <img
-                class="w-full h-full object-cover"
-                src="../images/index/7.webp"
-                alt=""
-              />
-            </div>
-            <div class="swiper-slide">
-              <div
-                class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[200px] h-[200px] absolute bottom-[40px] right-[50px] z-[99] text-white p-[10px]"
-              >
-                <p class="md:py-4 py-2 lg:text-[16px] text-[10px]">
-                  
-Amphitheater (Aerial View) – A stunning aerial/drone shot showcasing the amphitheater’s circular seating arrangement, emphasizing its scale and layout. The open-air design blends seamlessly with the surroundings, making it an ideal space for gatherings, performances, and discussions.
-                </p>
-              </div>
-              <div
-                class="dets flex items-center justify-center w-[60px] h-[60px] rounded-full bg-[black]/90 absolute bottom-[30px] right-[40px] z-[100] text-white"
-              >
-                <i class="ri-lightbulb-line bulb text-white text-[25px]"></i>
-              </div>
-              <img
-                class="w-full h-full object-cover"
-                src="../images/index/12.webp"
-                alt=""
-              />
-            </div>
-            <div class="swiper-slide">
-              <div
-                class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[200px] h-[200px] absolute bottom-[40px] right-[50px] z-[99] text-white p-[10px]"
-              >
-                <p class="md:py-4 py-2 lg:text-[14px] text-[10px]">
-                  A towering 10-story co-ed hostel designed to accommodate students in comfortable 2-seater and 4-seater rooms. The building features a modern architectural design with spacious balconies and large windows, ensuring ample natural light and ventilation. With well-lit corridors, common areas, and a welcoming entrance, the hostel serves as a vibrant hub of student life, fostering friendships and memorable experiences.
-
-                </p>
-              </div>
-              <div
-                class="dets flex items-center justify-center w-[60px] h-[60px] rounded-full bg-[black]/90 absolute bottom-[30px] right-[40px] z-[100] text-white"
-              >
-                <i class="ri-lightbulb-line bulb text-white text-[25px]"></i>
-              </div>
-              <img
-                class="w-full h-full object-cover"
-                src="../images/index/1.webp"
-                alt=""
-              />
+              <img class="w-full h-full object-fit blur-sm" src="../images/index/IIIT13.webp" alt="" />
             </div>
           </div>
-          <div class="swiper-pagination"></div>
-        </div>
