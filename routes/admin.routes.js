@@ -34,16 +34,10 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-
-
-
-
 //=============== Routes ===============//
 router.get("/", (_, res) => {
   res.render("admin/index.ejs");
 });
-
-
 
 router
   .route("/photo-carousel")
@@ -282,7 +276,7 @@ router
     try {
       const { data } = req.body;
       const newData = new Research(data);
-      await newData.save(); 
+      await newData.save();
       res.redirect("/admin/research");
     } catch (e) {
       res.status(500).json({ error: e.message });
@@ -320,65 +314,6 @@ router.route("/research/:id").delete(async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
-
-router
-  .route("/achievements")
-  .get(async (req, res) => {
-    try {
-      const result = await Achievement.find({});
-      res.render("admin/achievements/index.ejs", { data: result });
-    } catch (e) {
-      res.status(500).json({ error: e.message });
-    }
-  })
-  .post(async (req, res) => {
-    try {
-      const { data } = req.body;
-      const newData = new Achievement(data);
-      await newData.save();
-      res.redirect("/admin/achievements");
-    } catch (e) {
-      res.status(500).json({ error: e.message });
-    }
-  });
-
-router.route("/achievements/new").get(async (_, res) => {
-  res.render("admin/achievements/new.ejs");
-});
-
-router
-  .route("/achievements/edit/:id")
-  .get(async (req, res) => {
-    const { id } = req.params;
-    const result = await Achievement.findById(id);
-    res.render("admin/achievements/update.ejs", { data: result });
-  })
-  .patch(async (req, res) => {
-    const { id } = req.params;
-    const { data } = req.body;
-    try {
-      await Achievement.findByIdAndUpdate(id, data, { new: true });
-      res.redirect("/admin/achievements");
-    } catch (error) {
-      res.status(500).json({ error: error.message });
-    }
-  });
-
-router.route("/achievements/:id").delete(async (req, res) => {
-  const { id } = req.params;
-  try {
-    await Achievement.findByIdAndDelete(id);
-    res.redirect("/admin/achievements");
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-
-
-
-
 
 //route for student testimonial
 router
@@ -439,18 +374,18 @@ router.get("/faculty", async (req, res) => {
   try {
     const faculties = await Faculty.find({});
     const groupedFaculties = {
-      hod: faculties.filter(faculty => faculty.position === "hod"),
-      facultyMembers: faculties.filter(faculty => faculty.position === "faculty-member"),
-      staff: faculties.filter(faculty => faculty.position === "staff"),
+      hod: faculties.filter((faculty) => faculty.position === "hod"),
+      facultyMembers: faculties.filter(
+        (faculty) => faculty.position === "faculty-member"
+      ),
+      staff: faculties.filter((faculty) => faculty.position === "staff"),
     };
-
 
     res.render("admin/faculty/index.ejs", { groupedFaculties });
   } catch (e) {
     res.status(500).json({ error: `Error fetching faculties: ${e.message}` });
   }
 });
-
 
 // Route to render the add faculty form
 router.get("/faculty/new", async (_, res) => {
@@ -467,14 +402,24 @@ router.post("/faculty", async (req, res) => {
     }
 
     // Convert newline-separated input into an array for relevant fields
-    data.education = data.education ? data.education.split("\n").map((s) => s.trim()) : [];
-    data.experience = data.experience ? data.experience.split("\n").map((s) => s.trim()) : [];
-    data.teaching = data.teaching ? data.teaching.split("\n").map((s) => s.trim()) : [];
+    data.education = data.education
+      ? data.education.split("\n").map((s) => s.trim())
+      : [];
+    data.experience = data.experience
+      ? data.experience.split("\n").map((s) => s.trim())
+      : [];
+    data.teaching = data.teaching
+      ? data.teaching.split("\n").map((s) => s.trim())
+      : [];
     data.research.areaofReasearch = data.research.areaofReasearch
       ? data.research.areaofReasearch.split("\n").map((s) => s.trim())
       : [];
-    data.responsibility = data.responsibility ? data.responsibility.split("\n").map((s) => s.trim()) : [];
-    data.anyOther = data.anyOther ? data.anyOther.split("\n").map((s) => s.trim()) : [];
+    data.responsibility = data.responsibility
+      ? data.responsibility.split("\n").map((s) => s.trim())
+      : [];
+    data.anyOther = data.anyOther
+      ? data.anyOther.split("\n").map((s) => s.trim())
+      : [];
 
     // Ensure nested objects exist
     if (!data.research) data.research = {};
@@ -490,22 +435,30 @@ router.post("/faculty", async (req, res) => {
       data.supervision.phd = [];
     }
     if (!Array.isArray(data.supervision.MTech)) {
-      data.supervision.MTech = data.supervision.MTech ? data.supervision.MTech.split("\n").map((s) => s.trim()) : [];
+      data.supervision.MTech = data.supervision.MTech
+        ? data.supervision.MTech.split("\n").map((s) => s.trim())
+        : [];
     }
     if (!Array.isArray(data.supervision.BTech)) {
-      data.supervision.BTech = data.supervision.BTech ? data.supervision.BTech.split("\n").map((s) => s.trim()) : [];
+      data.supervision.BTech = data.supervision.BTech
+        ? data.supervision.BTech.split("\n").map((s) => s.trim())
+        : [];
     }
 
     // Function to parse publications (Journals, Conferences, Books)
     const parsePublications = (input) => {
       if (!input) return [];
 
-      const lines = input.split("\n").map(line => line.trim()).filter(Boolean);
+      const lines = input
+        .split("\n")
+        .map((line) => line.trim())
+        .filter(Boolean);
       let parsedData = [];
       let currentEntry = null;
 
-      lines.forEach(line => {
-        if (/^\d{4}$/.test(line)) { // Detects Year (YYYY)
+      lines.forEach((line) => {
+        if (/^\d{4}$/.test(line)) {
+          // Detects Year (YYYY)
           if (currentEntry) parsedData.push(currentEntry);
           currentEntry = { year: parseInt(line), papers: [] };
         } else if (line.startsWith("-") && currentEntry) {
@@ -524,11 +477,15 @@ router.post("/faculty", async (req, res) => {
 
     // Parse publication fields
     data.publication.journals = parsePublications(data.publication.journals);
-    data.publication.conferences = parsePublications(data.publication.conferences);
-    data.publication.books = parsePublications(data.publication.books).map(entry => ({
-      year: entry.year,
-      titles: entry.papers, // Rename "papers" to "titles" for books
-    }));
+    data.publication.conferences = parsePublications(
+      data.publication.conferences
+    );
+    data.publication.books = parsePublications(data.publication.books).map(
+      (entry) => ({
+        year: entry.year,
+        titles: entry.papers, // Rename "papers" to "titles" for books
+      })
+    );
 
     const newFaculty = new Faculty(data);
     await newFaculty.save();
@@ -556,13 +513,15 @@ router.get("/faculty/edit/:id", async (req, res) => {
     // Format Publications properly
     const formatPublications = (pubs) => {
       return (pubs || [])
-        .map((entry) => `${entry.year}\n${entry.papers.map((p) => `- ${p}`).join("\n")}`)
+        .map(
+          (entry) =>
+            `${entry.year}\n${entry.papers.map((p) => `- ${p}`).join("\n")}`
+        )
         .join("\n\n");
     };
 
     // Format research projects into an array of objects instead of a string
-  
-  
+
     const formatResearchProjects = (projects) => {
       if (Array.isArray(projects)) {
         // Case 1: If the input is already an array of objects, return it as is
@@ -571,20 +530,22 @@ router.get("/faculty/edit/:id", async (req, res) => {
           title: project.title || "",
           duration: project.duration || "",
         }));
-      } else if (typeof projects === 'string') {
+      } else if (typeof projects === "string") {
         // Case 2: If the input is a string, parse it into an array of objects
         try {
           return projects
-            .split("\n")  // Split by newline to separate entries
-            .map(project => {
-              const [year, title, duration] = project.split(",");  // Split each entry by comma
+            .split("\n") // Split by newline to separate entries
+            .map((project) => {
+              const [year, title, duration] = project.split(","); // Split each entry by comma
               return {
                 year: year?.trim() || "",
                 title: title?.trim() || "",
-                duration: duration?.trim() || ""
+                duration: duration?.trim() || "",
               };
             })
-            .filter(project => project.year || project.title || project.duration);  // Remove any empty entries
+            .filter(
+              (project) => project.year || project.title || project.duration
+            ); // Remove any empty entries
         } catch (error) {
           console.log("Error parsing research projects:", error);
           return [];
@@ -592,7 +553,6 @@ router.get("/faculty/edit/:id", async (req, res) => {
       }
       return [];
     };
-    
 
     // Format PhD supervision into an array of objects instead of a string
     const formatPhDSupervision = (phd) => {
@@ -607,7 +567,6 @@ router.get("/faculty/edit/:id", async (req, res) => {
       return [];
     };
 
-
     const data = {
       ...faculty.toObject(),
       education: formatMultiline(faculty.education),
@@ -615,11 +574,14 @@ router.get("/faculty/edit/:id", async (req, res) => {
       teaching: formatMultiline(faculty.teaching),
       research: {
         areaofResearch: formatMultiline(faculty.research?.areaofResearch || []),
-        researchProject: formatResearchProjects(faculty.research?.researchProject || []),
+        researchProject: formatResearchProjects(
+          faculty.research?.researchProject || []
+        ),
         patent: formatMultiline(faculty.research?.patent || []), // Add patent here
         fundedProject: formatMultiline(faculty.research?.fundedProject || []), // Add fundedProject here
-        reviewerofJournal: formatMultiline(faculty.research?.reviewerofJournal || []),
-
+        reviewerofJournal: formatMultiline(
+          faculty.research?.reviewerofJournal || []
+        ),
       },
       supervision: {
         phd: formatPhDSupervision(faculty.supervision?.phd || []),
@@ -630,10 +592,13 @@ router.get("/faculty/edit/:id", async (req, res) => {
       publication: {
         journals: formatPublications(faculty.publication?.journals),
         conferences: formatPublications(faculty.publication?.conferences),
-        books: formatPublications(faculty.publication?.books).replace(/papers/g, "titles"),
+        books: formatPublications(faculty.publication?.books).replace(
+          /papers/g,
+          "titles"
+        ),
       },
     };
-  //  console.log(data);
+    //  console.log(data);
     res.render("admin/faculty/update.ejs", { data });
   } catch (error) {
     res.status(500).send("Server error: " + error.message);
@@ -652,9 +617,12 @@ router.patch("/faculty/edit/:id", async (req, res) => {
 
     const parseMultiline = (input) => {
       if (!input) return [];
-      return Array.isArray(input) 
-        ? input 
-        : input.split("\n").map(s => s.trim()).filter(Boolean);
+      return Array.isArray(input)
+        ? input
+        : input
+            .split("\n")
+            .map((s) => s.trim())
+            .filter(Boolean);
     };
 
     // Parse basic fields
@@ -699,23 +667,28 @@ router.patch("/faculty/edit/:id", async (req, res) => {
     const parsePublications = (input) => {
       if (!input) return [];
       if (Array.isArray(input)) {
-        return input.map((entry) => ({
-          _id: entry._id || new mongoose.Types.ObjectId(),
-          year: entry.year || "",
-          papers: entry.papers || [],
-        })).filter(entry => entry.year);
+        return input
+          .map((entry) => ({
+            _id: entry._id || new mongoose.Types.ObjectId(),
+            year: entry.year || "",
+            papers: entry.papers || [],
+          }))
+          .filter((entry) => entry.year);
       }
 
-      const lines = input.split("\n").map(line => line.trim()).filter(Boolean);
+      const lines = input
+        .split("\n")
+        .map((line) => line.trim())
+        .filter(Boolean);
       let parsedData = [];
       let currentEntry = null;
 
       lines.forEach((line) => {
         if (/^\d{4}$/.test(line)) {
           if (currentEntry) parsedData.push(currentEntry);
-          currentEntry = { 
-            _id: new mongoose.Types.ObjectId(), 
-            year: parseInt(line, 10), 
+          currentEntry = {
+            _id: new mongoose.Types.ObjectId(),
+            year: parseInt(line, 10),
             papers: [],
           };
         } else if (line.startsWith("-") && currentEntry) {
@@ -733,7 +706,9 @@ router.patch("/faculty/edit/:id", async (req, res) => {
       books: parsePublications(data.publication?.books),
     };
 
-    const updatedFaculty = await Faculty.findByIdAndUpdate(id, data, { new: true });
+    const updatedFaculty = await Faculty.findByIdAndUpdate(id, data, {
+      new: true,
+    });
 
     if (!updatedFaculty) {
       console.error("Error: Faculty not found.");
@@ -741,7 +716,6 @@ router.patch("/faculty/edit/:id", async (req, res) => {
     }
 
     res.redirect("/admin/faculty?success=true");
-
   } catch (error) {
     console.error("Error updating faculty:", error);
     res.status(500).send("Error updating faculty: " + error.message);
@@ -751,12 +725,12 @@ router.patch("/faculty/edit/:id", async (req, res) => {
 //delete route
 router.delete("/faculty/delete/:id", async (req, res) => {
   try {
-      const { id } = req.params;
-      await Faculty.findByIdAndDelete(id);
-      res.redirect("/admin/faculty"); // Redirect back to faculty list
+    const { id } = req.params;
+    await Faculty.findByIdAndDelete(id);
+    res.redirect("/admin/faculty"); // Redirect back to faculty list
   } catch (error) {
-      console.error("Error deleting faculty:", error);
-      res.status(500).send("Server error: Unable to delete faculty.");
+    console.error("Error deleting faculty:", error);
+    res.status(500).send("Server error: Unable to delete faculty.");
   }
 });
 //=============== Media Routes ===============//

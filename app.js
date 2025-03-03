@@ -113,10 +113,6 @@ app.get("/admin-login", (_, res) => {
 app.get("/aboutUs", (req, res) => {
   res.render("aboutUs");
 });
-// app.get("/aboutUs/:page", (req, res) => {
-//   const { page } = req.params;
-//   res.render(`aboutUs/${page}`);
-// });
 
 // Student Routes
 app.get("/student", (req, res) => {
