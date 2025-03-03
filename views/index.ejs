@@ -21,7 +21,29 @@
       <div id="page1" class="w-full h-screen">
         <%- include('./partials/nav') %>
 
-          <div class="hero w-full h-full">
+          <div class="hero w-full h-full relative">
+            <div class="bg-black/30 absolute top-0 left-0 w-full h-full"></div>
+            <div class="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full mx-auto text-center">
+              <div class="pt-2 overflow-hidden lg:h-[5vw] md:h-[5vw] h-[7vw]">
+                <div class="text-container space-y-8 w-full">
+                  <h1
+                  class="leading-none  font-bold font-[font2] lg:text-[3.5vw] md:text-[3vw] text-[3vw] text-white tracking-tighter"
+                  >
+                  Indian Institute of Information Technology, Nagpur
+                </h1>
+                <h1
+                class="leading-none font-bold font-[font2] lg:text-[3.5vw] md:text-[3vw] text-[3vw] text-white tracking-tighter"
+                >
+                भारतीय सूचना प्रौद्योगिकी संस्थान, नागपुर
+              </h1>
+            <h1
+            class="leading-none font-bold font-[font2] lg:text-[3.5vw] md:text-[3vw] text-[3vw] text-white tracking-tighter"
+            >
+            Indian Institute of Information Technology, Nagpur
+          </h1>
+              </div>
+              </div>
+            </div>
             <div
               class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[200px] h-[200px] absolute bottom-[40px] right-[50px] z-[99] text-white p-[10px]">
               <p class="md:py-4 py-2 lg:text-[16px] text-[10px]">
@@ -34,7 +56,7 @@
               class="dets flex items-center justify-center w-[60px] h-[60px] rounded-full bg-[black]/90 absolute bottom-[30px] right-[40px] z-[100] text-white">
               <i class="ri-lightbulb-line bulb text-white text-[25px]"></i>
             </div>
-            <img class="w-full h-full object-cover" src="../images/index/4.webp" alt="" />
+            <img class="w-full h-full object-cover" src="../images/index/11.jpg" alt="" />
           </div>
       </div>
 
@@ -486,33 +508,36 @@
         </div>
       </div>
 
-      <div id="page11" class="w-full h-full px-4 lg:pb-20 pb-12 bg-zinc-100/80">
+      <div id="page11" class="w-full h-full px-4 lg:pb-20 pb-12 alumini">
         <h1
-          class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-10">
+          class="main font-bold text-white text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-10">
           STUDENT'S TESTIMONIAL
         </h1>
         <div class="lg:w-[90vw] lg:h-[95vh] w-[95%] h-[50%] mx-auto">
         <div class="swiper mySwiper8">
           <div class="swiper-wrapper">
-            <% studentTestimonial.forEach(testimonial=> { %>
-            <div class="swiper-slide relative text-white">
-              <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[99]  text-center w-full">
-                <div class="w-30 h-30 rounded-full mx-auto mb-10 overflow-hidden">
-                  <img class="h-full w-full object-cover" src=" <%= testimonial.image %>" alt="">
-                </div>
-                <h1 class="text-[2.5vw] w-[70%] mx-auto leading-[1.1] mb-10">        <%= testimonial.content %></h1>
-              <h1 class="font-bold text-[1.8vw] \">  <%= testimonial.name %></h1>
-              <p class="text-[1.2vw] leading-[1.1] italic">Class 2024</p>
-                <a href="<%= testimonial.link %>"><span class="font-bold text-[1.4vw]">More ></span></a>
+            <div class="swiper-slide">
+              <div class="alumini-content">
+                  <div class="alumini-img bg-white"></div>
+                  <div class="alumini-name"><br>Dhanraj Mahurkar</div>
+                  <div class="alumini-branch">Software Engineer at Lowes</div>
+                  <div class="alumini-speaks"><br>"One of the best things that you will find here is an amazing peer group.The training and placement cell keeps you well informed about the various opportunities available. The teahers are helpful and easy to approach. We have projects every semester which helps to develop critical thinking."</div>
               </div>
-              <img class="w-full h-full object-fit blur-sm" src="../images/index/IIIT13.webp" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <div class="alumini-content">
+                <div class="alumini-img bg-white"></div>
+                <div class="alumini-name"><br>Dhanraj Mahurkar</div>
+                <div class="alumini-branch">Software Engineer at Lowes</div>
+                <div class="alumini-speaks"><br>"One of the best things that you will find here is an amazing peer group.The training and placement cell keeps you well informed about the various opportunities available. The teahers are helpful and easy to approach. We have projects every semester which helps to develop critical thinking."</div>
             </div>
-            <% }); %>
+        </div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
       </div>
   </div>
+  
       <div id="page4" class="w-full h-fit md:pb-24 py-8 lg:pb-20">
         <h1
           class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-5">
