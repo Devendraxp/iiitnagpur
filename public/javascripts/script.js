@@ -777,3 +777,65 @@ const searchIcon = document.getElementById('searchIcon');
 
     // Note: Pressing Enter when the input is focused will naturally submit the form,
     // sending a GET request to /search?q=your_search_value.
+
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      let slides = document.querySelectorAll(".swiper-slide5");
+      let currentIndex = 0;
+      const nextButton = document.querySelector(".swiper-button-next");
+      const prevButton = document.querySelector(".swiper-button-prev");
+      let slideInterval;
+
+      // Function to show a specific slide
+      function showSlide(index) {
+          slides.forEach((slide, i) => {
+              slide.style.opacity = i === index ? "1" : "0";
+              slide.style.zIndex = i === index ? "1" : "-1";
+          });
+      }
+
+      // Function to show the next slide
+      function nextSlide() {
+          currentIndex = (currentIndex + 1) % slides.length;
+          showSlide(currentIndex);
+      }
+
+      // Function to show the previous slide
+      function prevSlide() {
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          showSlide(currentIndex);
+      }
+
+      // Auto-slide every 3 seconds
+      function startAutoSlide() {
+          slideInterval = setInterval(nextSlide, 6000);
+      }
+
+      // Stop auto-slide on hover
+      function stopAutoSlide() {
+          clearInterval(slideInterval);
+      }
+
+      // Event listeners for navigation buttons
+      nextButton.addEventListener("click", () => {
+          nextSlide();
+          stopAutoSlide(); // Stop auto-slide when user interacts
+          startAutoSlide(); // Restart auto-slide
+      });
+
+      prevButton.addEventListener("click", () => {
+          prevSlide();
+          stopAutoSlide();
+          startAutoSlide();
+      });
+
+      // Pause auto-slide when hovering over the container
+      document.querySelector(".swiper-container").addEventListener("mouseenter", stopAutoSlide);
+      document.querySelector(".swiper-container").addEventListener("mouseleave", startAutoSlide);
+
+      // Initialize the slider
+      showSlide(currentIndex);
+      startAutoSlide();
+  });
