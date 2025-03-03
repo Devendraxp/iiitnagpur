@@ -18,7 +18,7 @@
                         <p class="card-text"><%= item.description %></p>
                         <a href="<%= item.link %>" class="btn btn-primary mb-2" target="_blank">Visit Link</a>
                         <div class="d-flex gap-2">
-                            <a href="/admin/research/edit/<%= item._id %>" class="btn btn-success">Edit</a>
+                            <a href="/admin/research/<%= item._id %>" class="btn btn-success">Edit</a>
                             <form action="/admin/research/<%= item._id %>?_method=DELETE" method="POST" class="d-inline">
                                 <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this research item?')">Delete</button>
                             </form>

@@ -1,3 +1,19 @@
+import express from "express";
+import Achievement from "../../models/achievements.model.js";
+import methodOverride from "method-override";
+const router = express.Router();
+const PORT = 8080;
+
+router.use(methodOverride("_method"));
+router.use(express.json());
+router.use(express.urlencoded({ extended: true }));
+router.use("/files", express.static("uploads"));
+
+router.use(methodOverride("_method"));
+
+router.use(express.json());
+router.use(express.urlencoded({ extended: true }));
+router.use("/files", express.static("uploads"));
 
 router
   .route("/")
@@ -49,3 +65,5 @@ router
     res.status(500).json({ error: error.message });
   }
 });
+
+export default router;

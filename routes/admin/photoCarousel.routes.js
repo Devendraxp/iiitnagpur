@@ -1,3 +1,21 @@
+import express from "express";
+import methodOverride from "method-override";
+import PhotoCarousel from "../../models/photoCarousel.model.js";
+const router = express.Router();
+const PORT = 8080;
+
+router.use(methodOverride("_method"));
+router.use(express.json());
+router.use(express.urlencoded({ extended: true }));
+router.use("/files", express.static("uploads"));
+
+router.use(methodOverride("_method"));
+
+router.use(express.json());
+router.use(express.urlencoded({ extended: true }));
+router.use("/files", express.static("uploads"));
+
+
 router
   .route("/")
   .get(async (_, res) => {
@@ -13,7 +31,7 @@ router
       const { data } = req.body;
       const newData = new PhotoCarousel(data);
       await newData.save();
-      res.redirect("/admin/photo-carousel");
+      res.redirect("/admin/photoCarousel");
     } catch (e) {
       res.status(500).json({ error: e.message });
     }
@@ -40,7 +58,7 @@ router
       if (!updatedCarousel) {
         return res.status(404).json({ error: "Photo carousel not found" });
       }
-      res.redirect("/admin/photo-carousel");
+      res.redirect("/admin/photoCarousel");
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
@@ -52,8 +70,12 @@ router
       if (!deletedCarousel) {
         return res.status(404).json({ error: "Photo carousel not found" });
       }
-      res.redirect("/admin/photo-carousel");
+      res.redirect("/admin/photoCarousel");
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
   });
+
+
+
+  export default router;

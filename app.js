@@ -11,7 +11,7 @@ import StudentTestimonial from "./models/studentTestimonial.model.js";
 import Research from "./models/research.model.js";
 import Faculty from "./models/faculty.model.js";
 import Image from "./models/imageSchema.js";
-import adminRoute from "./routes/admin.routes.js";
+import adminRoute from "./routes/admin/index.routes.js";
 import Admin from "./models/admin.model.js";
 import session from "express-session";
 import MongoStore from "connect-mongo";
