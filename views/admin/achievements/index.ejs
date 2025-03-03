@@ -2,7 +2,7 @@
 
 <body>
     <div class="container mt-4"></div>
-        <h2 class="p-4">Notices</h2>
+        <h2 class="p-4">Achievements</h2>
         <div class="d-flex justify-content-end p-4">
                 <a href="/admin/achievements/new" class="btn btn-primary">Add New Notice</a>
         </div>
@@ -16,7 +16,7 @@
                         <h5 class="card-title"><%= item.title %></h5>
                         <p class="card-text"><%= item.description %></p>
                         <div class="d-flex gap-2">
-                            <a href="/admin/achievements/edit/<%= item._id %>" class="btn btn-success">Edit</a>
+                            <a href="/admin/achievements/<%= item._id %>" class="btn btn-success">Edit</a>
                             <form action="/admin/achievements/<%= item._id %>?_method=DELETE" method="POST" class="d-inline">
                                 <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this achievement?')">Delete</button>
                             </form>

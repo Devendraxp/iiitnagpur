@@ -2,7 +2,7 @@
 <body>
     <div class="container mt-4">
         <h2 class="mb-4">Update Notification</h2>
-        <form action="/admin/notification/edit?_method=PATCH" method="POST">
+        <form action="/admin/notification/<%= data._id %>?_method=PATCH" method="POST">
             <div class="mb-3">
                 <label for="title" class="form-label">Title*</label>
                 <input type="text" class="form-control" value="<%= data.title %>" id="title" name="data[title]" required>

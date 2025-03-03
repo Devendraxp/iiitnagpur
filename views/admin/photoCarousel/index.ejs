@@ -4,7 +4,7 @@
   <div class="container mt-4">
     <h2 class="p-4 ">Photo Carousel</h2>
     <div class="d-flex justify-content-end p-4">
-        <a href="/admin/photo-carousel/new" class="btn btn-primary">Add New Items</a>
+        <a href="/admin/photoCarousel/new" class="btn btn-primary">Add New Items</a>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <% data.forEach(item => { %>
@@ -15,8 +15,8 @@
             <h5 class="card-title"><%= item.title %></h5>
             <p class="mb-3"><b>Where it redirect:</b> <%= item.link %></p>
             <div class="d-flex gap-2">
-              <a href="/admin/photo-carousel/edit/<%= item._id %>" class="btn btn-success">Edit</a>
-              <form action="/admin/photo-carousel/<%= item._id %>?_method=DELETE" method="POST" class="d-inline">
+              <a href="/admin/photoCarousel/<%= item._id %>" class="btn btn-success">Edit</a>
+              <form action="/admin/photoCarousel/<%= item._id %>?_method=DELETE" method="POST" class="d-inline">
                 <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?')">Delete</button>
               </form>
             </div>

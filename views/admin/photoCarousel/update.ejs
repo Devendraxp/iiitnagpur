@@ -2,7 +2,7 @@
 <body>
     <div class="container mt-4">
         <h2 class="mb-4">Update A Photo Carousel Item</h2>
-        <form action="/admin/photo-carousel/edit/<%= data._id %>?_method=PATCH" method="POST">
+        <form action="/admin/photoCarousel/<%= data._id %>?_method=PATCH" method="POST">
             <div class="mb-3">
                 <label for="image" class="form-label">Image URL*</label>
                 <input type="text" value="<%= data.image %>" class="form-control" id="image" name="data[image]" required>

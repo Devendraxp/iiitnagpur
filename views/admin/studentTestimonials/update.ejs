@@ -2,7 +2,7 @@
 <body>
     <div class="container mt-4">
         <h2 class="mb-4">Update A Student Testimonial</h2>
-        <form action="/admin/student-testimonial/edit/<%=data._id%>?_method=PATCH" method="POST">
+        <form action="/admin/studentTestimonial/<%=data._id%>?_method=PATCH" method="POST">
             <div class="mb-3">
                 <label for="name" class="form-label">Name*</label>
                 <input type="text" value="<%= data.name %>" class="form-control" id="name" name="data[name]" required>

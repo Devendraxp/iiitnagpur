@@ -2,7 +2,7 @@
 <body>
     <div class="container mt-4">
         <h2 class="mb-4">Update Achievement</h2>
-        <form action="/admin/achievements/edit/<%= data._id %>?_method=PATCH" method="POST">
+        <form action="/admin/achievements/<%= data._id %>?_method=PATCH" method="POST">
             <div class="mb-3">
                 <label for="title" class="form-label">Title*</label>
                 <input type="text" value="<%= data.title %>" class="form-control" id="title" name="data[title]" required>

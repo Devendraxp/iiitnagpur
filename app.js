@@ -11,7 +11,7 @@ import StudentTestimonial from "./models/studentTestimonial.model.js";
 import Research from "./models/research.model.js";
 import Faculty from "./models/faculty.model.js";
 import Image from "./models/imageSchema.js";
-import adminRoute from "./routes/admin.routes.js";
+import adminRoute from "./routes/admin/index.routes.js";
 import Admin from "./models/admin.model.js";
 import session from "express-session";
 import MongoStore from "connect-mongo";
@@ -113,10 +113,6 @@ app.get("/admin-login", (_, res) => {
 app.get("/aboutUs", (req, res) => {
   res.render("aboutUs");
 });
-// app.get("/aboutUs/:page", (req, res) => {
-//   const { page } = req.params;
-//   res.render(`aboutUs/${page}`);
-// });
 
 // Student Routes
 app.get("/student", (req, res) => {
