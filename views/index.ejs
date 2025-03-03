@@ -21,7 +21,29 @@
       <div id="page1" class="w-full h-screen">
         <%- include('./partials/nav') %>
 
-          <div class="hero w-full h-full">
+          <div class="hero w-full h-full relative">
+            <div class="bg-black/30 absolute top-0 left-0 w-full h-full"></div>
+            <div class="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full mx-auto text-center">
+              <div class="pt-2 overflow-hidden lg:h-[5vw] md:h-[5vw] h-[7vw]">
+                <div class="text-container space-y-8 w-full">
+                  <h1
+                  class="leading-none  font-bold font-[font2] lg:text-[3.5vw] md:text-[3vw] text-[3vw] text-white tracking-tighter"
+                  >
+                  Indian Institute of Information Technology, Nagpur
+                </h1>
+                <h1
+                class="leading-none font-bold font-[font2] lg:text-[3.5vw] md:text-[3vw] text-[3vw] text-white tracking-tighter"
+                >
+                भारतीय सूचना प्रौद्योगिकी संस्थान, नागपुर
+              </h1>
+            <h1
+            class="leading-none font-bold font-[font2] lg:text-[3.5vw] md:text-[3vw] text-[3vw] text-white tracking-tighter"
+            >
+            Indian Institute of Information Technology, Nagpur
+          </h1>
+              </div>
+              </div>
+            </div>
             <div
               class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[200px] h-[200px] absolute bottom-[40px] right-[50px] z-[99] text-white p-[10px]">
               <p class="md:py-4 py-2 lg:text-[16px] text-[10px]">
@@ -34,7 +56,7 @@
               class="dets flex items-center justify-center w-[60px] h-[60px] rounded-full bg-[black]/90 absolute bottom-[30px] right-[40px] z-[100] text-white">
               <i class="ri-lightbulb-line bulb text-white text-[25px]"></i>
             </div>
-            <img class="w-full h-full object-cover" src="../images/index/4.webp" alt="" />
+            <img class="w-full h-full object-cover" src="../images/index/11.jpg" alt="" />
           </div>
       </div>
 
@@ -79,9 +101,284 @@
         <div class="flex justify-center items-center mt-12">
           <a href="/readMore">
             <button
-            class="px-10 py-2 text-[#00457b] bg-zinc-100/80 font-semibold border-2 border-[#00457b] hover:bg-[#003366] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
-            Read More
-          </button>
+              class="px-10 py-2 text-[#00457b] bg-zinc-100/80 font-semibold border-2 border-[#00457b] hover:bg-[#003366] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
+              Read More
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div id="page3b" class="w-full h-full  pb-10">
+        <div class="page7b">
+          <h1
+            class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
+            Academics</h1>
+          <p class="text-center lg:text-[1.5vw] md:text-[2vw] text-[3vw] leading-none px-4 pb-10">
+            Enhance intellectual growth via seminars, study groups, and debates that deepen subject knowledge.
+          </p>
+        </div>
+        <div class="swiper mySwiper6">
+          <div class="swiper-wrapper">
+            <% research.forEach(function(item) { %>
+              <div class="swiper-slide">
+                <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                  <div class="bg-zinc-200 w-full md:h-64 h-24">
+                    <img src="<%= item.image %>" alt="<%= item.title %>" class="w-full h-full object-cover" />
+                  </div>
+                  <div class="w-full h-fit">
+                    <h1 class="font-bold pt-4 pb-2 md:text-[1.5vw] text-[3.5vw] leading-none">
+                      Undergraduate Education
+                    </h1>
+                    <!-- <p class="md:text-[1vw] text-[3vw] leading-none md:pb-2 pb-2">
+                        Rich learning experiences that provide a broad liberal arts foundation and deep subject-area expertise
+                      </p> -->
+                    <p class="text-blue-500 md:text-[1.2vw] text-[3vw]">
+                      <a href="<%= item.link %>" target="_blank">checkout</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="flex justify-center items-center mt-12">
+          <a href="/readMore">
+            <button
+              class="px-10 py-2 text-[#00457b] bg-zinc-100/80 font-semibold border-2 border-[#00457b] hover:bg-[#003366] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
+              Read More
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div id="page7" class="w-full h-full  lg:pb-24 md:pb-16 pb-10">
+        <div class="page7b">
+          <h1
+            class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
+            Research</h1>
+          <p class="text-center lg:text-[1.5vw] md:text-[2vw] text-[3vw] leading-none px-4 mb-10">
+            Advancing discoveries that shape our world, well-being, and knowledge.
+          </p>
+        </div>
+
+        <div
+          class="flex md:flex-row flex-col justify-evenly border-b-2 border-t-2 border-black w-[90%] mx-auto py-10 my-10">
+          <div class=" pb-8 text-center">
+            <div class="flex text-center w-fit mx-auto">
+              <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] num" data-target="50">0</h1>
+              <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] ">+ Workshops</h1>
+            </div>
+            <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
+              Hands-on learning experiences to enhance skills.
+            </p>
+          </div>
+          <div class=" pb-8 text-center">
+            <div class="flex text-center w-fit mx-auto">
+              <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] num" data-target="30">0</h1>
+              <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] ">+ Seminars</h1>
+            </div>
+            <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
+              Insights from experts across various domains.
+            </p>
+          </div>
+          <div class=" pb-8 text-center">
+            <div class="flex text-center w-fit mx-auto">
+              <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] num" data-target="100">0</h1>
+              <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] ">+ Papers</h1>
+            </div>
+            <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
+              Advancing knowledge through groundbreaking research.
+            </p>
+            </p>
+          </div>
+        </div>
+
+        <div class="swiper mySwiper6">
+          <div class="swiper-wrapper">
+            <% research.forEach(function(item) { %>
+              <div class="swiper-slide">
+                <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                  <div class="bg-zinc-200 w-full md:h-64 h-24">
+                    <img src="<%= item.image %>" alt="<%= item.title %>" class="w-full h-full object-cover" />
+                  </div>
+                  <div class="w-full h-fit">
+                    <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                      <%= item.title %>
+                    </h1>
+                    <p class="text-blue-500 md:text-[1.2vw] text-[3vw]">
+                      <a href="<%= item.link %>" target="_blank">checkout</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="flex justify-center items-center mt-12">
+          <a href="/readMore">
+            <button
+              class="px-10 py-2 text-[#00457b] bg-zinc-100/80 font-semibold border-2 border-[#00457b] hover:bg-[#003366] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
+              Read More
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div id="page7b" class="w-full h-full  lg:pb-12 md:pb-16 pb-10">
+        <div class="page7b">
+          <h1
+            class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
+            Technical Clubs</h1>
+        </div>
+        <div class="swiper mySwiper6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                <div class="bg-zinc-200 w-full md:h-64 h-24">
+                  <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
+                </div>
+                <div class="w-full h-fit">
+                  <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                    Cripspr
+                  </h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <a href="/clubs/club">
+                <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                  <div class="bg-zinc-200 w-full md:h-64 h-24">
+                    <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
+                  </div>
+                  <div class="w-full h-fit">
+                    <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                      Cripspr
+                    </h1>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                <div class="bg-zinc-200 w-full md:h-64 h-24">
+                  <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
+                </div>
+                <div class="w-full h-fit">
+                  <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                    Cripspr
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                <div class="bg-zinc-200 w-full md:h-64 h-24">
+                  <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
+                </div>
+                <div class="w-full h-fit">
+                  <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                    Cripspr
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <div id="page7c" class="w-full h-full lg:pb-24 md:pb-16 pb-10">
+        <div class="page7c">
+          <h1
+            class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
+            Our Events</h1>
+        </div>
+        <div class="swiper mySwiper6">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                <div class="bg-zinc-200 w-full md:h-64 h-24">
+                  <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
+                </div>
+                <div class="w-full h-fit">
+                  <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                    Cripspr
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                <div class="bg-zinc-200 w-full md:h-64 h-24">
+                  <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
+                </div>
+                <div class="w-full h-fit">
+                  <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                    Cripspr
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                <div class="bg-zinc-200 w-full md:h-64 h-24">
+                  <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
+                </div>
+                <div class="w-full h-fit">
+                  <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                    Cripspr
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <div id="page9" class="w-full px-4 pb-20 bg-zinc-100/80">
+        <h1
+          class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-5">
+          Campus News
+        </h1>
+
+        <div class="swiper mySwiper4">
+          <div class="swiper-wrapper">
+            <% notification.forEach(notification=> { %>
+              <div class="swiper-slide">
+                <div class="bg-zinc-100/80 w-full h-full mb-10 overflow-hidden rounded-md event-box">
+                  <div class="w-full h-72">
+                    <img class="w-full h-full object-cover" src="<%= notification.image %>" alt="Notification Image" />
+                  </div>
+                  <h1 class="text-[#00457b] font-semibold lg:text-[1.2vw] md:text-[2vw] text-[5vw] pt-2">
+                    <%= notification.title %>
+                  </h1>
+                  <h1 class="px-4 text-white">
+                    <%= notification.date %>
+                  </h1>
+                  <% if (notification.link) { %>
+                    <div class=" pb-2">
+                      <a href="<%= notification.link %>" target="_blank" class="text-blue-500 hover:underline">
+                        Read Full Notification
+                      </a>
+                    </div>
+                    <% } %>
+                </div>
+              </div>
+              <% }); %>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="flex justify-center items-center mt-12">
+          <a href="/readMore">
+            <button
+              class="px-10 py-2 text-[#00457b] bg-zinc-100/80 font-semibold border-2 border-[#00457b] hover:bg-[#003366] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
+              Read More
+            </button>
           </a>
         </div>
       </div>
@@ -134,50 +431,113 @@
         </div>
       </div>
 
-      <div id="page3b" class="w-full h-full  pb-10">
-        <div class="page7b">
-          <h1
-          class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
-          Academics</h1>
-        <p class="text-center lg:text-[1.5vw] md:text-[2vw] text-[3vw] leading-none px-4 pb-10">
-          Enhance intellectual growth via seminars, study groups, and debates that deepen subject knowledge.
+      <div id="page8" class="page6b w-full lg:pb-30 pb-10 bg-zinc-100/80">
+        <h1 class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] uppercase pt-2">
+          Placements at Campus
+        </h1>
+        <p class="text-center lg:text-[1vw] md:text-[2vw] text-[3vw] leading-none px-4 mb-10">
+          About or Nearly 200 students from the campus sit for placements every
+          semester, of these almost 100% succeed in securing a job.
         </p>
-        </div>
-          <div class="swiper mySwiper6">
-            <div class="swiper-wrapper">
-              <% research.forEach(function(item) { %>
-                <div class="swiper-slide">
-                  <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
-                    <div class="bg-zinc-200 w-full md:h-64 h-24">
-                      <img src="<%= item.image %>" alt="<%= item.title %>" class="w-full h-full object-cover" />
-                    </div>
-                    <div class="w-full h-fit">
-                      <h1 class="font-bold pt-4 pb-2 md:text-[1.5vw] text-[3.5vw] leading-none">
-                        Undergraduate Education
-                      </h1>
-                      <!-- <p class="md:text-[1vw] text-[3vw] leading-none md:pb-2 pb-2">
-                        Rich learning experiences that provide a broad liberal arts foundation and deep subject-area expertise
-                      </p> -->
-                      <p class="text-blue-500 md:text-[1.2vw] text-[3vw]">
-                        <a href="<%= item.link %>" target="_blank">checkout</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <% }) %>
+        <div class="marquee-container overflow-hidden w-full">
+          <div class="marquee flex mb-10 flex lg:w-[200%] md:w-[300%] w-[600%] justify-evenly whitespace-nowrap">
+            <div class="marquee-content flex justify-evenly w-full">
+              <img class="h-12 object-contain" src="../images/logos/Accenture-Logo-3969515967.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Byju's_logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Infosys_logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Cisco-logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/nvidia-logo-vert.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Zscaler-Logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Network-18-logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Gold_Intuit.jpg" alt="" />
             </div>
-            <div class="swiper-pagination"></div>
+
+            <div class="marquee-content flex justify-evenly w-full">
+              <img class="h-12 object-contain" src="../images/logos/Accenture-Logo-3969515967.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Byju's_logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Infosys_logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Cisco-logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/nvidia-logo-vert.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Zscaler-Logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Network-18-logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Gold_Intuit.jpg" alt="" />
+            </div>
           </div>
-          <div class="flex justify-center items-center mt-12">
-            <a href="/readMore">
-              <button
-              class="px-10 py-2 text-[#00457b] bg-zinc-100/80 font-semibold border-2 border-[#00457b] hover:bg-[#003366] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
-              Read More
-            </button>
-            </a>
+          <div class="marquee2 flex lg:w-[200%] md:w-[300%] w-[600%] justify-evenly whitespace-nowrap">
+            <div class="marquee-content flex justify-evenly w-full">
+              <img class="h-12 object-contain" src="../images/logos/Accenture-Logo-3969515967.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Byju's_logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Infosys_logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Cisco-logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/nvidia-logo-vert.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Zscaler-Logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Network-18-logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Gold_Intuit.jpg" alt="" />
+            </div>
+
+            <div class="marquee-content flex justify-evenly w-full">
+              <img class="h-12 object-contain" src="../images/logos/Accenture-Logo-3969515967.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Byju's_logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Infosys_logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Cisco-logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/nvidia-logo-vert.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Zscaler-Logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Network-18-logo.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png" alt="" />
+              <img class="h-12 object-contain" src="../images/logos/Gold_Intuit.jpg" alt="" />
+            </div>
           </div>
         </div>
+      </div>
 
+      <div id="page10" class="w-full pb-20 bg-zinc-100/80">
+        <h1
+          class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-5">
+          OUR PARTNERS
+        </h1>
+        <div class="flex md:flex-row flex-col items-center justify-center gap-4">
+          <img class="w-50 object-fit translate-y-5 drop-shadow-2xl" src="../images/logos/unnamed-removebg-preview.png"
+            alt="" />
+          <img class="w-50 object-fit drop-shadow-2xl"
+            src="../images/logos/eba0b3f922fd6ab7e48e4ca07e727252-removebg-preview.png" alt="" />
+          <img class="w-84 object-fit drop-shadow-2xl" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png"
+            alt="" />
+        </div>
+      </div>
+
+      <div id="page11" class="w-full h-full px-4 lg:pb-20 pb-12 alumini">
+        <h1
+          class="main font-bold text-white text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-10">
+          STUDENT'S TESTIMONIAL
+        </h1>
+        <div class="lg:w-[90vw] lg:h-[95vh] w-[95%] h-[50%] mx-auto">
+        <div class="swiper mySwiper8">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="alumini-content">
+                  <div class="alumini-img bg-white"></div>
+                  <div class="alumini-name"><br>Dhanraj Mahurkar</div>
+                  <div class="alumini-branch">Software Engineer at Lowes</div>
+                  <div class="alumini-speaks"><br>"One of the best things that you will find here is an amazing peer group.The training and placement cell keeps you well informed about the various opportunities available. The teahers are helpful and easy to approach. We have projects every semester which helps to develop critical thinking."</div>
+              </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="alumini-content">
+                <div class="alumini-img bg-white"></div>
+                <div class="alumini-name"><br>Dhanraj Mahurkar</div>
+                <div class="alumini-branch">Software Engineer at Lowes</div>
+                <div class="alumini-speaks"><br>"One of the best things that you will find here is an amazing peer group.The training and placement cell keeps you well informed about the various opportunities available. The teahers are helpful and easy to approach. We have projects every semester which helps to develop critical thinking."</div>
+            </div>
+        </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+  </div>
+  
       <div id="page4" class="w-full h-fit md:pb-24 py-8 lg:pb-20">
         <h1
           class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-5">
@@ -253,7 +613,8 @@
                 <div
                   class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
                   <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
-                    Gym : It’s time to push limits, break a sweat, and unleash your inner strength! Whether you're lifting, running, or stretching, this is your space to grow, challenge yourself, and stay fit. 
+                    Gym : It’s time to push limits, break a sweat, and unleash your inner strength! Whether you're
+                    lifting, running, or stretching, this is your space to grow, challenge yourself, and stay fit.
                   </p>
                 </div>
                 <div
@@ -297,7 +658,9 @@
                 <div
                   class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
                   <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
-                    Hostel Mess : Get ready to fuel up with delicious meals, fresh flavors, and great company! Whether it's a hearty breakfast to kickstart your day or a comforting dinner after classes, we're here to serve you with love and energy! 
+                    Hostel Mess : Get ready to fuel up with delicious meals, fresh flavors, and great company! Whether
+                    it's a hearty breakfast to kickstart your day or a comforting dinner after classes, we're here to
+                    serve you with love and energy!
                   </p>
                 </div>
                 <div
@@ -310,7 +673,9 @@
                 <div
                   class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
                   <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
-                    Conference Room : A space for ideas to spark, discussions to thrive, and decisions to shape the future! Whether it’s a brainstorming session, a key meeting, or a collaborative event, let innovation and productivity take center stage. 
+                    Conference Room : A space for ideas to spark, discussions to thrive, and decisions to shape the
+                    future! Whether it’s a brainstorming session, a key meeting, or a collaborative event, let
+                    innovation and productivity take center stage.
                   </p>
                 </div>
                 <div
@@ -323,7 +688,9 @@
                 <div
                   class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
                   <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
-                    Amphitheater : Get ready for an experience like no other! From inspiring talks to electrifying performances, this is where creativity meets the spotlight. Sit back, engage, and let the magic unfold! 
+                    Amphitheater : Get ready for an experience like no other! From inspiring talks to electrifying
+                    performances, this is where creativity meets the spotlight. Sit back, engage, and let the magic
+                    unfold!
                   </p>
                 </div>
                 <div
@@ -336,7 +703,9 @@
                 <div
                   class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
                   <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
-                    3D Printer : Where imagination turns into reality—layer by layer! Whether you're prototyping, experimenting, or creating something groundbreaking, this is your space to innovate and bring ideas to life.  
+                    3D Printer : Where imagination turns into reality—layer by layer! Whether you're prototyping,
+                    experimenting, or creating something groundbreaking, this is your space to innovate and bring ideas
+                    to life.
                   </p>
                 </div>
                 <div
@@ -351,459 +720,8 @@
         </div>
       </div>
 
-      <div id="page7" class="w-full h-full  lg:pb-24 md:pb-16 pb-10">
-      <div class="page7b">
-        <h1
-        class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
-        Research</h1>
-      <p class="text-center lg:text-[1.5vw] md:text-[2vw] text-[3vw] leading-none px-4 mb-10">
-        Advancing discoveries that shape our world, well-being, and knowledge.
-      </p>
-      </div>
-
-      <div
-      class="flex md:flex-row flex-col justify-evenly border-b-2 border-t-2 border-black w-[90%] mx-auto py-10 my-10">
-      <div class=" pb-8 text-center">
-      <div class="flex text-center w-fit mx-auto">
-        <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] num" data-target="50">0</h1>
-        <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] " >+ Workshops</h1>
-      </div>
-        <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
-          Hands-on learning experiences to enhance skills.
-        </p>
-      </div>
-      <div class=" pb-8 text-center">
-        <div class="flex text-center w-fit mx-auto">
-          <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] num" data-target="30">0</h1>
-          <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] " >+ Seminars</h1>
-        </div>
-          <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
-            Insights from experts across various domains.
-          </p>
-        </div>
-        <div class=" pb-8 text-center">
-          <div class="flex text-center w-fit mx-auto">
-            <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] num" data-target="100">0</h1>
-            <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] " >+ Papers</h1>
-          </div>
-            <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
-              Advancing knowledge through groundbreaking research.
-            </p>
-            </p>
-          </div>
+      <%- include('./partials/footer') %>
     </div>
-    
-        <div class="swiper mySwiper6">
-          <div class="swiper-wrapper">
-            <% research.forEach(function(item) { %>
-              <div class="swiper-slide">
-                <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
-                  <div class="bg-zinc-200 w-full md:h-64 h-24">
-                    <img src="<%= item.image %>" alt="<%= item.title %>" class="w-full h-full object-cover" />
-                  </div>
-                  <div class="w-full h-fit">
-                    <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
-                      <%= item.title %>
-                    </h1>
-                    <p class="text-blue-500 md:text-[1.2vw] text-[3vw]">
-                      <a href="<%= item.link %>" target="_blank">checkout</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <% }) %>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-        <div class="flex justify-center items-center mt-12">
-          <a href="/readMore">
-            <button
-            class="px-10 py-2 text-[#00457b] bg-zinc-100/80 font-semibold border-2 border-[#00457b] hover:bg-[#003366] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
-            Read More
-          </button>
-          </a>
-        </div>
-      </div>
-
-      <div id="page7b" class="w-full h-full  lg:pb-12 md:pb-16 pb-10">
-        <div class="page7b">
-          <h1
-          class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
-          Technical Clubs</h1>
-        </div>
-          <div class="swiper mySwiper6">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
-                    <div class="bg-zinc-200 w-full md:h-64 h-24">
-                      <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
-                    </div>
-                    <div class="w-full h-fit">
-                      <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
-                       Cripspr
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-           
-                <div class="swiper-slide">
-                 <a href="/clubs/club">
-                  <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
-                    <div class="bg-zinc-200 w-full md:h-64 h-24">
-                      <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
-                    </div>
-                    <div class="w-full h-fit">
-                      <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
-                       Cripspr
-                      </h1>
-                    </div>
-                  </div>
-                 </a>
-                </div>
-                <div class="swiper-slide">
-                  <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
-                    <div class="bg-zinc-200 w-full md:h-64 h-24">
-                      <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
-                    </div>
-                    <div class="w-full h-fit">
-                      <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
-                       Cripspr
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
-                    <div class="bg-zinc-200 w-full md:h-64 h-24">
-                      <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
-                    </div>
-                    <div class="w-full h-fit">
-                      <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
-                       Cripspr
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-        <div id="page7b2" class="w-full h-full  lg:pb-12 md:pb-16 pb-10">
-          <div class="page7b">
-            <h1
-            class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
-            Cultural Clubs</h1>
-          </div>
-            <div class="swiper mySwiper6">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
-                    <div class="bg-zinc-200 w-full md:h-64 h-24">
-                      <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
-                    </div>
-                    <div class="w-full h-fit">
-                      <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
-                       Cripspr
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
-                    <div class="bg-zinc-200 w-full md:h-64 h-24">
-                      <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
-                    </div>
-                    <div class="w-full h-fit">
-                      <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
-                       Cripspr
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
-                    <div class="bg-zinc-200 w-full md:h-64 h-24">
-                      <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
-                    </div>
-                    <div class="w-full h-fit">
-                      <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
-                       Cripspr
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
-                    <div class="bg-zinc-200 w-full md:h-64 h-24">
-                      <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
-                    </div>
-                    <div class="w-full h-fit">
-                      <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
-                       Cripspr
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
-                    <div class="bg-zinc-200 w-full md:h-64 h-24">
-                      <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
-                    </div>
-                    <div class="w-full h-fit">
-                      <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
-                       Cripspr
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-        <div id="page7c" class="w-full h-full lg:pb-24 md:pb-16 pb-10">
-          <div class="page7c">
-            <h1
-            class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
-            Our Events</h1>
-          </div>
-            <div class="swiper mySwiper6">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
-                    <div class="bg-zinc-200 w-full md:h-64 h-24">
-                      <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
-                    </div>
-                    <div class="w-full h-fit">
-                      <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
-                       Cripspr
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
-                    <div class="bg-zinc-200 w-full md:h-64 h-24">
-                      <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
-                    </div>
-                    <div class="w-full h-fit">
-                      <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
-                       Cripspr
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
-                    <div class="bg-zinc-200 w-full md:h-64 h-24">
-                      <img src="../images/index/1692718014956.jpg" alt="image" class="w-full h-full object-cover" />
-                    </div>
-                    <div class="w-full h-fit">
-                      <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
-                       Cripspr
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-  
-
-          <div id="page9" class="w-full px-4 pb-20 bg-zinc-100/80">
-            <h1
-              class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-5">
-              Campus News
-            </h1>
-    
-            <div class="swiper mySwiper4">
-              <div class="swiper-wrapper">
-                <% notification.forEach(notification=> { %>
-                  <div class="swiper-slide">
-                    <div class="bg-zinc-100/80 w-full h-full mb-10 overflow-hidden rounded-md event-box">
-                      <div class="w-full h-72">
-                        <img class="w-full h-full object-cover" src="<%= notification.image %>" alt="Notification Image" />
-                      </div>
-                      <h1 class="text-[#00457b] font-semibold lg:text-[1.2vw] md:text-[2vw] text-[5vw] pt-2">
-                        <%= notification.title %>
-                      </h1>
-                      <h1 class="px-4 text-white">
-                        <%= notification.date %>
-                      </h1>
-                      <% if (notification.link) { %>
-                        <div class=" pb-2">
-                          <a href="<%= notification.link %>" target="_blank" class="text-blue-500 hover:underline">
-                            Read Full Notification
-                          </a>
-                        </div>
-                        <% } %>
-                    </div>
-                  </div>
-                  <% }); %>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-    
-            <div class="flex justify-center items-center mt-12">
-              <a href="/readMore">
-                <button
-                class="px-10 py-2 text-[#00457b] bg-zinc-100/80 font-semibold border-2 border-[#00457b] hover:bg-[#003366] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
-                Read More
-              </button>
-              </a>
-            </div>
-          </div>
-
-      <div id="page8" class="page6b w-full lg:pb-30 pb-10 bg-zinc-100/80">
-        <h1 class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] uppercase pt-2">
-          Placements at Campus
-        </h1>
-        <p class="text-center lg:text-[1vw] md:text-[2vw] text-[3vw] leading-none px-4 mb-10">
-          About or Nearly 200 students from the campus sit for placements every
-          semester, of these almost 100% succeed in securing a job.
-        </p>
-        <div class="marquee-container overflow-hidden w-full">
-          <div class="marquee flex mb-10 flex lg:w-[200%] md:w-[300%] w-[600%] justify-evenly whitespace-nowrap">
-            <div class="marquee-content flex justify-evenly w-full">
-              <img class="h-12 object-contain" src="../images/logos/Accenture-Logo-3969515967.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Byju's_logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Infosys_logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Cisco-logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/nvidia-logo-vert.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Zscaler-Logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Network-18-logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Gold_Intuit.jpg" alt="" />
-            </div>
-
-            <div class="marquee-content flex justify-evenly w-full">
-              <img class="h-12 object-contain" src="../images/logos/Accenture-Logo-3969515967.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Byju's_logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Infosys_logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Cisco-logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/nvidia-logo-vert.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Zscaler-Logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Network-18-logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Gold_Intuit.jpg" alt="" />
-            </div>
-          </div>
-          <div class="marquee2 flex lg:w-[200%] md:w-[300%] w-[600%] justify-evenly whitespace-nowrap">
-            <div class="marquee-content flex justify-evenly w-full">
-              <img class="h-12 object-contain" src="../images/logos/Accenture-Logo-3969515967.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Byju's_logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Infosys_logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Cisco-logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/nvidia-logo-vert.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Zscaler-Logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Network-18-logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Gold_Intuit.jpg" alt="" />
-            </div>
-
-            <div class="marquee-content flex justify-evenly w-full">
-              <img class="h-12 object-contain" src="../images/logos/Accenture-Logo-3969515967.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Byju's_logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Infosys_logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Cisco-logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/nvidia-logo-vert.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Zscaler-Logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Network-18-logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Gold_Intuit.jpg" alt="" />
-            </div>
-          </div>
-          <div class="marquee flex my-10 flex lg:w-[200%] md:w-[300%] w-[600%] justify-evenly whitespace-nowrap">
-            <div class="marquee-content flex justify-evenly w-full">
-              <img class="h-12 object-contain" src="../images/logos/Accenture-Logo-3969515967.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Byju's_logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Infosys_logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Cisco-logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/nvidia-logo-vert.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Zscaler-Logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Network-18-logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Gold_Intuit.jpg" alt="" />
-            </div>
-
-            <div class="marquee-content flex justify-evenly w-full">
-              <img class="h-12 object-contain" src="../images/logos/Accenture-Logo-3969515967.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Byju's_logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Infosys_logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Cisco-logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/nvidia-logo-vert.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Zscaler-Logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Network-18-logo.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png" alt="" />
-              <img class="h-12 object-contain" src="../images/logos/Gold_Intuit.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="page10" class="w-full pb-20 bg-zinc-100/80">
-        <h1
-          class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-5">
-          OUR PARTNERS
-        </h1>
-        <div class="flex md:flex-row flex-col items-center justify-center gap-4">
-          <img class="w-50 object-fit translate-y-5 drop-shadow-2xl" src="../images/logos/unnamed-removebg-preview.png"
-            alt="" />
-          <img class="w-50 object-fit drop-shadow-2xl"
-            src="../images/logos/eba0b3f922fd6ab7e48e4ca07e727252-removebg-preview.png" alt="" />
-          <img class="w-84 object-fit drop-shadow-2xl" src="../images/logos/Tata_Consultancy_Services_Logo.svg.png"
-            alt="" />
-        </div>
-      </div>
-
-      
-      <div id="page11" class="w-full h-full px-4 lg:pb-20 pb-12 bg-zinc-100/80">
-        <h1
-          class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-10">
-          STUDENT'S TESTIMONIAL
-        </h1>
-
-        <div class="swiper mySwiper2">
-          <div class="swiper-wrapper">
-            <% studentTestimonial.forEach(testimonial=> { %>
-              <div class="swiper-slide">
-                <div class="bg-zinc-200 w-full h-full flex items-center justify-evenly mb-10 rounded-md px-2">
-                  <div class="w-16 h-16 rounded-full overflow-hidden">
-                    <img class="w-full h-full object-cover" src="  <%= testimonial.image %>" alt="" />
-                  </div>
-                  <div class="py-10 w-[75%]">
-                    <h1 class="lg:text-[2vw] md:text-[2.5vw] text-[4vw] leading-none font-bold">
-                      <%= testimonial.name %>
-                    </h1>
-                    <p class="lg:text-[1vw] md:text-[1.6vw] text-[3vw] leading-none">
-                      <%= testimonial.content %>
-                    </p>
-                    <% if (testimonial.link) { %>
-                      <a href="<%= testimonial.link %>" target="_blank" class="text-blue-600 hover:underline">
-                        Read Full Testimonial
-                      </a>
-                      <% } %>
-                  </div>
-                </div>
-              </div>
-              <% }); %>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-        <div class="flex justify-center items-center mt-12">
-          <a href="/readMore">
-            <button
-            class="px-10 py-2 text-[#00457b] bg-zinc-100/80 font-semibold border-2 border-[#00457b] hover:bg-[#003366] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
-            Read More
-          </button>
-          </a>
-        </div>
-      </div>
-
-    <%- include('./partials/footer') %>
-      </div>
   </body>
 
   <%- include('./partials/tail') %>
