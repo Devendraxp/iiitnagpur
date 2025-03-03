@@ -13,6 +13,35 @@ function swiper() {
     // },
   });
 
+  var swiper = new Swiper(".mySwiper6", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
+
   var swiper = new Swiper(".mySwiper6b", {
     slidesPerView: 5,
     spaceBetween: 30,
