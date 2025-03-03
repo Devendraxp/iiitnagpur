@@ -394,6 +394,7 @@ router
   .post(async (req, res) => {
     try {
       const { data } = req.body;
+      console.log(req.body)
       const newData = new StudentTestimonial(data);
       await newData.save();
       res.redirect("/admin/student-testimonial");
