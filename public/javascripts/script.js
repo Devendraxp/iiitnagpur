@@ -104,8 +104,21 @@ function swiper() {
   var swiper = new Swiper(".mySwiper5", {
     loop: true,
     autoplay: {
-      delay: 3000,
+      delay: 5000,
       disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      dynamicBullets: true,
+      clickable: true,
+    },
+  });
+  
+  var swiper = new Swiper(".mySwiper8", {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true,
     },
     pagination: {
       el: ".swiper-pagination",
@@ -366,153 +379,6 @@ function nav() {
           </div>
         `,
         department: `
-          <div class="flex justify-between py-2">
-            <div class="w-[18%]">
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
-                <a href="#">Basic Sciences</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/about-department">About Department</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/bos">BoS</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/achievements">Achievements</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/research">Research</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/faculty">Faculty</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/staff">Staff</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/projects">Projects</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/laboratory">Laboratory</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/basic-science/events">Events</a>
-              </h1>
-            </div>
-            <div class="w-[18%]">
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white border-b-2 border-[#00457b]/20">
-                <a href="#">Computer Science & Eng...</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/about-department">About Department</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/bos">BoS</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/achievements">Achievements</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/research">Research</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/faculty">Faculty</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/staff">Staff</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/projects">Projects</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/laboratory">Laboratory</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/computer-science-eng/events">Events</a>
-              </h1>
-            </div>
-            <div class="w-[18%]">
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
-                <a href="#">Electronics & Communication Eng...</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/about-department">About Department</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/bos">BoS</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/achievements">Achievements</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/research">Research</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/faculty">Faculty</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/staff">Staff</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/projects">Projects</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/laboratory">Laboratory</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/electronics-communication-eng/events">Events</a>
-              </h1>
-            </div>
-            <div class="w-[18%]">
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
-                <a href="#">Doctoral Programme</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/doctoral-programme/overview">Overview of PhD Programmee</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/doctoral-programme/features">Doctoral Programme Features</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/doctoral-programme/research-areas">Research Areas</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/doctoral-programme/operational-details">Operational Details</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/doctoral-programme/proformas">Important Proformas</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/doctoral-programme/checklists">Checklists</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/doctoral-programme/contact-us">Contact Us</a>
-              </h1>
-            </div>
-            <div class="w-[18%]">
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
-                <a href="#">Programs</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/programs/btech">B.Tech</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/programs/pg-diploma">PG Diploma</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/programs/phd">PHD</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/programs/mtech">M.Tech</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/programs/curriculum">Curriculum</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/department/programs/reports">Reports</a>
-              </h1>
-            </div>
-          </div>
         `,
         admissions: `
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
