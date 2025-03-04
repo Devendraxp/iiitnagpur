@@ -189,6 +189,21 @@ function swiper() {
       },
     });
   
+    const icons = document.querySelector(".icons2");
+    gsap.to(".icons2 i", {
+      color: "#00508a",
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: ".banner",
+        scroller: "body",
+        // markers:true,
+        start: "top -10%",
+        end: "top -11%",
+        scrub: 1,
+      },
+    });
+
+    
     gsap.to(".overlay", {
       backgroundColor: "#fff",
       // backdropFilter: "blur(10px)",

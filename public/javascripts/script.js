@@ -419,6 +419,9 @@ function nav() {
                 <a href="#>Committee</a>
               </h1>
               <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+                <a href="/governance/board-of-governors">Committee</a>
+              </h1>
+                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
                 <a href="/governance/board-of-governors">Board of Governors</a>
               </h1>
               <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
@@ -471,13 +474,13 @@ function nav() {
         `,
         alumni: `
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-            <a href="/alumni/members">Members</a>
+            <a href="/alumni/Member">Members</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-            <a href="/alumni/member-login">Member Login</a>
+            <a href="/alumni/MemberLogin">Member Login</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-            <a href="/alumni/about-us">About Us</a>
+            <a href="/alumni/AboutUs">About Us</a>
           </h1>
         `,
         placements: `

@@ -124,13 +124,30 @@ app.get("/student/:page", (req, res) => {
 });
 
 // Basic Science Routes
-app.get("/basic-science", (req, res) => {
+app.get("/department", (req, res) => {
   res.redirect("/basic-science/about-department");
 });
 app.get("/basic-science/:page", (req, res) => {
   const { page } = req.params;
   res.render(`BasicScience/${page}`);
 });
+
+app.get("/alumni", (req, res) => {
+  res.redirect("/alumni/AbousUs");
+});
+app.get("/alumni/:page", (req, res) => {
+  const { page } = req.params;
+  res.render(`alumni/${page}`);
+});
+
+app.get("/others", (req, res) => {
+  res.redirect("/others/consultancy");
+});
+app.get("/others/:page", (req, res) => {
+  const { page } = req.params;
+  res.render(`others/${page}`);
+});
+
 
 // readMore Routes
 app.get("/readMore", async (req, res) => {
