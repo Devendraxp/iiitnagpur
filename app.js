@@ -277,32 +277,29 @@ app.get("/:id", (req, res) => {
 
 
 
+// Fetch all achievements
 app.get("/admin/deptAchievement", async (req, res) => {
   try {
-    const achievements = await DeptAchievement.find(); // Fetch from MongoDB
+    const achievements = await DeptAchievement.find();
     res.render("admin/deptAchievement/index", { data: achievements });
   } catch (error) {
     console.error("Error fetching achievements:", error);
     res.status(500).json({ error: "Failed to load department achievements." });
   }
 });
+
+// Render new achievement form
 app.get("/admin/deptAchievement/new", (req, res) => {
   res.render("admin/deptAchievement/new");
 });
 
+// Create new achievement
 app.post("/admin/deptAchievement/new", async (req, res) => {
   try {
-    const { title, year, description, department } = req.body; 
-
-    const newData = new DeptAchievement({
-      title,
-      year,
-      description,
-      department,
-    });
+    const { title, year, description, department } = req.body;
+    const newData = new DeptAchievement({ title, year, description, department });
 
     await newData.save();
-
     res.redirect("/admin/deptAchievement");
   } catch (error) {
     console.error("Error saving achievement:", error);
@@ -310,11 +307,16 @@ app.post("/admin/deptAchievement/new", async (req, res) => {
   }
 });
 
+// Render edit form
 app.get("/admin/deptAchievement/edit/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    
     const achievement = await DeptAchievement.findById(id);
+
+    if (!achievement) {
+      return res.status(404).json({ error: "Achievement not found." });
+    }
+
     res.render("admin/deptAchievement/update", { achievement });
   } catch (error) {
     console.error("Error loading achievement for editing:", error);
@@ -322,10 +324,15 @@ app.get("/admin/deptAchievement/edit/:id", async (req, res) => {
   }
 });
 
+// Update achievement
 app.post("/admin/deptAchievement/edit/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    await DeptAchievement.findByIdAndUpdate(id, req.body, { new: true });
+    const updatedAchievement = await DeptAchievement.findByIdAndUpdate(id, req.body, { new: true });
+
+    if (!updatedAchievement) {
+      return res.status(404).json({ error: "Achievement not found." });
+    }
 
     res.redirect("/admin/deptAchievement");
   } catch (error) {
@@ -334,15 +341,20 @@ app.post("/admin/deptAchievement/edit/:id", async (req, res) => {
   }
 });
 
-
+// Delete achievement
 app.delete("/admin/deptAchievement/:id", async (req, res) => {
   const { id } = req.params;
   try {
-   await DeptAchievement.findByIdAndDelete(id);
-    res.redirect("/admin/deptAchievement");
+    const deletedAchievement = await DeptAchievement.findByIdAndDelete(id);
+
+    if (!deletedAchievement) {
+      return res.status(404).json({ error: "Achievement not found." });
+    }
+
+    res.json({ message: "Deleted successfully" }); // Use JSON response for AJAX
   } catch (error) {
     console.error("Error deleting department achievement:", error);
-    res.status(500).json({ error: "Failed to delete  department achievement." });
+    res.status(500).json({ error: "Failed to delete department achievement." });
   }
 });
 

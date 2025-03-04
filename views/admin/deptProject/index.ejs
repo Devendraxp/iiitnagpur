@@ -2,7 +2,7 @@
 
 <body>
     <div class="container mt-4">
-        <h2 class="p-4 text-center">📂 Department Projects</h2>
+        <h2 class="p-4 text-center"> Department Projects</h2>
         
         <!-- Add New Project Button -->
         <div class="d-flex justify-content-end p-4">
@@ -30,8 +30,10 @@
                         <!-- Project Details -->
                         <p class="card-text"><strong> Faculty:</strong> <%= item.faculty %></p>
                         <p class="card-text"><strong>Sponsoring Agency:</strong> <%= item.sponsoringAgency %></p>
-                        <p class="card-text"><strong> Funding Amount:</strong> ₹<%= item.fundingAmount.toLocaleString() %></p>
-                        
+                        <p class="card-text"><strong> Funding Amount:</strong> 
+                            ₹<%= item.fundingAmount ? item.fundingAmount.toLocaleString() : "N/A" %>
+                          </p>
+                                                  
                         <!-- Action Buttons -->
                         <div class="d-flex gap-2">
                             <a href="/admin/deptProject/edit/<%= item._id %>" class="btn btn-warning">Edit</a>

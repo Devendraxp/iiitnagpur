@@ -1,63 +1,57 @@
-<div class="container mt-5">
-    <div class="card shadow-lg border-0 rounded-3">
-        <!-- Card Header -->
-        <div class="card-header bg-primary text-white text-center py-3">
-            <h3 class="mb-0"><i class="fas fa-folder-plus"></i> Add New Department Project</h3>
-        </div>
+<% layout('./admin/layout/boilerplate.ejs') -%>
 
-        <!-- Card Body -->
-        <div class="card-body p-4">
-            <form action="/admin/deptProject/new" method="POST">
-                
-                <!-- Faculty -->
-                <div class="mb-3">
-                    <label class="form-label fw-bold">👨‍🏫 Faculty</label>
-                    <input type="text" name="faculty" class="form-control shadow-sm" placeholder="Enter faculty name" required>
-                </div>
+<body>
+    <div class="container mt-4">
+        <h2 class="p-4 text-center"> Add New Department Project</h2>
+        <form action="/admin/deptProject/new" method="POST">
 
-                <!-- Title of Project -->
-                <div class="mb-3">
-                    <label class="form-label fw-bold">📌 Title of Project</label>
-                    <input type="text" name="titleofProject" class="form-control shadow-sm" placeholder="Enter project title" required>
-                </div>
+            <!-- Faculty -->
+            <div class="mb-3">
+                <label class="form-label">Faculty</label>
+                <input type="text" name="faculty" class="form-control" placeholder="Enter faculty name" required>
+            </div>
 
-                <!-- Year -->
-                <div class="mb-3">
-                    <label class="form-label fw-bold">📅 Year</label>
-                    <input type="text" name="year" class="form-control shadow-sm" placeholder="Enter year (e.g., 2025)" required>
-                </div>
+            <!-- Title of Project -->
+            <div class="mb-3">
+                <label class="form-label">Title of Project</label>
+                <input type="text" name="titleofProject" class="form-control" placeholder="Enter project title" required>
+            </div>
 
-                <!-- Sponsoring Agency -->
-                <div class="mb-3">
-                    <label class="form-label fw-bold">🏢 Sponsoring Agency</label>
-                    <input type="text" name="sponsoringAgency" class="form-control shadow-sm" placeholder="Enter sponsoring agency" required>
-                </div>
+            <!-- Year -->
+            <div class="mb-3">
+                <label class="form-label">Year</label>
+                <input type="text" name="year" class="form-control" placeholder="Enter year (e.g., 2025)" required>
+            </div>
 
-                <!-- Funding Amount -->
-                <div class="mb-3">
-                    <label class="form-label fw-bold">💰 Funding Amount</label>
-                    <input type="number" name="fundingAmount" class="form-control shadow-sm" placeholder="Enter funding amount" required>
-                </div>
+            <!-- Sponsoring Agency -->
+            <div class="mb-3">
+                <label class="form-label">Sponsoring Agency</label>
+                <input type="text" name="sponsoringAgency" class="form-control" placeholder="Enter sponsoring agency" required>
+            </div>
 
-                <!-- Department -->
-                <div class="mb-3">
-                    <label class="form-label fw-bold">🏛️ Department</label>
-                    <select name="department" class="form-select shadow-sm" required>
-                        <option value="" disabled selected>Select Department</option>
-                        <option value="bs">Basic Sciences</option>
-                        <option value="cse">Computer Science & Engineering</option>
-                        <option value="ece">Electronics & Communication Engineering</option>
-                    </select>
-                </div>
+            <!-- Funding Amount -->
+            <div class="mb-3">
+                <label class="form-label">Funding Amount</label>
+                <input type="number" name="fundingAmount" class="form-control" placeholder="Enter funding amount" required>
+            </div>
 
-                <!-- Submit Button -->
-                <div class="d-grid">
-                    <button type="submit" class="btn btn-success btn-lg fw-bold shadow-sm">
-                        <i class="fas fa-plus-circle"></i> Add Project
-                    </button>
-                </div>
+            <!-- Department -->
+            <div class="mb-3">
+                <label class="form-label">Department</label>
+                <select name="department" class="form-control" required>
+                    <option value="" disabled selected>Select Department</option>
+                    <option value="bs">Basic Sciences</option>
+                    <option value="cse">Computer Science & Engineering</option>
+                    <option value="ece">Electronics & Communication Engineering</option>
+                </select>
+            </div>
 
-            </form>
-        </div>
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-success">
+                <i class="fas fa-plus-circle"></i> Add Project
+            </button>
+            <a href="/admin/deptProject" class="btn btn-secondary">Cancel</a>
+
+        </form>
     </div>
-</div>
+</body>

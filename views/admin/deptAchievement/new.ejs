@@ -2,49 +2,34 @@
 
 <body>
     <div class="container mt-4">
-        <h2 class="p-4">Add New Department Project</h2>
-        <form action="/admin/deptProject/new" method="POST">
-            
-            <div class="mb-3">
-                <label for="faculty" class="form-label">Faculty</label>
-                <input type="text" class="form-control" id="faculty" name="faculty" required>
-            </div>
+        <h2 class="p-4">Add New Achievement</h2>
+        <div class="card p-4">
+            <form action="/admin/deptAchievement/new" method="POST">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="year" class="form-label">Year</label>
+                    <input type="number" class="form-control" id="year" name="year" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold"> Department</label>
+                    <select name="department" class="form-select shadow-sm" required>
+                        <option value="" disabled selected>Select Department</option>
+                        <option value="bs">Basic Sciences</option>
+                        <option value="cse">Computer Science & Engineering</option>
+                        <option value="ece">Electronics & Communication Engineering</option>
+                    </select>
+                </div>
 
-            <div class="mb-3">
-                <label for="titleofProject" class="form-label">Title of Project</label>
-                <input type="text" class="form-control" id="titleofProject" name="titleofProject" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="year" class="form-label">Year</label>
-                <input type="text" class="form-control" id="year" name="year" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="sponsoringAgency" class="form-label">Sponsoring Agency</label>
-                <input type="text" class="form-control" id="sponsoringAgency" name="sponsoringAgency" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="fundingAmount" class="form-label">Funding Amount</label>
-                <input type="number" class="form-control" id="fundingAmount" name="fundingAmount" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="department" class="form-label">Department</label>
-                <select class="form-control" id="department" name="department" required>
-                    <option value="" disabled selected>Select Department</option>
-                    <option value="bs">Basic Sciences</option>
-                    <option value="cse">Computer Science & Engineering</option>
-                    <option value="ece">Electronics & Communication Engineering</option>
-                </select>
-            </div>
-
-            <div class="d-flex gap-2">
-                <button type="submit" class="btn btn-primary">Save Project</button>
-                <a href="/admin/deptProject" class="btn btn-secondary">Cancel</a>
-            </div>
-            
-        </form>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Achievement</button>
+                <a href="/admin/deptAchievement" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
     </div>
 </body>
