@@ -2,7 +2,6 @@ import express from "express";
 import Achievement from "../../models/achievements.model.js";
 import methodOverride from "method-override";
 const router = express.Router();
-const PORT = 8080;
 
 router.use(methodOverride("_method"));
 router.use(express.json());

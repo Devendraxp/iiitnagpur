@@ -12,6 +12,9 @@ import Research from "./models/research.model.js";
 import Faculty from "./models/faculty.model.js";
 import Image from "./models/imageSchema.js";
 import adminRoute from "./routes/admin/index.routes.js";
+import studentRoute from "./routes/student.routes.js"
+import programRoute from "./routes/program.routes.js"
+import alumniRoute from "./routes/alumni.routes.js"
 import Admin from "./models/admin.model.js";
 import session from "express-session";
 import MongoStore from "connect-mongo";
@@ -104,6 +107,10 @@ app.get("/", async (_, res) => {
 });
 
 app.use("/admin", adminRoute);
+app.use("/student", studentRoute);
+app.use("/program", programRoute);
+app.use("/alumni",alumniRoute);
+
 
 app.get("/admin-login", (_, res) => {
   res.render("admin/login");
@@ -112,15 +119,6 @@ app.get("/admin-login", (_, res) => {
 // About Us Routes
 app.get("/aboutUs", (req, res) => {
   res.render("aboutUs");
-});
-
-// Student Routes
-app.get("/student", (req, res) => {
-  res.redirect("/student/Achievements");
-});
-app.get("/student/:page", (req, res) => {
-  const { page } = req.params;
-  res.render(`student/${page}`);
 });
 
 // Basic Science Routes
