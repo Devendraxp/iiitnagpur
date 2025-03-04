@@ -1,0 +1,33 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+
+<body>
+    <div class="container mt-4">
+        <h2 class="p-4 text-center">✏️ Edit Department Event</h2>
+        <form action="/admin/deptEvent/edit/<%= event._id %>" method="POST">
+            
+            <div class="mb-3">
+                <label class="form-label">Year</label>
+                <input type="text" name="year" class="form-control" value="<%= event.year %>" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea name="description" class="form-control" rows="3" required><%= event.description %></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Department</label>
+                <select name="department" class="form-control" required>
+                    <option value="bs" <%= event.department === "bs" ? "selected" : "" %>>Basic Sciences</option>
+                    <option value="cse" <%= event.department === "cse" ? "selected" : "" %>>Computer Science & Engineering</option>
+                    <option value="ece" <%= event.department === "ece" ? "selected" : "" %>>Electronics & Communication Engineering</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i> Update Event
+            </button>
+            <a href="/admin/deptEvent" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>
