@@ -1,0 +1,97 @@
+<%- include('../partials/head2') %>
+
+    <body>
+        <%- include('../partials/nav') %>
+            <div class="pb-20 w-full min-h-screen bg-white text-[#00457b]">
+                <div class="w-full lg:h-[100px] md:h-[70px] h-[60px]"></div>
+
+
+                <div
+                    class="routes w-full px-6 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#00457b] py-3 md:py-5">
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Home <i class="ri-arrow-right-s-line text-md"></i>
+                    </a>
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Others <i class="ri-arrow-right-s-line text-md"></i>
+                    </a>
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Tenders
+
+                    </a>
+                </div>
+                <!-- Main Content -->
+                <div class="border-4 border-[#00457b] md:m-10 m-8 pb-10 text-black">
+                    <div class="px-4 md:px-20 lg:px-40 mt-8 md:mt-16 mb-8 md:mb-10">
+                        <h1 class="text-lg md:text-2xl uppercase font-bold text-[#00457b]">Tenders
+                        </h1>
+                        <div class="w-full h-[1px] bg-[#00457b] mt-2"></div>
+                        <div class="overflow-x-auto p-4">
+                            <table class="w-full border-collapse border border-gray-300 shadow-md rounded-lg">
+                                <thead class="bg-[#00457b] text-white">
+                                    <tr>
+                                        <th class="px-4 py-3 border border-gray-600">Sr. No.</th>
+                                        <th class="px-4 py-3 border border-gray-600">Tender Particular</th>
+                                        <th class="px-4 py-3 border border-gray-600">Document Download</th>
+                                        <th class="px-4 py-3 border border-gray-600">Last Date of Submission</th>
+                                        <th class="px-4 py-3 border border-gray-600">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-gray-100">
+                                    <tr class="hover:bg-gray-200">
+                                        <td class="px-4 py-3 border border-gray-400">1</td>
+                                        <td class="px-4 py-3 border border-gray-400">Facility Management Service for Providing Housekeeping Services at IIIT, Nagpur Campus through GeM Portal (Bid No: GEM/2025/B/6004344 Dated: 04-03-2025)</td>
+                                        <td class="px-4 py-3 border border-gray-400 text-blue-600 hover:underline"><a href="TenderDocument.pdf">Download</a></td>
+                                        <td class="px-4 py-3 border border-gray-400">2025-03-25</td>
+                                        <td class="px-4 py-3 border border-gray-400 text-green-600 font-semibold">Active</td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-200">
+                                        <td class="px-4 py-3 border border-gray-400">2</td>
+                                        <td class="px-4 py-3 border border-gray-400">Providing Security Services at IIIT, Nagpur Campus through GeM Portal (Bid No: GEM/2025/B/5973191 Dated: 04-03-2025)</td>
+                                        <td class="px-4 py-3 border border-gray-400 text-blue-600 hover:underline"><a href="TenderDocument.pdf">Download</a></td>
+                                        <td class="px-4 py-3 border border-gray-400">2025-03-25</td>
+                                        <td class="px-4 py-3 border border-gray-400 text-green-600 font-semibold">Active</td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-200">
+                                        <td class="px-4 py-3 border border-gray-400">3</td>
+                                        <td class="px-4 py-3 border border-gray-400">Supply, Installation, Testing and Commissioning of Video Conferencing Setup at IIIT Nagpur through GeM Portal (Bid No: GEM/2025/B/6001484 Dated: 04-03-2025)</td>
+                                        <td class="px-4 py-3 border border-gray-400 text-blue-600 hover:underline"><a href="TenderDocument.pdf">Download</a></td>
+                                        <td class="px-4 py-3 border border-gray-400">2025-03-25</td>
+                                        <td class="px-4 py-3 border border-gray-400 text-green-600 font-semibold">Active</td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-200">
+                                        <td class="px-4 py-3 border border-gray-400">4</td>
+                                        <td class="px-4 py-3 border border-gray-400">Corrigendum of Appointment of Licensee for Leasing of Shop and Providing Photocopying Service at IIIT Nagpur (Bid No: IIITN/ADMIN/EoI-SS/Service/2024-25/02 Dated: 13-02-2025)</td>
+                                        <td class="px-4 py-3 border border-gray-400 text-blue-600 hover:underline"><a href="TenderDocument.pdf">Download</a></td>
+                                        <td class="px-4 py-3 border border-gray-400">2025-03-07</td>
+                                        <td class="px-4 py-3 border border-gray-400 text-green-600 font-semibold">Active</td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-200">
+                                        <td class="px-4 py-3 border border-gray-400">5</td>
+                                        <td class="px-4 py-3 border border-gray-400">Cancellation Notice for the Providing Housekeeping Services at IIIT Nagpur (GEM/2024/B/5761878)</td>
+                                        <td class="px-4 py-3 border border-gray-400 text-blue-600 hover:underline"><a href="TenderDocument.pdf">Download</a></td>
+                                        <td class="px-4 py-3 border border-gray-400">2025-02-25</td>
+                                        <td class="px-4 py-3 border border-gray-400 text-green-600 font-semibold">Active</td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-200">
+                                        <td class="px-4 py-3 border border-gray-400">6</td>
+                                        <td class="px-4 py-3 border border-gray-400">EoI for Setting up & Running a Men’s Salon at Hostel, IIIT Nagpur (Bid No: IIITN/ADMIN/EoI-MS/Service/2024-25/03)</td>
+                                        <td class="px-4 py-3 border border-gray-400 text-blue-600 hover:underline"><a href="TenderDocument.pdf">Download</a></td>
+                                        <td class="px-4 py-3 border border-gray-400">2025-03-05</td>
+                                        <td class="px-4 py-3 border border-gray-400 text-green-600 font-semibold">Active</td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-200">
+                                        <td class="px-4 py-3 border border-gray-400">7</td>
+                                        <td class="px-4 py-3 border border-gray-400">Appointment of Licensee for Leasing of Shop and Providing Photocopying Service at IIIT Nagpur (Bid No: IIITN/ADMIN/EoI-SS/Service/2024-25/02 Dated: 13-02-2025)</td>
+                                        <td class="px-4 py-3 border border-gray-400 text-blue-600 hover:underline"><a href="TenderDocument.pdf">Download</a></td>
+                                        <td class="px-4 py-3 border border-gray-400">2025-02-27</td>
+                                        <td class="px-4 py-3 border border-gray-400 text-green-600 font-semibold">Active</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                          
+                    </div>
+                </div>
+                <%- include('../partials/footer') %>
+    </body>
+    <%- include('../partials/tail2') %>
