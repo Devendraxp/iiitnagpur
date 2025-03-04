@@ -2,7 +2,7 @@
 
 <body>
     <h2 class="mb-3">Update Image</h2>
-    <form action="/admin/media/edit/<%= data._id %>?_method=PATCH" method="POST" enctype="multipart/form-data">
+    <form action="/admin/media/<%= data._id %>?_method=PATCH" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" value="<%= data.title %>" name="title" id="title" class="form-control" required>
