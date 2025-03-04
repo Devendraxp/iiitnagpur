@@ -17,13 +17,21 @@ import session from "express-session";
 import MongoStore from "connect-mongo";
 import passport from "passport";
 import passportLocal from "passport-local";
+import path from "path";
+import Department from "./models/department.model.js";
+import DeptAchievement from "./models/deptAchievement.model.js";
+import DeptProject from "./models/deptProject.model.js";
+import DeptEvents from "./models/deptEvents.model.js";
 
-const PORT = 8000;
+const PORT = 8080;
 const app = express();
 
 // Define __dirname and __filename for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+const DeptAchievement_File = path.join(__dirname, "database", "data", "departmentAchievement.json");
+const DeptProject_File=path.join(__dirname,"database","data","departmentProject.json");
+
 
 // Middleware
 app.use(methodOverride("_method"));
@@ -229,6 +237,234 @@ app.get("/more/:id", (req, res) => {
 app.get("/:id", (req, res) => {
   res.render("error404");
 });
+
+
+
+
+app.get("/admin/deptAchievement", async (req, res) => {
+  try {
+    const achievements = await DeptAchievement.find(); // Fetch from MongoDB
+    res.render("admin/deptAchievement/index", { data: achievements });
+  } catch (error) {
+    console.error("Error fetching achievements:", error);
+    res.status(500).json({ error: "Failed to load department achievements." });
+  }
+});
+app.get("/admin/deptAchievement/new", (req, res) => {
+  res.render("admin/deptAchievement/new");
+});
+
+app.post("/admin/deptAchievement/new", async (req, res) => {
+  try {
+    const { title, year, description, department } = req.body; 
+
+    const newData = new DeptAchievement({
+      title,
+      year,
+      description,
+      department,
+    });
+
+    await newData.save();
+
+    res.redirect("/admin/deptAchievement");
+  } catch (error) {
+    console.error("Error saving achievement:", error);
+    res.status(500).json({ error: "Failed to save department achievement." });
+  }
+});
+
+app.get("/admin/deptAchievement/edit/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    const achievement = await DeptAchievement.findById(id);
+    res.render("admin/deptAchievement/update", { achievement });
+  } catch (error) {
+    console.error("Error loading achievement for editing:", error);
+    res.status(500).json({ error: "Failed to load achievement for editing." });
+  }
+});
+
+app.post("/admin/deptAchievement/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    await DeptAchievement.findByIdAndUpdate(id, req.body, { new: true });
+
+    res.redirect("/admin/deptAchievement");
+  } catch (error) {
+    console.error("Error updating achievement:", error);
+    res.status(500).json({ error: "Failed to update achievement." });
+  }
+});
+
+
+app.delete("/admin/deptAchievement/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+   await DeptAchievement.findByIdAndDelete(id);
+    res.redirect("/admin/deptAchievement");
+  } catch (error) {
+    console.error("Error deleting department achievement:", error);
+    res.status(500).json({ error: "Failed to delete  department achievement." });
+  }
+});
+
+
+
+
+//routes for department project
+app.get("/admin/deptProject", async (req, res) => {
+ try{
+  const projects= await DeptProject.find();
+  res.render("admin/deptProject/index",{data:projects})
+ }catch(error){
+  console.error("Error fetching projects:", error);
+    res.status(500).json({ error: "Failed to load department projects." });
+ }
+});
+
+app.get("/admin/deptProject/new", (req, res) => {
+  res.render("admin/deptProject/new");
+});
+
+
+app.post("/admin/deptProject/new", async (req, res) => {
+  try {
+    const { faculty, titleofProject, year, sponsoringAgency, fundingAmount, department } = req.body;
+
+    if (!department) {
+      return res.status(400).send("Department field is required.");
+    }
+
+    const newData = new DeptProject({
+      faculty,
+      titleofProject,
+      year,
+      sponsoringAgency,
+      fundingAmount,
+      department,  
+    });
+
+
+    await newData.save();
+
+    res.redirect("/admin/deptProject");
+  } catch (error) {
+    console.error("Error saving project:", error);
+    res.status(500).json({ error: "Failed to save department project." });
+  }
+});
+
+
+app.get("/admin/deptProject/edit/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    const project = await DeptProject.findById(id);
+    res.render("admin/deptProject/update", { project });
+  } catch (error) {
+    console.error("Error loading project for editing:", error);
+    res.status(500).json({ error: "Failed to load project for editing." });
+  }
+});
+
+app.post("/admin/deptProject/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    await DeptProject.findByIdAndUpdate(id, req.body, { new: true });
+
+    res.redirect("/admin/deptProject");
+  } catch (error) {
+    console.error("Error updating Project:", error);
+    res.status(500).json({ error: "Failed to update Project." });
+  }
+});
+
+app.delete("/admin/deptProject/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+   await DeptProject.findByIdAndDelete(id);
+    res.redirect("/admin/deptProject");
+  } catch (error) {
+    console.error("Error deleting department project:", error);
+    res.status(500).json({ error: "Failed to delete  department project." });
+  }
+});
+
+
+
+app.get("/admin/deptEvent", async (req, res) => {
+  try {
+    const events = await DeptEvents.find();
+    res.render("admin/deptEvent/index", { data: events });
+  } catch (error) {
+    console.error("Error fetching events:", error);
+    res.status(500).json({ error: "Failed to load department events." });
+  }
+});
+
+app.get("/admin/deptEvent/new", (req, res) => {
+  res.render("admin/deptEvent/new");
+});
+
+app.post("/admin/deptEvent/new", async (req, res) => {
+  try {
+    const { year, description, department } = req.body;
+
+    if (!year || !description || !department) {
+      return res.status(400).send("All fields (year, description, department) are required.");
+    }
+
+    const newEvent = new DeptEvents({
+      year,
+      description,
+      department,  
+    });
+
+    await newEvent.save();
+    res.redirect("/admin/deptEvent");
+  } catch (error) {
+    console.error("Error saving event:", error);
+    res.status(500).json({ error: "Failed to save department event." });
+  }
+});
+
+app.get("/admin/deptEvent/edit/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    const event = await DeptEvents.findById(id);
+    res.render("admin/deptEvent/edit", { event });
+  } catch (error) {
+    console.error("Error loading events for editing:", error);
+    res.status(500).json({ error: "Failed to load events for editing." });
+  }
+});
+
+app.post("/admin/deptEvent/edit/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    await DeptEvents.findByIdAndUpdate(id, req.body, { new: true });
+
+    res.redirect("/admin/deptEvent");
+  } catch (error) {
+    console.error("Error updating Event:", error);
+    res.status(500).json({ error: "Failed to update Event." });
+  }
+});
+
+app.delete("/admin/deptEvent/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+   await DeptEvents.findByIdAndDelete(id);
+    res.redirect("/admin/deptEvent");
+  } catch (error) {
+    console.error("Error deleting department Event:", error);
+    res.status(500).json({ error: "Failed to delete  department Event." });
+  }
+});
+
 
 
 

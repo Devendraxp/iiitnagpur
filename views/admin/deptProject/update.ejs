@@ -1,0 +1,46 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+
+<body>
+    <div class="container mt-4">
+        <h2 class="p-4">Edit Department Project</h2>
+        <form action="/admin/deptProject/edit/<%= project._id %>" method="POST">
+            
+            <div class="mb-3">
+                <label class="form-label">Faculty</label>
+                <input type="text" name="faculty" class="form-control" value="<%= project.faculty %>" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Title of Project</label>
+                <input type="text" name="titleofProject" class="form-control" value="<%= project.titleofProject %>" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Year</label>
+                <input type="text" name="year" class="form-control" value="<%= project.year %>" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Sponsoring Agency</label>
+                <input type="text" name="sponsoringAgency" class="form-control" value="<%= project.sponsoringAgency %>" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Funding Amount</label>
+                <input type="number" name="fundingAmount" class="form-control" value="<%= project.fundingAmount %>" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Department</label>
+                <select name="department" class="form-control" required>
+                    <option value="bs" <%= project.department === "bs" ? "selected" : "" %>>Basic Sciences</option>
+                    <option value="cse" <%= project.department === "cse" ? "selected" : "" %>>Computer Science & Engineering</option>
+                    <option value="ece" <%= project.department === "ece" ? "selected" : "" %>>Electronics & Communication Engineering</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update Project</button>
+            <a href="/admin/deptProject" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>

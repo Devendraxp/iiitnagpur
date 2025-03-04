@@ -9,6 +9,8 @@ import Image from "../models/imageSchema.js";
 import Research from "../models/research.model.js";
 import methodOverride from "method-override";
 import multer from "multer";
+import mongoose from 'mongoose';
+
 const router = express.Router();
 const PORT = 8080;
 
@@ -320,7 +322,6 @@ router.route("/research/:id").delete(async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
 
 router
   .route("/achievements")

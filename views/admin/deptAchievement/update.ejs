@@ -1,0 +1,35 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+
+<body>
+    <div class="container mt-4">
+        <h2 class="p-4">Edit Achievement</h2>
+        <form action="/admin/deptAchievement/edit/<%= achievement._id %>" method="POST">
+            <!-- Hidden field to store old title -->
+            <input type="hidden" name="oldTitle" value="<%= achievement.title %>">
+
+            <div class="mb-3">
+                <label class="form-label">New Title</label>
+                <input type="text" name="newTitle" class="form-control" value="<%= achievement.title %>" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                <textarea name="description" class="form-control" rows="3" required><%= achievement.description %></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Year</label>
+                <input type="text" name="year" class="form-control" value="<%= achievement.year %>" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Department</label>
+                <select class="form-control" name="department">
+                    <option value="bs" <%= achievement.department === "bs" ? "selected" : "" %>>Basic Sciences</option>
+                    <option value="cse" <%= achievement.department === "cse" ? "selected" : "" %>>Computer Science & Engineering</option>
+                    <option value="ece" <%= achievement.department === "ece" ? "selected" : "" %>>Electronics & Communication Engineering</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-success">Update</button>
+            <a href="/admin/deptAchievement" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</body>

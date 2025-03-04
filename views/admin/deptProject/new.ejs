@@ -1,0 +1,63 @@
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-3">
+        <!-- Card Header -->
+        <div class="card-header bg-primary text-white text-center py-3">
+            <h3 class="mb-0"><i class="fas fa-folder-plus"></i> Add New Department Project</h3>
+        </div>
+
+        <!-- Card Body -->
+        <div class="card-body p-4">
+            <form action="/admin/deptProject/new" method="POST">
+                
+                <!-- Faculty -->
+                <div class="mb-3">
+                    <label class="form-label fw-bold">👨‍🏫 Faculty</label>
+                    <input type="text" name="faculty" class="form-control shadow-sm" placeholder="Enter faculty name" required>
+                </div>
+
+                <!-- Title of Project -->
+                <div class="mb-3">
+                    <label class="form-label fw-bold">📌 Title of Project</label>
+                    <input type="text" name="titleofProject" class="form-control shadow-sm" placeholder="Enter project title" required>
+                </div>
+
+                <!-- Year -->
+                <div class="mb-3">
+                    <label class="form-label fw-bold">📅 Year</label>
+                    <input type="text" name="year" class="form-control shadow-sm" placeholder="Enter year (e.g., 2025)" required>
+                </div>
+
+                <!-- Sponsoring Agency -->
+                <div class="mb-3">
+                    <label class="form-label fw-bold">🏢 Sponsoring Agency</label>
+                    <input type="text" name="sponsoringAgency" class="form-control shadow-sm" placeholder="Enter sponsoring agency" required>
+                </div>
+
+                <!-- Funding Amount -->
+                <div class="mb-3">
+                    <label class="form-label fw-bold">💰 Funding Amount</label>
+                    <input type="number" name="fundingAmount" class="form-control shadow-sm" placeholder="Enter funding amount" required>
+                </div>
+
+                <!-- Department -->
+                <div class="mb-3">
+                    <label class="form-label fw-bold">🏛️ Department</label>
+                    <select name="department" class="form-select shadow-sm" required>
+                        <option value="" disabled selected>Select Department</option>
+                        <option value="bs">Basic Sciences</option>
+                        <option value="cse">Computer Science & Engineering</option>
+                        <option value="ece">Electronics & Communication Engineering</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success btn-lg fw-bold shadow-sm">
+                        <i class="fas fa-plus-circle"></i> Add Project
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
