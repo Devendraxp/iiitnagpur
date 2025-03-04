@@ -140,6 +140,31 @@ app.get("/alumni/:page", (req, res) => {
   res.render(`alumni/${page}`);
 });
 
+app.get("/footerPages", (req, res) => {
+  res.redirect("/footerPages/campus-location");
+});
+app.get("/footerPages/:page", (req, res) => {
+  const { page } = req.params;
+  res.render(`footerPages/${page}`);
+});
+
+app.get("/admissions", (req, res) => {
+  res.redirect("/admissions/undergraduate-btech");
+});
+app.get("/admissions/:page", (req, res) => {
+  const { page } = req.params;
+  res.render(`admissions/${page}`);
+});
+
+app.get("/nirf", (req, res) => {
+  res.redirect("/nirf/2025");
+});
+app.get("/nirf/:page", (req, res) => {
+  const { page } = req.params;
+  res.render(`nirf/${page}`);
+});
+
+
 app.get("/others", (req, res) => {
   res.redirect("/others/consultancy");
 });

@@ -469,7 +469,7 @@ function nav() {
             <a href="admissions/pg-academic-rule-book">PG Academic Rule Book</a>
           </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-            <a href="admissions/pg-academic-rule-book">Recruitment Application</a>
+            <a href="admissions/recruitment">Recruitment</a>
           </h1>
         `,
         alumni: `
@@ -543,7 +543,7 @@ function nav() {
             <a href="/nirf/nirf-2025">NIRF 2025</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-            <a href="/nirf/nirf2024">NIRF 2024</a>
+            <a href="/nirf/nirf-2024">NIRF 2024</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
             <a href="/nirf/nirf-2023">NIRF 2023</a>
@@ -567,6 +567,9 @@ function nav() {
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
             <a href="/others/press-release">Press Release</a>
+          </h1>
+           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
+            <a href="/others/tender">Tender</a>
           </h1>
         `,
       };

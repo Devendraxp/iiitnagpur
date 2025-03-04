@@ -1,0 +1,104 @@
+<%- include('../partials/head2') %>
+
+    <body>
+        <%- include('../partials/nav') %>
+            <div class="w-full min-h-screen bg-white text-[#00457b]">
+                <div class="w-full lg:h-[100px] md:h-[70px] h-[60px]"></div>
+
+
+                <div
+                    class="routes w-full px-6 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#00457b] py-3 md:py-5">
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Home <i class="ri-arrow-right-s-line text-md"></i>
+                    </a>
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Grievance Portal
+
+                    </a>
+                </div>
+                <!-- Main Content -->
+                <div class="border-4 border-[#00457b] md:m-10 m-8 pb-10 text-black">
+                    <div class="px-4 md:px-20 lg:px-40 mt-8 md:mt-16 mb-8 md:mb-10">
+
+                        <div class="p-8 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl shadow-lg">
+                            <h2 class="text-3xl font-bold text-[#00457b] mb-6 text-center">📢 Grievance Portal</h2>
+                        
+                            <p class="text-gray-700 text-lg leading-relaxed mb-6 text-center">
+                                Using this portal, students, faculty, and staff can submit grievances, including general complaints, SC/ST caste-based discrimination complaints, or any other issues.
+                                The competent authority will resolve complaints after validation, and resolutions will be communicated to the complainant.
+                            </p>
+                        
+                            <!-- Grievance Portal Links -->
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center mb-6">
+                                <a href="#" class="bg-[#00457b] text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
+                                    🎓 Student Grievance Portal
+                                </a>
+                                <a href="#" class="bg-[#00457b] text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
+                                    🏫 Faculty / Staff Grievance Portal
+                                </a>
+                                <a href="#" class="bg-[#00457b] text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">
+                                    📝 General Grievance Portal
+                                </a>
+                            </div>
+                        
+                            <!-- SC/ST Grievance Committee -->
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h3 class="text-2xl font-semibold text-[#00457b] mb-4">⚖️ Grievance Committee for SC/ST (SC/ST Cell) <span class="text-[#f26e32]">(As on 1st July 2024)</span></h3>
+                        
+                                <p class="text-gray-700 mb-4">
+                                    The SC/ST Grievance Committee (GCC) addresses caste-based grievances of students, faculty, and staff. The committee listens to complaints, verifies facts, and submits a report for further proceedings.
+                                </p>
+                        
+                                <div class="overflow-x-auto">
+                                    <table class="w-full border-collapse bg-white shadow-md rounded-lg">
+                                        <thead>
+                                            <tr class="bg-[#00457b] text-white text-left">
+                                                <th class="p-3">Sr. No.</th>
+                                                <th class="p-3">Name</th>
+                                                <th class="p-3">Department</th>
+                                                <th class="p-3">Designation</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-gray-700">
+                                            <tr class="border-b hover:bg-gray-100">
+                                                <td class="p-3">1</td>
+                                                <td class="p-3">Dr. Aishwarya Sagar Anand Ukey</td>
+                                                <td class="p-3">CSE</td>
+                                                <td class="p-3">Chairman</td>
+                                            </tr>
+                                            <tr class="border-b hover:bg-gray-100">
+                                                <td class="p-3">2</td>
+                                                <td class="p-3">Dr. Vrinda Yadav</td>
+                                                <td class="p-3">CSE</td>
+                                                <td class="p-3">Member</td>
+                                            </tr>
+                                            <tr class="border-b hover:bg-gray-100">
+                                                <td class="p-3">3</td>
+                                                <td class="p-3">Mr. Nikhil Madavi</td>
+                                                <td class="p-3">CSE</td>
+                                                <td class="p-3">Member</td>
+                                            </tr>
+                                            <tr class="border-b hover:bg-gray-100">
+                                                <td class="p-3">4</td>
+                                                <td class="p-3">Ms. Reema Dongardive</td>
+                                                <td class="p-3">CSE</td>
+                                                <td class="p-3">Member</td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-100">
+                                                <td class="p-3">5</td>
+                                                <td class="p-3">Mr. Ashok Dongare</td>
+                                                <td class="p-3">Admin</td>
+                                                <td class="p-3">Member</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <%- include('../partials/footer') %>
+    </body>
+    <%- include('../partials/tail2') %>

@@ -92,13 +92,13 @@ html {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 }
-.page2b {
+.page2b, #page3b {
   width: 100%;
   background-image: url(../images/index/bg1.png);
   background: linear-gradient(#F6F6F7, rgba(255, 255, 255, 0)), url(../images/index/bg1.png);
 }
 
-#page4, #page6, #page3b, #page7, #page7b, #page7b2 {
+#page4, #page6, #page7, #page7b, #page7b2 {
   background-image: url("../images/index/bg2.avif");
   background-color: rgba(240, 241, 241, 0.9215686275);
   background-blend-mode: color;
