@@ -62,10 +62,7 @@
             <!-- Research -->
             <h4>Research</h4>
          
-            <!-- <div class="mb-3">
-                <label for="researchProjects" class="form-label">Research Projects (One per line)</label>
-                <textarea class="form-control" id="researchProjects" name="data[research][researchProject]" rows="3"><%= Array.isArray(data.research?.researchProject) ? data.research.researchProject.join("\n") : data.research?.researchProject || '' %></textarea>
-            </div> -->
+           
             <h6>Research Projects</h6>
             <div id="researchProjects">
                 <% if (data.research && Array.isArray(data.research.researchProject) && data.research.researchProject.length > 0) { %>
@@ -169,11 +166,15 @@
             <h4>Publications</h4>
             <div class="mb-3">
                 <label for="journals" class="form-label">Journals (One per line, year followed by paper titles)</label>
-                <textarea class="form-control" id="journals" name="data[publication][journals]" rows="3"  placeholder="Year first, then papers. Example:&#10;2023&#10;- Paper 1&#10;- Paper 2"><%= Array.isArray(data.publication?.journals) ? data.publication.journals.join("\n") : data.publication?.journals || '' %></textarea>
+                <textarea class="form-control" id="journals" name="data[publication][journals]" rows="6"  placeholder="Year first, then papers. Example:&#10;2023&#10;- Paper 1&#10;- Paper 2"><%= Array.isArray(data.publication?.journals) ? data.publication.journals.join("\n") : data.publication?.journals || '' %></textarea>
             </div>
             <div class="mb-3">
                 <label for="conferences" class="form-label">Conferences (One per line, year followed by paper titles)</label>
-                <textarea class="form-control" id="conferences" name="data[publication][conferences]" rows="3"  placeholder="Year first, then papers. Example:&#10;2023&#10;- Paper 1&#10;- Paper 2"><%= Array.isArray(data.publication?.conferences) ? data.publication.conferences.join("\n") : data.publication?.conferences || '' %></textarea>
+                <textarea class="form-control" id="conferences" name="data[publication][conferences]" rows="6"  placeholder="Year first, then papers. Example:&#10;2023&#10;- Paper 1&#10;- Paper 2"><%= Array.isArray(data.publication?.conferences) ? data.publication.conferences.join("\n") : data.publication?.conferences || '' %></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="books" class="form-label">Books (One per line, year followed by paper titles)</label>
+                <textarea class="form-control" id="books" name="data[publication][books]" rows="6"  placeholder="Year first, then titles. Example:&#10;2023&#10;- Title 1&#10;- Title 2"><%= Array.isArray(data.publication?.books) ? data.publication.books.join("\n") : data.publication?.books || '' %></textarea>
             </div>
             <!-- <div class="mb-3">
                 <label for="books" class="form-label">Books (One per line, year followed by book titles)</label>
@@ -193,15 +194,21 @@
             </div>
 
             <!-- Additional Information -->
-            <h4>Additional Information</h4>
+            <!-- <h4>Additional Information</h4> -->
             <div class="mb-3">
                 <label for="anyOther" class="form-label">Any Other Information</label>
                 <textarea class="form-control" id="anyOther" name="data[anyOther]" rows="3"><%= Array.isArray(data.anyOther) ? data.anyOther.join("\n") : data.anyOther || '' %></textarea>
             </div>
 
+
             <div class="mb-3">
-                <label for="contact" class="form-label">Contact Details</label>
-                <input type="text" class="form-control" id="contact" name="data[contact]" value="<%= data.contact || '' %>">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="data[username]" value="<%= data.username || '' %>">
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" class="form-control" id="email" name="data[email]" value="<%= data.email || '' %>">
             </div>
 
             <h4>Social Links</h4>

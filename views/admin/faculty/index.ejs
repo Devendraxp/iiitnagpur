@@ -15,7 +15,8 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <% category.data.forEach(faculty => { %>
                         <div class="col">
-                            <div class="card h-100">
+                            <div class="card h-[30vh]">
+
                                 <img src="<%= faculty.image && faculty.image.trim() !== '' ? faculty.image : '/public/images/default-faculty.jpg' %>" 
                                     class="card-img-top" 
                                     alt="<%= faculty.name || 'Faculty Image' %>" 
@@ -28,7 +29,7 @@
                                     <p class="card-text">
                                         <strong>Email:</strong> <%= faculty.email %><br>
                                         <strong>Designation:</strong> <%= faculty.designation || 'N/A' %><br>
-                                        <strong>Education:</strong> <%= faculty.education || 'N/A' %><br>
+                                        <!-- <strong>Education:</strong> <%= faculty.education || 'N/A' %><br> -->
                                         <!-- <strong>Phone:</strong> <%= faculty.phone || 'N/A' %><br> -->
 
                                     </p>

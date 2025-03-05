@@ -14,7 +14,7 @@
                         <h5 class="card-title"><%= item.year %></h5>
                         <h3 class="card-title"><%= item.title %></h3>
                         <span class="badge bg-info mb-2"><%= item.department.toUpperCase() %></span>
-                        <p class="card-text"><%= item.description %></p>
+                        <!-- <p class="card-text"><%= item.description %></p> -->
                         <div class="d-flex gap-2">
                             <a href="/admin/deptAchievement/edit/<%= item._id %>" class="btn btn-success">Edit</a>
                             <form action="/admin/deptAchievement/<%= item._id %>?_method=DELETE" method="POST" class="d-inline">

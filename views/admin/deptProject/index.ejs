@@ -2,7 +2,7 @@
 
 <body>
     <div class="container mt-4">
-        <h2 class="p-4 text-center"> Department Projects</h2>
+        <h2 class="p-4 text-center fw-bold"> Department Projects</h2>
         
         <!-- Add New Project Button -->
         <div class="d-flex justify-content-end p-4">
@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <!-- Project Year & Title -->
                         <h5 class="card-title text-muted"><i class="fas fa-calendar-alt"></i> <%= item.year %></h5>
-                        <h3 class="card-title fw-bold"><%= item.titleofProject %></h3>
+                        <h3 class="card-text fw-bold"><%= item.titleofProject %></h3>
                         
                         <!-- Department Badge (Fix for undefined issue) -->
                         <span class="badge bg-info mb-2">
