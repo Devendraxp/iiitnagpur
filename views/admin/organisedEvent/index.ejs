@@ -1,0 +1,37 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+
+<body>
+    <div class="container mt-4">
+        <h2 class="p-4">Organised Events</h2>
+        <div class="d-flex justify-content-end p-4">
+                <a href="/admin/organisedEvent/new" class="btn btn-primary">Add New Event</a>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <% data.forEach(event => { %>
+            <div class="col">
+                <div class="card h-100">
+                    <% if(event.images && event.images.length > 0) { %>
+                        <img src="<%= event.images[0] %>" class="card-img-top" alt="Event Image">
+                    <% } else { %>
+                        <div class="card-img-top bg-light text-center py-5">No Image</div>
+                    <% } %>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="badge bg-primary"><%= event.eventName || 'No Event' %></span>
+                            <span class="badge bg-secondary"><%= event.clubName || 'No Club' %></span>
+                        </div>
+                        <h5 class="card-title"><%= event.title %></h5>
+                        <p class="card-text"><%= event.description %></p>
+                        <div class="d-flex gap-2">
+                            <a href="/admin/organisedEvent/<%= event._id %>" class="btn btn-success">Edit</a>
+                            <form action="/admin/organisedEvent/<%= event._id %>?_method=DELETE" method="POST" class="d-inline">
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this event?')">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</body>

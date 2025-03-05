@@ -1,0 +1,33 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+<body>
+    <div class="container mt-4">
+        <h2 class="mb-4">Update Event</h2>
+        <form action="/admin/event/<%= data._id %>?_method=PATCH" method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title*</label>
+                <input type="text" value="<%= data.title %>" class="form-control" id="title" name="data[title]" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description*</label>
+                <textarea class="form-control" id="description" name="data[description]" required><%= data.description %></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="logo" class="form-label">Logo URL</label>
+                <input type="text" value="<%= data.logo %>" class="form-control" id="logo" name="data[logo]">
+            </div>
+            <div class="mb-3">
+                <label for="guests" class="form-label">Guests</label>
+                <textarea class="form-control" id="guests" name="data[guests]" placeholder="Enter guests separated by commas"><%= data.guests ? data.guests.join(', ') : '' %></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="images" class="form-label">Images</label>
+                <textarea class="form-control" id="images" name="data[images]" placeholder="Enter image URLs separated by commas"><%= data.images ? data.images.join(', ') : '' %></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="brochure" class="form-label">Brochure</label>
+                <textarea class="form-control" id="brochure" name="data[brochure]" placeholder="Enter brochure URLs separated by commas"><%= data.brochure ? data.brochure.join(', ') : '' %></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>

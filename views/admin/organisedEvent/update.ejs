@@ -1,0 +1,50 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+<body>
+    <div class="container mt-4">
+        <h2 class="mb-4">Update Organized Event</h2>
+        <form action="/admin/organisedEvent/<%= data._id %>?_method=PATCH" method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title*</label>
+                <input type="text" value="<%= data.title %>" class="form-control" id="title" name="data[title]" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description*</label>
+                <textarea class="form-control" id="description" name="data[description]" required><%= data.description %></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="images" class="form-label">Images (Enter URLs separated by commas)</label>
+                <input type="text" value="<%= data.images.join(',') %>" class="form-control" id="images" name="data[images]">
+                <small class="form-text text-muted">Enter image URLs separated by commas</small>
+            </div>
+            <div class="mb-3">
+                <label for="eventName" class="form-label">Event Name*</label>
+                <select class="form-control" id="eventName" name="data[eventName]" required>
+                    <option value="tantrafiesta" <%= data.eventName === 'tantrafiesta' ? 'selected' : '' %>>Tantrafiesta</option>
+                    <option value="abhivyakti" <%= data.eventName === 'abhivyakti' ? 'selected' : '' %>>Abhivyakti</option>
+                    <option value="esummit" <%= data.eventName === 'esummit' ? 'selected' : '' %>>E-Summit</option>
+                    <option value="selfhosted" <%= data.eventName === 'selfhosted' ? 'selected' : '' %>>Self Hosted</option>
+                </select>
+            </div>
+            <div class="mb-3"></div>
+                <label for="clubName" class="form-label">Club Name*</label>
+                <select class="form-control" id="clubName" name="data[clubName]" required>
+                    <option value="dotslash" <%= data.clubName === 'dotslash' ? 'selected' : '' %>>Dotslash</option>
+                    <option value="elevate" <%= data.clubName === 'elevate' ? 'selected' : '' %>>Elevate</option>
+                    <option value="strokes" <%= data.clubName === 'strokes' ? 'selected' : '' %>>Strokes</option>
+                    <option value="iotics" <%= data.clubName === 'iotics' ? 'selected' : '' %>>Iotics</option>
+                    <option value="dimensions" <%= data.clubName === 'dimensions' ? 'selected' : '' %>>Dimensions</option>
+                    <option value="udyam" <%= data.clubName === 'udyam' ? 'selected' : '' %>>Udyam</option>
+                    <option value="crispr" <%= data.clubName === 'crispr' ? 'selected' : '' %>>Crispr</option>
+                    <option value="crescendo" <%= data.clubName === 'crescendo' ? 'selected' : '' %>>Crescendo</option>
+                    <option value="dtraxia" <%= data.clubName === 'dtraxia' ? 'selected' : '' %>>Dtraxia</option>
+                    <option value="estoria" <%= data.clubName === 'estoria' ? 'selected' : '' %>>Estoria</option>
+                    <option value="orator" <%= data.clubName === 'orator' ? 'selected' : '' %>>Orator</option>
+                    <option value="probe" <%= data.clubName === 'probe' ? 'selected' : '' %>>Probe</option>
+                    <option value="eklavya" <%= data.clubName === 'eklavya' ? 'selected' : '' %>>Eklavya</option>
+                    <option value="selfhosted" <%= data.clubName === 'selfhosted' ? 'selected' : '' %>>Self Hosted</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>

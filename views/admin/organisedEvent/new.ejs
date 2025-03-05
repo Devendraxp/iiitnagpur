@@ -1,0 +1,49 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+<body>
+    <div class="container mt-4">
+        <h2 class="mb-4">Add New Organized Event</h2>
+        <form action="/admin/organisedEvent" method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title*</label>
+                <input type="text" class="form-control" id="title" name="data[title]" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description*</label>
+                <textarea class="form-control" id="description" name="data[description]" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="eventName" class="form-label">Event Name*</label>
+                <select class="form-control" id="eventName" name="data[eventName]" required>
+                    <option value="tantrafiesta">Tantrafiesta</option>
+                    <option value="abhivyakti">Abhivyakti</option>
+                    <option value="esummit">E-Summit</option>
+                    <option value="selfhosted">Self Hosted</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="clubName" class="form-label">Club Name*</label>
+                <select class="form-control" id="clubName" name="data[clubName]" required>
+                    <option value="dotslash">Dotslash</option>
+                    <option value="elevate">Elevate</option>
+                    <option value="strokes">Strokes</option>
+                    <option value="iotics">Iotics</option>
+                    <option value="dimensions">Dimensions</option>
+                    <option value="udyam">Udyam</option>
+                    <option value="crispr">Crispr</option>
+                    <option value="crescendo">Crescendo</option>
+                    <option value="dtraxia">Dtraxia</option>
+                    <option value="estoria">Estoria</option>
+                    <option value="orator">Orator</option>
+                    <option value="probe">Probe</option>
+                    <option value="eklavya">Eklavya</option>
+                    <option value="selfhosted">Self Hosted</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="images" class="form-label">Images (Enter URLs separated by commas)</label>
+                <input type="text" class="form-control" id="images" name="data[images]" placeholder="http://example.com/image1.jpg, http://example.com/image2.jpg">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>

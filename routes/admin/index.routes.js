@@ -7,7 +7,10 @@ import photoCarouselRoute from "./photoCarousel.routes.js";
 import researchRoute from "./research.routes.js";
 import studentTestimonialRoute from "./studentTestimonial.routes.js";
 import facultyRoute from "./faculty.routes.js";
-import mediaRouter from "./media.routes.js"
+import mediaRoute from "./media.routes.js";
+import clubRoute from "./club.routes.js";
+import eventRoute from "./event.routes.js";
+import organizedEventRoute from "./organisedEvent.routes.js";
 const router = express.Router();
 const PORT = 8080;
 
@@ -26,6 +29,9 @@ router.use("/photoCarousel", photoCarouselRoute);
 router.use("/research", researchRoute);
 router.use("/studentTestimonial", studentTestimonialRoute);
 router.use("/faculty", facultyRoute);
-router.use("/media",mediaRouter)
+router.use("/media", mediaRoute);
+router.use("/club", clubRoute);
+router.use("/event", eventRoute);
+router.use("/organisedEvent", organizedEventRoute);
 
 export default router;

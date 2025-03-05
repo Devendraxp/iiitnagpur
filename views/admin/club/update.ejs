@@ -1,0 +1,114 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+<body>
+    <div class="container mt-4">
+        <h2 class="mb-4">Update Club</h2>
+        <form action="/admin/club/<%= data._id %>?_method=PATCH" method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">Club Name*</label>
+                <input type="text" value="<%= data.title %>" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description*</label>
+                <textarea class="form-control" id="description" name="description" required><%= data.description %></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="logo" class="form-label">Logo URL</label>
+                <input type="text" value="<%= data.logo %>" class="form-control" id="logo" name="logo">
+            </div>
+            <div class="mb-3">
+                <label for="Lead" class="form-label">Club Lead</label>
+                <input type="text" value="<%= data.Lead %>" class="form-control" id="Lead" name="Lead">
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Category*</label>
+                <select class="form-control" id="category" name="category" required>
+                    <option value="technical" <%= data.category === 'technical' ? 'selected' : '' %>>Technical</option>
+                    <option value="cultural" <%= data.category === 'cultural' ? 'selected' : '' %>>Cultural</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Yearly Plans</label>
+                <div id="yearlyPlans">
+                    <% if (data.yearlyPlans && data.yearlyPlans.length > 0) { %>
+                        <% data.yearlyPlans.forEach((plan, index) => { %>
+                            <div class="yearly-plan mb-3 border p-3">
+                                <div class="mb-2">
+                                    <label class="form-label">Plan Title</label>
+                                    <input type="text" class="form-control" name="yearlyPlans[<%= index %>][title]" value="<%= plan.title %>">
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label">Plan Description</label>
+                                    <textarea class="form-control" name="yearlyPlans[<%= index %>][description]"><%= plan.description %></textarea>
+                                </div>
+                                <% if (index > 0) { %>
+                                    <button type="button" class="btn btn-danger btn-sm remove-plan">Remove</button>
+                                <% } %>
+                            </div>
+                        <% }); %>
+                    <% } else { %>
+                        <div class="yearly-plan mb-3 border p-3">
+                            <div class="mb-2">
+                                <label class="form-label">Plan Title</label>
+                                <input type="text" class="form-control" name="yearlyPlans[0][title]">
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Plan Description</label>
+                                <textarea class="form-control" name="yearlyPlans[0][description]"></textarea>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+                <button type="button" class="btn btn-secondary" id="addPlan">Add Plan</button>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const addPlanButton = document.getElementById('addPlan');
+                    const yearlyPlansContainer = document.getElementById('yearlyPlans');
+                    let planCount = parseInt("<%= (data.yearlyPlans && data.yearlyPlans.length > 0) ? data.yearlyPlans.length : 1 %>");
+
+                    addPlanButton.addEventListener('click', function() {
+                        const newPlan = document.createElement('div');
+                        newPlan.className = 'yearly-plan mb-3 border p-3';
+                        newPlan.innerHTML = `
+                            <div class="mb-2">
+                                <label class="form-label">Plan Title</label>
+                                <input type="text" class="form-control" name="yearlyPlans[${planCount}][title]">
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Plan Description</label>
+                                <textarea class="form-control" name="yearlyPlans[${planCount}][description]"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-danger btn-sm remove-plan">Remove</button>
+                        `;
+                        yearlyPlansContainer.appendChild(newPlan);
+                        
+                        // Add event listener to the remove button
+                        newPlan.querySelector('.remove-plan').addEventListener('click', function() {
+                            yearlyPlansContainer.removeChild(newPlan);
+                        });
+                        
+                        planCount++;
+                    });
+
+                    // Add event listeners to existing remove buttons
+                    document.querySelectorAll('.remove-plan').forEach(button => {
+                        button.addEventListener('click', function() {
+                            this.closest('.yearly-plan').remove();
+                        });
+                    });
+                });
+            </script>
+            <div class="mb-3">
+                <label for="images" class="form-label">Images URLs (comma separated)</label>
+                <input type="text" class="form-control" id="images" name="images" value="<%= data.images ? data.images.join(',') : '' %>">
+                <small class="form-text text-muted">Enter URLs separated by commas</small>
+            </div>
+            <div class="mb-3">
+                <label for="brochure" class="form-label">Club Brochure link</label>
+                <input type="text" class="form-control" id="brochure" name="brochure" value="<%= data.brochure %>">
+            </div>
+            <button type="submit" class="btn btn-primary">Update Club</button>
+        </form>
+    </div>
+</body></div>
