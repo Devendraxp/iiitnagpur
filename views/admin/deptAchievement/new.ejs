@@ -1,0 +1,35 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+
+<body>
+    <div class="container mt-4">
+        <h2 class="p-4">Add New Achievement</h2>
+        <div class="card p-4">
+            <form action="/admin/deptAchievement/new" method="POST">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="year" class="form-label">Year</label>
+                    <input type="number" class="form-control" id="year" name="year" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold"> Department</label>
+                    <select name="department" class="form-select shadow-sm" required>
+                        <option value="" disabled selected>Select Department</option>
+                        <option value="bs">Basic Sciences</option>
+                        <option value="cse">Computer Science & Engineering</option>
+                        <option value="ece">Electronics & Communication Engineering</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Achievement</button>
+                <a href="/admin/deptAchievement" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</body>
