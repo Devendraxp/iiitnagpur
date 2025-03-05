@@ -9,8 +9,6 @@ import Notice from "./models/notice.model.js";
 import Notification from "./models/notification.model.js";
 import StudentTestimonial from "./models/studentTestimonial.model.js";
 import Research from "./models/research.model.js";
-import Faculty from "./models/faculty.model.js";
-import Image from "./models/imageSchema.js";
 import adminRoute from "./routes/admin/index.routes.js";
 import studentRoute from "./routes/student.routes.js"
 import programRoute from "./routes/program.routes.js"
