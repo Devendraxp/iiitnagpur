@@ -28,43 +28,24 @@
           <a
             class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500"
             href="#"
-            >Projects
+            >Laboratory
           </a>
         </div>
 
         <div class="content px-44 mt-16 mb-10">
           <h2 class="text-2xl uppercase font-bold text-black">
-            Projects
+            Laboratory
           </h2>
           <div class="w-full h-[1px] bg-zinc-300 mt-2"></div>
+          <h3 class="text-lg font-medium mt-5">List of Laboratories of Basic Science : </h3>
            <div class="pl-10 mt-6">
-            <ol class="list-disc">
-              <% if(data && data.length > 0) { %>
-                <% data.forEach(project => { %>
-                  <li>
-                    <p class="text-sm font-normal leading-6">
-                      <strong><%= project.faculty %></strong>, 
-                      "<%= project.titleofProject %>"
-                      <% if(project.typeOfProject) { %>
-                        [<%= project.typeOfProject %>]
-                      <% } %>
-                      <% if(project.sponsoringAgency) { %>
-                        funding agency <%= project.sponsoringAgency %>, 
-                      <% } %>
-                      <% if(project.fundingAmount) { %>
-                        Rs. <%= project.fundingAmount %> Lakh
-                      <% } %>
-                      <% if(project.year) { %>
-                        (<%= project.year %>)
-                      <% } %>
-                    </p>
-                  </li>
-                <% }) %>
-              <% } else { %>
-                <li>
-                  <p class="text-sm font-normal leading-6">No projects available at the moment.</p>
-                </li>
-              <% } %>
+            <ol class="list-decimal">
+               <li><a class="inline-block leading-6 hover:underline text-sky-600 text-md font-normal" href="#">Applied Science Lab</a></li>
+               <li><a class="inline-block leading-6 hover:underline text-sky-600 text-md font-normal" href="#">Elements of Electrical Engineering Lab</a></li>
+               <li><a class="inline-block leading-6 text-sky-600 hover:underline text-md font-normal" href="#">Nano SciTech Lab</a></li>
+               <li><a class="inline-block leading-6 hover:underline text-sky-600 text-md font-normal" href="#">Graphics & Mechanics Lab</a></li>
+               <li><a class="inline-block leading-6 hover:underline text-sky-600 text-md font-normal" href="#">Communication Lab</a></li>
+               <li><a class="inline-block leading-6 hover:underline text-sky-600 text-md font-normal" href="#">Robotics Lab</a></li>
             </ol>
            </div>
         </div>

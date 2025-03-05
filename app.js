@@ -13,6 +13,9 @@ import adminRoute from "./routes/admin/index.routes.js";
 import studentRoute from "./routes/student.routes.js"
 import programRoute from "./routes/program.routes.js"
 import alumniRoute from "./routes/alumni.routes.js"
+import basicScienceRoute from "./routes/department/basicScience.routes.js"
+import cseRoute from "./routes/department/cse.routes.js"
+import eceRoute from "./routes/department/ece.routes.js"
 import Admin from "./models/admin.model.js";
 import session from "express-session";
 import MongoStore from "connect-mongo";
@@ -117,6 +120,11 @@ app.use("/admin", adminRoute);
 app.use("/student", studentRoute);
 app.use("/program", programRoute);
 app.use("/alumni",alumniRoute);
+app.use("/basic_science", basicScienceRoute)
+app.use("/cse", cseRoute)
+app.use("/ece", eceRoute)
+
+
 
 
 app.get("/admin-login", (_, res) => {
@@ -130,12 +138,9 @@ app.get("/aboutUs", (req, res) => {
 
 // Basic Science Routes
 app.get("/department", (req, res) => {
-  res.redirect("/basic_science/about-department");
+  res.redirect("/basic_science/aboutDepartment");
 });
-app.get("/basic_science/:page", (req, res) => {
-  const { page } = req.params;
-  res.render(`basic_science/${page}`);
-});
+
 
 app.get("/alumni", (req, res) => {
   res.redirect("/alumni/AboutUs");
