@@ -415,11 +415,8 @@ function nav() {
         governance: `
           <div class="flex justify-between py-2">
             <div class="w-[48%]">
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
-                <a href="#>Committee</a>
-              </h1>
-              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                <a href="/governance/board-of-governors">Committee</a>
+                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
+                <a href="#">Committee</a>
               </h1>
                 <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
                 <a href="/governance/board-of-governors">Board of Governors</a>
@@ -488,7 +485,7 @@ function nav() {
             <a href="/placements/about-us">About Us</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-            <a href="/placements/why-recruit-from-iiitn-nagpur">Why Recruit from IIITN Nagpur?</a>
+            <a href="/placements/why-recruit-from-iiit-nagpur">Why Recruit from IIITN Nagpur?</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
             <a href="/placements/placement-statistics">Placement Statistics</a>
@@ -570,6 +567,9 @@ function nav() {
           </h1>
            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
             <a href="/others/tender">Tender</a>
+          </h1>
+          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
+            <a href="/others/rti">RTI</a>
           </h1>
         `,
       };

@@ -274,74 +274,74 @@ function swiper() {
           about: `
           `,
           explore: `
-    <div class="flex justify-between py-2">
-        <div class="w-[30%]">
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
-            <a href="#">Technical Clubs</a>
-          </h1>
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/technical/dotslash">Dotslash</a>
-          </h1>
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/technical/elevate">Elevate</a>
-          </h1>
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/technical/crispr">Crispr</a>
-          </h1>
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/technical/udhyam">Udhyam</a>
-          </h1>
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/technical/iotics">Iotics</a>
-          </h1>
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/technical/strokes">Strokes</a>
-          </h1>
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/technical/dimensions">Dimensions</a>
-          </h1>
+      <div class="flex justify-between py-2">
+          <div class="w-[30%]">
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
+              <a href="#">Technical Clubs</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+              <a href="/clubs/technical/dotslash">Dotslash</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+              <a href="/clubs/technical/elevate">Elevate</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+              <a href="/clubs/technical/crispr">Crispr</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+              <a href="/clubs/technical/udhyam">Udhyam</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+              <a href="/clubs/technical/iotics">Iotics</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+              <a href="/clubs/technical/strokes">Strokes</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+              <a href="/clubs/technical/dimensions">Dimensions</a>
+            </h1>
+          </div>
+        
+          <div class="w-[30%]">
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white border-b-2 border-[#00457b]/20">
+              <a href="#">Cultural Clubs</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+              <a href="/clubs/cultural/crescendo">Crescendo</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+              <a href="/clubs/cultural/dtraxia">Dtraxia</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+              <a href="/clubs/cultural/estoria">Estoria</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+              <a href="/clubs/cultural/orator">Orator</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+              <a href="/clubs/cultural/probe">Probe</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+              <a href="/clubs/cultural/eklavya">Eklavya</a>
+            </h1>
+          </div>
+        
+          <div class="w-[30%]">
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
+              <a href="#">Events</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+              <a href="/events/tantrafiesta">Tantrafiesta</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+              <a href="/events/abhivyakti">Abhivyakti</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+              <a href="/events/kshitij">Kshitij</a>
+            </h1>
+          </div>
         </div>
-      
-        <div class="w-[30%]">
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white border-b-2 border-[#00457b]/20">
-            <a href="#">Cultural Clubs</a>
-          </h1>
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/cultural/crescendo">Crescendo</a>
-          </h1>
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/cultural/dtraxia">Dtraxia</a>
-          </h1>
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/cultural/estoria">Estoria</a>
-          </h1>
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/cultural/orator">Orator</a>
-          </h1>
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/cultural/probe">Probe</a>
-          </h1>
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/cultural/eklavya">Eklavya</a>
-          </h1>
-        </div>
-      
-        <div class="w-[30%]">
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
-            <a href="#">Events</a>
-          </h1>
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/events/tantrafiesta">Tantrafiesta</a>
-          </h1>
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/events/abhivyakti">Abhivyakti</a>
-          </h1>
-          <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/events/kshitij">Kshitij</a>
-          </h1>
-        </div>
-      </div>
-        `,
+          `,
           governance: `
             <div class="flex justify-between py-2">
               <div class="w-[48%]">
@@ -349,6 +349,9 @@ function swiper() {
                   <a href="#>Committee</a>
                 </h1>
                 <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
+                  <a href="/governance/board-of-governors">Committee</a>
+                </h1>
+                  <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
                   <a href="/governance/board-of-governors">Board of Governors</a>
                 </h1>
                 <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
@@ -381,153 +384,6 @@ function swiper() {
             </div>
           `,
           department: `
-            <div class="flex justify-between py-2">
-              <div class="w-[18%]">
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
-                  <a href="#">Basic Sciences</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/basic-science/about-department">About Department</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/basic-science/bos">BoS</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/basic-science/achievements">Achievements</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/basic-science/research">Research</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/basic-science/faculty">Faculty</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/basic-science/staff">Staff</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/basic-science/projects">Projects</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/basic-science/laboratory">Laboratory</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/basic-science/events">Events</a>
-                </h1>
-              </div>
-              <div class="w-[18%]">
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white border-b-2 border-[#00457b]/20">
-                  <a href="#">Computer Science & Eng...</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/computer-science-eng/about-department">About Department</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/computer-science-eng/bos">BoS</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/computer-science-eng/achievements">Achievements</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/computer-science-eng/research">Research</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/computer-science-eng/faculty">Faculty</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/computer-science-eng/staff">Staff</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/computer-science-eng/projects">Projects</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/computer-science-eng/laboratory">Laboratory</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/computer-science-eng/events">Events</a>
-                </h1>
-              </div>
-              <div class="w-[18%]">
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
-                  <a href="#">Electronics & Communication Eng...</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/electronics-communication-eng/about-department">About Department</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/electronics-communication-eng/bos">BoS</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/electronics-communication-eng/achievements">Achievements</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/electronics-communication-eng/research">Research</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/electronics-communication-eng/faculty">Faculty</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/electronics-communication-eng/staff">Staff</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/electronics-communication-eng/projects">Projects</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/electronics-communication-eng/laboratory">Laboratory</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/electronics-communication-eng/events">Events</a>
-                </h1>
-              </div>
-              <div class="w-[18%]">
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
-                  <a href="#">Doctoral Programme</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/doctoral-programme/overview">Overview of PhD Programmee</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/doctoral-programme/features">Doctoral Programme Features</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/doctoral-programme/research-areas">Research Areas</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/doctoral-programme/operational-details">Operational Details</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/doctoral-programme/proformas">Important Proformas</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/doctoral-programme/checklists">Checklists</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/doctoral-programme/contact-us">Contact Us</a>
-                </h1>
-              </div>
-              <div class="w-[18%]">
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
-                  <a href="#">Programs</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/programs/btech">B.Tech</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/programs/pg-diploma">PG Diploma</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/programs/phd">PHD</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/programs/mtech">M.Tech</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/programs/curriculum">Curriculum</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/department/programs/reports">Reports</a>
-                </h1>
-              </div>
-            </div>
           `,
           admissions: `
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
@@ -542,16 +398,19 @@ function swiper() {
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
               <a href="admissions/pg-academic-rule-book">PG Academic Rule Book</a>
             </h1>
+              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
+              <a href="admissions/recruitment">Recruitment</a>
+            </h1>
           `,
           alumni: `
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/alumni/members">Members</a>
+              <a href="/alumni/Member">Members</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/alumni/member-login">Member Login</a>
+              <a href="/alumni/MemberLogin">Member Login</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/alumni/about-us">About Us</a>
+              <a href="/alumni/AboutUs">About Us</a>
             </h1>
           `,
           placements: `
@@ -559,7 +418,7 @@ function swiper() {
               <a href="/placements/about-us">About Us</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/placements/why-recruit-from-iiitn-nagpur">Why Recruit from IIITN Nagpur?</a>
+              <a href="/placements/why-recruit-from-iiit-nagpur">Why Recruit from IIITN Nagpur?</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
               <a href="/placements/placement-statistics">Placement Statistics</a>
@@ -605,13 +464,16 @@ function swiper() {
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
               <a href="/student/fees">Fees</a>
             </h1>
+             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
+              <a href="/student/fees">Exchange Program</a>
+            </h1>
           `,
           nirf: `
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
               <a href="/nirf/nirf-2025">NIRF 2025</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/nirf/nirf2024">NIRF2024</a>
+              <a href="/nirf/nirf-2024">NIRF 2024</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
               <a href="/nirf/nirf-2023">NIRF 2023</a>
@@ -636,9 +498,11 @@ function swiper() {
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
               <a href="/others/press-release">Press Release</a>
             </h1>
+             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
+              <a href="/others/tender">Tender</a>
+            </h1>
           `,
         };
-  
         // Functions to update the top value for subheading div
         function updateSecondBoxTop() {
           const nav = document.getElementById("firstBox");
@@ -918,3 +782,223 @@ function swiper() {
         searchForm.classList.remove('active');
       }
     });
+
+
+    // Department Data (Descriptions & Links)
+    const departments = {
+      basic_science: {
+          description: `
+            <div class="about px-4 pt-10 text-xl">
+    <p class="text-gray-700">
+        The Department of Basic Sciences at <b>Indian Institute of Information Technology Nagpur</b> was established in 2016 and is currently headed by <b>Dr. Prasad V. Joshi</b>.
+        The Department of Basic Sciences brings together the disciplines of Mathematics, Applied Sciences, Humanities, Social Sciences, Mechanical Engineering, and Electrical Engineering under one roof.
+        <br><br>
+        The department envisages high-quality education and cutting-edge interdisciplinary research in science and technology. It acts as a foundation for all core Information Technology branches and offers various core courses such as:
+        <b>Applied Sciences, Applied Mathematics, Communication Skills, Environmental Studies, Mechanics and Graphics, Electrical Engineering.</b>
+        <br><br>
+        The department caters to Information Technology streams by offering electives like <b>Robotics, Technical Communication, Professional Ethics, Policy Governance, Neuro-fuzzy techniques</b>, etc.
+        The 15 proficient faculty members of the department bring various interdisciplinary research-oriented areas under one gambit as envisioned in <b>NEP 2020</b>.
+        This unique course blends the best of contemporary Basic Sciences and Engineering to create professionals equally comfortable with human values, applied science, and technology.
+        <br><br>
+        The department integrates software tools such as <b>MATLAB, AUTOCAD, 3Ds Max</b>, and applications of programming in <b>C/C++</b> into Mathematics, Graphics, and other courses.
+        Modeling and Simulation platforms like <b>Webots, Robot Operating System, RVC Toolbox</b> make the curriculum enriching for Electronics and Computer Science students.
+        <br><br>
+        Complete with human and social understanding, the department is well-known for its breadth of knowledge and fosters appreciation of intellectual excellence, academic integrity, accountability, and creativity.
+        <br><br>
+        The department is privileged with proficient faculty, all holding <b>PhD degrees</b> from renowned institutes across India and abroad, specializing in interdisciplinary fields.
+        <br><br>
+        The department hosts <b>five developed laboratories:</b>
+        <ul class="list-disc pl-6">
+            <li>Applied Sciences Lab</li>
+            <li>Mechanics & Graphics Lab</li>
+            <li>Robotics Lab</li>
+            <li>Language Lab</li>
+            <li>Electrical Engineering Lab</li>
+        </ul>
+    </p>
+</div>
+
+          `,
+          links: ["BoS", "Achievement", "Research", "Faculty", "Staff", "Projects", "Laboratory", "Events"]
+      },
+      cse: {
+        description: `
+       <div class="about px-4 py-10 text-xl">
+    <p class="text-gray-700">
+        The <b>Department of Computer Science and Engineering</b> at <b>IIIT Nagpur</b> was established in the year <b>2016</b>.
+        Since then, it has grown into a <b>center for excellence, innovation, and research</b> with dedicated faculty and staff, highly motivated students, 
+        state-of-the-art facilities, and an innovative teaching-learning environment.
+        <br><br>
+        The department offers four undergraduate programs:
+        <ul class="list-disc pl-6">
+            <li>B.Tech in Computer Science and Engineering (Intake: 223)</li>
+            <li>B.Tech in CSE with specialization in Artificial Intelligence & Machine Learning (Intake: 66)</li>
+            <li>B.Tech in CSE with specialization in Data Science & Analytics (Intake: 66)</li>
+            <li>B.Tech in CSE with specialization in Human-Computer Interaction & Gaming Technology (Intake: 66)</li>
+        </ul>
+        Additionally, the department introduced a <b>Ph.D. program</b> in the academic year <b>2018-19</b> for research enthusiasts.
+        <br><br>
+        The department is committed to fostering <b>interdisciplinary research and innovation</b>, continuously working to provide students 
+        with a cutting-edge curriculum aimed at solving real-world problems in industry and society.
+        <br><br>
+        Equipped with advanced laboratories, the latest technologies, platforms, and best-in-class computing facilities, 
+        the department also acquires specialized hardware and software for research projects based on specific needs.
+        Additionally, it features a <b>dedicated research lab</b> for research activities.
+        <br><br>
+        The department has proficient faculty members with <b>PhDs</b> from prestigious institutions such as IITs, NITs, IIITs, foreign universities, 
+        and other renowned universities across India, specializing in various research areas:
+        <ul class="list-disc pl-6">
+            <li>Artificial Intelligence and Machine Learning</li>
+            <li>Deep Learning</li>
+            <li>Natural Language Processing</li>
+            <li>Parallel Computing</li>
+            <li>High-Performance Computing</li>
+            <li>Bioinformatics</li>
+            <li>Internet of Things (IoT)</li>
+            <li>Pattern Recognition</li>
+        </ul>
+        <br>
+        The department is currently headed by <b>Dr. Nishat Afshan Ansari</b>.
+    </p>
+</div>
+
+    `,
+          links: ["BoS", "Achievement", "Research", "Faculty", "Staff", "Projects", "Laboratory", "Events"]
+      },
+      ece: {
+          description: `
+          <div class="about px-4 pt-10 text-xl">
+    <p class="text-gray-700">
+        The <b>Department of Electronics & Communication Engineering (ECE)</b> was established in <b>2016</b>. It is currently headed by <b>Dr. Harsh Goud</b>. 
+        The department offers two undergraduate programs:
+        <ul class="list-disc pl-6">
+            <li>B.Tech in Electronics & Communication Engineering</li>
+            <li>B.Tech in ECE with specialization in Internet of Things (IoT)</li>
+        </ul>
+        The department also offers a <b>Ph.D. program</b>, with <b>32 research scholars</b> currently enrolled.
+        <br><br>
+        The department is dedicated to <b>innovation and research</b> in inter-disciplinary areas, specializing in:
+        <ul class="list-disc pl-6">
+            <li>Signal, Image, and Video Processing</li>
+            <li>Embedded Systems</li>
+            <li>Antenna Design</li>
+            <li>VLSI Design</li>
+        </ul>
+        <br>
+        The department has strong <b>industry collaborations</b>, engages in <b>consultancy activities</b>, and regularly organizes events such as:
+        <ul class="list-disc pl-6">
+            <li>Short-Term Training Programs (STTP)</li>
+            <li>Faculty Development Programs (FDP)</li>
+            <li>AICTE-sponsored Workshops</li>
+            <li>Expert Lectures</li>
+        </ul>
+        <br>
+        The department is equipped with <b>state-of-the-art laboratories</b> and an advanced curriculum tailored for industry needs.
+        <br><br>
+        Faculty members hold <b>PhDs</b> from renowned institutes like <b>IITs, NITs, and international universities</b>. 
+        <br><br>
+        <b>Faculty Achievements:</b>
+        <ul class="list-disc pl-6">
+            <li>Over <b>7 patents</b> to their name</li>
+            <li>More than <b>120 journal publications</b></li>
+            <li>Over <b>55 conference papers</b></li>
+            <li><b>13+ book chapters</b> published internationally</li>
+            <li>Secured research project funding of <b>₹1.5 Cr+</b></li>
+        </ul>
+        <br>
+        
+        <h2 class="font-bold text-xl text-[#00457b]">B.Tech. in Electronics & Communication Engineering</h2>
+        <br>
+        The department offers a <b>B.Tech in Electronics and Communication Engineering</b>, focusing on:
+        <ul class="list-disc pl-6">
+            <li>Embedded Systems</li>
+            <li>Internet of Things (IoT)</li>
+            <li>Communication Technologies</li>
+            <li>Control Systems</li>
+            <li>Image and Computer Vision</li>
+            <li>CMOS Design</li>
+            <li>Machine Learning & Artificial Intelligence</li>
+        </ul>
+        <br>
+        The curriculum is updated regularly to align with <b>industry trends</b>. The department offers <b>advanced experimental labs</b>, rigorous lab sessions, 
+        and <b>mini-projects</b> to enhance practical skills. More than <b>480 students</b> are currently enrolled in this program.
+        <br><br>
+        
+        <b>Career Opportunities:</b>
+        <ul class="list-disc pl-6">
+            <li>Wireless Communication & Sensor Networks</li>
+            <li>Image and Video Processing</li>
+            <li>Biomedical Signal Processing</li>
+            <li>IoT and Artificial Intelligence</li>
+            <li>Computer Vision</li>
+            <li>Antenna Design</li>
+            <li>VLSI Design</li>
+            <li>Embedded System Design</li>
+        </ul>
+        <br>
+
+        <h2 class="font-bold text-xl text-[#00457b]">B.Tech. in ECE (Internet of Things)</h2>
+        <br>
+        The B.Tech program in <b>ECE (Internet of Things - IoT)</b> equips students with:
+        <ul class="list-disc pl-6">
+            <li>A strong foundation in <b>Electronic Engineering</b> and <b>Computer Science</b></li>
+            <li>Deep knowledge of <b>IoT devices, systems, and networks</b></li>
+            <li>Expertise in <b>Sensors & Instrumentation</b>, <b>Chip Design</b>, and <b>IoT Security</b></li>
+        </ul>
+        <br>
+        IoT applications are expanding rapidly, influencing areas such as:
+        <ul class="list-disc pl-6">
+            <li>Urban Transport</li>
+            <li>Medical Devices</li>
+            <li>Smart Homes</li>
+            <li>Wearable Tech</li>
+        </ul>
+        <br>
+        Currently, the department houses more than <b>645 students</b>.
+    </p>
+</div>
+
+          `,
+          links: ["BoS", "Achievement", "Research", "Faculty", "Staff", "Projects", "Laboratory", "Events"]
+      },
+      doctoral: {
+          description: `
+              The Doctoral Program at IIIT Nagpur is designed for researchers and scholars who wish to pursue advanced studies in engineering and sciences. 
+              The program offers Ph.D. opportunities in Computer Science, Electronics, Applied Mathematics, and more.
+              <br><br>
+              The department provides financial support, research funding, and international collaboration opportunities.
+          `,
+          links: ["Research Areas", "Guides", "Admissions", "Publications", "Funding Opportunities", "Conferences", "Workshops"]
+      },
+      programs: {
+          description: `
+              IIIT Nagpur offers a variety of programs across multiple disciplines. From undergraduate B.Tech courses to postgraduate and Ph.D. programs, 
+              the institute is committed to providing quality education in emerging technologies.
+              <br><br>
+              Programs focus on industry-relevant skills, innovation, and interdisciplinary learning.
+          `,
+          links: ["B.Tech Programs", "M.Tech Programs", "Ph.D.", "Research Collaborations", "Internships", "Placements", "Workshops"]
+      }
+  };
+
+  // Function to change department
+  function changeDepartment(dept) {
+      // Update about section
+      document.getElementById("tab-description").innerHTML = departments[dept].description;
+
+      // Update explore links
+      const exploreLinksContainer = document.getElementById("explore-links");
+      exploreLinksContainer.innerHTML = ""; // Clear previous links
+
+      departments[dept].links.forEach(link => {
+          const anchor = document.createElement("a");
+          anchor.href = `/${dept}/${link.replace(/\s+/g, '')}`; // Generate URL
+          anchor.innerHTML = `<h1 class="bg-[#00457b] text-white px-4 py-2 rounded-md">${link}</h1>`;
+          exploreLinksContainer.appendChild(anchor);
+      });
+  }
+
+  // Load Basic Science by default on page load
+  window.onload = function() {
+      changeDepartment('basic_science');
+  };
