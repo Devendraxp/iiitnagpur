@@ -1,14 +1,14 @@
 <nav
 class="w-full banner lg:h-[100px] md:h-[80px] pl-4 py-[4px] flex items-center justify-between fixed top-0 left-0 z-[998] "
 >
-<div class="flex h-full items-center gap-4">
+<div class="flex h-full items-center md:gap-4 gap-2">
   <img
-    class="lg:h-32 h-12 translate-y-2 -translate-x-[10px]"
+    class="lg:h-32 md:h-28 h-20  -translate-y-2 md:translate-y-2 -translate-x-[10px]"
     src="../images/logos/logobanner.webp"
     alt="" onclick="window.location.href='/'"
   />
   <div class="flex flex-col">
-    <div class="pt-2 overflow-hidden lg:h-[3vw] md:h-[5vw] h-[7vw]">
+    <div class="pt-2 overflow-hidden lg:h-[3vw] md:h-[5vw] h-[9vw]">
       <div class="text-container space-y-4">
         <h1
         class="leading-none title font-bold font-[font2] lg:text-[2vw] md:text-[3vw] text-[3vw] text-transparent tracking-tighter"
@@ -29,12 +29,12 @@ class="w-full banner lg:h-[100px] md:h-[80px] pl-4 py-[4px] flex items-center ju
     </div>
   </div>
 </div>
-<div class="icons2">
+<div class="icons2 flex gap-2">
   <form id="searchForm" class="search-form" action="/search" method="GET">
     <input type="text" name="q" placeholder="Search..." class="search-input" />
   </form>
   <!-- Search Icon -->
-  <i id="searchIcon" class="ri-search-line icon text-[#fff] lg:text-[1.8vw] md:text-[3vw] my-[20px] mr-[20px] translate-x-[10px]"></i>
+  <i id="searchIcon" class="ri-search-line icon text-[#fff] lg:text-[1.8vw] md:text-[3vw] my-[20px] md:mr-[20px]  mr-[10px] translate-x-[10px]"></i>
   <!-- Menu Icon -->
   <i class="ri-menu-line text-[#fff] lg:text-[1.8vw] md:text-[3vw] open my-[20px] mr-[20px] translate-x-[10px]"></i>
   
@@ -46,9 +46,9 @@ class="w-full overlay pl-4 py-[4px] items-center fixed top-0 left-0 z-[999] lg:h
 id="firstBox"
 >
 <img
-  class="lg:h-[65%] h-12 object-cover translate-x-[25px]"
-  src="../images/logos/Logo1.svg"
-  alt="Logo" onclick="window.location.href='/'"
+class="lg:h-32 h-12 translate-y-2 -translate-x-[10px]"
+src="../images/logos/logobanner.webp"
+alt="" onclick="window.location.href='/'"
 />
 <div class="flex md:flex-row justify-evenly w-full ">
 <a href="/aboutUs">  <h1
@@ -120,30 +120,47 @@ id="firstBox"
 </div>
 <div
 class="w-full h-screen pl-4 py-[3px] pb-20 fixed top-0 left-0 z-[999] lg:h-[100px] md:h-[80px] bg-[#00508a] text-white  md:hidden overflow-y-auto overlay2">
-<div class="flex justify-between items-center">
+<div class="flex items-center md:gap-4 gap-2">
   <img
-    class="lg:h-full h-12 object-cover"
-    src="../images/logos/Logo1.svg"
-    alt="Logo" onclick="window.location.href='/'"
+    class="lg:h-32 md:h-28 h-20  -translate-y-2 md:translate-y-2 -translate-x-[10px]"
+    src="../images/logos/logobanner.webp"
+    alt="" onclick="window.location.href='/'"
   />
-  <div class="flex flex-col mx-4">
-    <div class="pt-2">
-      <h1
-        class="leading-none title font-bold font-[font2] text-[3.2vw] text-white tracking-tighter"
-      >
+  <div class="flex flex-col">
+    <div class="pt-2 overflow-hidden lg:h-[3vw] md:h-[5vw] h-[8.5vw]">
+      <div class=" space-y-4">
+        <h1
+        class="leading-none title font-bold font-[font2] lg:text-[2vw] md:text-[3vw] text-[3vw] text-white tracking-tighter"
+        >
         Indian Institute of Information Technology, Nagpur
       </h1>
-    </div>
-    <h1
-      class="leading-none tracking-tighter text-[#f26e32] text-[2.5vw]"
-    >
-      An Institution of National Importance By An Act of Parliament
+      <h1
+      class="leading-none title font-bold font-[font2] lg:text-[2vw] md:text-[3vw] text-[3vw] text-white tracking-tighter"
+      >
+      भारतीय सूचना प्रौद्योगिकी संस्थान, नागपुर
     </h1>
+  <h1
+  class="leading-none title font-bold font-[font2] lg:text-[2vw] md:text-[3vw] text-[3vw] text-white tracking-tighter"
+  >
+  Indian Institute of Information Technology, Nagpur
+</h1>
+    </div>
+    </div>
   </div>
-  <i
-    class="ri-menu-line text-white lg:text-[1.8vw] md:text-[3vw] close2 my-[20px] mr-[20px] -translate-x-[5px]"
-  ></i>
+  <div class="icons2 flex gap-2">
+    <form id="searchForm" class="search-form" action="/search" method="GET">
+      <input type="text" name="q" placeholder="Search..." class="search-input" />
+    </form>
+    <!-- Search Icon -->
+    <i id="searchIcon" class="ri-search-line icon text-[#fff] lg:text-[1.8vw] md:text-[3vw] my-[20px] md:mr-[20px]  mr-[10px] translate-x-[10px]"></i>
+    <!-- Menu Icon -->
+    <i class="ri-menu-line text-[#fff] lg:text-[1.8vw] md:text-[3vw] close2 my-[20px] mr-[20px] translate-x-[10px]"></i>
+    
+  </div>
 </div>
+
+
+
 <div class="flex flex-col w-full space-y-6 font-medium pt-4 pr-4 uppercase">
   <!-- About Us Accordion -->
   <div class="accordion-item">

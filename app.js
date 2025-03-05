@@ -227,6 +227,9 @@ app.get("/readMore", async (req, res) => {
 app.get("/readMore/internationalResearch", (req, res) => {
   res.render("readMore/InternationalRes");
 });
+app.get("/readMore/academicReadMore", (req, res) => {
+  res.render("readMore/academicReadMore");
+});
 app.get("/readMore/research", (req, res) => {
   res.render("readMore/Research");
 });
