@@ -138,7 +138,7 @@ app.get("/basic-science/:page", (req, res) => {
 });
 
 app.get("/alumni", (req, res) => {
-  res.redirect("/alumni/AbousUs");
+  res.redirect("/alumni/AboutUs");
 });
 app.get("/alumni/:page", (req, res) => {
   const { page } = req.params;
