@@ -130,11 +130,11 @@ app.get("/aboutUs", (req, res) => {
 
 // Basic Science Routes
 app.get("/department", (req, res) => {
-  res.redirect("/basic-science/about-department");
+  res.redirect("/basic_science/about-department");
 });
-app.get("/basic-science/:page", (req, res) => {
+app.get("/basic_science/:page", (req, res) => {
   const { page } = req.params;
-  res.render(`BasicScience/${page}`);
+  res.render(`basic_science/${page}`);
 });
 
 app.get("/alumni", (req, res) => {
@@ -144,6 +144,23 @@ app.get("/alumni/:page", (req, res) => {
   const { page } = req.params;
   res.render(`alumni/${page}`);
 });
+
+app.get("/placements", (req, res) => {
+  res.redirect("/placements/about-us");
+});
+app.get("/placements/:page", (req, res) => {
+  const { page } = req.params;
+  res.render(`placements/${page}`);
+});
+
+app.get("/governance", (req, res) => {
+  res.redirect("/governance/board-of-governors");
+});
+app.get("/governance/:page", (req, res) => {
+  const { page } = req.params;
+  res.render(`governance/${page}`);
+});
+
 
 app.get("/footerPages", (req, res) => {
   res.redirect("/footerPages/campus-location");

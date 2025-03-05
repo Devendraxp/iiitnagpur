@@ -1,0 +1,630 @@
+<%- include('../partials/head2') %>
+
+<body>
+  <%- include('../partials/nav') %>
+  <div class="w-full min-h-screen bg-white text-black">
+    <div class="w-full lg:h-[100px] md:h-[80px]"></div>
+
+    <div class="mainContent w-full">
+      <div
+        class="routes w-full px-44 flex items-center gap-4 bg-[#00457b] py-5"
+      >
+        <a
+          class="text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+          href="#"
+          >Home <i class="ri-arrow-right-s-line text-md"></i>
+        </a>
+        <a
+          class="text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+          href="#"
+          >Profile details
+        </a>
+      </div>
+
+      <div class="content px-4 md:px-20 lg:px-44 mt-8 md:mt-16 mb-8 md:mb-10">
+        <h2 class="text-xl md:text-2xl uppercase font-bold text-[#00457b]">
+          Profile details
+        </h2>
+        <div class="w-full h-[1px] bg-[#00457b] mt-2"></div>
+
+        <div class="max-w-5xl mx-auto p-8">
+          <div class="bg-white shadow-lg rounded-lg p-8">
+            <!-- Profile Header -->
+            <div
+              class="flex flex-col md:flex-row items-center md:items-start gap-6"
+            >
+              <!-- Profile Image -->
+              <div class="w-50 h-64">
+                <img
+                src="../images/basicScience/HOD.jpg"
+                  alt="Dr. Prasad V. Joshi"
+                  class="rounded-lg shadow-md object-cover"
+                />
+              </div>
+              <!-- Profile Info -->
+              <div class="text-center md:text-left">
+                <h1 class="text-3xl font-bold text-[#00457b]">
+                  Dr. Prasad V. Joshi
+                </h1>
+                <p class="text-gray-600 text-lg font-semibold">
+                  Assistant Professor & HOD
+                </p>
+                <p class="text-gray-700 mt-2">
+                  <i class="ri-phone-line"></i> 9893195909
+                </p>
+                <p class="text-gray-700">
+                  <i class="ri-mail-line"></i> pjoshi@iiitn.ac.in
+                </p>
+
+                <!-- Socials -->
+                <div class="flex justify-center md:justify-start gap-4 mt-4">
+                  <a href="#" class="text-gray-600 hover:text-blue-500"
+                    ><i class="ri-facebook-fill text-2xl"></i
+                  ></a>
+                  <a href="#" class="text-gray-600 hover:text-pink-500"
+                    ><i class="ri-instagram-line text-2xl"></i
+                  ></a>
+                  <a href="#" class="text-gray-600 hover:text-blue-400"
+                    ><i class="ri-twitter-fill text-2xl"></i
+                  ></a>
+                  <a href="#" class="text-gray-600 hover:text-blue-600"
+                    ><i class="ri-linkedin-fill text-2xl"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <hr class="border-[#00457b] my-6" />
+
+            <!-- Sections -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Left Section -->
+              <div>
+                <!-- Education -->
+                <div class="mb-6">
+                  <h3 class="text-lg font-bold text-[#00457b]">EDUCATION</h3>
+                  <ul class="list-disc ml-6 text-gray-700 space-y-1">
+                    <li>Ph.D. in Solid Mechanics, NIT Raipur (2015)</li>
+                    <li>
+                      M.Tech. in Mechanical Engineering, NIT Kurukshetra (2001)
+                    </li>
+                    <li>B.E. in Mechanical Engineering, C.O.E.T.A</li>
+                  </ul>
+                </div>
+
+                <!-- Experience -->
+                <div class="mb-6">
+                  <h3 class="text-lg font-bold text-[#00457b]">EXPERIENCE</h3>
+                  <ul class="list-disc ml-6 text-gray-700 space-y-1">
+                    <li>2018 - Present: Assistant Professor, IIIT Nagpur</li>
+                    <li>2001 - 2018: Professor, SSTC Bhilai</li>
+                    <li>1996 - 1999: Design Engineer, CEAT Tyres (SATL)</li>
+                  </ul>
+                </div>
+
+                <!-- Teaching -->
+                <div class="mb-6">
+                  <h3 class="text-lg font-bold text-[#00457b]">TEACHING</h3>
+                  <ul class="list-disc ml-6 text-gray-700 space-y-1">
+                    <li>
+                      1st / 2nd Sem CSE/ECE – Mechanics & Graphics (2018-19,
+                      2019-20)
+                    </li>
+                    <li>7th / 8th Sem ECE – Robotics (2019-20)</li>
+                    <li>3rd / 4th Sem ME – Structural Analysis</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Right Section -->
+              <div>
+                <!-- Research -->
+                <div class="mb-6">
+                  <h3 class="text-lg font-bold text-[#00457b]">RESEARCH</h3>
+
+                  <!-- Research Profile Link -->
+                  <a href="#" class="text-blue-600 hover:underline"
+                    >Link to IRINS/Vidwan Research Profile</a
+                  >
+
+                  <!-- Areas of Research -->
+                  <div class="mt-2">
+                    <p class="font-semibold">Area of Research:</p>
+                    <ul class="list-disc ml-6 text-gray-700">
+                      <li>Solid Mechanics</li>
+                      <li>Vibration, Acoustics</li>
+                    </ul>
+                  </div>
+
+                  <!-- Research Projects -->
+                  <div class="mt-4">
+                    <p class="font-semibold">Research Projects:</p>
+                    <ul class="list-disc ml-6 text-gray-700">
+                      <li>Modified IC engines with data acquisition.</li>
+                      <li>
+                        Vibration & Acoustic analysis using Fast Fourier
+                        Transform (FFT).
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Reviewer for Journals / Conferences -->
+                  <div class="mt-4">
+                    <p class="font-semibold">
+                      Reviewer for Journals / Conferences:
+                    </p>
+                    <ul class="list-disc ml-6 text-gray-700">
+                      <li>
+                        <span class="font-semibold">Thin Walled Structure</span
+                        >, Elsevier, USA
+                      </li>
+                      <li>
+                        <span class="font-semibold"
+                          >European Journal of Mechanics A – Solids</span
+                        >, Elsevier, UK
+                      </li>
+                      <li>
+                        <span class="font-semibold">Nonlinear Dynamics</span>,
+                        Springer
+                      </li>
+                      <li>
+                        <span class="font-semibold"
+                          >Journal of Solids and Structures</span
+                        >, Inderscience
+                      </li>
+                      <li>
+                        <span class="font-semibold"
+                          >Journal of Low Frequency Noise, Vibration and Active
+                          Control</span
+                        >, Multi-Science, UK
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr class="border-[#00457b] my-6" />
+
+            <!-- Publications -->
+            <div class="mb-6">
+              <h3 class="text-lg font-bold text-[#00457b]">PUBLICATIONS</h3>
+
+              <ul class="list-disc ml-6 text-gray-700">
+                <li>
+                  <strong
+                    >Analytical modeling and vibration analysis of internally
+                    cracked rectangular plates</strong
+                  >
+                  – <em>Journal of Sound and Vibration, Elsevier</em>, Vol. 333,
+                  Issue 22 (2014), pp. 5851–5864.
+                  <a
+                    href="http://dx.doi.org/10.1016/j.jsv.2014.06.028"
+                    class="text-blue-600 hover:underline"
+                    >DOI</a
+                  >
+                  (SCI Journal)
+                </li>
+                <li>
+                  <strong
+                    >Analytical modeling for vibration analysis of partially
+                    cracked orthotropic rectangular plates</strong
+                  >
+                  – <em>European Journal of Mechanics A/Solids, Elsevier</em>,
+                  Vol. 50 (2015), pp. 100–111.
+                  <a
+                    href="http://dx.doi.org/10.1016/j.euromechsol.2014.11.007"
+                    class="text-blue-600 hover:underline"
+                    >DOI</a
+                  >
+                  (SCI Journal)
+                </li>
+                <li>
+                  <strong
+                    >Analytical modeling for vibration analysis of thin
+                    rectangular orthotropic/functionally graded plates with an
+                    internal crack</strong
+                  >
+                  – <em>Journal of Sound and Vibration, Elsevier</em>, Vol. 344
+                  (2015), pp. 377–398.
+                  <a
+                    href="http://dx.doi.org/10.1016/j.jsv.2015.01.026"
+                    class="text-blue-600 hover:underline"
+                    >DOI</a
+                  >
+                  (SCI Journal)
+                </li>
+                <li>
+                  <strong
+                    >Effect of thermal environment on free vibration of cracked
+                    rectangular plate: An analytical approach</strong
+                  >
+                  – <em>Thin-Walled Structures, Elsevier</em>, Vol. 91 (2015),
+                  pp. 38–49.
+                  <a
+                    href="http://dx.doi.org/10.1016/j.tws.2015.02.004"
+                    class="text-blue-600 hover:underline"
+                    >DOI</a
+                  >
+                  (SCI Journal)
+                </li>
+                <li>
+                  <strong
+                    >Non-linear vibration analysis of isotropic plate with
+                    perpendicular surface cracks</strong
+                  >
+                  –
+                  <em
+                    >Book Chapter in Advances in Structural Engineering,
+                    Springer</em
+                  >, pp. 77–94 (2015).
+                  <a
+                    href="https://doi.org/10.1007/978-81-322-2190-6_8"
+                    class="text-blue-600 hover:underline"
+                    >DOI</a
+                  >
+                  (SCI Journal)
+                </li>
+                <li>
+                  <strong
+                    >Effect of microstructure on vibration characteristics of
+                    partially cracked rectangular plates based on a modified
+                    couple stress theory</strong
+                  >
+                  –
+                  <em>International Journal of Mechanical Sciences, Elsevier</em
+                  >, Vol. 100 (2015), pp. 269–282.
+                  <a
+                    href="http://dx.doi.org/10.1016/j.ijmecsci.2015.07.004"
+                    class="text-blue-600 hover:underline"
+                    >DOI</a
+                  >
+                  (SCI Journal)
+                </li>
+              </ul>
+
+              <!-- Publications from Ph.D. Work -->
+              <div class="mt-4">
+                <p class="font-semibold">Publications from Ph.D. Work:</p>
+                <ul class="list-disc ml-6 text-gray-700">
+                  <li>
+                    <strong
+                      >Effect of fibre orientation on non-linear vibration of
+                      partially cracked thin rectangular orthotropic micro
+                      plate: An analytical approach</strong
+                    >
+                    –
+                    <em
+                      >International Journal of Mechanical Sciences,
+                      Elsevier</em
+                    >, Vol. 105 (2016), pp. 378–397.
+                    <a
+                      href="http://dx.doi.org/10.1016/j.ijmecsci.2015.11.020"
+                      class="text-blue-600 hover:underline"
+                      >DOI</a
+                    >
+                    (SCI Journal)
+                  </li>
+                  <li>
+                    <strong
+                      >Vibration and buckling analysis of partially cracked thin
+                      orthotropic rectangular plates in thermal
+                      environment</strong
+                    >
+                    – <em>Thin-Walled Structures, Elsevier</em>, Vol. 109
+                    (2016), pp. 143–158.
+                    <a
+                      href="http://dx.doi.org/10.1016/j.tws.2016.09.020"
+                      class="text-blue-600 hover:underline"
+                      >DOI</a
+                    >
+                    (SCI Journal)
+                  </li>
+                  <li>
+                    <strong
+                      >Effect of thermal environment on free vibration and
+                      buckling of partially cracked isotropic and FGM micro
+                      plates</strong
+                    >
+                    –
+                    <em
+                      >International Journal of Mechanical Sciences,
+                      Elsevier</em
+                    >, Vol. 131-132 (2017), pp. 155–170.
+                    <a
+                      href="http://dx.doi.org/10.1016/j.ijmecsci.2017.06.044"
+                      class="text-blue-600 hover:underline"
+                      >DOI</a
+                    >
+                    (SCI Journal)
+                  </li>
+                  <li>
+                    <strong
+                      >Analytical modeling for nonlinear vibration analysis of
+                      partially cracked thin magneto-electro-elastic plate
+                      coupled with fluid</strong
+                    >
+                    – <em>Nonlinear Dynamics, Springer</em>, 2017.
+                    <a
+                      href="https://doi.org/10.1007/s11071-017-3652-5"
+                      class="text-blue-600 hover:underline"
+                      >DOI</a
+                    >
+                    (SCI Journal)
+                  </li>
+                  <li>
+                    <strong
+                      >Vibration analysis of partially cracked plate submerged
+                      in fluid</strong
+                    >
+                    – <em>Journal of Sound and Vibration, Elsevier</em>, Vol.
+                    412 (2018), pp. 28–57.
+                    <a
+                      href="https://doi.org/10.1016/j.jsv.2017.09.016"
+                      class="text-blue-600 hover:underline"
+                      >DOI</a
+                    >
+                    (SCI Journal)
+                  </li>
+                  <li>
+                    <strong
+                      >Effect of thermal environment on vibration analysis of
+                      partially cracked thin isotropic plate submerged in
+                      fluid</strong
+                    >
+                    – <em>Journal of Solid Mechanics</em>, Vol. 11, No. 1
+                    (2019), pp. 120–143.
+                    <a
+                      href="https://doi.org/10.22034/JSM.2019.664224"
+                      class="text-blue-600 hover:underline"
+                      >DOI</a
+                    >
+                    (SCI Journal)
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <hr class="border-[#00457b] my-6" />
+
+            <!-- Supervision -->
+            <div class="mb-6">
+              <h3 class="text-lg font-bold text-[#00457b]">SUPERVISION</h3>
+
+              <p class="text-gray-700">
+                <strong>M.E. / M.Tech:</strong> Supervised more than 15 M.Tech
+                theses.
+              </p>
+              <p class="text-gray-700">
+                <strong>B.E. / B.Tech:</strong> Guided more than 15 project
+                groups.
+              </p>
+              <p class="text-gray-700"><strong>Ph.D. Supervision:</strong></p>
+
+              <!-- PhD Students -->
+              <table class="w-full border-collapse border border-gray-300 mt-3">
+                <thead>
+                  <tr class="bg-gray-200">
+                    <th class="border border-gray-400 px-4 py-2 text-left">
+                      Student Name
+                    </th>
+                    <th class="border border-gray-400 px-4 py-2 text-left">
+                      Year
+                    </th>
+                    <th class="border border-gray-400 px-4 py-2 text-left">
+                      Research Topic
+                    </th>
+                    <th class="border border-gray-400 px-4 py-2 text-left">
+                      Status
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="border border-gray-400 px-4 py-2">
+                      Mr. Sandeep Buradkar
+                    </td>
+                    <td class="border border-gray-400 px-4 py-2">2020</td>
+                    <td class="border border-gray-400 px-4 py-2">
+                      Machine Learning techniques for disease detection
+                    </td>
+                    <td class="border border-gray-400 px-4 py-2">Ongoing</td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-400 px-4 py-2">
+                      Mr. Dhabekar Nikhil Satyavijay
+                    </td>
+                    <td class="border border-gray-400 px-4 py-2">2020</td>
+                    <td class="border border-gray-400 px-4 py-2">----</td>
+                    <td class="border border-gray-400 px-4 py-2">Ongoing</td>
+                  </tr>
+                  <tr>
+                    <td class="border border-gray-400 px-4 py-2">
+                      Mr. Shashank Soni
+                    </td>
+                    <td class="border border-gray-400 px-4 py-2">----</td>
+                    <td class="border border-gray-400 px-4 py-2">
+                      Analytical modeling for vibration analysis of partially
+                      cracked submerged plates
+                    </td>
+                    <td class="border border-gray-400 px-4 py-2">
+                      Submitted, NIT Raipur
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Responsibilities -->
+            <div class="mb-6">
+              <h3 class="text-lg font-bold text-[#00457b]">RESPONSIBILITIES</h3>
+
+              <ul class="list-disc list-inside text-gray-700">
+                <li>Institute Exam Controller, IIIT Nagpur</li>
+                <li>
+                  Coordinator of College Magazine and Communication Club at
+                  IIITN
+                </li>
+                <li>Chairman of Sexual Harassment Committee at IIITN</li>
+                <li>Member of Admission Committee at IIITN</li>
+                <li>Mentor for a startup funded by MSME, GOI under SSTC-BI</li>
+                <li>
+                  Project:
+                  <strong
+                    >“Solar Cow Urine Distiller for Strengthening Rural
+                    Economy”</strong
+                  >
+                </li>
+                <li>Organized EAC sponsored by DST, NIMAT</li>
+                <li>Mentor at IIPC, DST at SSTC Bhilai</li>
+                <li>M.E. Coordinator (Design) at SSTC</li>
+              </ul>
+
+              <!-- Lab Establishment -->
+              <h4 class="text-md font-semibold text-[#00457b] mt-4">
+                Lab Establishment:
+              </h4>
+              <ul class="list-disc list-inside text-gray-700">
+                <li>
+                  Vibration Lab (Funded by AICTE, New Delhi) - File No.
+                  8024/RIFD/MOD-258/2010-11
+                </li>
+                <li>
+                  Internal Combustion Engine Lab (Funded by AICTE, New Delhi) -
+                  File No. 8024/RID/BOR/MOD-266/2008-09
+                </li>
+              </ul>
+
+              <!-- Memberships -->
+              <h4 class="text-md font-semibold text-[#00457b] mt-4">
+                Memberships:
+              </h4>
+              <ul class="list-disc list-inside text-gray-700">
+                <li>Associate Member of Institute of Engineers India (IEI)</li>
+                <li>
+                  Life Member of Indian Society for Technical Education (ISTE)
+                </li>
+                <li>
+                  Life Member of International Journal of Engineering Research
+                  and Applications (IJERIA)
+                </li>
+              </ul>
+            </div>
+            <!-- Any Other Achievements -->
+            <div class="mb-6">
+              <h3 class="text-lg font-bold text-[#00457b]">
+                ANY OTHER ACHIEVEMENTS
+              </h3>
+
+              <ul class="list-disc list-inside text-gray-700">
+                <li>
+                  In-house Design & Fabrication of Coal-Fired Open Hearth
+                  Furnace.
+                </li>
+                <li>Attended STTP on PROE (Wildfire 2.0), 2005.</li>
+                <li>
+                  Participated in Workshop on Advances in Refrigeration, Air
+                  Conditioning & Cryogenics at GMRIT (RAJAM), A.P., 2005.
+                </li>
+                <li>
+                  Developed an Engineering Graphics learning program using
+                  PowerPoint.
+                </li>
+                <li>
+                  Founder and Incharge of Departmental Student Body
+                  <strong>“METAL”</strong>.
+                </li>
+                <li>
+                  Organizing Secretary for National-level events like
+                  <strong>“Techno-vision 07”</strong> and a 5-day STTP on PRO-E
+                  (WildFire 2.0).
+                </li>
+                <li>Worked as a Workshop Superintendent.</li>
+                <li>
+                  Experience as Assistant Examination Controller for 3 years.
+                </li>
+                <li>
+                  Member of the team constituted for framing the syllabus of
+                  M.E. (Design) in 2006.
+                </li>
+                <li>M.E. Coordinator for M.E. (Design) from 2006 to 2009.</li>
+                <li>M.E. Coordinator for M.E. (Thermal) since 2009.</li>
+                <li>
+                  Set up experimentation for evaluating the performance
+                  characteristics of a 4-stroke diesel engine fueled with
+                  Biodiesel.
+                </li>
+                <li>
+                  Published observations and results in IE(I); this paper
+                  received the
+                  <strong>Railway Board’s 2nd Prize (2012)</strong>.
+                </li>
+                <li>
+                  Familiar with laptop-based projector teaching, online
+                  tutorials for students, and the use of e-campus MIS.
+                </li>
+                <li>
+                  Participated in a 12-Day Faculty Development Programme,
+                  Organized by CCED, Sponsored by DST, 2006.
+                </li>
+                <li>
+                  Attended Conference on
+                  <strong
+                    >Industry-Institute Partnership for Global Innovative
+                    Practices</strong
+                  >, Organized by CSVTU in Collaboration with UGS & TCS, 2006.
+                </li>
+                <li>
+                  Part of the Team for Accreditation and represented the
+                  Department as HoD in 2014.
+                </li>
+                <li>
+                  Received a grant of <strong>Rs. 12.0 Lakh</strong> from AICTE
+                  under “MODROBS” for IC Engines Lab.
+                </li>
+                <li>
+                  Received a grant of <strong>Rs. 7.60 Lakh</strong> from AICTE
+                  for setting up a vibration laboratory (FFT Analyzer).
+                </li>
+                <li>Team member for objective-based teaching and learning.</li>
+                <li>
+                  More than 3 students’ projects sponsored by the IEDC cell.
+                </li>
+                <li>
+                  Received a grant for the
+                  <strong>Solar Cow Urine Distiller</strong> through the
+                  Business Incubator (BI) from MSME, Govt. of India (Mentor for
+                  this project).
+                </li>
+                <li>
+                  Participated in a workshop on
+                  <strong>“Intellectual Property Rights”</strong>, organized by
+                  the Ministry of MSME, Govt. of India, 2012.
+                </li>
+                <li>
+                  Attended a one-week
+                  <strong>ANSYS Structural Training</strong> organized by
+                  Innovent Engg. Solutions Pvt. Ltd., 2011.
+                </li>
+                <li>
+                  Successfully completed a one-week Refresher Course on
+                  <strong>Finite Element Method</strong>, organized by NIT
+                  Raipur, June 2012.
+                </li>
+                <li>
+                  Attended a Short-Term Course on
+                  <strong
+                    >“Application and Research Scope in Composite
+                    Materials”</strong
+                  >, organized by SSTC, SSGI Bhilai, 2016.
+                </li>
+                <li>Established a <strong>3D Printing Laboratory</strong>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('../partials/footer') %>
+</body>
+<%- include('../partials/tail2') %>

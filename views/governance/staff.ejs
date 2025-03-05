@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Staff</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-  </head>
-  <body>
+<%- include('../partials/head2') %>
+
+    <body>
+        <%- include('../partials/nav') %>
     <div class="pb-12 md:pb-20 w-full min-h-screen bg-white text-[#00457b]">
       <!-- Spacer for header -->
       <div class="w-full h-[60px] md:h-[70px] lg:h-[100px]"></div>
@@ -134,5 +129,7 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
+  </div>
+  <%- include('../partials/footer') %>
+</body>
+<%- include('../partials/tail2') %>
