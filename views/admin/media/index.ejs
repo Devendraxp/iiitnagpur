@@ -5,35 +5,61 @@
         alert("Copied: " + link);
     }
 </script>
+<style>
+    .media-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .media-card .card-img-top, 
+    .media-card embed {
+        height: 160px;
+        object-fit: cover;
+        object-position: center;
+    }
+    .media-card .card-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .media-card .card-title {
+        font-size: 1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .actions-container {
+        margin-top: auto;
+    }
+</style>
 <body>
     <h2 class="mb-3">Media</h2>
 
     <div class="col-12 mb-4 text-end">
         <a href="/admin/media/new" class="btn btn-primary">Upload New items</a>
     </div>
-    <div class="row">
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
         <% data.forEach(file => { %>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    
+            <div class="col">
+                <div class="card media-card shadow-sm">
                     <%if (file.filename.endsWith('.pdf')) { %>
-                        <embed src="<%= file.imageUrl %>" type="application/pdf" width="100%" height="200px" toolbar="0" menubar="0" />
+                        <embed src="<%= file.imageUrl %>" type="application/pdf" width="100%" toolbar="0" menubar="0" />
                     <% } else {%>
                         <img src="<%= file.imageUrl %>" class="card-img-top" alt="Image">
                     <% } %>
                     <div class="card-body">
                         <h5 class="card-title"><b><%= file.title%></b></h5>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" value="<%= file.imageUrl %>" readonly>
-                            <button class="btn btn-outline-secondary" onclick="copyToClipboard('<%= file.imageUrl %>')">
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control form-control-sm" value="<%= file.imageUrl %>" readonly>
+                            <button class="btn btn-outline-secondary btn-sm" onclick="copyToClipboard('<%= file.imageUrl %>')">
                                 <i class="bi bi-clipboard"></i>
                             </button>
                         </div>
-                        <div class="d-flex gap-2">
-                            <a href="/admin/media/<%= file._id %>" class="btn btn-success flex-grow-1">Edit</a>
+                        <div class="d-flex gap-2 actions-container">
+                            <a href="/admin/media/<%= file._id %>" class="btn btn-success btn-sm flex-grow-1">Edit</a>
                             <form action="/admin/media/<%= file._id %>?_method=DELETE" method="POST" class="flex-grow-1">
                                 <input type="hidden" name="_method" value="DELETE">
-                                <button type="submit" class="btn btn-secondary w-100">Delete</button>
+                                <button type="submit" class="btn btn-secondary btn-sm w-100">Delete</button>
                             </form>
                         </div>
                     </div>
@@ -41,4 +67,4 @@
             </div>
         <% }) %>
     </div>
-</body>
+</body></div>

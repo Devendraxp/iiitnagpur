@@ -9,23 +9,23 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <% data.forEach(event => { %>
             <div class="col">
-                <div class="card h-100">
+                <div class="card h-100 shadow-sm">
                     <% if(event.images && event.images.length > 0) { %>
-                        <img src="<%= event.images[0] %>" class="card-img-top" alt="Event Image">
+                        <img src="<%= event.images[0] %>" class="card-img-top" alt="Event Image" style="height: 180px; object-fit: cover;">
                     <% } else { %>
-                        <div class="card-img-top bg-light text-center py-5">No Image</div>
+                        <div class="card-img-top bg-light text-center py-5" style="height: 180px;">No Image</div>
                     <% } %>
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <div class="d-flex justify-content-between mb-2">
                             <span class="badge bg-primary"><%= event.eventName || 'No Event' %></span>
                             <span class="badge bg-secondary"><%= event.clubName || 'No Club' %></span>
                         </div>
-                        <h5 class="card-title"><%= event.title %></h5>
-                        <p class="card-text"><%= event.description %></p>
-                        <div class="d-flex gap-2">
-                            <a href="/admin/organisedEvent/<%= event._id %>" class="btn btn-success">Edit</a>
+                        <h5 class="card-title text-truncate"><%= event.title %></h5>
+                        <p class="card-text flex-grow-1" style="max-height: 100px; overflow: hidden;"><%= event.description %></p>
+                        <div class="d-flex gap-2 mt-auto">
+                            <a href="/admin/organisedEvent/<%= event._id %>" class="btn btn-sm btn-success">Edit</a>
                             <form action="/admin/organisedEvent/<%= event._id %>?_method=DELETE" method="POST" class="d-inline">
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this event?')">Delete</button>
+                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this event?')">Delete</button>
                             </form>
                         </div>
                     </div>
