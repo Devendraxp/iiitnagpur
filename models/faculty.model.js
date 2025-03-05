@@ -75,7 +75,7 @@ const facultySchema = new Schema(
             books: [
                 {
                     year: { type: Number, /* required: true */ },
-                    titles: { type: [String], /* required: true */ } // Multiple books per year
+                    papers: { type: [String], /* required: true */ } // Multiple books per year
                 }
             ]
         },

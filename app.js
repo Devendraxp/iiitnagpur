@@ -11,7 +11,7 @@ import StudentTestimonial from "./models/studentTestimonial.model.js";
 import Research from "./models/research.model.js";
 import Faculty from "./models/faculty.model.js";
 import Image from "./models/imageSchema.js";
-import adminRoute from "./routes/admin/index.routes.js";
+import adminRoute from "./routes/admin.routes.js";
 import studentRoute from "./routes/student.routes.js"
 import programRoute from "./routes/program.routes.js"
 import alumniRoute from "./routes/alumni.routes.js"
@@ -91,6 +91,7 @@ passport.use(new passportLocal.Strategy(Admin.authenticate()));
 passport.serializeUser(Admin.serializeUser());
 passport.deserializeUser(Admin.deserializeUser());
 
+
 // Routes
 app.get("/", async (_, res) => {
   const studentNotice = await Notice.find({ type: "student" });
@@ -110,7 +111,7 @@ app.get("/", async (_, res) => {
     update, 
     notification, 
     studentTestimonial, 
-    research 
+    research ,
   });
 });
 
@@ -296,7 +297,13 @@ app.get("/admin/deptAchievement/new", (req, res) => {
 // Create new achievement
 app.post("/admin/deptAchievement/new", async (req, res) => {
   try {
-    const { title, year, description, department } = req.body;
+    let { title, year, description, department } = req.body;
+
+    // Convert description to an array (handles multiline input)
+    description = Array.isArray(description)
+      ? description.filter((line) => line.trim() !== "")
+      : description.split("\n").map((line) => line.trim()).filter(Boolean);
+
     const newData = new DeptAchievement({ title, year, description, department });
 
     await newData.save();
@@ -328,7 +335,17 @@ app.get("/admin/deptAchievement/edit/:id", async (req, res) => {
 app.post("/admin/deptAchievement/edit/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    const updatedAchievement = await DeptAchievement.findByIdAndUpdate(id, req.body, { new: true });
+    let { title, year, description, department } = req.body;
+
+    description = Array.isArray(description)
+      ? description.filter((line) => line.trim() !== "")
+      : description.split("\n").map((line) => line.trim()).filter(Boolean);
+
+    const updatedAchievement = await DeptAchievement.findByIdAndUpdate(
+      id,
+      { title, year, description, department },
+      { new: true ,runValidators:true},
+    );
 
     if (!updatedAchievement) {
       return res.status(404).json({ error: "Achievement not found." });
@@ -351,12 +368,13 @@ app.delete("/admin/deptAchievement/:id", async (req, res) => {
       return res.status(404).json({ error: "Achievement not found." });
     }
 
-    res.json({ message: "Deleted successfully" }); // Use JSON response for AJAX
+    res.redirect("/admin/deptAchievement");
   } catch (error) {
     console.error("Error deleting department achievement:", error);
     res.status(500).json({ error: "Failed to delete department achievement." });
   }
 });
+
 
 
 
@@ -379,7 +397,7 @@ app.get("/admin/deptProject/new", (req, res) => {
 
 app.post("/admin/deptProject/new", async (req, res) => {
   try {
-    const { faculty, titleofProject, year, sponsoringAgency, fundingAmount, department } = req.body;
+    const { typeOfProject,faculty, titleofProject, year, sponsoringAgency, fundingAmount, department } = req.body;
 
     if (!department) {
       return res.status(400).send("Department field is required.");
@@ -392,6 +410,7 @@ app.post("/admin/deptProject/new", async (req, res) => {
       sponsoringAgency,
       fundingAmount,
       department,  
+      typeOfProject,
     });
 
 
@@ -441,7 +460,6 @@ app.delete("/admin/deptProject/:id", async (req, res) => {
 });
 
 
-
 app.get("/admin/deptEvent", async (req, res) => {
   try {
     const events = await DeptEvents.find();
@@ -458,16 +476,21 @@ app.get("/admin/deptEvent/new", (req, res) => {
 
 app.post("/admin/deptEvent/new", async (req, res) => {
   try {
-    const { year, description, department } = req.body;
+    let { year, description, department } = req.body;
 
     if (!year || !description || !department) {
       return res.status(400).send("All fields (year, description, department) are required.");
     }
 
+    // Convert description into an array of strings
+    description = Array.isArray(description)
+      ? description.filter((line) => line.trim() !== "")
+      : description.split("\n").map((line) => line.trim()).filter(Boolean);
+
     const newEvent = new DeptEvents({
       year,
       description,
-      department,  
+      department,
     });
 
     await newEvent.save();
@@ -481,7 +504,7 @@ app.post("/admin/deptEvent/new", async (req, res) => {
 app.get("/admin/deptEvent/edit/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    
+
     const event = await DeptEvents.findById(id);
     res.render("admin/deptEvent/edit", { event });
   } catch (error) {
@@ -493,7 +516,18 @@ app.get("/admin/deptEvent/edit/:id", async (req, res) => {
 app.post("/admin/deptEvent/edit/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    await DeptEvents.findByIdAndUpdate(id, req.body, { new: true });
+    let { year, description, department } = req.body;
+
+    // Ensure description is stored as an array
+    description = Array.isArray(description)
+      ? description.filter((line) => line.trim() !== "")
+      : description.split("\n").map((line) => line.trim()).filter(Boolean);
+
+    await DeptEvents.findByIdAndUpdate(
+      id,
+      { year, description, department },
+      { new: true }
+    );
 
     res.redirect("/admin/deptEvent");
   } catch (error) {
@@ -505,13 +539,14 @@ app.post("/admin/deptEvent/edit/:id", async (req, res) => {
 app.delete("/admin/deptEvent/:id", async (req, res) => {
   const { id } = req.params;
   try {
-   await DeptEvents.findByIdAndDelete(id);
+    await DeptEvents.findByIdAndDelete(id);
     res.redirect("/admin/deptEvent");
   } catch (error) {
     console.error("Error deleting department Event:", error);
-    res.status(500).json({ error: "Failed to delete  department Event." });
+    res.status(500).json({ error: "Failed to delete department Event." });
   }
 });
+
 
 
 

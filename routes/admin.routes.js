@@ -554,48 +554,44 @@ router.get("/faculty/edit/:id", async (req, res) => {
     // Convert arrays into newline-separated strings for textareas
     const formatMultiline = (arr) => (Array.isArray(arr) ? arr.join("\n") : "");
 
-    // Format Publications properly
+    // Properly format Publications
     const formatPublications = (pubs) => {
-      return (pubs || [])
-        .map((entry) => `${entry.year}\n${entry.papers.map((p) => `- ${p}`).join("\n")}`)
+      if (!Array.isArray(pubs)) return "";
+      return pubs
+        .map(
+          (entry) =>
+            `${entry.year}\n${(entry.papers || [])
+              .map((p) => `- ${p}`)
+              .join("\n")}`
+        )
         .join("\n\n");
     };
 
-    // Format research projects into an array of objects instead of a string
-  
-  
+    // Format research projects into an array of objects
     const formatResearchProjects = (projects) => {
       if (Array.isArray(projects)) {
-        // Case 1: If the input is already an array of objects, return it as is
         return projects.map((project) => ({
           year: project.year || "",
           title: project.title || "",
           duration: project.duration || "",
         }));
-      } else if (typeof projects === 'string') {
-        // Case 2: If the input is a string, parse it into an array of objects
-        try {
-          return projects
-            .split("\n")  // Split by newline to separate entries
-            .map(project => {
-              const [year, title, duration] = project.split(",");  // Split each entry by comma
-              return {
-                year: year?.trim() || "",
-                title: title?.trim() || "",
-                duration: duration?.trim() || ""
-              };
-            })
-            .filter(project => project.year || project.title || project.duration);  // Remove any empty entries
-        } catch (error) {
-          console.log("Error parsing research projects:", error);
-          return [];
-        }
+      } else if (typeof projects === "string") {
+        return projects
+          .split("\n")
+          .map((project) => {
+            const [year, title, duration] = project.split(",");
+            return {
+              year: year?.trim() || "",
+              title: title?.trim() || "",
+              duration: duration?.trim() || "",
+            };
+          })
+          .filter((project) => project.year || project.title || project.duration);
       }
       return [];
     };
-    
 
-    // Format PhD supervision into an array of objects instead of a string
+    // Format PhD supervision into an array of objects
     const formatPhDSupervision = (phd) => {
       if (Array.isArray(phd)) {
         return phd.map((supervision) => ({
@@ -608,7 +604,6 @@ router.get("/faculty/edit/:id", async (req, res) => {
       return [];
     };
 
-
     const data = {
       ...faculty.toObject(),
       education: formatMultiline(faculty.education),
@@ -617,14 +612,12 @@ router.get("/faculty/edit/:id", async (req, res) => {
       research: {
         areaofResearch: formatMultiline(faculty.research?.areaofResearch || []),
         researchProject: formatResearchProjects(faculty.research?.researchProject || []),
-        patent: formatMultiline(faculty.research?.patent || []), // Add patent here
-        fundedProject: formatMultiline(faculty.research?.fundedProject || []), // Add fundedProject here
+        patent: formatMultiline(faculty.research?.patent || []),
+        fundedProject: formatMultiline(faculty.research?.fundedProject || []),
         reviewerofJournal: formatMultiline(faculty.research?.reviewerofJournal || []),
-
       },
       supervision: {
         phd: formatPhDSupervision(faculty.supervision?.phd || []),
-
         MTech: formatMultiline(faculty.supervision?.MTech || []),
         BTech: formatMultiline(faculty.supervision?.BTech || []),
       },
@@ -634,12 +627,13 @@ router.get("/faculty/edit/:id", async (req, res) => {
         books: formatPublications(faculty.publication?.books).replace(/papers/g, "titles"),
       },
     };
-  //  console.log(data);
     res.render("admin/faculty/update.ejs", { data });
   } catch (error) {
+    console.error("Error fetching faculty details:", error);
     res.status(500).send("Server error: " + error.message);
   }
 });
+
 
 router.patch("/faculty/edit/:id", async (req, res) => {
   const { id } = req.params;
@@ -735,7 +729,6 @@ router.patch("/faculty/edit/:id", async (req, res) => {
     };
 
     const updatedFaculty = await Faculty.findByIdAndUpdate(id, data, { new: true });
-
     if (!updatedFaculty) {
       console.error("Error: Faculty not found.");
       return res.status(404).send("Faculty not found.");

@@ -4,7 +4,7 @@ const deptAchievementSchema = new Schema(
   {
     title:{type:String},
     year: { type: String },
-    description: { type: String },
+    description:  [String ],
     department: {
       type: String,
       enum: ["bs", "cse", "ece"],

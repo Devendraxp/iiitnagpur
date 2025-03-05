@@ -2,6 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 const deptProjectSchema=new Schema(
     {
+        typeOfProject:String,
         faculty:String,
         titleofProject:String,
         year:String,
