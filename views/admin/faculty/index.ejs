@@ -15,12 +15,12 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <% category.data.forEach(faculty => { %>
                         <div class="col">
-                            <div class="card h-[30vh]">
+                            <div class="card h-[20vh] w-[50%]">
 
                                 <img src="<%= faculty.image && faculty.image.trim() !== '' ? faculty.image : '/public/images/default-faculty.jpg' %>" 
                                     class="card-img-top" 
                                     alt="<%= faculty.name || 'Faculty Image' %>" 
-                                    style="width: 100%; max-height: 400px; object-fit: cover;">
+                                    style="width: 80%; max-height: 300px; object-fit: cover;">
                             
                                 <div class="card-body">
                                     <h5 class="card-title"><%= faculty.name %></h5>
@@ -51,10 +51,11 @@
                                         <% } %>
                                     </div>
                                     <div class="d-flex gap-2">
-                                        <a href="/admin/faculty/edit/<%= faculty._id %>" class="btn btn-warning">Edit</a>
-                                        <form action="/admin/faculty/delete/<%= faculty._id %>?_method=DELETE" method="POST">
+                                        <a href="/admin/faculty/<%= faculty._id %>" class="btn btn-warning">Edit</a>
+                                        <form action="/admin/faculty/<%= faculty._id %>?_method=DELETE" method="POST">
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
+                                        
                                         
                                     </div>
                                 </div>
