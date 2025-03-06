@@ -1,6 +1,8 @@
 import express from "express";
 import methodOverride from "method-override";
 import Faculty from "../../models/faculty.model.js";
+import mongoose from "mongoose"; 
+
 const router = express.Router();
 const PORT = 8080;
 
