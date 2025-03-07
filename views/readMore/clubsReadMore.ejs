@@ -1,0 +1,104 @@
+<%- include('../partials/head2') %>
+<body>
+  <%- include('../partials/nav') %>
+
+    <header class="bg-[#00457b] text-white text-center py-6">
+        <h1 class="text-3xl font-bold">IIIT Nagpur Clubs & Events</h1>
+    </header>
+    <main class="container mx-auto p-6">
+    <section>
+        <h2 class="text-2xl font-semibold text-[#00457b] mb-4">Technical Clubs</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+             
+                <div class="swiper-slide">
+                    <a href="/readMore/club"><div class="bg-white shadow-md rounded-lg p-4 text-center">
+                        <img src="https://via.placeholder.com/300" alt="Coding Club" class="rounded-lg w-full h-40 object-cover">
+                        <h3 class="mt-3 font-semibold">Coding Club</h3>
+                    </div></a>
+                </div>
+             
+                <div class="swiper-slide">
+                    <div class="bg-white shadow-md rounded-lg p-4 text-center">
+                        <img src="https://via.placeholder.com/300" alt="AI & ML Club" class="rounded-lg w-full h-40 object-cover">
+                        <h3 class="mt-3 font-semibold">AI & ML Club</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-white shadow-md rounded-lg p-4 text-center">
+                        <img src="https://via.placeholder.com/300" alt="Robotics Club" class="rounded-lg w-full h-40 object-cover">
+                        <h3 class="mt-3 font-semibold">Robotics Club</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-white shadow-md rounded-lg p-4 text-center">
+                        <img src="https://via.placeholder.com/300" alt="Robotics Club" class="rounded-lg w-full h-40 object-cover">
+                        <h3 class="mt-3 font-semibold">Robotics Club</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Cultural Clubs Carousel -->
+    <section class="mt-8">
+        <h2 class="text-2xl font-semibold text-[#00457b] mb-4">Cultural Clubs</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="bg-white shadow-md rounded-lg p-4 text-center">
+                        <img src="https://via.placeholder.com/300" alt="Music Club" class="rounded-lg w-full h-40 object-cover">
+                        <h3 class="mt-3 font-semibold">Music Club</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-white shadow-md rounded-lg p-4 text-center">
+                        <img src="https://via.placeholder.com/300" alt="Dance Club" class="rounded-lg w-full h-40 object-cover">
+                        <h3 class="mt-3 font-semibold">Dance Club</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-white shadow-md rounded-lg p-4 text-center">
+                        <img src="https://via.placeholder.com/300" alt="Drama Club" class="rounded-lg w-full h-40 object-cover">
+                        <h3 class="mt-3 font-semibold">Drama Club</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="bg-white shadow-md rounded-lg p-4 text-center">
+                        <img src="https://via.placeholder.com/300" alt="Drama Club" class="rounded-lg w-full h-40 object-cover">
+                        <h3 class="mt-3 font-semibold">Drama Club</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- Primary Events -->
+    <section class="mt-8">
+        <h2 class="text-2xl font-semibold text-[#00457b] mb-4">Primary Events</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
+            <div class="bg-[#00457b] text-white shadow-lg rounded-lg p-6 text-center font-semibold hover:scale-105 transition">
+                <img src="https://via.placeholder.com/300" alt="Tech Fest" class="rounded-lg w-full h-40 object-cover">
+                <h3 class="mt-3">Tech Fest</h3>
+            </div>
+            <div class="bg-[#00457b] text-white shadow-lg rounded-lg p-6 text-center font-semibold hover:scale-105 transition">
+                <img src="https://via.placeholder.com/300" alt="Cultural Fest" class="rounded-lg w-full h-40 object-cover">
+                <h3 class="mt-3">Cultural Fest</h3>
+            </div>
+            <div class="bg-[#00457b] text-white shadow-lg rounded-lg p-6 text-center font-semibold hover:scale-105 transition">
+                <img src="https://via.placeholder.com/300" alt="Hackathon" class="rounded-lg w-full h-40 object-cover">
+                <h3 class="mt-3">Hackathon</h3>
+            </div>
+            <div class="bg-[#00457b] text-white shadow-lg rounded-lg p-6 text-center font-semibold hover:scale-105 transition">
+                <img src="https://via.placeholder.com/300" alt="E-Summit" class="rounded-lg w-full h-40 object-cover">
+                <h3 class="mt-3">E-Summit</h3>
+            </div>
+        </div>
+    </section>
+</main>
+
+    <%- include('../partials/footer') %>
+</body>
+<%- include('../partials/tail2') %>

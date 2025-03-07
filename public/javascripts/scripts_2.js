@@ -1,17 +1,17 @@
 function swiper() {
-    var swiper = new Swiper(".mySwiper", {
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      // pagination: {
-      //   el: ".swiper-pagination",
-      //   dynamicBullets: true,
-      //   clickable: true,
-  
-      // },
-    });
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    breakpoints: {
+        640: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+    }
+});
   
     var swiper = new Swiper(".mySwiper6", {
       slidesPerView: 3,
@@ -113,6 +113,36 @@ function swiper() {
         clickable: true,
       },
     });
+
+    var swiper = new Swiper(".mySwiper9", {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      loop: true,
+      // autoplay: {
+      //   delay: 3000,
+      //   disableOnInteraction: false,
+      // },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        dynamicBullets: true,
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      },
+    });
+  
   }
   swiper();
   
@@ -1002,3 +1032,28 @@ function swiper() {
   window.onload = function() {
       changeDepartment('basic_science');
   };
+
+  document.getElementById('yearFilter').addEventListener('change', filterItems);
+  document.getElementById('deptFilter').addEventListener('change', filterItems);
+  document.getElementById('categoryFilter').addEventListener('change', filterItems);
+
+  function filterItems() {
+      const year = document.getElementById('yearFilter').value;
+      const dept = document.getElementById('deptFilter').value;
+      const category = document.getElementById('categoryFilter').value;
+      const items = document.querySelectorAll('.data-item');
+
+      items.forEach(item => {
+          const itemYear = item.getAttribute('data-year');
+          const itemDept = item.getAttribute('data-dept');
+          const itemCategory = item.getAttribute('data-category');
+
+          if ((year === "all" || year === itemYear) &&
+              (dept === "all" || dept === itemDept) &&
+              (category === "all" || category === itemCategory)) {
+              item.style.display = "block";
+          } else {
+              item.style.display = "none";
+          }
+      });
+  }

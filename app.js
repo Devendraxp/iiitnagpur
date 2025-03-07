@@ -140,7 +140,10 @@ app.get("/aboutUs", (req, res) => {
 app.get("/department", (req, res) => {
   res.redirect("/basic_science/aboutDepartment");
 });
-
+app.get("/basic_science/:page", (req, res) => {
+  const { page } = req.params;
+  res.render(`basic_science/${page}`);
+});
 
 app.get("/alumni", (req, res) => {
   res.redirect("/alumni/AboutUs");
@@ -230,11 +233,17 @@ app.get("/readMore/internationalResearch", (req, res) => {
 app.get("/readMore/academicReadMore", (req, res) => {
   res.render("readMore/academicReadMore");
 });
+app.get("/readMore/researchReadMore", (req, res) => {
+  res.render("readMore/researchReadMore");
+});
 app.get("/readMore/research", (req, res) => {
   res.render("readMore/Research");
 });
-app.get("/readMore/studentClubs", (req, res) => {
-  res.render("readMore/StudentClubs");
+app.get("/readMore/clubsReadMore", (req, res) => {
+  res.render("readMore/clubsReadMore");
+});
+app.get("/readMore/club", (req, res) => {
+  res.render("readMore/club");
 });
 
 app.get("/search", async (req, res) => {
