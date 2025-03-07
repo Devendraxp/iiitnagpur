@@ -14,8 +14,8 @@
           </a>
         </div>
 
-        <div class="contentNews px-4 md:px-20 lg:px-44 pt-8 md:pt-16 pb-8 md:pb-10 h-screen">
-          <div class="max-w-5xl mx-auto p-4">
+        <div class="contentNews px-4 md:px-20 lg:px-44 pt-8 md:pt-16 pb-8 md:pb-10 min-h-screen">
+          <div class="max-w-5xl mx-auto p-4 ">
             <nav class="bg-[#00457b] text-white p-4 flex flex-wrap justify-center md:justify-start space-x-4 md:space-x-8">
               <a href="#" onclick="showContent('news')" class="tab-btn" id="newsBtn">News</a>
               <a href="#" onclick="showContent('facultyNotice')" class="tab-btn">Faculty Notices</a>
@@ -26,7 +26,7 @@
               <a href="#" onclick="showContent('update')" class="tab-btn">Latest Updates</a>
             </nav>
 
-            <div class="bg-white p-6 mt-4 shadow-lg rounded-lg">
+            <div class="bg-white p-6 mt-4 shadow-lg rounded-lg h-full">
               <div id="news" class="content-div">
                 <h2 class="text-xl font-semibold text-gray-800 border-b pb-2 mb-4">Latest News</h2>
                 <ol class="list-decimal pl-6 space-y-2 text-gray-700">
@@ -90,17 +90,11 @@
                 </ol>
               </div>
             </div>
+
           </div>
         </div>
       </div>
 
-      <style>
-        
-      </style>
-
-      <script>
-        
-      </script>
     </div>
     <%- include('../partials/footer') %> 
   </body>

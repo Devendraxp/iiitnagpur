@@ -29,7 +29,7 @@
           <h2 class="text-2xl uppercase font-bold text-black">Achievements</h2>
           <div class="w-full h-[1px] bg-zinc-300 mt-2"></div>
 
-          <% 
+          <% sortedYears.forEach(year => { %>
             // Group achievements by year
             const achievementsByYear = {};
             
@@ -42,7 +42,7 @@
             
             // Sort years in descending order
             const sortedYears = Object.keys(achievementsByYear).sort((a, b) => b - a);
-          %>
+          <% }) %>
 
           <% sortedYears.forEach(year => { %>
             <div>
