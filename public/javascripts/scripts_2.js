@@ -1,15 +1,15 @@
 function swiper() {
   var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 3,
+    slidesPerView: 5,
     spaceBetween: 20,
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
     },
     breakpoints: {
-        640: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
+        640: { slidesPerView: 2 },
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 5 },
     }
 });
   
@@ -1023,7 +1023,7 @@ function swiper() {
       departments[dept].links.forEach(link => {
           const anchor = document.createElement("a");
           anchor.href = `/${dept}/${link.replace(/\s+/g, '')}`; // Generate URL
-          anchor.innerHTML = `<h1 class="bg-[#00457b] text-white px-4 py-2 rounded-md">${link}</h1>`;
+          anchor.innerHTML = `<h1 class="bg-white border-2 border-[#00457b] text-[#00457b] px-4 py-2 rounded-md">${link}</h1>`;
           exploreLinksContainer.appendChild(anchor);
       });
   }
@@ -1057,3 +1057,16 @@ function swiper() {
           }
       });
   }
+
+  // Assign Tailwind colors dynamically to category badges
+  document.querySelectorAll('.category-badge').forEach(badge => {
+      const category = badge.getAttribute('data-category');
+      const colors = {
+          "research": "bg-green-500",
+          "seminar": "bg-blue-500",
+          "workshop": "bg-orange-500",
+          "funded": "bg-red-500"
+      };
+
+      badge.classList.add(colors[category] || "bg-gray-500");
+  });

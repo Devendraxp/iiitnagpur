@@ -1,0 +1,96 @@
+<%- include('../partials/head2') %>
+
+    <body>
+        <%- include('../partials/nav') %>
+            <div class="pb-20 w-full min-h-screen bg-white text-[#00457b]">
+                <div class="w-full lg:h-[100px] md:h-[70px] h-[60px]"></div>
+
+
+                <div
+                    class="routes w-full px-6 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#00457b] py-3 md:py-5">
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Home <i class="ri-arrow-right-s-line text-md"></i>
+                    </a>
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">RTI <i class="ri-arrow-right-s-line text-md"></i>
+                    </a>
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">RTI DETAILS
+                    </a>
+                </div>
+                <!-- Main Content -->
+                <div class="border-4 border-[#00457b] md:m-10 m-8 text-black">
+                    <div class="w-full px-6 py-8">
+                        <h2 class="text-2xl font-bold text-[#00457b] mb-4">RTI DETAILS</h2>
+                        
+                        <!-- Section 1: Organization and Function -->
+                        <details class="mb-4">
+                            <summary class="font-semibold text-lg text-[#00457b] cursor-pointer">1. Organization and Function</summary>
+                            <ul class="mt-2 ml-5 list-disc text-gray-700">
+                                <li>Particulars of its organization, functions, and duties [Section 4(1)(b)(i)]</li>
+                                <li>Power and duties of officers and employees [Section 4(1)(b)(ii)]</li>
+                                <li>Procedure followed in decision-making [Section 4(1)(b)(iii)]</li>
+                                <li>Norms for discharge of functions [Section 4(1)(b)(iv)]</li>
+                                <li>Rules, regulations, and manuals for functions [Section 4(1)(b)(v)]</li>
+                                <li>Categories of documents under authority's control [Section 4(1)(b)(vi)]</li>
+                                <li>Boards, Councils, Committees constituted [Section 4(1)(b)(viii)]</li>
+                                <li>Directory of officers and employees [Section 4(1)(b)(ix)]</li>
+                                <li>Monthly remuneration and compensation system [Section 4(1)(b)(x)]</li>
+                                <li>Public information officers' details [Section 4(1)(b)(xvi)]</li>
+                                <li>Disciplinary actions proposed/taken [Section 4(2)]</li>
+                                <li>RTI awareness programs [Section 26]</li>
+                                <li>Transfer policy and orders [F No. 1/6/2011-IR]</li>
+                            </ul>
+                        </details>
+                    
+                        <!-- Section 2: Budget and Programme -->
+                        <details class="mb-4">
+                            <summary class="font-semibold text-lg text-[#00457b] cursor-pointer">2. Budget and Programme</summary>
+                            <ul class="mt-2 ml-5 list-disc text-gray-700">
+                                <li>Budget allocation and reports on disbursements [Section 4(1)(b)(xi)]</li>
+                                <li>Foreign and domestic tours [F.No. 1/8/2012-IR]</li>
+                                <li>Execution of subsidy programmes [Section 4(1)(b)(xii)]</li>
+                                <li>Discretionary and non-discretionary grants [F. No. 1/6/2011-IR]</li>
+                                <li>Recipients of concessions, permits, and authorizations [Section 4(1)(b)(xiii)]</li>
+                                <li>CAG & PAC reports [F No. 1/6/2011-IR]</li>
+                            </ul>
+                        </details>
+                    
+                        <!-- Section 3: Public Interface -->
+                        <details class="mb-4">
+                            <summary class="font-semibold text-lg text-[#00457b] cursor-pointer">3. Publicity and Public Interface</summary>
+                            <ul class="mt-2 ml-5 list-disc text-gray-700">
+                                <li>Public consultation in policy formulation [Section 4(1)(b)(vii)]</li>
+                                <li>Transparency in public-affecting decisions [Section 4(1)(c)]</li>
+                                <li>Accessible dissemination of information [Section 4(3)]</li>
+                                <li>Information manual/handbook availability [Section 4(1)(b)]</li>
+                            </ul>
+                        </details>
+                    
+                        <!-- Section 4: E-Governance -->
+                        <details class="mb-4">
+                            <summary class="font-semibold text-lg text-[#00457b] cursor-pointer">4. E-Governance</summary>
+                            <ul class="mt-2 ml-5 list-disc text-gray-700">
+                                <li>Language of Information Handbook [F No. 1/6/2011-IR]</li>
+                                <li>Last updated date of Handbook [F No. 1/6/2011-IR]</li>
+                                <li>Information available electronically [Section 4(1)(b)(xiv)]</li>
+                                <li>Facilities for citizens to obtain information [Section 4(1)(b)(xv)]</li>
+                                <li>Receipt & disposal of RTI applications [F.No 1/6/2011-IR]</li>
+                            </ul>
+                        </details>
+                    
+                        <!-- Section 5: Other Information -->
+                        <details class="mb-4">
+                            <summary class="font-semibold text-lg text-[#00457b] cursor-pointer">5. Additional Information</summary>
+                            <ul class="mt-2 ml-5 list-disc text-gray-700">
+                                <li>Other prescribed information [F.No. 1/2/2016-IR]</li>
+                                <li>Guidelines for Indian Government Websites (GIGW)</li>
+                                <li>STQC certification details</li>
+                            </ul>
+                        </details>
+                    </div>
+                    
+                </div>
+                <%- include('../partials/footer') %>
+    </body>
+    <%- include('../partials/tail2') %>
