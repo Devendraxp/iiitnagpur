@@ -1,0 +1,54 @@
+<%- include('../partials/head2') %>
+
+    <body>
+        <%- include('../partials/nav') %>
+            <div class="pb-20 w-full min-h-screen bg-white text-[#00457b]">
+                <div class="w-full lg:h-[100px] md:h-[70px] h-[60px]"></div>
+
+
+                <div
+                    class="routes w-full px-6 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#00457b] py-3 md:py-5">
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Home <i class="ri-arrow-right-s-line text-md"></i>
+                    </a>
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Others <i class="ri-arrow-right-s-line text-md"></i>
+                    </a>
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">RTI OFFICERS
+                    </a>
+                </div>
+                <!-- Main Content -->
+                <div class="border-4 border-[#00457b] md:m-10 m-8 pb-10 text-black">
+                    <div class="px-4 md:px-20 lg:px-40 mt-8 md:mt-16 mb-8 md:mb-10">
+                            <h2 class="text-2xl font-bold text-[#00457b] mb-6">RTI Contact Information</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- CPIO (Central Public Information Officer) -->
+                                <div class="p-5 bg-white shadow rounded-lg flex flex-col md:flex-row items-center md:items-start">
+                                    <img src="https://iiitn.ac.in/images/Staff/Ms.%20Shilpa%20M.%20Pawankar.JPG" alt="Ms. Shilpa Pawankar" class="w-56 h-56 rounded-sm object-cover mb-4 md:mb-0 md:mr-4">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-[#00457b]">Central Public Information Officer</h3>
+                                        <p class="mt-2"><span class="font-medium">Ms. Shilpa Pawankar</span>, Assistant Registrar (Accounts)</p>
+                                        <p class="text-gray-700 mt-1">Indian Institute of Information Technology, Nagpur</p>
+                                        <p class="mt-1"><span class="font-medium">Phone:</span> <a href="tel:8080339345" class="text-sky-700 hover:underline">8080339345</a></p>
+                                        <p class="mt-1"><span class="font-medium">Email:</span> <a href="mailto:aracct@iiitn.ac.in" class="text-sky-700 hover:underline">aracct@iiitn.ac.in</a></p>
+                                    </div>
+                                </div>
+                        
+                                <!-- First Appellate Authority -->
+                                <div class="p-5 bg-white shadow rounded-lg flex flex-col md:flex-row items-center md:items-start">
+                                    <img src="https://iiitn.ac.in/images/Staff/registrar.jpg" alt="Shri Kailas N. Dakhale" class="w-56 h-56 rounded-sm object-cover mb-4 md:mb-0 md:mr-4">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-[#00457b]">First Appellate Authority</h3>
+                                        <p class="mt-2"><span class="font-medium">Shri Kailas N. Dakhale</span>, Registrar</p>
+                                        <p class="text-gray-700 mt-1">Indian Institute of Information Technology, Nagpur</p>
+                                        <p class="mt-1"><span class="font-medium">Phone:</span> <a href="tel:8087983449" class="text-sky-700 hover:underline">8087983449</a></p>
+                                        <p class="mt-1"><span class="font-medium">Email:</span> <a href="mailto:registrar@iiitn.ac.in" class="text-sky-700 hover:underline">registrar@iiitn.ac.in</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <%- include('../partials/footer') %>
+    </body>
+    <%- include('../partials/tail2') %>

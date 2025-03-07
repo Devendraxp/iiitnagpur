@@ -237,6 +237,10 @@ footer h2:hover, footer i:hover {
   border-radius: 4px;
 }
 
+.icons2 {
+  align-items: center;
+}
+
 .alumini {
   position: relative;
   display: flex;

@@ -1,0 +1,68 @@
+<%- include('../partials/head2') %>
+
+    <body>
+        <%- include('../partials/nav') %>
+            <div class="w-full min-h-screen bg-white text-[#00457b]">
+                <div class="w-full lg:h-[100px] md:h-[70px] h-[60px]"></div>
+
+
+                <div
+                    class="routes w-full px-6 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#00457b] py-3 md:py-5">
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Home <i class="ri-arrow-right-s-line text-md"></i>
+                    </a>
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Academic Calender
+
+                    </a>
+                </div>
+                <!-- Main Content -->
+                <div class="border-4 border-[#00457b] md:m-10 m-8 pb-10 text-black">
+                    <div class="px-4 md:px-20 lg:px-40 mt-8 md:mt-16 mb-8 md:mb-10">
+
+                      <!-- Header Section -->
+    <section class="bg-white text-[#00457b] py-10 text-center">
+        <h1 class="text-4xl font-extrabold">📅 IIIT Nagpur Academic Calendar</h1>
+        <p class="mt-2 text-lg">Stay updated with the academic schedule and holidays.</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mx-auto py-12 px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Academic Calendar Section -->
+            <div class="bg-white shadow-lg rounded-lg p-6 border-t-4 border-[#00457b]">
+                <h2 class="text-2xl font-semibold text-[#00457b] mb-4">📚 Academic Calendar</h2>
+                <p class="text-gray-700 mb-4">View the academic calendar for the entire year.</p>
+                <a href="#" class="block text-lg bg-white text-[#00457b] px-5 py-3 rounded-lg shadow-md text-center border-2 border-[#00457b] hover:bg-[#00457b] hover:text-white transition-all">
+                    📅 Academic Calendar 2024-2025
+                </a>
+            </div>
+
+            <!-- Holidays Section -->
+            <div class="bg-white shadow-lg rounded-lg p-6 border-t-4 border-[#00457b]">
+                <h2 class="text-2xl font-semibold text-[#00457b] mb-4">🎉 Approved Holidays</h2>
+                <p class="text-gray-700 mb-4">Check the list of approved holidays for different years.</p>
+                <div class="grid grid-cols-1 gap-4">
+                    <a href="#" class="block text-lg bg-gray-700 text-white px-5 py-3 rounded-lg shadow-md text-center border-2 border-[#00457b] hover:bg-[#00457b] hover:text-white transition-all">
+                        🏖️ Holidays - 2022
+                    </a>
+                    <a href="#" class="block text-lg bg-gray-700 text-white px-5 py-3 rounded-lg shadow-md text-center border-2 border-[#00457b] hover:bg-[#00457b] hover:text-white transition-all">
+                        🏖️ Holidays - 2023
+                    </a>
+                    <a href="#" class="block text-lg bg-gray-700 text-white px-5 py-3 rounded-lg shadow-md text-center border-2 border-[#00457b] hover:bg-[#00457b] hover:text-white transition-all">
+                        🏖️ Holidays - 2024
+                    </a>
+                    <a href="#" class="block text-lg bg-gray-700 text-white px-5 py-3 rounded-lg shadow-md text-center border-2 border-[#00457b] hover:bg-[#00457b] hover:text-white transition-all">
+                        🏖️ Holidays - 2025
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    </div>
+                </div>
+                <%- include('../partials/footer') %>
+    </body>
+    <%- include('../partials/tail2') %>
