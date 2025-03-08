@@ -1,0 +1,52 @@
+<%- layout("admin/layout/boilerplate") %>
+
+<div class="container-xl px-4 mt-5">
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="card mb-4">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <div>Publications</div>
+          <a href="/admin/departmentResearch/publication/new" class="btn btn-sm btn-primary">Add New</a>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Type</th>
+                  <th>Department</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% if (data && data.length > 0) { %>
+                  <% data.forEach((item) => { %>
+                    <tr>
+                      <td><%= item.year %></td>
+                      <td><%= item.type %></td>
+                      <td><%= item.department.toUpperCase() %></td>
+                    
+                      <td>
+                        <div class="d-flex gap-2">
+                          <a href="/admin/departmentResearch/publication/<%= item._id %>" class="btn btn-sm btn-primary">Edit</a>
+                          <form action="/admin/departmentResearch/publication/<%= item._id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?');">Delete</button>
+                          </form>
+                        </div>
+                      </td>
+                    </tr>
+                  <% }) %>
+                <% } else { %>
+                  <tr>
+                    <td colspan="5" class="text-center">No data found</td>
+                  </tr>
+                <% } %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

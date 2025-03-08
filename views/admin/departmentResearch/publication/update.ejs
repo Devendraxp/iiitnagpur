@@ -1,0 +1,49 @@
+<%- layout("admin/layout/boilerplate") %>
+
+<div class="container-xl px-4 mt-5">
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="card mb-4">
+        <div class="card-header">Edit Publication</div>
+        <div class="card-body">
+          <form action="/admin/departmentResearch/publication/<%= result._id %>?_method=PATCH" method="POST">
+            <div class="mb-3">
+              <label for="year" class="form-label">Year</label>
+              <input type="number" class="form-control" id="year" name="year" value="<%= result.year %>" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="type" class="form-label">Type</label>
+              <select class="form-control" id="type" name="type" required>
+                <option value="bookChapter" <%= result.type === 'bookChapter' ? 'selected' : '' %>>Book Chapter</option>
+                <option value="confrencePaper" <%= result.type === 'confrencePaper' ? 'selected' : '' %>>Conference Paper</option>
+                <option value="journal" <%= result.type === 'journal' ? 'selected' : '' %>>Journal</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="department" class="form-label">Department</label>
+              <select class="form-control" id="department" name="department" required>
+                <option value="cse" <%= result.department === 'cse' ? 'selected' : '' %>>CSE</option>
+                <option value="ece" <%= result.department === 'ece' ? 'selected' : '' %>>ECE</option>
+                <option value="bs" <%= result.department === 'bs' ? 'selected' : '' %>>BS</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">Description (Line-separated)</label>
+              <textarea class="form-control" id="description" name="description" rows="5">
+<%= result.description ? result.description.join("\n") : "" %>
+              </textarea>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <button type="submit" class="btn btn-primary">Update</button>
+              <a href="/admin/departmentResearch/publication" class="btn btn-secondary">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
