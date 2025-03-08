@@ -1,0 +1,76 @@
+<%- layout("admin/layout/boilerplate") %>
+
+<div class="container-xl px-4 mt-5">
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="card mb-4">
+        <div class="card-header">Update Patent</div>
+        <div class="card-body">
+          <form action="/admin/departmentResearch/patent/<%= data._id %>?_method=PATCH" method="POST">
+            
+            <div class="mb-3">
+              <label for="inventor" class="form-label">Inventor(s)</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="inventor" 
+                name="data[inventor]" 
+                value="<%= data.inventor.join(', ') %>" 
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="patentNo" class="form-label">Patent Number</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="patentNo" 
+                name="data[patentNo]" 
+                value="<%= data.patentNo %>" 
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="state" class="form-label">Patent State</label>
+              <select class="form-control" id="state" name="data[state]" required>
+                <option value="">Select State</option>
+                <option value="filed" <%= data.state === 'filed' ? 'selected' : '' %>>Filed</option>
+                <option value="published" <%= data.state === 'published' ? 'selected' : '' %>>Published</option>
+                <option value="granted" <%= data.state === 'granted' ? 'selected' : '' %>>Granted</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="title" 
+                name="data[title]" 
+                value="<%= data.title %>" 
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="department" class="form-label">Department</label>
+              <select class="form-control" id="department" name="data[department]" required>
+                <option value="">Select Department</option>
+                <option value="cse" <%= data.department === 'cse' ? 'selected' : '' %>>CSE</option>
+                <option value="ece" <%= data.department === 'ece' ? 'selected' : '' %>>ECE</option>
+                <option value="bs" <%= data.department === 'bs' ? 'selected' : '' %>>Basic Sciences</option>
+              </select>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <button type="submit" class="btn btn-primary">Update</button>
+              <a href="/admin/departmentResearch/patent" class="btn btn-secondary">Cancel</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

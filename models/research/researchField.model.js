@@ -1,11 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
-const researchDomainSchema = Schema(
+const researchFieldSchema = Schema(
   {
-    title: {
-      type: String,
-      required: [true, "Title is required"],
-    },
     description: {
       type: [String],
       required: [true, "Description is required"],
@@ -19,5 +15,5 @@ const researchDomainSchema = Schema(
   { timestamps: true }
 );
 
-const ResearchDomain = mongoose.model("ResearchDomain", researchDomainSchema);
-export default ResearchDomain;
+const ResearchField = mongoose.model("ResearchField", researchFieldSchema);
+export default ResearchField;

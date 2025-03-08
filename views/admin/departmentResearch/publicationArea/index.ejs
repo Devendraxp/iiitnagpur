@@ -1,0 +1,38 @@
+<%- layout("admin/layout/boilerplate") %>
+
+<div class="container-xl px-4 mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Publication Areas</h2>
+    <a href="/admin/departmentResearch/publicationArea/new" class="btn btn-primary">Add New</a>
+  </div>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Department</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(area => { %>
+        <tr>
+          <td><%= area.department.toUpperCase() %></td>
+          <td>
+            <ul>
+              <% area.description.forEach(desc => { %>
+                <li><%= desc %></li>
+              <% }) %>
+            </ul>
+          </td>
+          <td>
+            <a href="/admin/departmentResearch/publicationArea/<%= area._id %>" class="btn btn-warning btn-sm">Edit</a>
+            <form action="/admin/departmentResearch/publicationArea/<%= area._id %>?_method=DELETE" method="POST" style="display:inline;">
+              <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
