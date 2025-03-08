@@ -1,6 +1,6 @@
 import express from "express";
 import methodOverride from "method-override";
-import Publication from "../../../models/research/publication.model";
+import Publication from "../../../models/research/publication.model.js";
 
 const router = express.Router();
 

@@ -1,6 +1,6 @@
 import express from "express";
 import methodOverride from "method-override";
-import Patent from "../../../models/research/patent.model";
+import Patent from "../../../models/research/patent.model.js";
 
 const router = express.Router();
 

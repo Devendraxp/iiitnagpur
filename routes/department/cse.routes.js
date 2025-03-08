@@ -57,7 +57,11 @@ router.route("/projects").get(async(_, res) => {
   res.render("cse/projects.ejs", {data});
 });
 
-router.route("/research").get((_, res) => {
+router.route("/research").get( async(_, res) => {
+  res.render("cse/research.ejs");
+});
+
+router.route("/staff").get((_, res) => {
   res.render("cse/staff.ejs");
 });
 

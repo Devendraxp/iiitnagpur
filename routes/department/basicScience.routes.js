@@ -5,6 +5,8 @@ import Faculty from "../../models/faculty.model.js";
 import DeptAchievement from "../../models/department/deptAchievement.model.js";
 import DeptEvents from "../../models/department/deptEvents.model.js";
 import DeptProject from "../../models/department/deptProject.model.js";
+import AreaOfSpecialization from "../../models/research/areaOfSpecialization.model.js";
+import PublicationArea from "../../models/research/publicationArea.model.js";
 
 router.route("/").get((_, res) => {
     res.redirect("/basic_science/aboutDepartment");
@@ -16,8 +18,22 @@ router.route("/aboutDepartment").get((_, res) => {
 
 router.route("/achievements").get(async (_, res) => {
   const data = await DeptAchievement.find({ department: "bs" });
-  res.render("basic_science/achievements.ejs", { data });
+
+  // Group achievements by year
+  const achievementsByYear = {};
+  data.forEach((achievement) => {
+    if (!achievementsByYear[achievement.year]) {
+      achievementsByYear[achievement.year] = [];
+    }
+    achievementsByYear[achievement.year].push(achievement);
+  });
+
+  // Sort years in descending order
+  const sortedYears = Object.keys(achievementsByYear).sort((a, b) => b - a);
+
+  res.render("basic_science/achievement.ejs", { achievementsByYear, sortedYears });
 });
+
 router.route("/bos").get((_, res) => {
   res.render("basic_science/bos.ejs");
 });
@@ -57,7 +73,23 @@ router.route("/projects").get(async(_, res) => {
   res.render("basic_science/projects.ejs", {data});
 });
 
-router.route("/research").get((_, res) => {
+
+router.route("/research").get(async (_, res) => {
+  try {
+    const areasOfSpecialization = await AreaOfSpecialization.find({ department: "bs" });
+    const publicationAreas = await PublicationArea.findOne({ department: "bs" });
+
+    res.render("basic_science/research.ejs", { 
+      areasOfSpecialization, 
+      publicationAreas: publicationAreas?.description || [] 
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server Error");
+  }
+});
+
+router.route("/staff").get((_, res) => {
   res.render("basic_science/staff.ejs");
 });
 
