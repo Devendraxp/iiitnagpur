@@ -19,6 +19,11 @@ const facultySchema = new Schema(
             type: String,
             enum: ["hod", "faculty-member", "staff"], 
         },
+        // Add priority field with default value
+        priority: {
+            type: Number,
+            default: 211
+        },
         image: {
             type: String,
         },
