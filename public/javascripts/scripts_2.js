@@ -849,7 +849,7 @@ function swiper() {
 </div>
 
           `,
-          links: ["BoS", "Achievement", "Research", "Faculty", "Staff", "Projects", "Laboratory", "Events"]
+          links: ["BoS", "Achievements", "Research", "Faculty", "Staff", "Projects", "Laboratory", "Events"]
       },
       cse: {
         description: `
@@ -893,7 +893,7 @@ function swiper() {
 </div>
 
     `,
-          links: ["BoS", "Achievement", "Research", "Faculty", "Staff", "Projects", "Laboratory", "Events"]
+          links: ["BoS", "Achievements", "Research", "Faculty", "Staff", "Projects", "Laboratory", "Events"]
       },
       ece: {
           description: `
@@ -989,7 +989,7 @@ function swiper() {
 </div>
 
           `,
-          links: ["BoS", "Achievement", "Research", "Faculty", "Staff", "Projects", "Laboratory", "Events"]
+          links: ["BoS", "Achievements", "Research", "Faculty", "Staff", "Projects", "Laboratory", "Events"]
       },
       doctoral: {
           description: `
@@ -1022,7 +1022,9 @@ function swiper() {
 
       departments[dept].links.forEach(link => {
           const anchor = document.createElement("a");
-          anchor.href = `/${dept}/${link.replace(/\s+/g, '')}`; // Generate URL
+          // anchor.href = `/${dept}/${link.replace(/\s+/g, '')}`; // Generate URL
+          anchor.href = `/${dept}/${link.toLowerCase().replace(/\s+/g, '')}`;
+
           anchor.innerHTML = `<h1 class="bg-white border-2 border-[#00457b] text-[#00457b] px-4 py-2 rounded-md">${link}</h1>`;
           exploreLinksContainer.appendChild(anchor);
       });

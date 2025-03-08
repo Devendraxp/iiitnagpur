@@ -1,6 +1,6 @@
 import express from "express";
 import methodOverride from "method-override";
-import PublicationArea from "../../../models/research/publicationArea.model";
+import PublicationArea from "../../../models/research/publicationArea.model.js";
 
 const router = express.Router();
 
@@ -8,7 +8,6 @@ router.use(methodOverride("_method"));
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
-// Display all publication areas
 router
   .route("/")
   .get(async (_, res) => {
@@ -40,12 +39,10 @@ router
     }
   });
 
-// New form page
 router.route("/new").get((_, res) => {
   res.render("admin/departmentResearch/publicationArea/new.ejs");
 });
 
-// Edit and Update route
 router
   .route("/:id")
   .get(async (req, res) => {

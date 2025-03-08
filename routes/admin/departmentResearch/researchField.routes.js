@@ -1,6 +1,6 @@
 import express from "express";
 import methodOverride from "method-override";
-import ResearchField from "../../../models/research/researchField.model";
+import ResearchField from "../../../models/research/researchField.model.js";
 
 const router = express.Router();
 

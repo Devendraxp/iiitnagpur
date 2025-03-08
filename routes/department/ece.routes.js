@@ -58,7 +58,10 @@ router.route("/projects").get(async(_, res) => {
 });
 
 router.route("/research").get((_, res) => {
-  res.render("ece/staff.ejs");
+  res.render("ece/research.ejs");
 });
 
+router.route("/staff").get((_, res) => {
+  res.render("cse/staff.ejs");
+});
 export default router;
