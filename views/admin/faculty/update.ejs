@@ -5,7 +5,7 @@
         <h2 class="mb-4">Faculty Details</h2>
         <!-- <pre><%= JSON.stringify(data, null, 2) %></pre> -->
 
-        <form action="/admin/faculty/edit/<%= data._id %>?_method=PATCH" method="POST">
+        <form action="/admin/faculty/<%= data._id %>?_method=PATCH" method="POST">
 
             <!-- Basic Details -->
             <h4>Basic Information</h4>
@@ -36,6 +36,10 @@
             <div class="mb-3">
                 <label for="designation" class="form-label">Designation</label>
                 <input type="text" class="form-control" id="designation" name="data[designation]" value="<%= data.designation || '' %>">
+            </div>
+            <div class="mb-3">
+                <label for="priority" class="form-label">Priority</label>
+                <input type="number" class="form-control" id="priority" name="data[priority]" value="<%= data.priority || '' %>">
             </div>
 
             <!-- Education -->

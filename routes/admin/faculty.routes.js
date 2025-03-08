@@ -1,4 +1,5 @@
 import express from "express";
+import mongoose from "mongoose";
 import methodOverride from "method-override";
 import Faculty from "../../models/faculty.model.js";
 const router = express.Router();

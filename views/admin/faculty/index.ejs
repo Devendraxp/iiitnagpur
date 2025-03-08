@@ -29,6 +29,7 @@
                                     <p class="card-text">
                                         <strong>Email:</strong> <%= faculty.email %><br>
                                         <strong>Designation:</strong> <%= faculty.designation || 'N/A' %><br>
+                                        <span class="badge bg-info mb-2">Priority: <%= faculty.priority %></span>
                                         <!-- <strong>Education:</strong> <%= faculty.education || 'N/A' %><br> -->
                                         <!-- <strong>Phone:</strong> <%= faculty.phone || 'N/A' %><br> -->
 
@@ -51,8 +52,8 @@
                                         <% } %>
                                     </div>
                                     <div class="d-flex gap-2">
-                                        <a href="/admin/faculty/edit/<%= faculty._id %>" class="btn btn-warning">Edit</a>
-                                        <form action="/admin/faculty/delete/<%= faculty._id %>?_method=DELETE" method="POST">
+                                        <a href="/admin/faculty/<%= faculty._id %>" class="btn btn-warning">Edit</a>
+                                        <form action="/admin/faculty/<%= faculty._id %>?_method=DELETE" method="POST">
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                         </form>
                                         

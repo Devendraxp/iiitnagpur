@@ -2,9 +2,9 @@ import express from "express";
 const router = express.Router();
 
 import Faculty from "../../models/faculty.model.js";
-import DeptAchievement from "../../models/deptAchievement.model.js";
-import DeptEvents from "../../models/deptEvents.model.js";
-import DeptProject from "../../models/deptProject.model.js";
+import DeptAchievement from "../../models/department/deptAchievement.model.js";
+import DeptEvents from "../../models/department/deptEvents.model.js";
+import DeptProject from "../../models/department/deptProject.model.js";
 
 router.route("/").get((_, res) => {
     res.redirect("/ece/aboutDepartment");

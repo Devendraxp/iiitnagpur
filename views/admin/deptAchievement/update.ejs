@@ -3,7 +3,7 @@
 <body>
     <div class="container mt-4">
         <h2 class="p-4">Edit Achievement</h2>
-        <form action="/admin/deptAchievement/edit/<%= achievement._id %>" method="POST">
+        <form action="/admin/deptAchievement/<%= achievement._id %>" method="POST">
             <!-- Hidden field to store old title -->
             <input type="hidden" name="oldTitle" value="<%= achievement.title %>">
 
