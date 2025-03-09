@@ -1013,22 +1013,37 @@ function swiper() {
 
   // Function to change department
   function changeDepartment(dept) {
-      // Update about section
-      document.getElementById("tab-description").innerHTML = departments[dept].description;
+    // Get all tab buttons
+    const tabs = document.querySelectorAll(".tab-btn2");
 
-      // Update explore links
-      const exploreLinksContainer = document.getElementById("explore-links");
-      exploreLinksContainer.innerHTML = ""; // Clear previous links
+    // Remove active styles from all buttons
+    tabs.forEach(tab => {
+        tab.classList.remove("bg-[#00457b]", "text-white");
+        tab.classList.add("bg-white", "text-[#00457b]");
+    });
 
-      departments[dept].links.forEach(link => {
-          const anchor = document.createElement("a");
-          // anchor.href = `/${dept}/${link.replace(/\s+/g, '')}`; // Generate URL
-          anchor.href = `/${dept}/${link.toLowerCase().replace(/\s+/g, '')}`;
+    // Highlight the active tab
+    const activeTab = document.querySelector(`[onclick="changeDepartment('${dept}')"]`);
+    if (activeTab) {
+        activeTab.classList.add("bg-[#00457b]", "text-white");
+        activeTab.classList.remove("bg-white", "text-[#00457b]");
+    }
 
-          anchor.innerHTML = `<h1 class="bg-white border-2 border-[#00457b] text-[#00457b] px-4 py-2 rounded-md">${link}</h1>`;
-          exploreLinksContainer.appendChild(anchor);
-      });
-  }
+    // Update the about section
+    document.getElementById("tab-description").innerHTML = departments[dept].description;
+
+    // Update explore links
+    const exploreLinksContainer = document.getElementById("explore-links");
+    exploreLinksContainer.innerHTML = ""; // Clear previous links
+
+    departments[dept].links.forEach(link => {
+        const anchor = document.createElement("a");
+        anchor.href = `/${dept}/${link.toLowerCase().replace(/\s+/g, '')}`; // Generate URL dynamically
+        anchor.innerHTML = `<h1 class="bg-white border-2 border-[#00457b] text-[#00457b] px-4 py-2 rounded-md hover:bg-[#00457b] hover:text-white transition-all">${link}</h1>`;
+        exploreLinksContainer.appendChild(anchor);
+    });
+}
+
 
   // Load Basic Science by default on page load
   window.onload = function() {

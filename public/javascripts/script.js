@@ -43,8 +43,8 @@ function swiper() {
   });
 
   var swiper = new Swiper(".mySwiper4b", {
-    slidesPerView: 3,
-    spaceBetween: 30,
+    slidesPerView: 4,
+    spaceBetween: 15,
     loop: true,
     // autoplay: {
     //   delay: 2500,
@@ -58,15 +58,15 @@ function swiper() {
     breakpoints: {
       320: {
         slidesPerView: 1,
-        spaceBetween: 20,
+        spaceBetween: 15,
       },
       768: {
-        slidesPerView: 2,
-        spaceBetween: 20,
+        slidesPerView: 3,
+        spaceBetween: 15,
       },
       1024: {
-        slidesPerView: 3,
-        spaceBetween: 30,
+        slidesPerView: 4,
+        spaceBetween: 15,
       },
     },
   });
