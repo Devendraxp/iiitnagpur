@@ -1,0 +1,324 @@
+<%- include('../partials/head2') %>
+
+<body>
+    <%- include('../partials/nav') %>
+    <div class="w-full min-h-screen bg-white text-black">
+        <div class="w-full lg:h-[100px] md:h-[80px]"></div>
+
+        <div class="mainContent w-full">
+            <div class="routes w-full px-4 md:px-44 flex items-center gap-4 bg-[#00457b] py-5">
+                <a class="text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white" href="/">Home <i class="ri-arrow-right-s-line text-md"></i></a>
+                <a class="text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white" href="#">Faculty Dashboard</a>
+            </div>
+
+            <div class="container mt-4">
+                    
+                    <% if (error && error.length > 0) { %>
+                      <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                        <%= error %>
+                      </div>
+                    <% } %>
+                    
+                    <% if (success && success.length > 0) { %>
+                      <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+                        <%= success %>
+                      </div>
+                    <% } %>
+
+                    <!-- <pre><%= JSON.stringify(data, null, 2) %></pre> -->
+                    <form action="/faculty/edit?_method=PATCH" method="POST" class="max-w-4xl mx-auto p-6 bg-gray-100 rounded shadow space-y-6">
+
+                        <!-- Basic Details -->
+                        <h4 class="text-xl font-semibold mb-4">Basic Information</h4>
+                        <div class="mb-4">
+                            <label for="name" class="block font-medium text-gray-700 mb-1">Name*</label>
+                            <input type="text" id="name" name="data[name]" value="<%= data.name || '' %>"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="department" class="block font-medium text-gray-700 mb-1">Department*</label>
+                            <select id="department" name="data[department]" required
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400">
+                                <option value="cse" <%= data.department === 'cse' ? 'selected' : '' %>>CSE</option>
+                                <option value="ece" <%= data.department === 'ece' ? 'selected' : '' %>>ECE</option>
+                                <option value="bs" <%= data.department === 'bs' ? 'selected' : '' %>>BS</option>
+                            </select>
+                        </div>
+                        <input type="hidden" id="position" name="data[position]" value="<%= data.position || '' %>" required>
+                        <div class="mb-4">
+                            <label for="image" class="block font-medium text-gray-700 mb-1">Profile Image URL</label>
+                            <input type="text" id="image" name="data[image]" value="<%= data.image || '' %>"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400">
+                        </div>
+                        <div class="mb-4">
+                            <label for="designation" class="block font-medium text-gray-700 mb-1">Designation</label>
+                            <input type="text" id="designation" name="data[designation]" value="<%= data.designation || '' %>"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400">
+                        </div>
+                        <input type="hidden" id="priority" name="data[priority]" value="<%= data.priority || '' %>">
+
+                        <!-- Education -->
+                        <h4 class="text-xl font-semibold mb-2">Education</h4>
+                        <div class="mb-4">
+                            <label for="education" class="block font-medium text-gray-700 mb-1">Education (One per line)</label>
+                            <textarea id="education" name="data[education]" rows="3"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400"><%= Array.isArray(data.education) ? data.education.join("\n") : data.education || '' %></textarea>
+                        </div>
+
+                        <!-- Experience -->
+                        <h4 class="text-xl font-semibold mb-2">Experience</h4>
+                        <div class="mb-4">
+                            <label for="experience" class="block font-medium text-gray-700 mb-1">Experience (One per line)</label>
+                            <textarea id="experience" name="data[experience]" rows="3"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400"><%= Array.isArray(data.experience) ? data.experience.join("\n") : data.experience || '' %></textarea>
+                        </div>
+
+                        <!-- Teaching -->
+                        <h4 class="text-xl font-semibold mb-2">Teaching Subjects</h4>
+                        <div class="mb-4">
+                            <label for="teaching" class="block font-medium text-gray-700 mb-1">Teaching Subjects (One per line)</label>
+                            <textarea id="teaching" name="data[teaching]" rows="3"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400"><%= Array.isArray(data.teaching) ? data.teaching.join("\n") : data.teaching || '' %></textarea>
+                        </div>
+
+                        <!-- Research -->
+                        <h4 class="text-xl font-semibold mb-2">Research</h4>
+                        <h6 class="mb-2 font-medium text-gray-700">Research Projects</h6>
+                        <div id="researchProjects" class="space-y-2">
+                            <% if (data.research && Array.isArray(data.research.researchProject) && data.research.researchProject.length > 0) { %>
+                                <% data.research.researchProject.forEach(function(project, index) { %>
+                                    <div class="flex flex-wrap gap-2 items-center" id="research-entry-<%= index %>">
+                                        <input type="text" name="data[research][researchProject][<%= index %>][year]"
+                                            class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring focus:ring-blue-400"
+                                            placeholder="Year" value="<%= project.year || '' %>">
+                                        <input type="text" name="data[research][researchProject][<%= index %>][title]"
+                                            class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring focus:ring-blue-400"
+                                            placeholder="Project Title" value="<%= project.title || '' %>">
+                                        <input type="text" name="data[research][researchProject][<%= index %>][duration]"
+                                            class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring focus:ring-blue-400"
+                                            placeholder="Duration" value="<%= project.duration || '' %>">
+                                        <button type="button"
+                                            class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                                            onclick="removeResearchProject('<%= index %>')">Remove</button>
+                                    </div>
+                                <% }); %>
+                            <% } else { %>
+                                <div class="flex flex-wrap gap-2 items-center" id="research-entry-0">
+                                    <input type="text" name="data[research][researchProject][0][year]"
+                                        class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring focus:ring-blue-400"
+                                        placeholder="Year">
+                                    <input type="text" name="data[research][researchProject][0][title]"
+                                        class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring focus:ring-blue-400"
+                                        placeholder="Project Title">
+                                    <input type="text" name="data[research][researchProject][0][duration]"
+                                        class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring focus:ring-blue-400"
+                                        placeholder="Duration">
+                                </div>
+                            <% } %>
+                        </div>
+                        <button type="button"
+                            class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
+                            onclick="addResearchProject()">+ Add Research Project</button>
+
+                        <div class="mb-4">
+                            <label for="researchAreas" class="block font-medium text-gray-700 mb-1">Research Areas (One per line)</label>
+                            <textarea id="researchAreas" name="data[research][areaofResearch]" rows="3"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400"><%= Array.isArray(data.research?.areaofResearch) ? data.research.areaofResearch.join("\n") : data.research?.areaofResearch || '' %></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="patent" class="block font-medium text-gray-700 mb-1">Patent</label>
+                            <textarea id="patent" name="data[research][patent]" rows="3"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400"><%= Array.isArray(data.research?.patent) ? data.research.patent.join("\n") : data.research?.patent || '' %></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="fundedProject" class="block font-medium text-gray-700 mb-1">Funded Project</label>
+                            <textarea id="fundedProject" name="data[research][fundedProject]" rows="3"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400"><%= Array.isArray(data.research?.fundedProject) ? data.research.fundedProject.join("\n") : data.research?.fundedProject || '' %></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="reviewerofJournal" class="block font-medium text-gray-700 mb-1">Reviewer of Journal</label>
+                            <textarea id="reviewerofJournal" name="data[research][reviewerofJournal]" rows="3"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400"><%= Array.isArray(data.research?.reviewerofJournal) ? data.research.reviewerofJournal.join("\n") : data.research?.reviewerofJournal || '' %></textarea>
+                        </div>
+
+                        <!-- Supervision -->
+                        <h4 class="text-xl font-semibold mb-2">Supervision</h4>
+                        <h5 class="text-lg font-medium mb-2">PhD Supervision</h5>
+                        <div id="phdSupervision" class="space-y-2">
+                            <% if (data.supervision && data.supervision.phd && Array.isArray(data.supervision.phd) && data.supervision.phd.length > 0) { %>
+                                <% data.supervision.phd.forEach(function(entry, index) { %>
+                                    <div class="flex flex-wrap gap-2 items-center" id="phd-entry-<%= index %>">
+                                        <input type="number" name="data[supervision][phd][<%= index %>][year]"
+                                            class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring focus:ring-blue-400"
+                                            placeholder="Year" value="<%= entry.year || '' %>">
+                                        <input type="text" name="data[supervision][phd][<%= index %>][studentName]"
+                                            class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring focus:ring-blue-400"
+                                            placeholder="Student Name" value="<%= entry.studentName || '' %>">
+                                        <input type="text" name="data[supervision][phd][<%= index %>][workDetails]"
+                                            class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring focus:ring-blue-400"
+                                            placeholder="Work Details" value="<%= entry.workDetails || '' %>">
+                                        <input type="text" name="data[supervision][phd][<%= index %>][status]"
+                                            class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring focus:ring-blue-400"
+                                            placeholder="Status" value="<%= entry.status || '' %>">
+                                        <button type="button"
+                                            class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+                                            onclick="removePhDSupervision('<%= index %>')">Remove</button>
+                                    </div>
+                                <% }); %>
+                            <% } else { %>
+                                <div class="flex flex-wrap gap-2 items-center" id="phd-entry-0">
+                                    <input type="number" name="data[supervision][phd][0][year]"
+                                        class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring focus:ring-blue-400"
+                                        placeholder="Year">
+                                    <input type="text" name="data[supervision][phd][0][studentName]"
+                                        class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring focus:ring-blue-400"
+                                        placeholder="Student Name">
+                                    <input type="text" name="data[supervision][phd][0][workDetails]"
+                                        class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring focus:ring-blue-400"
+                                        placeholder="Work Details">
+                                    <input type="text" name="data[supervision][phd][0][status]"
+                                        class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring focus:ring-blue-400"
+                                        placeholder="Status">
+                                </div>
+                            <% } %>
+                        </div>
+                        <button type="button"
+                            class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
+                            onclick="addPhDSupervision()">+ Add PhD Supervision</button>
+
+                        <div class="mb-4">
+                            <label for="MTechSupervision" class="block font-medium text-gray-700 mb-1">MTech Students (One per line)</label>
+                            <textarea id="MTechSupervision" name="data[supervision][MTech]" rows="3"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400"><%= Array.isArray(data.supervision?.MTech) ? data.supervision.MTech.join("\n") : data.supervision?.MTech || '' %></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="BTechSupervision" class="block font-medium text-gray-700 mb-1">BTech Students (One per line)</label>
+                            <textarea id="BTechSupervision" name="data[supervision][BTech]" rows="3"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400"><%= Array.isArray(data.supervision?.BTech) ? data.supervision.BTech.join("\n") : data.supervision?.BTech || '' %></textarea>
+                        </div>
+
+                        <!-- Publications -->
+                        <h4 class="text-xl font-semibold mb-2">Publications</h4>
+                        <div class="mb-4">
+                            <label for="journals" class="block font-medium text-gray-700 mb-1">Journals (One per line, year followed by paper titles)</label>
+                            <textarea id="journals" name="data[publication][journals]" rows="6"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400"
+                                placeholder="Year first, then papers. Example:&#10;2023&#10;- Paper 1&#10;- Paper 2"><%= Array.isArray(data.publication?.journals) ? data.publication.journals.join("\n") : data.publication?.journals || '' %></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="conferences" class="block font-medium text-gray-700 mb-1">Conferences (One per line, year followed by paper titles)</label>
+                            <textarea id="conferences" name="data[publication][conferences]" rows="6"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400"
+                                placeholder="Year first, then papers. Example:&#10;2023&#10;- Paper 1&#10;- Paper 2"><%= Array.isArray(data.publication?.conferences) ? data.publication.conferences.join("\n") : data.publication?.conferences || '' %></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label for="books" class="block font-medium text-gray-700 mb-1">Books (One per line, year followed by paper titles)</label>
+                            <textarea id="books" name="data[publication][books]" rows="6"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400"
+                                placeholder="Year first, then titles. Example:&#10;2023&#10;- Title 1&#10;- Title 2"><%= Array.isArray(data.publication?.books) ? data.publication.books.join("\n") : data.publication?.books || '' %></textarea>
+                        </div>
+
+                        <!-- Responsibilities -->
+                        <h4 class="text-xl font-semibold mb-2">Responsibilities</h4>
+                        <div class="mb-4">
+                            <label for="responsibility" class="block font-medium text-gray-700 mb-1">Responsibilities (One per line)</label>
+                            <textarea id="responsibility" name="data[responsibility]" rows="3"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400"><%= Array.isArray(data.responsibility) ? data.responsibility.join("\n") : data.responsibility || '' %></textarea>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="anyOther" class="block font-medium text-gray-700 mb-1">Any Other Information</label>
+                            <textarea id="anyOther" name="data[anyOther]" rows="3"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400"><%= Array.isArray(data.anyOther) ? data.anyOther.join("\n") : data.anyOther || '' %></textarea>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="username" class="block font-medium text-gray-700 mb-1">Username</label>
+                            <input type="text" id="username" name="data[username]" value="<%= data.username || '' %>"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="email" class="block font-medium text-gray-700 mb-1">Email</label>
+                            <input type="text" id="email" name="data[email]" value="<%= data.email || '' %>"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400">
+                        </div>
+
+                        <h4 class="text-xl font-semibold mb-2">Social Links</h4>
+                        <div class="mb-4 space-y-2">
+                            <input type="url" id="twitter" name="data[socialLinks][twitter]" placeholder="Twitter URL"
+                                value="<%= data.socialLinks && data.socialLinks.twitter || '' %>"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400">
+                            <input type="url" id="linkedin" name="data[socialLinks][linkedin]" placeholder="LinkedIn URL"
+                                value="<%= data.socialLinks && data.socialLinks.linkedin || '' %>"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400">
+                            <input type="url" id="github" name="data[socialLinks][github]" placeholder="GitHub URL"
+                                value="<%= data.socialLinks && data.socialLinks.github || '' %>"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400">
+                            <input type="url" id="facebook" name="data[socialLinks][facebook]" placeholder="Facebook URL"
+                                value="<%= data.socialLinks && data.socialLinks.facebook || '' %>"
+                                class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:ring-blue-400">
+                        </div>
+
+                        <button type="submit"
+                            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Update Faculty</button>
+                    </form>
+            </div> <!-- Closing container -->
+
+        </div> <!-- Closing mainContent -->
+    </div> <!-- Closing w-full min-h-screen -->
+
+    <script>
+            // let phdIndex = 1; // Index to keep track of dynamically added PhD supervision entries
+            let researchIndex = 1; // Index to keep track of dynamically added Research Project entries
+            
+            function removeResearchProject(index) {
+                    const entryToRemove = document.getElementById(`research-entry-${index}`);
+                    if (entryToRemove) {
+                            entryToRemove.remove();
+                    }
+            }
+            
+            // Function to add Research Project dynamically
+            function addResearchProject() {
+                    const researchSection = document.getElementById('researchProjects');
+                    const newResearchEntry = `
+                            <div class="input-group mb-2 research-entry" id="research-entry-${researchIndex}">
+                                    <input type="text" name="data[research][researchProject][${researchIndex}][year]" class="form-control" placeholder="Year" >
+                                    <input type="text" name="data[research][researchProject][${researchIndex}][title]" class="form-control" placeholder="Project Title" >
+                                    <input type="text" name="data[research][researchProject][${researchIndex}][duration]" class="form-control" placeholder="Duration" >
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="removeResearchProject(${researchIndex})">Remove</button>
+                            </div>
+                    `;
+                    researchSection.insertAdjacentHTML('beforeend', newResearchEntry);
+                    researchIndex++; // Increment the index for the next Research Project
+            }
+    
+            // Initialize phdIndex based on the number of existing PhD supervision entries
+            let phdIndex = document.querySelectorAll('.phd-entry').length || 1; 
+    
+            // Function to remove a PhD Supervision entry
+            function removePhDSupervision(index) {
+                    const entryToRemove = document.getElementById(`phd-entry-${index}`);
+                    if (entryToRemove) {
+                            entryToRemove.remove();
+                    }
+            }
+    
+            // Function to add a new PhD Supervision entry dynamically
+            function addPhDSupervision() {
+                    const phdSupervisionSection = document.getElementById('phdSupervision');
+                    const newPhDEntry = `
+                            <div class="input-group mb-2 phd-entry" id="phd-entry-${phdIndex}">
+                                    <input type="number" name="data[supervision][phd][${phdIndex}][year]" class="form-control" placeholder="Year">
+                                    <input type="text" name="data[supervision][phd][${phdIndex}][studentName]" class="form-control" placeholder="Student Name">
+                                    <input type="text" name="data[supervision][phd][${phdIndex}][workDetails]" class="form-control" placeholder="Work Details">
+                                    <input type="text" name="data[supervision][phd][${phdIndex}][status]" class="form-control" placeholder="Status">
+                                    <button type="button" class="btn btn-danger btn-sm" onclick="removePhDSupervision(${phdIndex})">Remove</button>
+                            </div>
+                    `;
+                    phdSupervisionSection.insertAdjacentHTML('beforeend', newPhDEntry);
+                    phdIndex++; // Increment the index for the next entry
+            }
+    </script>
+</body>
