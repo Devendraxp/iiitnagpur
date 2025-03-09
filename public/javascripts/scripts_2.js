@@ -849,7 +849,7 @@ function swiper() {
 </div>
 
           `,
-          links: ["BoS", "Achievement", "Research", "Faculty", "Staff", "Projects", "Laboratory", "Events"]
+          links: ["Faculty", "Achievement", "Research", "Events", "Staff", "Projects", "Laboratory", "BoS"]
       },
       cse: {
         description: `
@@ -893,7 +893,7 @@ function swiper() {
 </div>
 
     `,
-          links: ["BoS", "Achievement", "Research", "Faculty", "Staff", "Projects", "Laboratory", "Events"]
+            links: ["Faculty", "Achievement", "Research", "Events", "Staff", "Projects", "Laboratory", "BoS"]
       },
       ece: {
           description: `
@@ -989,7 +989,7 @@ function swiper() {
 </div>
 
           `,
-          links: ["BoS", "Achievement", "Research", "Faculty", "Staff", "Projects", "Laboratory", "Events"]
+            links: ["Faculty", "Achievement", "Research", "Events", "Staff", "Projects", "Laboratory", "BoS"]
       },
       doctoral: {
           description: `
@@ -1030,7 +1030,7 @@ function swiper() {
 
   // Load Basic Science by default on page load
   window.onload = function() {
-      changeDepartment('basic_science');
+      changeDepartment('cse');
   };
 
   document.getElementById('yearFilter').addEventListener('change', filterItems);

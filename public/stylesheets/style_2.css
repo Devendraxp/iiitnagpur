@@ -63,10 +63,10 @@
   .title{
     color: #00457b;
   }
-   .overlay {
+   /* .overlay {
     -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
             clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-  }
+  } */
   
   .dets-box {
     -webkit-clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
