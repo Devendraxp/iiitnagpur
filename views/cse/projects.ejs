@@ -1,75 +1,99 @@
 <%- include('../partials/head2') %> 
-  <body>
-    <%- include('../partials/nav') %> 
-    <div class=" w-full min-h-screen bg-white text-black">
-      <div class="w-full lg:h-[100px] md:h-[80px]"></div>
-      <div class="img w-full overflow-hidden">
-        <img
-          class="w-full h-76 object-cover object-center"
-          src="../images/basicScience/BS.jpg"
-          alt=""
-        />
+<body>
+  <%- include('../partials/nav') %> 
+  <div class="w-full min-h-screen bg-white text-black">
+    <div class="w-full lg:h-[100px] md:h-[80px]"></div>
+    <div class="img w-full overflow-hidden">
+      <img
+        class="w-full h-76 object-cover object-center"
+        src="../images/basicScience/BS.jpg"
+        alt="CSE Projects"
+      />
+    </div>
+
+    <div class="mainContent w-full">
+      <div class="routes w-full px-44 flex items-center gap-4 bg-[#f6f6f6] py-5">
+        <a class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500" href="#">Home <i class="ri-arrow-right-s-line text-md"></i></a>
+        <a class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500" href="#">CSE <i class="ri-arrow-right-s-line text-md"></i></a>
+        <a class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500" href="#">Projects</a>
       </div>
 
-      <div class="mainContent w-full">
-        <div
-          class="routes w-full px-44 flex items-center gap-4 bg-[#f6f6f6] py-5"
-        >
-          <a
-            class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500"
-            href="#"
-            >Home <i class="ri-arrow-right-s-line text-md"></i>
-          </a>
-          <a
-            class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500"
-            href="#"
-            >Basic Sciences <i class="ri-arrow-right-s-line text-md"></i>
-          </a>
-          <a
-            class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500"
-            href="#"
-            >Projects
-          </a>
-        </div>
+      <div class="content px-44 mt-16 mb-10">
+        <h2 class="text-2xl uppercase font-bold text-black">Projects</h2>
+        <div class="w-full h-[1px] bg-zinc-300 mt-2"></div>
 
-        <div class="content px-44 mt-16 mb-10">
-          <h2 class="text-2xl uppercase font-bold text-black">
-            Projects
-          </h2>
-          <div class="w-full h-[1px] bg-zinc-300 mt-2"></div>
-           <div class="pl-10 mt-6">
-            <ol class="list-disc">
-              <% if(data && data.length > 0) { %>
-                <% data.forEach(project => { %>
-                  <li>
-                    <p class="text-sm font-normal leading-6">
-                      <strong><%= project.faculty %></strong>, 
-                      "<%= project.titleofProject %>"
-                      <% if(project.typeOfProject) { %>
-                        [<%= project.typeOfProject %>]
-                      <% } %>
-                      <% if(project.sponsoringAgency) { %>
-                        funding agency <%= project.sponsoringAgency %>, 
-                      <% } %>
-                      <% if(project.fundingAmount) { %>
-                        Rs. <%= project.fundingAmount %> Lakh
-                      <% } %>
-                      <% if(project.year) { %>
-                        (<%= project.year %>)
-                      <% } %>
-                    </p>
-                  </li>
+        <!-- Ongoing Projects -->
+        <h3 class="text-2xl font-semibold mt-8 mb-4">Ongoing Projects</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full table-auto border border-zinc-300 rounded-lg overflow-hidden">
+            <thead>
+              <tr class="border-b border-zinc-300">
+                <th class="p-4">Sl. No.</th>
+                <th class="p-4">Name of Faculty</th>
+                <th class="p-4">Title of Project</th>
+                <th class="p-4">Funding Amount (Rs.)</th>
+                <th class="p-4">End Date</th>
+                <th class="p-4">Funding Agency</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (ongoingProjects && ongoingProjects.length > 0) { %>
+                <% ongoingProjects.forEach((project, index) => { %>
+                  <tr class="border-b border-zinc-300">
+                    <td class="p-4 text-center"><%= index + 1 %></td>
+                    <td class="p-4"><%= project.faculty %></td>
+                    <td class="p-4"><%= project.titleofProject %></td>
+                    <td class="p-4">Rs. <%= project.fundingAmount.toFixed(2) %> Lakh</td>
+                    <td class="p-4"><%= project.year %></td>
+                    <td class="p-4"><%= project.sponsoringAgency %></td>
+                  </tr>
                 <% }) %>
               <% } else { %>
-                <li>
-                  <p class="text-sm font-normal leading-6">No projects available at the moment.</p>
-                </li>
+                <tr>
+                  <td colspan="6" class="text-center p-4">No ongoing projects available.</td>
+                </tr>
               <% } %>
-            </ol>
-           </div>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Completed Projects -->
+        <h3 class="text-2xl font-semibold mt-8 mb-4">Completed Projects</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full table-auto border border-zinc-300 rounded-lg overflow-hidden">
+            <thead>
+              <tr class="border-b border-zinc-300">
+                <th class="p-4">Sl. No.</th>
+                <th class="p-4">Name of Faculty</th>
+                <th class="p-4">Title of Project</th>
+                <th class="p-4">Funding Amount (Rs.)</th>
+                <th class="p-4">End Date</th>
+                <th class="p-4">Funding Agency</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (completedProjects && completedProjects.length > 0) { %>
+                <% completedProjects.forEach((project, index) => { %>
+                  <tr class="border-b border-zinc-300">
+                    <td class="p-4 text-center"><%= index + 1 %></td>
+                    <td class="p-4"><%= project.faculty %></td>
+                    <td class="p-4"><%= project.titleofProject %></td>
+                    <td class="p-4">Rs. <%= project.fundingAmount.toFixed(2) %> Lakh</td>
+                    <td class="p-4"><%= project.year %></td>
+                    <td class="p-4"><%= project.sponsoringAgency %></td>
+                  </tr>
+                <% }) %>
+              <% } else { %>
+                <tr>
+                  <td colspan="6" class="text-center p-4">No completed projects available.</td>
+                </tr>
+              <% } %>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-    <%- include('../partials/footer') %> 
-  </body>
-  <%- include('../partials/tail2') %> 
+  </div>
+  <%- include('../partials/footer') %> 
+</body>
+<%- include('../partials/tail2') %> 
