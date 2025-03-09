@@ -1,45 +1,201 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Department of Basic Sciences - Faculty & Research</title>
-</head>
-<body>
-    <h1>Department of Basic Sciences - Faculty Members</h1>
+<%- include('../partials/head2') %>
+    <body>
+        <%- include('../partials/nav') %>
+        <div class="w-full min-h-screen bg-white text-black">
+            <div class="w-full lg:h-[100px] md:h-[80px]"></div>
+            <div class="img w-full overflow-hidden">
+                <img
+                    class="w-full h-76 object-cover object-center"
+                    src="../images/basicScience/BS.jpg"
+                    alt=""
+                />
+            </div>
 
-    <% if (areasOfSpecialization.length) { %>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>S. No.</th>
-                    <th>Name</th>
-                    <th>Area of Specialization</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% areasOfSpecialization.forEach((faculty, index) => { %>
-                    <tr>
-                        <td><%= index + 1 %></td>
-                        <td><%= faculty.name %></td>
-                        <td><%= faculty.areaOfSpecialization %></td>
-                    </tr>
-                <% }) %>
-            </tbody>
-        </table>
-    <% } else { %>
-        <p>No faculty data available at the moment.</p>
-    <% } %>
+            <div class="mainContent w-full">
+                <div class="routes w-full px-44 flex items-center gap-4 bg-[#f6f6f6] py-5">
+                    <a class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500" href="#">
+                        Home <i class="ri-arrow-right-s-line text-md"></i>
+                    </a>
+                    <a class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500" href="#">
+                        Computer Sciences <i class="ri-arrow-right-s-line text-md"></i>
+                    </a>
+                    <a class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500" href="#">
+                        Research
+                    </a>
+                </div>
 
-    <h2>Research Publications</h2>
-    <p>The department faculty has more than 69 research publications in journals of repute in the following areas:</p>
+                <div class="content px-44 mt-16 mb-10">
+                    <h2 class="text-2xl uppercase font-bold text-black">Research</h2>
+                    <div class="w-full h-[1px] bg-zinc-300 mt-2"></div>
 
-    <% if (publicationAreas.length) { %>
-        <ul>
-            <% publicationAreas.forEach(area => { %>
-                <li><%= area %></li>
-            <% }) %>
-        </ul>
-    <% } else { %>
-        <p>No research publications listed at the moment.</p>
-    <% } %>
-</body>
-</html>
+                    <% if (areasOfSpecialization && areasOfSpecialization.length) { %>
+                        <h4 class="text-md mt-5 font-bold">
+                            Department Faculty Specializations:
+                        </h4>
+                        <div class="overflow-x-auto w-full mt-5">
+                            <table class="w-full border border-gray-300">
+                                <thead>
+                                    <tr class="bg-gray-100 border-b border-gray-300">
+                                        <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
+                                            Sr. No.
+                                        </th>
+                                        <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
+                                            Name
+                                        </th>
+                                        <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
+                                            Area of Specialization
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% areasOfSpecialization.forEach(function(item, index) { %>
+                                        <% if (item && item.name && item.areaOfSpecialization) { %>
+                                            <tr class="border-b border-gray-300">
+                                                <td class="px-6 py-4 border-r border-gray-300">
+                                                    <%= index + 1 %>
+                                                </td>
+                                                <td class="px-6 py-4 border-r border-gray-300">
+                                                    <%= item.name %>
+                                                </td>
+                                                <td class="px-6 py-4 border-r border-gray-300">
+                                                    <%= item.areaOfSpecialization.replace(/[\r\n]+/g, ' ') %>
+                                                </td>
+                                            </tr>
+                                        <% } %>
+                                    <% }) %>
+                                </tbody>
+                            </table>
+                        </div>
+                    <% } %>
+
+                    <% if (publicationAreas && publicationAreas.length) { %>
+                        <h4 class="text-md mt-8 font-bold">
+                            Research Publication Areas:
+                        </h4>
+                        <div class="mt-8 px-20">
+                            <% publicationAreas.forEach(function(area) { %>
+                                <% if (area.description && area.description.length) { %>
+                                    <ol class="list-disc">
+                                        <% area.description.forEach(function(desc) { %>
+                                            <li>
+                                                <p class="text-base font-normal leading-6"><%= desc %></p>
+                                            </li>
+                                        <% }) %>
+                                    </ol>
+                                <% } %>
+                            <% }) %>
+                        </div>
+                    <% } %>
+
+                    <% 
+                        // Separate publications into book chapters and conference papers
+                        let bookChapters = publications ? publications.filter(pub => pub.type === 'bookChapter') : [];
+                        let conferencePapers = publications ? publications.filter(pub => pub.type === 'confrencePaper') : [];
+                    %>
+
+                    <% if (bookChapters.length) { %>
+                        <h4 class="text-lg mt-5 font-bold">Book Chapters :</h4>
+                        <div class="mt-8 px-20">
+                            <% bookChapters.forEach(function(pub) { %>
+                                <% if (pub.description && pub.description.length) { %>
+                                    <ol class="list-decimal">
+                                        <% pub.description.forEach(function(desc) { %>
+                                            <li>
+                                                <p class="text-base font-normal leading-6"><%= desc %></p>
+                                            </li>
+                                        <% }) %>
+                                    </ol>
+                                <% } %>
+                            <% }) %>
+                        </div>
+                    <% } %>
+
+                    <% if (conferencePapers.length) { %>
+                        <h4 class="text-lg mt-5 font-bold">Conference Papers :</h4>
+                        <div class="mt-8 px-20">
+                            <% conferencePapers.forEach(function(pub) { %>
+                                <% if (pub.description && pub.description.length) { %>
+                                    <ol class="list-decimal">
+                                        <% pub.description.forEach(function(desc) { %>
+                                            <li>
+                                                <p class="text-base font-normal leading-6"><%= desc %></p>
+                                            </li>
+                                        <% }) %>
+                                    </ol>
+                                <% } %>
+                            <% }) %>
+                        </div>
+                    <% } %>
+
+                    <% if (patents && patents.length) { %>
+                        <h4 class="text-lg mt-5 font-bold">Patent:</h4>
+                        <div class="overflow-x-auto pl-16 mt-10">
+                            <table class="w-full border border-gray-300">
+                                <thead>
+                                    <tr class="bg-gray-100 border-b border-gray-300">
+                                        <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
+                                            Sl. No.
+                                        </th>
+                                        <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
+                                            Inventor/s Name
+                                        </th>
+                                        <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
+                                            Patent Application No.
+                                        </th>
+                                        <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
+                                            Filed/Published / Granted
+                                        </th>
+                                        <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
+                                            Title of the Patent
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% patents.forEach(function(pat, index) { %>
+                                        <% if (pat && pat.inventor && pat.title) { %>
+                                            <tr class="border-b border-gray-300">
+                                                <td class="px-6 py-4 border-r border-gray-300">
+                                                    <%= index + 1 %>
+                                                </td>
+                                                <td class="px-6 py-4 border-r border-gray-300">
+                                                    <%= pat.inventor.join(', ') %>
+                                                </td>
+                                                <td class="px-6 py-4 border-r border-gray-300">
+                                                    <%= pat.patentNo %>
+                                                </td>
+                                                <td class="px-6 py-4 border-r border-gray-300">
+                                                    <%= pat.state %>
+                                                </td>
+                                                <td class="px-6 py-4 border-r border-gray-300">
+                                                    <%= pat.title %>
+                                                </td>
+                                            </tr>
+                                        <% } %>
+                                    <% }) %>
+                                </tbody>
+                            </table>
+                        </div>
+                    <% } %>
+
+                    <% 
+                        // If none of the sections has data, show a placeholder message
+                        if (
+                            (!areasOfSpecialization || areasOfSpecialization.length === 0) &&
+                            (!publicationAreas || publicationAreas.length === 0) &&
+                            (!publications || publications.length === 0) &&
+                            (!patents || patents.length === 0)
+                        ) { 
+                    %>
+                        <p class="mt-5">No research data available.</p>
+                    <% } %>
+
+                    <h4 class="text-lg mt-8 font-bold">
+                        More than 19 seminars/STTPs/workshops organized in last few years.
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        <%- include('../partials/footer') %>
+    </body>
+<%- include('../partials/tail2') %>

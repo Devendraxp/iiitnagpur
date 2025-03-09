@@ -6,7 +6,11 @@ import DeptAchievement from "../../models/department/deptAchievement.model.js";
 import DeptEvents from "../../models/department/deptEvents.model.js";
 import DeptProject from "../../models/department/deptProject.model.js";
 import AreaOfSpecialization from "../../models/research/areaOfSpecialization.model.js";
+import Publication from "../../models/research/publication.model.js";
+import ResearchArea from "../../models/research/researchArea.model.js";
+import ResearchField from "../../models/research/researchField.model.js";
 import PublicationArea from "../../models/research/publicationArea.model.js";
+import Patent from "../../models/research/patent.model.js";
 
 router.route("/").get((_, res) => {
     res.redirect("/basic_science/aboutDepartment");
@@ -77,18 +81,32 @@ router.route("/projects").get(async(_, res) => {
 router.route("/research").get(async (_, res) => {
   try {
     const areasOfSpecialization = await AreaOfSpecialization.find({ department: "bs" });
-    const publicationAreas = await PublicationArea.findOne({ department: "bs" });
+    const publications = await Publication.find({ department: "bs" });
+    const researchAreas = await ResearchArea.find({ department: "bs" });
+    const researchFields = await ResearchField.find({ department: "bs" });
+    const publicationAreas = await PublicationArea.find({ department: "bs" });
+    const patents = await Patent.find({ department: "bs" });
+
+    console.log("Areas of Specialization:", areasOfSpecialization);
+    console.log("Publications:", publications);
+    console.log("Research Areas:", researchAreas);
+    console.log("Research Fields:", researchFields);
+    console.log("Publication Areas:", publicationAreas);
+    console.log("Patents:", patents);
 
     res.render("basic_science/research.ejs", { 
       areasOfSpecialization, 
-      publicationAreas: publicationAreas?.description || [] 
+      publications,
+      researchAreas,
+      researchFields,
+      publicationAreas,
+      patents
     });
   } catch (err) {
     console.error(err);
     res.status(500).send("Server Error");
   }
 });
-
 router.route("/staff").get((_, res) => {
   res.render("basic_science/staff.ejs");
 });
