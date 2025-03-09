@@ -129,10 +129,13 @@ app.get("/aboutUs", (req, res) => {
 //   const { page } = req.params;
 //   res.render(`basic_science/${page}`);
 // });
-
-app.get("/placements", (req, res) => {
-  res.redirect("/placements/about-us");
+// app.get("/department", (req, res) => {
+//   res.redirect("/basic_science/aboutDepartment");
+// });
+app.get("/department", (req, res) => {
+  res.render("department");
 });
+
 app.get("/placements/:page", (req, res) => {
   const { page } = req.params;
   res.render(`placements/${page}`);

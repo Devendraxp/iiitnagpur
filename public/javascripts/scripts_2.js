@@ -1040,25 +1040,37 @@ function swiper() {
   document.getElementById('categoryFilter').addEventListener('change', filterItems);
 
   function filterItems() {
-      const year = document.getElementById('yearFilter').value;
-      const dept = document.getElementById('deptFilter').value;
-      const category = document.getElementById('categoryFilter').value;
-      const items = document.querySelectorAll('.data-item');
+    const year = document.getElementById('yearFilter').value;
+    const dept = document.getElementById('deptFilter').value;
+    const category = document.getElementById('categoryFilter').value;
+    const items = document.querySelectorAll('.data-item');
 
-      items.forEach(item => {
-          const itemYear = item.getAttribute('data-year');
-          const itemDept = item.getAttribute('data-dept');
-          const itemCategory = item.getAttribute('data-category');
+    // Update the URL with query parameters
+    const params = new URLSearchParams();
+    if (year !== "all") params.set("year", year);
+    if (dept !== "all") params.set("dept", dept);
+    if (category !== "all") params.set("category", category);
 
-          if ((year === "all" || year === itemYear) &&
-              (dept === "all" || dept === itemDept) &&
-              (category === "all" || category === itemCategory)) {
-              item.style.display = "block";
-          } else {
-              item.style.display = "none";
-          }
-      });
-  }
+    // Push updated URL without reloading the page
+    const newUrl = window.location.pathname + "?" + params.toString();
+    window.history.pushState({}, "", newUrl);
+
+    // Apply filtering logic
+    items.forEach(item => {
+        const itemYear = item.getAttribute('data-year');
+        const itemDept = item.getAttribute('data-dept');
+        const itemCategory = item.getAttribute('data-category');
+
+        if ((year === "all" || year === itemYear) &&
+            (dept === "all" || dept === itemDept) &&
+            (category === "all" || category === itemCategory)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+}
+
 
   // Assign Tailwind colors dynamically to category badges
   document.querySelectorAll('.category-badge').forEach(badge => {
@@ -1072,3 +1084,18 @@ function swiper() {
 
       badge.classList.add(colors[category] || "bg-gray-500");
   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get("category"); // Get 'category' from URL
+
+    if (category) {
+        const categoryFilter = document.getElementById("categoryFilter");
+        if (categoryFilter) {
+            categoryFilter.value = category; // Set the dropdown value
+        }
+    }
+
+    // Call filterItems() after setting the dropdown
+    filterItems();
+});
