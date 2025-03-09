@@ -135,14 +135,14 @@ app.get("/aboutUs", (req, res) => {
   res.render("aboutUs");
 });
 
-// // Basic Science Routes
-// app.get("/department", (req, res) => {
-//   res.redirect("/basic_science/aboutDepartment");
-// });
-// app.get("/basic_science/:page", (req, res) => {
-//   const { page } = req.params;
-//   res.render(`basic_science/${page}`);
-// });
+// Basic Science Routes
+app.get("/department", (req, res) => {
+  res.redirect("/basic_science/aboutDepartment");
+});
+app.get("/basic_science/:page", (req, res) => {
+  const { page } = req.params;
+  res.render(`basic_science/${page}`);
+});
 
 app.get("/placements", (req, res) => {
   res.redirect("/placements/about-us");
