@@ -1,0 +1,236 @@
+<%- include('../partials/head2') %>
+
+<body>
+  <%- include('../partials/nav') %>
+  <div class="w-full min-h-screen bg-white text-black flex flex-col">
+    <!-- Removed fixed height constraint that was causing overlap -->
+    <div class="w-full">
+      <div class="mainContent w-full">
+        <div class="routes w-full px-4 md:px-44 flex items-center gap-4 bg-[#00457b] py-5">
+          <a class="text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white" href="/">Home <i class="ri-arrow-right-s-line text-md"></i></a>
+          <a class="text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white" href="#">Faculty Dashboard</a>
+        </div>
+
+        <div class="content px-4 md:px-20 lg:px-44 mt-8 md:mt-16 mb-8 md:mb-10">
+          <h2 class="text-xl md:text-2xl uppercase font-bold text-[#00457b]">Faculty Dashboard</h2>
+          <div class="w-full h-[1px] bg-[#00457b] mt-2">
+
+            <% if (success && success.length > 0) { %>
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded my-4">
+              <%= success %>
+            </div>
+            <% } %>
+
+            <% if (error && error.length > 0) { %>
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded my-4">
+              <%= error %>
+            </div>
+            <% } %>
+
+            <div class="max-w-5xl mx-auto p-4 md:p-8">
+              <div class="bg-white shadow-lg rounded-lg p-6 md:p-8">
+                <!-- Profile Header -->
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                  <!-- Profile Image -->
+                  <div class="w-40 h-40 md:w-44 md:h-52">
+                    <% if (faculty.image) { %>
+                    <img src="<%= faculty.image %>" alt="<%= faculty.name %>" class="rounded-lg shadow-md object-cover w-full h-full" />
+                    <% } else { %>
+                    <div class="w-full h-full rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                      <span class="text-5xl font-bold text-white"><%= faculty.name.charAt(0) %></span>
+                    </div>
+                    <% } %>
+                  </div>
+
+                  <!-- Profile Info -->
+                  <div class="text-center md:text-left flex-grow">
+                    <h1 class="text-3xl font-bold text-[#00457b]"><%= faculty.name %></h1>
+                    <p class="text-gray-600 text-lg font-semibold">
+                      <%= faculty.designation %><%= faculty.position ? ' & ' + faculty.position.toUpperCase() : '' %>
+                    </p>
+                    <p class="text-blue-600 font-medium"><%= faculty.department.toUpperCase() %> Department</p>
+                    <p class="text-gray-700 mt-2">
+                      <i class="ri-mail-line"></i> <%= faculty.email %>
+                    </p>
+                    <% if (faculty.mobile) { %>
+                    <p class="text-gray-700">
+                      <i class="ri-phone-line"></i> <%= faculty.mobile %>
+                    </p>
+                    <% } %>
+
+                    <!-- Socials -->
+                    <div class="flex justify-center md:justify-start gap-4 mt-4">
+                      <% if(faculty.socialLinks && faculty.socialLinks.facebook) { %>
+                      <a href="<%= faculty.socialLinks.facebook %>" target="_blank" class="text-gray-600 hover:text-blue-500">
+                        <i class="ri-facebook-fill text-2xl"></i>
+                      </a>
+                      <% } %>
+                      <% if(faculty.socialLinks && faculty.socialLinks.twitter) { %>
+                      <a href="<%= faculty.socialLinks.twitter %>" target="_blank" class="text-gray-600 hover:text-blue-400">
+                        <i class="ri-twitter-fill text-2xl"></i>
+                      </a>
+                      <% } %>
+                      <% if(faculty.socialLinks && faculty.socialLinks.linkedin) { %>
+                      <a href="<%= faculty.socialLinks.linkedin %>" target="_blank" class="text-gray-600 hover:text-blue-600">
+                        <i class="ri-linkedin-fill text-2xl"></i>
+                      </a>
+                      <% } %>
+                      <% if(faculty.socialLinks && faculty.socialLinks.github) { %>
+                      <a href="<%= faculty.socialLinks.github %>" target="_blank" class="text-gray-600 hover:text-gray-800">
+                        <i class="ri-github-fill text-2xl"></i>
+                      </a>
+                      <% } %>
+                    </div>
+                  </div>
+
+                  <!-- Quick Actions -->
+                  <div class="mt-4 md:mt-0 min-w-[200px]">
+                    <div class="border rounded-lg p-4 shadow-sm">
+                      <h3 class="font-semibold text-[#00457b] mb-3 border-b pb-2">Quick Actions</h3>
+                      <ul class="space-y-3">
+                      <% if (faculty.department === 'cse') { %>
+                      <li>
+                        <a href="/cse/profile/<%= faculty._id %>" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors">
+                          <i class="ri-eye-line mr-3 text-lg"></i> View Public Profile
+                        </a>
+                      </li>
+                      <% } else if (faculty.department === 'ece') { %>
+                      <li>
+                        <a href="/ece/profile/<%= faculty._id %>" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors">
+                          <i class="ri-eye-line mr-3 text-lg"></i> View Public Profile
+                        </a>
+                      </li>
+                      <% } else if (faculty.department === 'bs') { %>
+                      <li>
+                        <a href="/basic_science/profile/<%= faculty._id %>" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors">
+                          <i class="ri-eye-line mr-3 text-lg"></i> View Public Profile
+                        </a>
+                      </li>
+                      <% } %>
+                      <li>
+                        <a href="/faculty/edit" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors">
+                          <i class="ri-edit-2-line mr-3 text-lg"></i> Edit Profile
+                        </a>
+                      </li>
+                      <li>
+                                              <a href="/faculty/changePassword" class="flex items-center text-gray-700 hover:text-blue-600 transition-colors">
+                                                <i class="ri-lock-password-line mr-3 text-lg"></i> Change Password
+                                              </a>
+                                            </li>
+                      <li>
+                        <a href="/faculty/logout" class="flex items-center text-gray-700 hover:text-red-600 transition-colors">
+                          <i class="ri-logout-circle-r-line mr-3 text-lg"></i> Logout
+                        </a>
+                      </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <hr class="border-[#00457b] my-6" />
+
+                <!-- Profile Summary Sections -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <!-- Left Section -->
+                  <div>
+                    <!-- Education -->
+                    <% if(faculty.education && faculty.education.length > 0) { %>
+                    <div class="mb-6">
+                      <h3 class="text-lg font-bold text-[#00457b]">EDUCATION</h3>
+                      <ul class="list-disc ml-6 text-gray-700 space-y-1">
+                        <% faculty.education.forEach(item => { %>
+                        <li><%= item %></li>
+                        <% }); %>
+                      </ul>
+                    </div>
+                    <% } %>
+
+                    <!-- Experience -->
+                    <% if(faculty.experience && faculty.experience.length > 0) { %>
+                    <div class="mb-6">
+                      <h3 class="text-lg font-bold text-[#00457b]">EXPERIENCE</h3>
+                      <ul class="list-disc ml-6 text-gray-700 space-y-1">
+                        <% faculty.experience.forEach(item => { %>
+                        <li><%= item %></li>
+                        <% }); %>
+                      </ul>
+                    </div>
+                    <% } %>
+
+                    <!-- Teaching -->
+                    <% if(faculty.teaching && faculty.teaching.length > 0) { %>
+                    <div class="mb-6">
+                      <h3 class="text-lg font-bold text-[#00457b]">TEACHING</h3>
+                      <ul class="list-disc ml-6 text-gray-700 space-y-1">
+                        <% faculty.teaching.forEach(item => { %>
+                        <li><%= item %></li>
+                        <% }); %>
+                      </ul>
+                    </div>
+                    <% } %>
+                  </div>
+
+                  <!-- Right Section -->
+                  <div>
+                    <!-- Research -->
+                    <% if(faculty.research) { %>
+                    <div class="mb-6">
+                      <h3 class="text-lg font-bold text-[#00457b]">RESEARCH</h3>
+
+                      <!-- Research Profile Link -->
+                      <% if(faculty.research.link) { %>
+                      <a href="<%= faculty.research.link %>" class="text-blue-600 hover:underline">Link to Research Profile</a>
+                      <% } %>
+
+                      <!-- Areas of Research -->
+                      <% if(faculty.research.areaOfResearch && faculty.research.areaOfResearch.length > 0) { %>
+                      <div class="mt-2">
+                        <p class="font-semibold">Area of Research:</p>
+                        <ul class="list-disc ml-6 text-gray-700">
+                          <% faculty.research.areaOfResearch.forEach(area => { %>
+                          <li><%= area %></li>
+                          <% }); %>
+                        </ul>
+                      </div>
+                      <% } %>
+                    </div>
+                    <% } %>
+
+                    <!-- Responsibilities -->
+                    <% if(faculty.responsibility && faculty.responsibility.length > 0) { %>
+                    <div class="mb-6">
+                      <h3 class="text-lg font-bold text-[#00457b]">RESPONSIBILITIES</h3>
+                      <ul class="list-disc ml-6 text-gray-700">
+                        <% faculty.responsibility.forEach(item => { %>
+                        <li><%= item %></li>
+                        <% }); %>
+                      </ul>
+                    </div>
+                    <% } %>
+                  </div>
+                </div>
+
+                <!-- View Full Profile Button -->
+                <div class="flex justify-center mt-6">
+                  <% if (faculty.department === 'cse') { %>
+                  <a href="/cse/profile/<%= faculty._id %>" class="bg-[#00457b] hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-md transition-colors">
+                    View Complete Profile
+                  </a>
+                  <% } else if (faculty.department === 'ece') { %>
+                  <a href="/ece/profile/<%= faculty._id %>" class="bg-[#00457b] hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-md transition-colors">
+                    View Complete Profile
+                  </a>
+                  <% } else if (faculty.department === 'bs') { %>
+                  <a href="/basic_science/profile/<%= faculty._id %>" class="bg-[#00457b] hover:bg-blue-800 text-white font-medium py-3 px-6 rounded-md transition-colors">
+                    View Complete Profile
+                  </a>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

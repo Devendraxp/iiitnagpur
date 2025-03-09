@@ -1,0 +1,68 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title mb-4">Create Faculty User Account</h2>
+
+          <% if (availableFaculty && availableFaculty.length > 0) { %>
+            <form action="/admin/facultyUser/create" method="POST">
+              <div class="mb-3">
+                <label for="facultyId" class="form-label">Faculty Member</label>
+                <select 
+                  id="facultyId" 
+                  name="facultyId" 
+                  required
+                  class="form-select"
+                >
+                  <option value="">-- Select Faculty --</option>
+                  <% availableFaculty.forEach(faculty => { %>
+                    <option value="<%= faculty._id %>"><%= faculty.name %> (<%= faculty.department %>, <%= faculty.email %>)</option>
+                  <% }) %>
+                </select>
+              </div>
+              
+              <div class="mb-3">
+                <label for="password" class="form-label">Initial Password</label>
+                <input 
+                  type="password" 
+                  id="password" 
+                  name="password" 
+                  required
+                  class="form-control"
+                >
+                <div class="form-text">The faculty member will be able to change this password after login.</div>
+              </div>
+              
+              <div class="d-flex justify-content-between">
+                <button 
+                  type="submit" 
+                  class="btn btn-primary"
+                >
+                  Create Account
+                </button>
+                <a 
+                  href="/admin/faculty-users"
+                  class="btn btn-secondary"
+                >
+                  Cancel
+                </a>
+              </div>
+            </form>
+          <% } else { %>
+            <div class="alert alert-warning" role="alert">
+              <p>There are no faculty members without user accounts or with incomplete profile information.</p>
+              <p class="mt-2">
+                <a href="/admin/faculty" class="alert-link">
+                  Add or update faculty profiles first.
+                </a>
+              </p>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
