@@ -130,10 +130,10 @@ app.get("/basic_science/:page", (req, res) => {
   res.render(`basic_science/${page}`);
 });
 
-
 app.get("/placements", (req, res) => {
   res.redirect("/placements/about-us");
 });
+
 app.get("/placements/:page", (req, res) => {
   const { page } = req.params;
   res.render(`placements/${page}`);
