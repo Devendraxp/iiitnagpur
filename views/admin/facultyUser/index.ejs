@@ -1,0 +1,46 @@
+<% layout('./admin/layout/boilerplate.ejs') -%>
+
+<div class="container py-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Faculty User Management</h1>
+    <a href="/admin/facultyUser/create" class="btn btn-primary">
+      Create New Faculty User
+    </a>
+  </div>
+
+  <div class="card">
+    <div class="card-body p-0">
+      <table class="table mb-0">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Department</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% facultyUsers.forEach(user => { %>
+            <tr>
+              <td><%= user.facultyDetails?.name || 'Unknown' %></td>
+              <td><%= user.username %></td>
+              <td><%= user.email %></td>
+              <td><%= user.facultyDetails?.department || 'Unknown' %></td>
+              <td>
+                <a href="/admin/facultyUser/resetPassword/<%= user._id %>" class="text-primary">
+                  Reset Password
+                </a>
+              </td>
+            </tr>
+          <% }) %>
+          <% if (facultyUsers.length === 0) { %>
+            <tr>
+              <td colspan="5" class="text-center">No faculty user accounts found</td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

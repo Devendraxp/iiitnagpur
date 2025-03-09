@@ -16,15 +16,17 @@ import alumniRoute from "./routes/alumni.routes.js"
 import basicScienceRoute from "./routes/department/basicScience.routes.js"
 import cseRoute from "./routes/department/cse.routes.js"
 import eceRoute from "./routes/department/ece.routes.js"
-import Admin from "./models/admin.model.js";
+import facultyUserRoute from "./routes/facultyUser.routes.js"
+
+import flash from "connect-flash";
 import session from "express-session";
-import MongoStore from "connect-mongo";
 import passport from "passport";
 import passportLocal from "passport-local";
 import path from "path";
 import deptAchievementRoutes from "./routes/admin/deptAchievement.routes.js";
 import deptProjectRoutes from "./routes/admin/deptProject.routes.js";
 import deptEventRoutes from "./routes/admin/deptEvent.routes.js";
+import FacultyUser from "./models/facultyUser.model.js";
 
 const PORT = 8080;
 const app = express();
@@ -55,42 +57,25 @@ connectDB();
 const MONGODB_URI =
   "mongodb+srv://devendradhuvan:8440088Dev@cluster01.uw7df.mongodb.net/iiitn?retryWrites=true&w=majority&appName=Cluster01";
 
-const store = MongoStore.create({
-  mongoUrl: MONGODB_URI,
-  crypto: {
-    secret: process.env.SECRET,
-  },
-  touchAfter: 24 * 3600,
-});
-
-store.on("error", (err) => {
-  console.log("ERROR ! in mongo session store", err);
-});
-store.on("connect", () => {
-  console.log("MongoDB session store connected");
-});
-
-const sessionOptions = {
-  store: store,
-  secret: "your-secret-key-here", // Replace with actual secret from environment variable
-  resave: false,
-  saveUninitialized: true,
-  cookie: {
-    expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
-    maxAge: 7 * 24 * 60 * 60 * 1000,
-    httpOnly: true,
-  },
-};
+const sessionOptions=
+{secret:"mysupersecret",
+    resave:false,
+    saveUninitialized:true}
 
 app.use(session(sessionOptions));
-
-// Passport configuration
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new passportLocal.Strategy(Admin.authenticate()));
-passport.serializeUser(Admin.serializeUser());
-passport.deserializeUser(Admin.deserializeUser());
 
+passport.use(new passportLocal.Strategy(FacultyUser.authenticate()));
+passport.serializeUser(FacultyUser.serializeUser());
+passport.deserializeUser(FacultyUser.deserializeUser());
+
+app.use((req, res, next) => {
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
+    next();
+});
 
 // Routes
 app.get("/", async (_, res) => {
@@ -125,6 +110,7 @@ app.use("/ece", eceRoute)
 app.use("/admin/deptAchievement", deptAchievementRoutes);
 app.use("/admin/deptProject", deptProjectRoutes);
 app.use("/admin/deptEvent", deptEventRoutes);
+app.use("/faculty", facultyUserRoute)
 
 app.get("/admin-login", (_, res) => {
   res.render("admin/login");
