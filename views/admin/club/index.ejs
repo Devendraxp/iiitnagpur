@@ -20,7 +20,7 @@
               <span class="badge bg-primary mb-2"><%= item.category %></span>
             <% } %>
             <h5 class="card-title"><%= item.title || 'Untitled Club' %></h5>
-            <!-- <p class="card-text"><%= item.description || 'No description available' %></p> -->
+            <p class="card-text"><%= item.description || 'No description available' %></p>
             <p><strong>Lead:</strong> <%= item.Lead || 'Not specified' %></p>
             <% if(item.yearlyPlans && item.yearlyPlans.length > 0) { %>
               <p><strong>Plans:</strong> <%= item.yearlyPlans.length %> yearly plans</p>
