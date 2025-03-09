@@ -15,6 +15,7 @@ import deptAchievementRoute from "./deptAchievement.routes.js"
 import deptEventRoute from "./deptEvent.routes.js"
 import deptProjectRoute from "./deptProject.routes.js"
 import departmentResearchRoute from "./departmentResearch/index.routes.js"
+import facultyUserRoutes from "./facultyUser.routes.js";
 
 const router = express.Router();
 const PORT = 8080;
@@ -42,5 +43,6 @@ router.use("/deptAchievement", deptAchievementRoute);
 router.use("/deptEvent", deptEventRoute);
 router.use("/deptProject", deptProjectRoute);
 router.use("/departmentResearch", departmentResearchRoute);
+router.use("/facultyUser", facultyUserRoutes);
 
 export default router;
