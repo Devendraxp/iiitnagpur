@@ -849,7 +849,7 @@ function swiper() {
 </div>
 
           `,
-          links: ["Faculty", "Achievement", "Research", "Events", "Staff", "Projects", "Laboratory", "BoS"]
+          links: ["Faculty", "Achievements", "Research", "Events", "Staff", "Projects", "Laboratory", "BoS"]
       },
       cse: {
         description: `
@@ -893,7 +893,7 @@ function swiper() {
 </div>
 
     `,
-            links: ["Faculty", "Achievement", "Research", "Events", "Staff", "Projects", "Laboratory", "BoS"]
+            links: ["Faculty", "Achievements", "Research", "Events", "Staff", "Projects", "Laboratory", "BoS"]
       },
       ece: {
           description: `
@@ -989,7 +989,7 @@ function swiper() {
 </div>
 
           `,
-            links: ["Faculty", "Achievement", "Research", "Events", "Staff", "Projects", "Laboratory", "BoS"]
+            links: ["Faculty", "Achievements", "Research", "Events", "Staff", "Projects", "Laboratory", "BoS"]
       },
       doctoral: {
           description: `

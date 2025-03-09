@@ -52,10 +52,25 @@ router.route("/laboratory").get((_, res) => {
   res.render("ece/laboratory.ejs");
 });
 
-router.route("/projects").get(async(_, res) => {
-  const data = await DeptProject.find({ department: "ece" });
-  res.render("ece/projects.ejs", {data});
+router.route("/projects").get(async (_, res) => {
+  try {
+      const ongoingProjects = await DeptProject.find({ 
+          department: "ece", 
+          typeOfProject: "Ongoing" 
+      });
+
+      const completedProjects = await DeptProject.find({ 
+          department: "ece", 
+          typeOfProject: "Completed" 
+      });
+
+      res.render("ece/projects", { ongoingProjects, completedProjects });  // Correct key-value mapping
+  } catch (error) {
+      console.error("Error fetching projects:", error);
+      res.status(500).send("Server error");
+  }
 });
+
 
 router.route("/research").get((_, res) => {
   res.render("ece/research.ejs");
