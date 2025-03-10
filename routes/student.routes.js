@@ -13,6 +13,10 @@ router.route("/clinical-counselling").get((_, res) => {
   res.render("student/clinical-counselling");
 });
 
+router.route("/scholarship").get((_, res) => {
+  res.render("student/scholarship");
+});
+
 router.route("/convocation-2023").get((_, res) => {
   res.render("student/convocation-2023");
 });
@@ -31,6 +35,14 @@ router.route("/hostel").get((_, res) => {
 
 router.route("/student-mess").get((_, res) => {
   res.render("student/student-mess");
+});
+
+router.route("/academic-payment").get((_, res) => {
+  res.render("student/academic-payment");
+});
+
+router.route("/hostel-payment").get((_, res) => {
+  res.render("student/hostel-payment");
 });
 
 export default router;

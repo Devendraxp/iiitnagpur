@@ -474,7 +474,7 @@ function swiper() {
               <a href="/student/clinical-counselling">Clinical Counselling</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/student/scholarships">Scholarships</a>
+              <a href="/student/scholarship">Scholarships</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
               <a href="/student/hostel">Hostel</a>

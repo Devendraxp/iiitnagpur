@@ -1,0 +1,59 @@
+<%- include('../partials/head2') %>
+
+    <body>
+        <%- include('../partials/nav') %>
+            <div class="pb-20 w-full min-h-screen bg-white text-[#00457b]">
+                <div class="w-full lg:h-[100px] md:h-[70px] h-[60px]"></div>
+
+
+                <div
+                    class="routes w-full px-6 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#00457b] py-3 md:py-5">
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Home <i class="ri-arrow-right-s-line text-md"></i>
+                    </a>
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Admission <i class="ri-arrow-right-s-line text-md"></i>
+                    </a>
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Academic Payment
+                    </a>
+                </div>
+                <!-- Main Content -->
+                <div class="border-4 border-[#00457b] md:m-10 m-8 pb-10 text-black">
+                    <div class="px-4 md:px-20 lg:px-40 mt-8 md:mt-16 mb-8 md:mb-10"> 
+                        <div class="content max-w-6xl mx-auto px-6 sm:px-12 md:px-20 lg:px-28 mt-10 md:mt-16 mb-10 md:mb-14">
+                            <!-- Title -->
+                            <h2 class="text-2xl sm:text-3xl uppercase font-bold text-[#00457b]">Institute Bank Details</h2>
+                            <div class="w-full h-[2px] bg-gray-300 mt-2"></div>
+                        
+                            <!-- Flex Container -->
+                            <div class="mt-6 flex flex-col md:flex-row justify-between items-start gap-8">
+                                <!-- Bank Details Section (Left Side) -->
+                                <div class="w-full md:w-1/2 p-6 rounded-lg ">
+                                    <h3 class="text-xl sm:text-2xl font-bold text-[#00457b]">Academic Fees</h3>
+                                    <div class="mt-4 space-y-2">
+                                        <p class="text-lg font-medium"><strong>🏦 Name of Account:</strong> Indian Institute of Information Technology, Nagpur General</p>
+                                        <p class="text-lg font-medium"><strong>💳 Account No:</strong> 41759739179</p>
+                                        <p class="text-lg font-medium"><strong>🏛 &nbsp;IFSC Code:</strong> SBIN0006702</p>
+                                        <p class="text-lg font-medium"><strong>📍 Branch Name:</strong> VRCE BRANCH</p>
+                                    </div>
+                                    
+                                    <!-- Online Payment Button -->
+                                    <div class="mt-6">
+                                        <a class="inline-block text-lg font-semibold hover:text-white hover:bg-[#00457b] bg-white text-[#00457b]  border-2 border-[#00457b]  px-4 py-2 rounded-md shadow-md transition duration-300" href="#">
+                                            💻 Online Payment Link: Click Here
+                                        </a>
+                                    </div>
+                                </div>
+                        
+                                <!-- QR Code Section (Right Side) -->
+                                <div class="w-full md:w-1/2 flex flex-col items-start">
+                                    <img class="mt-4 w-48 sm:w-56 md:w-64 lg:w-[50vw] shadow-md rounded-lg" src="../images/student/academic-payment.jpg" alt="Institute Academic Fees QR Code">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%- include('../partials/footer') %>
+    </body>
+    <%- include('../partials/tail2') %>
