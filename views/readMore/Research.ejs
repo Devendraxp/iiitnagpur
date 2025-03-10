@@ -71,7 +71,7 @@
                 });
                 
                 patents.forEach(patent => { %>
-                  <div class="bg-white p-4 rounded shadow-md data-item" data-year="<%= patent.year || 'N/A' %>" data-dept="<%= patent.department %>" data-category="patent">
+                  <div class="bg-white p-4 rounded border-2 border-[#00457b]  data-item" data-year="<%= patent.year || 'N/A' %>" data-dept="<%= patent.department %>" data-category="patent">
                       <div class="flex flex-wrap gap-2 mb-3">
                           <!-- Year Badge (if available) -->
                           <% if (patent.year) { %>
@@ -108,7 +108,7 @@
                 Object.keys(publicationsByYear.bookChapters).sort((a, b) => b - a).forEach(year => {
                   publicationsByYear.bookChapters[year].forEach(bookChapter => {
                     bookChapter.description.forEach(desc => { %>
-                      <div class="bg-white p-4 rounded shadow-md data-item" data-year="<%= year %>" data-dept="<%= bookChapter.department %>" data-category="book">
+                      <div class="bg-white p-4 rounded border-2 border-[#00457b]  data-item" data-year="<%= year %>" data-dept="<%= bookChapter.department %>" data-category="book">
                           <div class="flex flex-wrap gap-2 mb-3">
                               <!-- Year Badge -->
                               <span class="px-2 py-1 text-xs font-bold text-white rounded bg-yellow-600">
@@ -138,7 +138,7 @@
                 Object.keys(publicationsByYear.conferencePapers).sort((a, b) => b - a).forEach(year => {
                   publicationsByYear.conferencePapers[year].forEach(paper => {
                     paper.description.forEach(desc => { %>
-                      <div class="bg-white p-4 rounded shadow-md data-item" data-year="<%= year %>" data-dept="<%= paper.department %>" data-category="conference">
+                      <div class="bg-white p-4 rounded border-2 border-[#00457b]  data-item" data-year="<%= year %>" data-dept="<%= paper.department %>" data-category="conference">
                           <div class="flex flex-wrap gap-2 mb-3">
                               <!-- Year Badge -->
                               <span class="px-2 py-1 text-xs font-bold text-white rounded bg-yellow-600">
@@ -168,7 +168,7 @@
                 Object.keys(publicationsByYear.journals).sort((a, b) => b - a).forEach(year => {
                   publicationsByYear.journals[year].forEach(journal => {
                     journal.description.forEach(desc => { %>
-                      <div class="bg-white p-4 rounded shadow-md data-item" data-year="<%= year %>" data-dept="<%= journal.department %>" data-category="journal">
+                      <div class="bg-white p-4 rounded border-2 border-[#00457b]  data-item" data-year="<%= year %>" data-dept="<%= journal.department %>" data-category="journal">
                           <div class="flex flex-wrap gap-2 mb-3">
                               <!-- Year Badge -->
                               <span class="px-2 py-1 text-xs font-bold text-white rounded bg-yellow-600">
