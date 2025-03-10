@@ -169,7 +169,258 @@
         <div class="flex justify-center items-center mt-12">
           <a href="/readMore/academicReadMore">
             <button
-              class="px-10 py-2 text-[#f26e32] bg-zinc-100/80 font-semibold border-2 border-[#f26e32] hover:bg-[#f26e32] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
+              class="px-10 py-2 text-[#00457b] bg-zinc-100/80 font-semibold border-2 border-[#00457b] hover:bg-[#003366] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
+              Read More
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div id="page7" class="w-full h-full  lg:pb-24 md:pb-16 pb-10">
+        <div class="page7b">
+          <h1
+            class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
+            Research</h1>
+          <p class="text-center lg:text-[1.5vw] md:text-[2vw] text-[3vw] leading-none px-4 mb-10">
+            Advancing discoveries that shape our world, well-being, and knowledge.
+          </p>
+        </div>
+
+        <div
+          class="flex md:flex-row flex-col justify-evenly border-b-2 border-t-2 border-black w-[90%] mx-auto py-10 my-10">
+          <div class=" pb-8 text-center">
+            <div class="flex text-center w-fit mx-auto">
+              <!-- <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] num" data-target="50">0</h1> -->
+              <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] ">Workshops</h1>
+            </div>
+            <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
+              Hands-on learning experiences to enhance skills.
+            </p>
+          </div>
+          <div class=" pb-8 text-center">
+            <div class="flex text-center w-fit mx-auto">
+              <!-- <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] num" data-target="30">0</h1> -->
+              <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] ">Seminars</h1>
+            </div>
+            <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
+              Insights from experts across various domains.
+            </p>
+          </div>
+          <div class=" pb-8 text-center">
+            <div class="flex text-center w-fit mx-auto">
+              <!-- <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] num" data-target="100">0</h1> -->
+              <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] ">Projects</h1>
+            </div>
+            <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
+              Advancing knowledge through groundbreaking research.
+            </p>
+            </p>
+          </div>
+        </div>
+
+        <div class="swiper mySwiper6">
+          <div class="swiper-wrapper">
+            <% research.forEach(function(item) { %>
+              <div class="swiper-slide">
+                <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                  <div class="bg-zinc-200 w-full md:h-64 h-24">
+                    <img src="<%= item.image %>" alt="<%= item.title %>" class="w-full h-full object-cover" />
+                  </div>
+                  <div class="w-full h-fit">
+                    <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                      <%= item.title %>
+                    </h1>
+                    <p class="text-blue-500 md:text-[1.2vw] text-[3vw]">
+                      <a href="<%= item.link %>" target="_blank">checkout</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="flex justify-center items-center mt-12">
+          <a href="/readMore/research">
+            <button
+              class="px-10 py-2 text-[#00457b] bg-zinc-100/80 font-semibold border-2 border-[#00457b] hover:bg-[#003366] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
+              Read More
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div id="page7b" class="w-full h-full  lg:pb-12 md:pb-16 pb-10">
+        <div class="page7b">
+          <h1
+            class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
+             Clubs</h1>
+        </div>
+        <div class="swiper mySwiper4b text-center">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="bg-zinc-100/80 w-full h-full mb-10 overflow-hidden rounded-md event-box">
+                <div class="w-full h-72">
+                  <img class="w-full h-full object-cover" src="../images/clubs/1.JPG" alt="Event Image" />
+                </div>
+                <h1 class="text-[#00457b] font-semibold lg:text-[1.2vw] md:text-[2vw] text-[5vw] pt-2">
+                 Guest Performance
+                </h1>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-zinc-100/80 w-full h-full mb-10 overflow-hidden rounded-md event-box">
+                <div class="w-full h-72">
+                  <img class="w-full h-full object-cover"  src="../images/clubs/2.JPG" alt="Event Image" />
+                </div>
+                <h1 class="text-[#00457b] font-semibold lg:text-[1.2vw] md:text-[2vw] text-[5vw] pt-2">
+                 Trail Traizer
+                </h1>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-zinc-100/80 w-full h-full mb-10 overflow-hidden rounded-md event-box">
+                <div class="w-full h-72">
+                  <img class="w-full h-full object-cover"  src="../images/clubs/3.JPG" alt="Event Image" />
+                </div>
+                <h1 class="text-[#00457b] font-semibold lg:text-[1.2vw] md:text-[2vw] text-[5vw] pt-2">
+                 Standup Show
+                </h1>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-zinc-100/80 w-full h-full mb-10 overflow-hidden rounded-md event-box">
+                <div class="w-full h-72">
+                  <img class="w-full h-full object-cover"  src="../images/clubs/5.webp" alt="Event Image" />
+                </div>
+                <h1 class="text-[#00457b] font-semibold lg:text-[1.2vw] md:text-[2vw] text-[5vw] pt-2">
+                  AR / VR
+                </h1>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-zinc-100/80 w-full h-full mb-10 overflow-hidden rounded-md event-box">
+                <div class="w-full h-72">
+                  <img class="w-full h-full object-cover"  src="../images/clubs/4.JPG" alt="Event Image" />
+                </div>
+                <h1 class="text-[#00457b] font-semibold lg:text-[1.2vw] md:text-[2vw] text-[5vw] pt-2">
+                  Talent Showcase
+                </h1>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="flex justify-center items-center mt-12">
+          <a href="/club">
+            <button
+              class="px-10 py-2 text-[#00457b] bg-zinc-100/80 font-semibold border-2 border-[#00457b] hover:bg-[#003366] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
+              Read More
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div id="page7c" class="w-full h-full lg:pb-24 md:pb-16 pb-10">
+        <div class="page7c">
+          <h1
+            class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
+            Primary Events</h1>
+        </div>
+        <div class="swiper mySwiper6c text-center">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                <div class="w-full md:h-64 h-24">
+                  <img src="../images/index/abhivyakti.jpeg" alt="image" class="w-full h-full object-contain" />
+                </div>
+                <div class="w-full h-fit">
+                  <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                    Abhivyakti
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                <div class="w-full md:h-64 h-24">
+                  <img src="../images/index/tf.jpeg" alt="image" class="w-full h-full object-contain" />
+                </div>
+                <div class="w-full h-fit">
+                  <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                    Tantrafiesta
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                <div class="w-full md:h-64 h-24">
+                  <img src="../images/index/kshitij.jpg" alt="image" class="w-full h-full object-contain" />
+                </div>
+                <div class="w-full h-fit">
+                  <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                    Kshitij
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
+                <div class="w-full md:h-64 h-24">
+                  <img src="../images/index/e-summit.png" alt="image" class="w-full h-full object-contain" />
+                </div>
+                <div class="w-full h-fit">
+                  <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                    E-Summit
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <div id="page9" class="w-full px-4 pb-20 bg-zinc-100/80">
+        <h1
+          class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-5">
+          Campus News
+        </h1>
+
+        <div class="swiper mySwiper4">
+          <div class="swiper-wrapper">
+            <% notification.forEach(notification=> { %>
+              <div class="swiper-slide">
+                <div class="bg-zinc-100/80 w-full h-full mb-10 overflow-hidden rounded-md event-box">
+                  <div class="w-full h-72">
+                    <img class="w-full h-full object-cover" src="<%= notification.image %>" alt="Notification Image" />
+                  </div>
+                  <h1 class="text-[#00457b] font-semibold lg:text-[1.2vw] md:text-[2vw] text-[5vw] pt-2">
+                    <%= notification.title %>
+                  </h1>
+                  <h1 class="px-4 text-white">
+                    <%= notification.date %>
+                  </h1>
+                  <% if (notification.link) { %>
+                    <div class=" pb-2">
+                      <a href="<%= notification.link %>" target="_blank" class="text-blue-500 hover:underline">
+                        Read Full Notification
+                      </a>
+                    </div>
+                    <% } %>
+                </div>
+              </div>
+              <% }); %>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="flex justify-center items-center mt-12">
+          <a href="/readMore">
+            <button
+              class="px-10 py-2 text-[#00457b] bg-zinc-100/80 font-semibold border-2 border-[#00457b] hover:bg-[#003366] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
               Read More
             </button>
           </a>
