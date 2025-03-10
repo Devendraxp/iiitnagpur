@@ -77,7 +77,6 @@ router.route("/projects").get(async (_, res) => {
   }
 });
 
-
 router.route("/research").get(async (_, res) => {
   try {
     // Fetch areas of specialization for ECE
