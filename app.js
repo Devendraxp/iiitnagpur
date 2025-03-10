@@ -9,6 +9,10 @@ import Notice from "./models/notice.model.js";
 import Notification from "./models/notification.model.js";
 import StudentTestimonial from "./models/studentTestimonial.model.js";
 import Research from "./models/research.model.js";
+import Patent from "./models/research/patent.model.js";
+import Publication from "./models/research/publication.model.js";
+
+
 import adminRoute from "./routes/admin/index.routes.js";
 import studentRoute from "./routes/student.routes.js"
 import programRoute from "./routes/program.routes.js"
@@ -125,10 +129,10 @@ app.get("/aboutUs", (req, res) => {
 app.get("/department", (req, res) => {
   res.redirect("/basic_science/aboutDepartment");
 });
-app.get("/basic_science/:page", (req, res) => {
-  const { page } = req.params;
-  res.render(`basic_science/${page}`);
-});
+// app.get("/basic_science/:page", (req, res) => {
+//   const { page } = req.params;
+//   res.render(`basic_science/${page}`);
+// });
 
 app.get("/placements", (req, res) => {
   res.redirect("/placements/about-us");
@@ -214,9 +218,57 @@ app.get("/readMore/academicReadMore", (req, res) => {
 app.get("/readMore/researchReadMore", (req, res) => {
   res.render("readMore/researchReadMore");
 });
-app.get("/readMore/research", (req, res) => {
-  res.render("readMore/Research");
-});
+app.get("/research",async (req, res) => {
+   
+    // Fetch patents
+    const patents = await Patent.find({});
+    
+    // Fetch all publications
+    const allPublications = await Publication.find({}).sort({ year: -1 });
+    
+    // Group publications by type
+    const publications = {
+      bookChapters: allPublications.filter(pub => pub.type === "bookChapter"),
+      conferencePapers: allPublications.filter(pub => pub.type === "confrencePaper"), // Note: there's a typo in the model
+      journals: allPublications.filter(pub => pub.type === "journal")
+    };
+    
+    // Group publications by year for each type
+    const publicationsByYear = {
+      bookChapters: groupPublicationsByYear(publications.bookChapters),
+      conferencePapers: groupPublicationsByYear(publications.conferencePapers), 
+      journals: groupPublicationsByYear(publications.journals)
+    };
+
+    res.render("readMore/Research", { 
+      patents,
+      publicationsByYear
+    });
+  });
+
+
+  
+// Helper function to group publications by year
+function groupPublicationsByYear(publications) {
+  const groupedByYear = {};
+  
+  publications.forEach(pub => {
+    if (!groupedByYear[pub.year]) {
+      groupedByYear[pub.year] = [];
+    }
+    groupedByYear[pub.year].push(pub);
+  });
+  
+  // Sort years in descending order (newest first)
+  return Object.keys(groupedByYear)
+    .sort((a, b) => b - a)
+    .reduce((result, year) => {
+      result[year] = groupedByYear[year];
+      return result;
+    }, {});
+}
+
+
 app.get("/readMore/clubsReadMore", (req, res) => {
   res.render("readMore/clubsReadMore");
 });

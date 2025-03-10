@@ -1,103 +1,249 @@
 <%- include('../partials/head2') %> 
   <body>
     <%- include('../partials/nav') %> 
-    <div class=" w-full min-h-screen bg-white text-black">
+    <div class="w-full min-h-screen bg-white text-black">
       <div class="w-full lg:h-[100px] md:h-[80px]"></div>
 
       <div class="mainContent w-full">
         <div class="routes w-full px-4 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#00457b] py-3 md:py-5">
-          <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white" href="#">
+          <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white" href="/">
             Home <i class="ri-arrow-right-s-line text-md"></i>
           </a>
-          <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white" href="#">
+          <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white" href="/research">
             Research <i class="ri-arrow-right-s-line text-md"></i>
           </a>
         </div>
 
         <div class="container mx-auto p-6">
-          <h1 class="text-3xl font-bold text-center mb-6">College Research & Events</h1>
+          <h1 class="text-3xl font-bold text-center mb-6">IIITN Research Publications</h1>
   
           <!-- Filters -->
           <div class="flex flex-wrap justify-center gap-4 mb-6">
               <select id="yearFilter" class="p-2 border border-gray-300 rounded">
                   <option value="all">All Years</option>
-                  <option value="2025">2025</option>
-                  <option value="2024">2024</option>
-                  <option value="2023">2023</option>
+                  <% 
+                  const years = new Set();
+                  if (publicationsByYear && publicationsByYear.bookChapters) {
+                    Object.keys(publicationsByYear.bookChapters).forEach(year => years.add(year));
+                  }
+                  if (publicationsByYear && publicationsByYear.conferencePapers) {
+                    Object.keys(publicationsByYear.conferencePapers).forEach(year => years.add(year));
+                  }
+                  if (publicationsByYear && publicationsByYear.journals) {
+                    Object.keys(publicationsByYear.journals).forEach(year => years.add(year));
+                  }
+                  const sortedYears = Array.from(years).sort((a, b) => b - a);
+                  sortedYears.forEach(year => { %>
+                    <option value="<%= year %>"><%= year %></option>
+                  <% }); %>
               </select>
   
               <select id="deptFilter" class="p-2 border border-gray-300 rounded">
                   <option value="all">All Departments</option>
-                  <option value="cse">Computer Science</option>
-                  <option value="eee">Electrical Engineering</option>
-                  <option value="mech">Mechanical Engineering</option>
+                  <option value="cse">Computer Science (CSE)</option>
+                  <option value="ece">Electronics & Communication (ECE)</option>
+                  <option value="bs">Basic Sciences</option>
               </select>
   
               <select id="categoryFilter" class="p-2 border border-gray-300 rounded">
                   <option value="all">All Categories</option>
-                  <option value="research">Research Papers</option>
-                  <option value="funded">Funded Projects</option>
-                  <option value="workshop">Workshops</option>
-                  <option value="seminar">Seminars</option>
-                  <option value="consultation">Consultation</option>
-                  <option value="publications">Publications</option>
+                  <option value="journal">Journal Papers</option>
+                  <option value="conference">Conference Papers</option>
+                  <option value="book">Book Chapters</option>
+                  <option value="patent">Patents</option>
               </select>
           </div>
   
           <!-- Research Data List -->
           <div id="researchContainer" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <!-- Example Entries -->
-              <div class="bg-white p-4 rounded shadow-md data-item" data-year="2024" data-dept="cse" data-category="research">
-                  <h2 class="text-xl font-semibold">AI in Healthcare</h2>
-                  <p class="mb-2">Published in 2024 | Computer Science</p>
-                  
-                  <!-- Category Badge -->
-                  <span class="category-badge px-2 py-1 text-xs font-bold text-white rounded" data-category="research">
-                      Research Paper
-                  </span>
-  
-                  <p class="text-gray-600 mt-2">A research paper exploring AI's impact in modern healthcare.</p>
-              </div>
-  
-              <div class="bg-white p-4 rounded shadow-md data-item" data-year="2023" data-dept="mech" data-category="funded">
-                  <h2 class="text-xl font-semibold">Automation in Manufacturing</h2>
-                  <p class="mb-2">Published in 2023 | Mechanical Engineering</p>
-                  
-                  <!-- Category Badge -->
-                  <span class="category-badge px-2 py-1 text-xs font-bold text-white rounded" data-category="funded">
-                      Funded Project
-                  </span>
-  
-                  <p class="text-gray-600 mt-2">A funded project on automation's role in the industry.</p>
-              </div>
-  
-              <div class="bg-white p-4 rounded shadow-md data-item" data-year="2025" data-dept="eee" data-category="seminar">
-                  <h2 class="text-xl font-semibold">Renewable Energy Seminar</h2>
-                  <p class="mb-2">Happened in 2025 | Electrical Engineering</p>
-                  
-                  <!-- Category Badge -->
-                  <span class="category-badge px-2 py-1 text-xs font-bold text-white rounded" data-category="seminar">
-                      Seminar
-                  </span>
-  
-                  <p class="text-gray-600 mt-2">A seminar discussing the future of green energy.</p>
-              </div>
-  
-              <div class="bg-white p-4 rounded shadow-md data-item" data-year="2024" data-dept="cse" data-category="workshop">
-                  <h2 class="text-xl font-semibold">Cybersecurity Workshop</h2>
-                  <p class="mb-2">Held in 2024 | Computer Science</p>
-                  
-                  <!-- Category Badge -->
-                  <span class="category-badge px-2 py-1 text-xs font-bold text-white rounded" data-category="workshop">
-                      Workshop
-                  </span>
-  
-                  <p class="text-gray-600 mt-2">An interactive session on modern cybersecurity threats.</p>
-              </div>
+              <% 
+              // Display Patents - sort by year if available
+              if (patents && patents.length > 0) {
+                // Sort patents by year (newest first)
+                patents.sort((a, b) => {
+                  if (!a.year && !b.year) return 0;
+                  if (!a.year) return 1;
+                  if (!b.year) return -1;
+                  return b.year - a.year;
+                });
+                
+                patents.forEach(patent => { %>
+                  <div class="bg-white p-4 rounded shadow-md data-item" data-year="<%= patent.year || 'N/A' %>" data-dept="<%= patent.department %>" data-category="patent">
+                      <div class="flex flex-wrap gap-2 mb-3">
+                          <!-- Year Badge (if available) -->
+                          <% if (patent.year) { %>
+                          <span class="px-2 py-1 text-xs font-bold text-white rounded bg-yellow-600">
+                              <%= patent.year %>
+                          </span>
+                          <% } %>
+                          
+                          <!-- Department Badge -->
+                          <span class="px-2 py-1 text-xs font-bold text-white rounded bg-indigo-600">
+                              <%= patent.department.toUpperCase() %>
+                          </span>
+                          
+                          <!-- Category Badge -->
+                          <span class="px-2 py-1 text-xs font-bold text-white rounded bg-purple-600">
+                              Patent (<%= patent.state %>)
+                          </span>
+                          
+                          <% if (patent.patentNo) { %>
+                          <span class="px-2 py-1 text-xs font-bold text-white rounded bg-gray-600">
+                              <%= patent.patentNo %>
+                          </span>
+                          <% } %>
+                      </div>
+                      
+                      <h3 class="text-lg font-semibold mb-2"><%= patent.title %></h3>
+                      <p class="text-gray-600"><strong>Inventors:</strong> <%= patent.inventor.join(', ') %></p>
+                  </div>
+              <% }); 
+              }
+              
+              // Display Book Chapters - sort years newest first
+              if (publicationsByYear && publicationsByYear.bookChapters) {
+                Object.keys(publicationsByYear.bookChapters).sort((a, b) => b - a).forEach(year => {
+                  publicationsByYear.bookChapters[year].forEach(bookChapter => {
+                    bookChapter.description.forEach(desc => { %>
+                      <div class="bg-white p-4 rounded shadow-md data-item" data-year="<%= year %>" data-dept="<%= bookChapter.department %>" data-category="book">
+                          <div class="flex flex-wrap gap-2 mb-3">
+                              <!-- Year Badge -->
+                              <span class="px-2 py-1 text-xs font-bold text-white rounded bg-yellow-600">
+                                  <%= year %>
+                              </span>
+                              
+                              <!-- Department Badge -->
+                              <span class="px-2 py-1 text-xs font-bold text-white rounded bg-indigo-600">
+                                  <%= bookChapter.department.toUpperCase() %>
+                              </span>
+                              
+                              <!-- Type Badge -->
+                              <span class="px-2 py-1 text-xs font-bold text-white rounded bg-blue-600">
+                                  Book Chapter
+                              </span>
+                          </div>
+                          
+                          <p class="text-gray-700"><%= desc %></p>
+                      </div>
+                    <% });
+                  });
+                });
+              }
+              
+              // Display Conference Papers - sort years newest first
+              if (publicationsByYear && publicationsByYear.conferencePapers) {
+                Object.keys(publicationsByYear.conferencePapers).sort((a, b) => b - a).forEach(year => {
+                  publicationsByYear.conferencePapers[year].forEach(paper => {
+                    paper.description.forEach(desc => { %>
+                      <div class="bg-white p-4 rounded shadow-md data-item" data-year="<%= year %>" data-dept="<%= paper.department %>" data-category="conference">
+                          <div class="flex flex-wrap gap-2 mb-3">
+                              <!-- Year Badge -->
+                              <span class="px-2 py-1 text-xs font-bold text-white rounded bg-yellow-600">
+                                  <%= year %>
+                              </span>
+                              
+                              <!-- Department Badge -->
+                              <span class="px-2 py-1 text-xs font-bold text-white rounded bg-indigo-600">
+                                  <%= paper.department.toUpperCase() %>
+                              </span>
+                              
+                              <!-- Type Badge -->
+                              <span class="px-2 py-1 text-xs font-bold text-white rounded bg-green-600">
+                                  Conference Paper
+                              </span>
+                          </div>
+                          
+                          <p class="text-gray-700"><%= desc %></p>
+                      </div>
+                    <% });
+                  });
+                });
+              }
+              
+              // Display Journal Papers - sort years newest first
+              if (publicationsByYear && publicationsByYear.journals) {
+                Object.keys(publicationsByYear.journals).sort((a, b) => b - a).forEach(year => {
+                  publicationsByYear.journals[year].forEach(journal => {
+                    journal.description.forEach(desc => { %>
+                      <div class="bg-white p-4 rounded shadow-md data-item" data-year="<%= year %>" data-dept="<%= journal.department %>" data-category="journal">
+                          <div class="flex flex-wrap gap-2 mb-3">
+                              <!-- Year Badge -->
+                              <span class="px-2 py-1 text-xs font-bold text-white rounded bg-yellow-600">
+                                  <%= year %>
+                              </span>
+                              
+                              <!-- Department Badge -->
+                              <span class="px-2 py-1 text-xs font-bold text-white rounded bg-indigo-600">
+                                  <%= journal.department.toUpperCase() %>
+                              </span>
+                              
+                              <!-- Type Badge -->
+                              <span class="px-2 py-1 text-xs font-bold text-white rounded bg-red-600">
+                                  Journal Paper
+                              </span>
+                          </div>
+                          
+                          <p class="text-gray-700"><%= desc %></p>
+                      </div>
+                    <% });
+                  });
+                });
+              } %>
+              
+              <!-- Show message if no data -->
+              <% if (
+                (!patents || patents.length === 0) && 
+                (!publicationsByYear || 
+                 (!publicationsByYear.bookChapters || Object.keys(publicationsByYear.bookChapters).length === 0) && 
+                 (!publicationsByYear.conferencePapers || Object.keys(publicationsByYear.conferencePapers).length === 0) && 
+                 (!publicationsByYear.journals || Object.keys(publicationsByYear.journals).length === 0))
+              ) { %>
+                <div class="col-span-full text-center py-10">
+                  <p class="text-lg text-gray-500">No research publications found.</p>
+                </div>
+              <% } %>
           </div>
       </div>
       </div>
     </div>
-    <%- include('../partials/footer') %> 
+    <%- include('../partials/footer') %>
+    
+    <script>
+      // Initialize filters
+      document.addEventListener('DOMContentLoaded', function() {
+        const yearFilter = document.getElementById('yearFilter');
+        const deptFilter = document.getElementById('deptFilter');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const items = document.querySelectorAll('.data-item');
+        
+        // Filter function
+        function applyFilters() {
+          const selectedYear = yearFilter.value;
+          const selectedDept = deptFilter.value;
+          const selectedCategory = categoryFilter.value;
+          
+          items.forEach(item => {
+            const itemYear = item.getAttribute('data-year');
+            const itemDept = item.getAttribute('data-dept');
+            const itemCategory = item.getAttribute('data-category');
+            
+            const yearMatch = selectedYear === 'all' || itemYear === selectedYear;
+            const deptMatch = selectedDept === 'all' || itemDept === selectedDept;
+            const categoryMatch = selectedCategory === 'all' || itemCategory === selectedCategory;
+            
+            if (yearMatch && deptMatch && categoryMatch) {
+              item.style.display = '';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        }
+        
+        // Add event listeners to filters
+        yearFilter.addEventListener('change', applyFilters);
+        deptFilter.addEventListener('change', applyFilters);
+        categoryFilter.addEventListener('change', applyFilters);
+      });
+    </script>
   </body>
-  <%- include('../partials/tail2') %> 
+  <%- include('../partials/tail2') %>
