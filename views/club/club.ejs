@@ -1,0 +1,94 @@
+<%- include('../partials/head2') %> 
+  <body>
+    <%- include('../partials/nav') %> 
+
+    <!-- Spacer -->
+    <div class="w-full lg:h-[100px] md:h-[70px] h-[60px]">
+
+    <!-- Club Header Banner -->
+    <section class="relative bg-stone-200 h-[300px] md:h-[350px] lg:h-[400px] bg-cover bg-center bg-no-repeat clip-right-slant"
+      style="background-image: url('<%= club.logo %>');">
+      <div class="absolute inset-0 bg-black/70">
+      <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-6">
+          <h2 class="text-5xl md:text-8xl font-bold text-glow"><%= club.title %></h2>
+      </div>
+    </section>
+
+    <!-- Club Description Section -->
+    <section class="flex flex-col md:flex-row items-center justify-center bg-stone-200 px-[4vw] py-[4vw] lg:ml-20 lg:ml-40 lg:-mt-[2vw]">
+      <!-- About Club Box -->
+      <div class="w-full sm:w-[45vh] md:w-[40vw] lg:w-[30vw] min-h-[20vw] 
+           text-left border border-gray-300 shadow-lg rounded-md p-[3vw] 
+           flex flex-col justify-between overflow-hidden bg-stone-200 ">
+          <h3 class="text-[5vw] md:text-[2.5vw] lg:text-[1.75vw] text-gray-800 pt-[1vw]">
+            <%= club.title %>
+          </h3>
+          <p class="mt-[2vw] md:mt-[1vw] text-gray-700 text-[2vw] md:text-[1.5vw] lg:text-[1vw] leading-tight">
+            <%= club.description %>
+          </p>
+      </div>
+
+      <!-- Club Logo -->
+      <% if (club.logo) { %>
+      <div class="w-full md:w-[50vw] flex justify-center relative mt-[4vw] md:mt-0">
+        <div class="relative flex justify-center items-center">
+          <div class="absolute top-[1vw] left-[1vw] w-[calc(100%+0.5vw)] h-[calc(100%+0.5vw)] border-[0.35vw]"
+            style="border-color: rgba(207, 169, 74); border-style: solid;">
+          <div class="relative z-10">
+              <img src="<%= club.logo %>" alt="<%= club.title %> Logo" 
+                   class="w-[50vw] h-[40vw] sm:w-[50vw] sm:h-[35vw] md:w-[35vw] md:h-[30vw] 
+                          lg:w-[27vw] lg:h-[23vw] object-cover shadow-lg ">
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </section>
+
+    <!-- Events Slider -->
+    <h1 class="font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-5">
+      Events Organised
+    </h1>
+    <div class="lg:w-[90vw] lg:h-[95vh] w-[95%] h-[50%] mx-auto">
+      <div class="swiper mySwiper5 relative">
+        <div class="swiper-wrapper">
+          <% events.forEach(function(event){ %>
+            <div class="swiper-slide relative">
+              <div
+                class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
+                <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
+                  <strong><%= event.title %></strong> <br>
+                  <%= event.description %>
+                </p>
+              </div>
+              <div
+                class="dets flex items-center justify-center lg:w-[60px] w-[40px] lg:h-[60px] h-[40px] rounded-full bg-[black]/90 absolute lg:bottom-[30px] md:bottom-[15px] bottom-[10px] lg:right-[40px] md:right-[15px] right-[10px] z-[100] text-white">
+                <i class="ri-lightbulb-line bulb text-white lg:text-[25px] text-[15px]"></i>
+              </div>
+              <img class="w-full h-full object-fit" src="<%= event.images[0] %>" alt="<%= event.title %>" loading="lazy"/>
+            </div>
+          <% }) %>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <!-- Club Yearly Plans Section -->
+    <% if(club.yearlyPlans && club.yearlyPlans.length > 0) { %>
+    <section class="bg-stone-200 px-[4vw] py-[4vw]">
+      <h1 class="font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-5">
+        Yearly Plans
+      </h1>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <% club.yearlyPlans.forEach(function(plan){ %>
+          <div class="border border-gray-300 shadow-lg rounded-md p-[2vw] bg-stone-100 w-[90%] md:w-[40%] lg:w-[30%]">
+            <h3 class="font-bold text-xl mb-2"><%= plan.title %></h3>
+            <p class="text-gray-700 text-sm leading-tight"><%= plan.description %></p>
+          </div>
+        <% }) %>
+      </div>
+    </section>
+    <% } %>
+
+    <%- include('../partials/footer') %> 
+  </body>
+<%- include('../partials/tail2') %> 

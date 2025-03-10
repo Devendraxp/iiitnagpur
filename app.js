@@ -21,6 +21,8 @@ import basicScienceRoute from "./routes/department/basicScience.routes.js"
 import cseRoute from "./routes/department/cse.routes.js"
 import eceRoute from "./routes/department/ece.routes.js"
 import facultyUserRoute from "./routes/facultyUser.routes.js"
+import clubRoute from "./routes/club.routes.js"
+
 
 import flash from "connect-flash";
 import session from "express-session";
@@ -115,6 +117,7 @@ app.use("/admin/deptAchievement", deptAchievementRoutes);
 app.use("/admin/deptProject", deptProjectRoutes);
 app.use("/admin/deptEvent", deptEventRoutes);
 app.use("/faculty", facultyUserRoute)
+app.use("/club",clubRoute)
 
 app.get("/admin-login", (_, res) => {
   res.render("admin/login");
