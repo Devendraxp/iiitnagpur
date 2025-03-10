@@ -186,38 +186,33 @@
           </p>
         </div>
 
-        <div
-          class="flex md:flex-row flex-col justify-evenly border-b-2 border-t-2 border-black w-[90%] mx-auto py-10 my-10">
-          <div class=" pb-8 text-center">
-            <div class="flex text-center w-fit mx-auto">
-              <!-- <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] num" data-target="50">0</h1> -->
-              <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] ">Workshops</h1>
-            </div>
-            <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
-              Hands-on learning experiences to enhance skills.
-            </p>
+        <div class="flex md:flex-row flex-col justify-evenly border-b-2 border-t-2 border-black w-[90%] mx-auto py-10 my-10">
+          <div class="pb-8 text-center category-heading cursor-pointer" data-category="workshop" data-link="/research?category=consultation">
+              <div class="flex text-center w-fit mx-auto">
+                  <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw]">Consultancy</h1>
+              </div>
+              <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
+                  Hands-on learning experiences to enhance skills.
+              </p>
           </div>
-          <div class=" pb-8 text-center">
-            <div class="flex text-center w-fit mx-auto">
-              <!-- <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] num" data-target="30">0</h1> -->
-              <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] ">Seminars</h1>
-            </div>
-            <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
-              Insights from experts across various domains.
-            </p>
+          <div class="pb-8 text-center category-heading cursor-pointer" data-category="research" data-link="/research?category=publication">
+              <div class="flex text-center w-fit mx-auto">
+                  <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw]">Publications</h1>
+              </div>
+              <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
+                  Insights from experts across various domains.
+              </p>
           </div>
-          <div class=" pb-8 text-center">
-            <div class="flex text-center w-fit mx-auto">
-              <!-- <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] num" data-target="100">0</h1> -->
-              <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw] ">Projects</h1>
-            </div>
-            <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
-              Advancing knowledge through groundbreaking research.
-            </p>
-            </p>
+          <div class="pb-8 text-center category-heading cursor-pointer" data-category="funded" data-link="/research?category=funded">
+              <div class="flex text-center w-fit mx-auto">
+                  <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw]">Funded Projects</h1>
+              </div>
+              <p class="font-regular md:text-[1.3vw] text-[4.5vw]">
+                  Advancing knowledge through groundbreaking research.
+              </p>
           </div>
-        </div>
-
+      </div>
+      
         <div class="swiper mySwiper6">
           <div class="swiper-wrapper">
             <% research.forEach(function(item) { %>
@@ -241,7 +236,7 @@
           <div class="swiper-pagination"></div>
         </div>
         <div class="flex justify-center items-center mt-12">
-          <a href="/readMore/research">
+          <a href="/research">
             <button
               class="px-10 py-2 text-[#00457b] bg-zinc-100/80 font-semibold border-2 border-[#00457b] hover:bg-[#003366] hover:scale-105 hover:text-white transition flex items-center gap-2 lg:text-[1vw] md:text-[1.8vw] text-[4vw]">
               Read More
@@ -261,30 +256,10 @@
             <div class="swiper-slide">
               <div class="bg-zinc-100/80 w-full h-full mb-10 overflow-hidden rounded-md event-box">
                 <div class="w-full h-72">
-                  <img class="w-full h-full object-cover" src="../images/clubs/1.JPG" alt="Event Image" />
-                </div>
-                <h1 class="text-[#00457b] font-semibold lg:text-[1.2vw] md:text-[2vw] text-[5vw] pt-2">
-                 Guest Performance
-                </h1>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="bg-zinc-100/80 w-full h-full mb-10 overflow-hidden rounded-md event-box">
-                <div class="w-full h-72">
                   <img class="w-full h-full object-cover"  src="../images/clubs/2.JPG" alt="Event Image" />
                 </div>
                 <h1 class="text-[#00457b] font-semibold lg:text-[1.2vw] md:text-[2vw] text-[5vw] pt-2">
                  Trail Traizer
-                </h1>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="bg-zinc-100/80 w-full h-full mb-10 overflow-hidden rounded-md event-box">
-                <div class="w-full h-72">
-                  <img class="w-full h-full object-cover"  src="../images/clubs/3.JPG" alt="Event Image" />
-                </div>
-                <h1 class="text-[#00457b] font-semibold lg:text-[1.2vw] md:text-[2vw] text-[5vw] pt-2">
-                 Standup Show
                 </h1>
               </div>
             </div>
@@ -308,7 +283,26 @@
                 </h1>
               </div>
             </div>
-
+            <!-- <div class="swiper-slide">
+              <div class="bg-zinc-100/80 w-full h-full mb-10 overflow-hidden rounded-md event-box">
+                <div class="w-full h-72">
+                  <img class="w-full h-full object-cover" src="../images/clubs/1.JPG" alt="Event Image" />
+                </div>
+                <h1 class="text-[#00457b] font-semibold lg:text-[1.2vw] md:text-[2vw] text-[5vw] pt-2">
+                 Guest Performance
+                </h1>
+              </div>
+            </div> -->
+            <div class="swiper-slide">
+              <div class="bg-zinc-100/80 w-full h-full mb-10 overflow-hidden rounded-md event-box">
+                <div class="w-full h-72">
+                  <img class="w-full h-full object-cover"  src="../images/clubs/3.JPG" alt="Event Image" />
+                </div>
+                <h1 class="text-[#00457b] font-semibold lg:text-[1.2vw] md:text-[2vw] text-[5vw] pt-2">
+                 Standup Show
+                </h1>
+              </div>
+            </div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -333,7 +327,7 @@
             <div class="swiper-slide">
               <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
                 <div class="w-full md:h-64 h-24">
-                  <img src="../images/index/abhivyakti.jpeg" alt="image" class="w-full h-full object-contain" />
+                  <img src="../images/index/abhivyakti.jpg" alt="image" class="w-full h-full object-contain" />
                 </div>
                 <div class="w-full h-fit">
                   <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
@@ -345,7 +339,7 @@
             <div class="swiper-slide">
               <div class="w-full h-full mb-10 rounded-md overflow-hidden px-2">
                 <div class="w-full md:h-64 h-24">
-                  <img src="../images/index/tf.jpeg" alt="image" class="w-full h-full object-contain" />
+                  <img src="../images/index/tantrafiesta.jpg" alt="image" class="w-full h-full object-contain" />
                 </div>
                 <div class="w-full h-fit">
                   <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
