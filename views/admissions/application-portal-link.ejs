@@ -1,0 +1,63 @@
+<%- include('../partials/head2') %>
+
+    <body>
+        <%- include('../partials/nav') %>
+            <div class="pb-20 w-full min-h-screen bg-white text-[#00457b]">
+                <div class="w-full lg:h-[100px] md:h-[70px] h-[60px]"></div>
+
+
+                <div
+                    class="routes w-full px-6 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#00457b] py-3 md:py-5">
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Home <i class="ri-arrow-right-s-line text-md"></i>
+                    </a>
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Others <i class="ri-arrow-right-s-line text-md"></i>
+                    </a>
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Admission Portal Link
+                    </a>
+                </div>
+                <!-- Main Content -->
+                <div class="border-4 border-[#00457b] md:m-10 m-8 pb-10 text-black">
+                    <div class="px-4 md:px-20 lg:px-40 mt-8 md:mt-16 mb-8 md:mb-10"> 
+                        <div class="max-w-6xl mt-10 mx-auto bg-white overflow-hidden">
+                            <!-- Header -->
+                            <div class="bg-[#00457b] text-white text-center py-4 text-lg font-bold">
+                                List of Vacancies
+                            </div>
+                        
+                            <!-- Table -->
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full border border-gray-300">
+                                    <thead class="bg-gray-200">
+                                        <tr class="text-left">
+                                            <th class="border px-4 py-2">Action</th>
+                                            <th class="border px-4 py-2">Name of Post</th>
+                                            <th class="border px-4 py-2">Advt. No.</th>
+                                            <th class="border px-4 py-2">No. of Posts</th>
+                                            <th class="border px-4 py-2">Last Date of Application</th>
+                                            <th class="border px-4 py-2">Advertisement</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="border px-4 py-2">
+                                                <a href="/admissions/applyDetails" class="text-blue-600 hover:underline">Apply Now</a>
+                                            </td>
+                                            <td class="border px-4 py-2">Registrar (Group-A, Level-14)</td>
+                                            <td class="border px-4 py-2">IIITN/ADMIN/R/2024-25/S-220225</td>
+                                            <td class="border px-4 py-2">1</td>
+                                            <td class="border px-4 py-2">17-03-2025</td>
+                                            <td class="border px-4 py-2">
+                                                <a href="#" class="text-blue-600 hover:underline">Click Here</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>                            </div>
+                    </div>
+                </div>
+                <%- include('../partials/footer') %>
+    </body>
+    <%- include('../partials/tail2') %>

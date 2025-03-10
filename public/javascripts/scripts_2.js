@@ -375,11 +375,8 @@ function swiper() {
           governance: `
             <div class="flex justify-between py-2">
               <div class="w-[48%]">
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
-                  <a href="#>Committee</a>
-                </h1>
-                <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-                  <a href="/governance/board-of-governors">Committee</a>
+                  <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular bg-[#f26e32] text-center font-bold text-white">
+                  <a href="#">Committee</a>
                 </h1>
                   <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
                   <a href="/governance/board-of-governors">Board of Governors</a>
@@ -417,19 +414,19 @@ function swiper() {
           `,
           admissions: `
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="admissions/undergraduate-btech">Undergraduate B.Tech</a>
+              <a href="/admissions/undergraduate-btech">Undergraduate B.Tech</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="admissions/postgraduate">Postgraduate</a>
+              <a href="/admissions/postgraduate">Postgraduate</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="admissions/ug-academic-rule-book">UG Academic Rule Book</a>
+              <a href="/admissions/ug-academic-rule-book">UG Academic Rule Book</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="admissions/pg-academic-rule-book">PG Academic Rule Book</a>
+              <a href="/admissions/pg-academic-rule-book">PG Academic Rule Book</a>
             </h1>
               <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="admissions/recruitment">Recruitment</a>
+              <a href="/admissions/recruitment">Recruitment</a>
             </h1>
           `,
           alumni: `
@@ -477,7 +474,7 @@ function swiper() {
               <a href="/student/clinical-counselling">Clinical Counselling</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/student/scholarships">Scholarships</a>
+              <a href="/student/scholarship">Scholarships</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
               <a href="/student/hostel">Hostel</a>
@@ -493,9 +490,6 @@ function swiper() {
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
               <a href="/student/fees">Fees</a>
-            </h1>
-             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/student/fees">Exchange Program</a>
             </h1>
           `,
           nirf: `
@@ -530,6 +524,9 @@ function swiper() {
             </h1>
              <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
               <a href="/others/tender">Tender</a>
+            </h1>
+            <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
+              <a href="/others/rti">RTI</a>
             </h1>
           `,
         };
