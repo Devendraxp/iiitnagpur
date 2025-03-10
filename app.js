@@ -284,6 +284,9 @@ app.get("/rti/rtidetails", (req, res) => {
 app.get("/rti/rtiofficer", (req, res) => {
   res.render("rti/rtiofficer");
 });
+app.get("/rti/others", (req, res) => {
+  res.render("rti/others");
+});
 
 app.get("/search", async (req, res) => {
   const query = req.query.q;
