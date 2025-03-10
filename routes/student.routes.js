@@ -9,7 +9,7 @@ router.route("/activities").get((_, res) => {
   res.render("student/activities");
 });
 
-router.route("/clinicalCounselling").get((_, res) => {
+router.route("/clinical-counselling").get((_, res) => {
   res.render("student/clinical-counselling");
 });
 
@@ -29,7 +29,7 @@ router.route("/hostel").get((_, res) => {
   res.render("student/hostel");
 });
 
-router.route("/studentMess").get((_, res) => {
+router.route("/student-mess").get((_, res) => {
   res.render("student/student-mess");
 });
 
