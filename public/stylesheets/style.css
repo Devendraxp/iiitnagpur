@@ -56,6 +56,38 @@ html {
 
 .main {
   font-family: font6;
+  display: flex;
+  align-items: center;
+  gap: 0.2em; /* Adjust spacing dynamically based on font size */
+  position: relative;
+  justify-content: center;
+  text-align: center;
+}
+
+.main::before,
+.main::after {
+  content: "";
+  height: 5px;
+  width: 1.5em; /* Adjusts based on text size */
+  background-color: #00457b;
+}
+
+.main2 {
+  font-family: font6;
+  display: flex;
+  align-items: center;
+  gap: 0.2em; /* Adjust spacing dynamically based on font size */
+  position: relative;
+  justify-content: center;
+  text-align: center;
+}
+
+.main2::before,
+.main2::after {
+  content: "";
+  height: 5px;
+  width: 1.5em; /* Adjusts based on text size */
+  background-color: #ffffff;
 }
 
 .overlay {
@@ -341,41 +373,6 @@ footer h2:hover, footer i:hover {
   text-align: center;
   font-size: 1.2rem;
   line-height: 24px;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 30px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 5;
-  position: absolute;
-  margin: 10px;
-}
-
-.swiper-button-next {
-  right: 0;
-  top: 50%;
-}
-
-.swiper-button-prev {
-  left: 0;
-  top: 50%;
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 1.5rem;
-}
-
-.swiper-slide:first-child {
-  position: relative;
 }
 
 .alumini {
