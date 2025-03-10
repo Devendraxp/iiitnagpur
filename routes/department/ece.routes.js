@@ -77,11 +77,6 @@ router.route("/projects").get(async (_, res) => {
   }
 });
 
-<<<<<<< Updated upstream
-
-router.route("/research").get((_, res) => {
-  res.render("ece/research.ejs");
-=======
 router.route("/research").get(async (_, res) => {
   try {
     // Fetch areas of specialization for ECE
@@ -128,7 +123,6 @@ router.route("/research").get(async (_, res) => {
     console.error("Error loading ECE research data:", err);
     res.status(500).render("error.ejs", { message: "Server Error loading research data" });
   }
->>>>>>> Stashed changes
 });
 
 // Helper function to group publications by year
