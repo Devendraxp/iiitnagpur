@@ -12,19 +12,19 @@ import Research from "./models/research.model.js";
 import Patent from "./models/research/patent.model.js";
 import Publication from "./models/research/publication.model.js";
 import Club from "./models/club.model.js";
-import Faculty from "./models/faculty.model.js"; 
+import Faculty from "./models/faculty.model.js";
 import OrganizedEvent from "./models/organisedEvent.model.js";
+import DeptProject from "./models/department/deptProject.model.js";
 
 import adminRoute from "./routes/admin/index.routes.js";
-import studentRoute from "./routes/student.routes.js"
-import programRoute from "./routes/program.routes.js"
-import alumniRoute from "./routes/alumni.routes.js"
-import basicScienceRoute from "./routes/department/basicScience.routes.js"
-import cseRoute from "./routes/department/cse.routes.js"
-import eceRoute from "./routes/department/ece.routes.js"
-import facultyUserRoute from "./routes/facultyUser.routes.js"
-import clubRoute from "./routes/club.routes.js"
-
+import studentRoute from "./routes/student.routes.js";
+import programRoute from "./routes/program.routes.js";
+import alumniRoute from "./routes/alumni.routes.js";
+import basicScienceRoute from "./routes/department/basicScience.routes.js";
+import cseRoute from "./routes/department/cse.routes.js";
+import eceRoute from "./routes/department/ece.routes.js";
+import facultyUserRoute from "./routes/facultyUser.routes.js";
+import clubRoute from "./routes/club.routes.js";
 
 import flash from "connect-flash";
 import session from "express-session";
@@ -42,9 +42,18 @@ const app = express();
 // Define __dirname and __filename for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const DeptAchievement_File = path.join(__dirname, "database", "data", "departmentAchievement.json");
-const DeptProject_File=path.join(__dirname,"database","data","departmentProject.json");
-
+const DeptAchievement_File = path.join(
+  __dirname,
+  "database",
+  "data",
+  "departmentAchievement.json"
+);
+const DeptProject_File = path.join(
+  __dirname,
+  "database",
+  "data",
+  "departmentProject.json"
+);
 
 // Middleware
 app.use(methodOverride("_method"));
@@ -65,10 +74,11 @@ connectDB();
 const MONGODB_URI =
   "mongodb+srv://devendradhuvan:8440088Dev@cluster01.uw7df.mongodb.net/iiitn?retryWrites=true&w=majority&appName=Cluster01";
 
-const sessionOptions=
-{secret:"mysupersecret",
-    resave:false,
-    saveUninitialized:true}
+const sessionOptions = {
+  secret: "mysupersecret",
+  resave: false,
+  saveUninitialized: true,
+};
 
 app.use(session(sessionOptions));
 app.use(flash());
@@ -80,9 +90,9 @@ passport.serializeUser(FacultyUser.serializeUser());
 passport.deserializeUser(FacultyUser.deserializeUser());
 
 app.use((req, res, next) => {
-    res.locals.success = req.flash('success');
-    res.locals.error = req.flash('error');
-    next();
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+  next();
 });
 
 // Routes
@@ -92,34 +102,36 @@ app.get("/", async (_, res) => {
   const update = await Notification.find({ type: "update" });
   const studentAchievement = await Achievement.find({ type: "student" });
   const facultyAchievement = await Achievement.find({ type: "faculty" });
-  const notification = await Notification.find({ type: { $in: ["news", "event","update"] } });
+  const notification = await Notification.find({
+    type: { $in: ["news", "event", "update"] },
+  });
   const studentTestimonial = await StudentTestimonial.find({});
   const research = await Research.find({});
 
-  res.render("index", { 
-    studentAchievement, 
-    studentNotice, 
-    facultyAchievement, 
-    facultyNotice, 
-    update, 
-    notification, 
-    studentTestimonial, 
-    research ,
+  res.render("index", {
+    studentAchievement,
+    studentNotice,
+    facultyAchievement,
+    facultyNotice,
+    update,
+    notification,
+    studentTestimonial,
+    research,
   });
 });
 
 app.use("/admin", adminRoute);
 app.use("/student", studentRoute);
 app.use("/program", programRoute);
-app.use("/alumni",alumniRoute);
-app.use("/basic_science", basicScienceRoute)
-app.use("/cse", cseRoute)
-app.use("/ece", eceRoute)
+app.use("/alumni", alumniRoute);
+app.use("/basic_science", basicScienceRoute);
+app.use("/cse", cseRoute);
+app.use("/ece", eceRoute);
 app.use("/admin/deptAchievement", deptAchievementRoutes);
 app.use("/admin/deptProject", deptProjectRoutes);
 app.use("/admin/deptEvent", deptEventRoutes);
-app.use("/faculty", facultyUserRoute)
-app.use("/club",clubRoute)
+app.use("/faculty", facultyUserRoute);
+app.use("/club", clubRoute);
 
 app.get("/admin-login", (_, res) => {
   res.render("admin/login");
@@ -134,10 +146,6 @@ app.get("/aboutUs", (req, res) => {
 app.get("/department", (req, res) => {
   res.redirect("/basic_science/aboutDepartment");
 });
-// app.get("/basic_science/:page", (req, res) => {
-//   const { page } = req.params;
-//   res.render(`basic_science/${page}`);
-// });
 
 app.get("/placements", (req, res) => {
   res.redirect("/placements/about-us");
@@ -155,7 +163,6 @@ app.get("/governance/:page", (req, res) => {
   const { page } = req.params;
   res.render(`governance/${page}`);
 });
-
 
 app.get("/footerPages", (req, res) => {
   res.redirect("/footerPages/campus-location");
@@ -181,7 +188,6 @@ app.get("/nirf/:page", (req, res) => {
   res.render(`nirf/${page}`);
 });
 
-
 app.get("/others", (req, res) => {
   res.redirect("/others/consultancy");
 });
@@ -189,7 +195,6 @@ app.get("/others/:page", (req, res) => {
   const { page } = req.params;
   res.render(`others/${page}`);
 });
-
 
 // readMore Routes
 app.get("/readMore", async (req, res) => {
@@ -200,17 +205,19 @@ app.get("/readMore", async (req, res) => {
   const event = await Notification.find({ type: "event" });
   const studentAchievement = await Achievement.find({ type: "student" });
   const facultyAchievement = await Achievement.find({ type: "faculty" });
-  const notification = await Notification.find({ type: { $in: ["news", "event"] } });
+  const notification = await Notification.find({
+    type: { $in: ["news", "event"] },
+  });
 
-  res.render("readMore/ViewAll", { 
-    studentAchievement, 
-    studentNotice, 
-    facultyAchievement, 
-    facultyNotice, 
-    update, 
-    news, 
-    event, 
-    notification 
+  res.render("readMore/ViewAll", {
+    studentAchievement,
+    studentNotice,
+    facultyAchievement,
+    facultyNotice,
+    update,
+    news,
+    event,
+    notification,
   });
 });
 
@@ -223,47 +230,48 @@ app.get("/readMore/academicReadMore", (req, res) => {
 app.get("/readMore/researchReadMore", (req, res) => {
   res.render("readMore/researchReadMore");
 });
-app.get("/research",async (req, res) => {
-   
-    // Fetch patents
-    const patents = await Patent.find({});
-    
-    // Fetch all publications
-    const allPublications = await Publication.find({}).sort({ year: -1 });
-    
-    // Group publications by type
-    const publications = {
-      bookChapters: allPublications.filter(pub => pub.type === "bookChapter"),
-      conferencePapers: allPublications.filter(pub => pub.type === "confrencePaper"), // Note: there's a typo in the model
-      journals: allPublications.filter(pub => pub.type === "journal")
-    };
-    
-    // Group publications by year for each type
-    const publicationsByYear = {
-      bookChapters: groupPublicationsByYear(publications.bookChapters),
-      conferencePapers: groupPublicationsByYear(publications.conferencePapers), 
-      journals: groupPublicationsByYear(publications.journals)
-    };
+app.get("/research", async (req, res) => {
+  // Fetch patents
+  const patents = await Patent.find({});
+  const fundedProjects = await DeptProject.find({});
 
-    res.render("readMore/Research", { 
-      patents,
-      publicationsByYear
-    });
+  // Fetch all publications
+  const allPublications = await Publication.find({}).sort({ year: -1 });
+
+  // Group publications by type
+  const publications = {
+    bookChapters: allPublications.filter((pub) => pub.type === "bookChapter"),
+    conferencePapers: allPublications.filter(
+      (pub) => pub.type === "confrencePaper"
+    ), // Note: there's a typo in the model
+    journals: allPublications.filter((pub) => pub.type === "journal"),
+  };
+
+  // Group publications by year for each type
+  const publicationsByYear = {
+    bookChapters: groupPublicationsByYear(publications.bookChapters),
+    conferencePapers: groupPublicationsByYear(publications.conferencePapers),
+    journals: groupPublicationsByYear(publications.journals),
+  };
+
+  res.render("readMore/Research", {
+    patents,
+    publicationsByYear,
+    fundedProjects
   });
+});
 
-
-  
 // Helper function to group publications by year
 function groupPublicationsByYear(publications) {
   const groupedByYear = {};
-  
-  publications.forEach(pub => {
+
+  publications.forEach((pub) => {
     if (!groupedByYear[pub.year]) {
       groupedByYear[pub.year] = [];
     }
     groupedByYear[pub.year].push(pub);
   });
-  
+
   // Sort years in descending order (newest first)
   return Object.keys(groupedByYear)
     .sort((a, b) => b - a)
@@ -272,7 +280,6 @@ function groupPublicationsByYear(publications) {
       return result;
     }, {});
 }
-
 
 app.get("/readMore/clubsReadMore", (req, res) => {
   res.render("readMore/clubsReadMore");
@@ -288,62 +295,50 @@ app.get("/rti/:page", (req, res) => {
   res.render(`rti/${page}`);
 });
 
-
 app.get("/search", async (req, res) => {
   const query = req.query.q;
   if (!query) {
-    return res.render("searchResult.ejs", { 
-      notices: [], 
-      notifications: [], 
-      achievements: [], 
+    return res.render("searchResult.ejs", {
+      notices: [],
+      notifications: [],
+      achievements: [],
       researches: [],
       clubs: [],
       faculty: [],
       organizedEvents: [],
       patents: [],
-      publications: []
+      publications: [],
     });
   }
 
   try {
     // Use regex search instead of text index search
-    const regex = new RegExp(query, 'i'); // case-insensitive search
-    
+    const regex = new RegExp(query, "i"); // case-insensitive search
+
     // Search existing models
-    const notices = await Notice.find({ 
-      $or: [
-        { title: { $regex: regex } },
-        { description: { $regex: regex } }
-      ]
+    const notices = await Notice.find({
+      $or: [{ title: { $regex: regex } }, { description: { $regex: regex } }],
     });
-    
-    const notifications = await Notification.find({ 
-      $or: [
-        { title: { $regex: regex } },
-        { description: { $regex: regex } }
-      ]
+
+    const notifications = await Notification.find({
+      $or: [{ title: { $regex: regex } }, { description: { $regex: regex } }],
     });
-    
-    const achievements = await Achievement.find({ 
-      $or: [
-        { title: { $regex: regex } },
-        { description: { $regex: regex } }
-      ]
+
+    const achievements = await Achievement.find({
+      $or: [{ title: { $regex: regex } }, { description: { $regex: regex } }],
     });
-    
-    const researches = await Research.find({ 
-      $or: [
-        { title: { $regex: regex } },
-        { description: { $regex: regex } }
-      ]
+
+    const researches = await Research.find({
+      $or: [{ title: { $regex: regex } }, { description: { $regex: regex } }],
+
     });
-    
+
     // New model searches
     // Club search
     const clubs = await Club.find({
-      title: { $regex: regex }
+      title: { $regex: regex },
     });
-    
+
     // Faculty search (complex with nested fields)
     const faculty = await Faculty.find({
       $or: [
@@ -352,55 +347,65 @@ app.get("/search", async (req, res) => {
         { education: { $elemMatch: { $regex: regex } } },
         { teaching: { $elemMatch: { $regex: regex } } },
         { "research.areaofResearch": { $elemMatch: { $regex: regex } } },
-        { responsibility: { $elemMatch: { $regex: regex } } }
+        { responsibility: { $elemMatch: { $regex: regex } } },
         // Note: Searching in publication data is more complex and might need additional logic
-      ]
+      ],
     });
-    
+
     // Organized Events search
     const organizedEvents = await OrganizedEvent.find({
       $or: [
         { title: { $regex: regex } },
         { description: { $regex: regex } },
         { eventName: { $regex: regex } },
-        { clubName: { $regex: regex } }
-      ]
+        { clubName: { $regex: regex } },
+      ],
     });
-    
+
+    // Department Projects search
+    const fundedProjects = await DeptProject.find({
+      $or: [
+        { faculty: { $regex: regex } },
+        { titleofProject: { $regex: regex } },
+        { sponsoringAgency: { $regex: regex } },
+        { department: { $regex: regex } },
+      ],
+    });
+
     // Patent search
     const patents = await Patent.find({
       $or: [
         { inventor: { $elemMatch: { $regex: regex } } },
         { title: { $regex: regex } },
-        { department: { $regex: regex } }
-      ]
+        { department: { $regex: regex } },
+      ],
     });
-    
+
     // Publication search
     const publications = await Publication.find({
       $or: [
         { description: { $elemMatch: { $regex: regex } } },
-        { department: { $regex: regex } }
-      ]
+        { department: { $regex: regex } },
+      ],
     });
-    
-    res.render("searchResult.ejs", { 
-      notices, 
-      notifications, 
-      achievements, 
+
+    res.render("searchResult.ejs", {
+      notices,
+      notifications,
+      achievements,
       researches,
       clubs,
       faculty,
       organizedEvents,
       patents,
-      publications
+      publications,
+      fundedProjects
     });
   } catch (err) {
     console.error("Search error:", err);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-
 
 app.get("/clubs/club", (req, res) => {
   res.render(`clubs/club`);

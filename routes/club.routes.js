@@ -10,6 +10,7 @@ router.route("/").get((_, res) => {
     const renderClubRouteWithEvents = async (req, res, title, clubName) => {
         try {
             const club = await Club.findOne({ title });
+            console.log(club)
             const events = await OrganizedEvent.find({ clubName });
             if (!club) return res.status(404).send("Club not found");
             res.render("club/club.ejs", { club, events });

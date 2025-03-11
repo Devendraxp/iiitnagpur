@@ -57,9 +57,46 @@
               </select>
           </div>
   
-          <!-- Research Data List -->
           <div id="researchContainer" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               <% 
+              // Display Funded Projects at the top - sort by year if available
+              if (fundedProjects && fundedProjects.length > 0) {
+                // Sort funded projects by year (newest first)
+                fundedProjects.sort((a, b) => {
+                  if (!a.year && !b.year) return 0;
+                  if (!a.year) return 1;
+                  if (!b.year) return -1;
+                  return b.year - a.year;
+                });
+                
+                fundedProjects.forEach(project => { %>
+                  <div class="bg-white p-4 rounded border-2 border-[#00457b] data-item" data-year="<%= project.year || 'N/A' %>" data-dept="<%= project.department %>" data-category="funded">
+                      <div class="flex flex-wrap gap-2 mb-3">
+                          <% if (project.year) { %>
+                          <span class="px-2 py-1 text-xs font-bold text-white rounded bg-yellow-600">
+                              <%= project.year %>
+                          </span>
+                          <% } %>
+                          <span class="px-2 py-1 text-xs font-bold text-white rounded bg-indigo-600">
+                              <%= project.department.toUpperCase() %>
+                          </span>
+                          
+                          <span class="px-2 py-1 text-xs font-bold text-white rounded bg-emerald-600">
+                              Funded Project
+                          </span>
+                          
+                          <span class="px-2 py-1 text-xs font-bold text-white rounded bg-amber-500">
+                              ₹<%= project.fundingAmount ? project.fundingAmount.toLocaleString('en-IN') : 'N/A' %>
+                          </span>
+                      </div>
+                      
+                      <h3 class="text-lg font-semibold mb-2"><%= project.titleofProject %></h3>
+                      <p class="text-gray-600 mb-1"><strong>Faculty:</strong> <%= project.faculty %></p>
+                      <p class="text-gray-600"><strong>Sponsoring Agency:</strong> <%= project.sponsoringAgency %></p>
+                  </div>
+              <% }); 
+              }
+              
               // Display Patents - sort by year if available
               if (patents && patents.length > 0) {
                 // Sort patents by year (newest first)
@@ -73,14 +110,12 @@
                 patents.forEach(patent => { %>
                   <div class="bg-white p-4 rounded border-2 border-[#00457b]  data-item" data-year="<%= patent.year || 'N/A' %>" data-dept="<%= patent.department %>" data-category="patent">
                       <div class="flex flex-wrap gap-2 mb-3">
-                          <!-- Year Badge (if available) -->
                           <% if (patent.year) { %>
                           <span class="px-2 py-1 text-xs font-bold text-white rounded bg-yellow-600">
                               <%= patent.year %>
                           </span>
                           <% } %>
                           
-                          <!-- Department Badge -->
                           <span class="px-2 py-1 text-xs font-bold text-white rounded bg-indigo-600">
                               <%= patent.department.toUpperCase() %>
                           </span>

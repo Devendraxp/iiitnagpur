@@ -14,7 +14,7 @@
             <% 
             const totalResults = notices.length + notifications.length + achievements.length + 
                                 researches.length + clubs.length + faculty.length + 
-                                organizedEvents.length + patents.length + publications.length;
+                                organizedEvents.length + patents.length + publications.length + fundedProjects.length;
             %>
             <p class="text-center text-gray-600 mb-8">Found <%= totalResults %> results for your search</p>
             
@@ -53,6 +53,55 @@
             </div>
             <% } %>
             
+            <!-- Funded Projects Section -->
+            <% if (fundedProjects && fundedProjects.length > 0) { %>
+            <div class="mb-10">
+                <h2 class="text-xl font-bold mb-4 text-gray-800 border-b border-gray-300 pb-2">Funded Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <% fundedProjects.forEach(project => { %>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                        <div class="p-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <% if (project.department) { %>
+                                <span class="px-2 py-1 text-xs font-bold text-white rounded bg-indigo-600">
+                                    <%= project.department.toUpperCase() %>
+                                </span>
+                                <% } %>
+                                <% if (project.year) { %>
+                                <span class="px-2 py-1 text-xs font-bold text-white rounded bg-green-600">
+                                    <%= project.year %>
+                                </span>
+                                <% } %>
+                                <% if (project.typeOfProject) { %>
+                                <span class="px-2 py-1 text-xs font-bold text-white rounded bg-blue-600">
+                                    <%= project.typeOfProject %>
+                                </span>
+                                <% } %>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-3 text-[#00457b]"><%= project.titleofProject %></h3>
+                            <% if (project.faculty) { %>
+                            <p class="text-gray-700 text-sm mb-2">
+                                <strong>Faculty:</strong> <%= project.faculty %>
+                            </p>
+                            <% } %>
+                            <% if (project.sponsoringAgency) { %>
+                            <p class="text-gray-700 text-sm mb-2">
+                                <strong>Sponsoring Agency:</strong> <%= project.sponsoringAgency %>
+                            </p>
+                            <% } %>
+                            <% if (project.fundingAmount) { %>
+                            <p class="text-gray-700 text-sm mb-3">
+                                <strong>Funding:</strong> ₹<%= project.fundingAmount.toLocaleString() %>
+                            </p>
+                            <% } %>
+                            <a href="/research" class="text-blue-600 hover:underline text-sm font-medium">View Research</a>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+            <% } %>
+
             <!-- Clubs Section -->
             <% if (clubs && clubs.length > 0) { %>
             <div class="mb-10">

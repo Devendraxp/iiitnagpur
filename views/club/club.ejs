@@ -35,8 +35,9 @@
         <div class="relative flex justify-center items-center">
           <div class="absolute top-[1vw] left-[1vw] w-[calc(100%+0.5vw)] h-[calc(100%+0.5vw)] border-[0.35vw]"
             style="border-color: rgba(207, 169, 74); border-style: solid;">
+          </div>
           <div class="relative z-10">
-              <img src="<%= club.logo %>" alt="<%= club.title %> Logo" 
+              <img src="<%= club.images[0] %>" alt="<%= club.title %> Logo" 
                    class="w-[50vw] h-[40vw] sm:w-[50vw] sm:h-[35vw] md:w-[35vw] md:h-[30vw] 
                           lg:w-[27vw] lg:h-[23vw] object-cover shadow-lg ">
           </div>
@@ -81,9 +82,10 @@
       </h1>
       <div class="flex flex-wrap gap-4 justify-center">
         <% club.yearlyPlans.forEach(function(plan){ %>
-          <div class="border border-gray-300 shadow-lg rounded-md p-[2vw] bg-stone-100 w-[90%] md:w-[40%] lg:w-[30%]">
-            <h3 class="font-bold text-xl mb-2"><%= plan.title %></h3>
-            <p class="text-gray-700 text-sm leading-tight"><%= plan.description %></p>
+          <div class="border-2 border-[#1e5b94] rounded-lg p-[2vw] bg-white w-[90%] md:w-[40%] lg:w-[30%] hover:transform hover:scale-105 transition-all duration-300">
+            <h3 class="font-bold text-xl mb-3 text-[#00457b]"><%= plan.title %></h3>
+            <div class="w-16 h-1 bg-[#1e5b94] mb-3"></div>
+            <p class="text-gray-700 text-sm leading-relaxed"><%= plan.description %></p>
           </div>
         <% }) %>
       </div>
