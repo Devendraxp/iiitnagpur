@@ -592,7 +592,6 @@ function nav() {
         const clampedNavHeight = Math.min(Math.max(navHeight, navMin), navMax);
         const ratio = (clampedNavHeight - navMin) / (navMax - navMin);
         const newTop = topMin + ratio * (topMax - topMin);
-        console.log("updateSecondBoxTop:", newTop);
         gsap.to([secondBox, secondBox2], { duration: 0.3, top: newTop + "vw" });
       }
 

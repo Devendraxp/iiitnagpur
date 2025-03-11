@@ -1,33 +1,26 @@
 <%- include('../partials/head2') %> 
   <body>
     <%- include('../partials/nav') %> 
-    <div class="main w-full min-h-screen bg-white text-black">
-      <div class="w-full lg:h-[100px] md:h-[80px]"></div>
+    <div class="pb-20 w-full min-h-screen bg-white text-[#00457b]">
+      <div class="w-full lg:h-[100px] md:h-[70px] h-[85px]"></div>
 
       <div class="mainContent w-full">
         <div
-          class="routes w-full px-44 flex items-center gap-4 bg-[#00457b] py-5"
-        >
-          <a
-            class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-white"
-            href="/"
-            >Home <i class="ri-arrow-right-s-line text-md"></i>
-          </a>
-          <a
-            class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-white"
-            href="/basic_science/aboutDepartment"
-            >Basic Sciences <i class="ri-arrow-right-s-line text-md"></i>
-          </a>
-          <a
-            class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-white"
-            href="#"
-            >Events
-          </a>
-        </div>
-
-        <div class="content px-44 mt-16">
-          <h2 class="text-2xl uppercase font-bold text-black">Events</h2>
-          <div class="w-full h-[1px] bg-zinc-300 mt-2"></div>
+        class="routes w-full px-6 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#00457b] py-3 md:py-5">
+        <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+            href="#">Home <i class="ri-arrow-right-s-line text-md"></i>
+        </a>
+        <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+            href="#">Basic Science<i class="ri-arrow-right-s-line text-md"></i>
+        </a>
+        <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+            href="#">Events <i class="ri-arrow-right-s-line text-md"></i>
+        </a>
+    </div>
+  
+        <div class="content px-10 mt-16">
+          <h2 class="text-lg md:text-2xl uppercase font-bold text-[#00457b]">Events</h2>
+          <div class="w-full h-[1px] bg-[#00457b] mt-2"></div>
 
           <% if (data && data.length > 0) { %>
             <% 
@@ -47,7 +40,7 @@
             <% sortedYears.forEach(year => { %>
               <div>
                 <h2 class="text-xl mt-5 font-bold"><%= year %>:</h2>
-                <ol class="text-ms mt-5 pl-12 text-black list-disc">
+                <ol class="text-ms mt-5 md:pl-12 text-black list-disc">
                   <% eventsByYear[year].forEach(event => { %>
                     <% event.description.forEach(desc => { %>
                       <li>

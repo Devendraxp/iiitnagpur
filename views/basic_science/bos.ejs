@@ -1,140 +1,132 @@
 <%- include('../partials/head2') %> 
   <body>
     <%- include('../partials/nav') %> 
-    <div class="main2 w-full min-h-screen bg-white text-black">
-        <div class="w-full lg:h-[100px] md:h-[80px]"></div>
+    <div class="pb-20 w-full min-h-screen bg-white text-[#00457b]">
+        <div class="w-full lg:h-[100px] md:h-[70px] h-[85px]"></div>
+        <div class="mainContent w-full">
+          <div
+          class="routes w-full md:px-6 px-2 px-2 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gamd:p-4 p-[4px] bg-[#00457b] py-3 md:py-5">
+          <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+              href="#">Home <i class="ri-arrow-right-s-line text-md"></i>
+          </a>
+          <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+              href="#">Basic Science <i class="ri-arrow-right-s-line text-md"></i>
+          </a>
+          <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+              href="#">Bos <i class="ri-arrow-right-s-line text-md"></i>
+          </a>
+      </div>
 
-      <div class="mainContent w-full">
-        <div
-          class="routes w-full px-44 flex items-center gap-4 bg-[#00457b] py-5"
-        >
-          <a
-            class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-white"
-            href="#"
-            >Home <i class="ri-arrow-right-s-line text-md"></i>
-          </a>
-          <a
-            class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-white"
-            href="#"
-            >Basic Sciences <i class="ri-arrow-right-s-line text-md"></i>
-          </a>
-          <a
-            class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-white"
-            href="#"
-            >Bos
-          </a>
-        </div>
-
-        <div class="content px-44 mt-16 mb-10">
-          <h2 class="text-2xl uppercase font-bold text-black">Bos</h2>
-          <div class="w-full h-[1px] bg-zinc-300 mt-2"></div>
+      <div class="content px-10 mt-16 mb-10">
+        <h2 class="text-2xl uppercase font-bold text-[#00457b]">Bos</h2>
+        <div class="w-full h-[1px] bg-[#00457b] mt-2"></div>
 
     <div class="overflow-x-auto mt-8">
-        <table class="w-full border border-gray-300">
+        <table class="w-full border border-gray-300 lg:text-[1vw] md:text-[1.5vw] text-[2vw]">
             <thead>
-                <tr class="bg-gray-100 border-b border-gray-300">
-                    <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">Sr. No.</th>
-                    <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">Name</th>
-                    <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">Position</th>
-                    <th class="px-6 py-4 text-left font-semibold">Designation</th>
+                <tr class="bg-[#00457b] text-white border-b border-gray-300">
+                    <th class="md:px-6 px-2 py-4 border-r border-gray-300 text-left font-semibold">Sr. No.</th>
+                    <th class="md:px-6 px-2 py-4 border-r border-gray-300 text-left font-semibold">Name</th>
+                    <th class="md:px-6 px-2 py-4 border-r border-gray-300 text-left font-semibold">Position</th>
+                    <th class="md:px-6 px-2 py-4 text-left font-semibold">Designation</th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="border-b border-gray-300">
-                    <td class="px-6 py-4 border-r border-gray-300">1</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Dr. Prasad V. Joshi</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Chairman</td>
-                    <td class="px-6 py-4">Head of Department, BS</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">1</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Dr. Prasad V. Joshi</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Chairman</td>
+                    <td class="md:px-6 px-2 py-4">Head of Department, BS</td>
                 </tr>
                 <tr class="border-b border-gray-300">
-                    <td class="px-6 py-4 border-r border-gray-300">2</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Dr. Tausif Diwan</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Special Invitee</td>
-                    <td class="px-6 py-4">Associate Dean</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">2</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Dr. Tausif Diwan</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Special Invitee</td>
+                    <td class="md:px-6 px-2 py-4">Associate Dean</td>
                 </tr>
                 <tr class="border-b border-gray-300">
-                    <td class="px-6 py-4 border-r border-gray-300">3</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Dr. Harsh Goud</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Special Invitee</td>
-                    <td class="px-6 py-4">Head of Department, ECE</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">3</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Dr. Harsh Goud</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Special Invitee</td>
+                    <td class="md:px-6 px-2 py-4">Head of Department, ECE</td>
                 </tr>
                 <tr class="border-b border-gray-300">
-                    <td class="px-6 py-4 border-r border-gray-300">4</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Dr. Nishat Ansari</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Special Invitee</td>
-                    <td class="px-6 py-4">Head of Department, CSE</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">4</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Dr. Nishat Ansari</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Special Invitee</td>
+                    <td class="md:px-6 px-2 py-4">Head of Department, CSE</td>
                 </tr>
                 <tr class="border-b border-gray-300">
-                    <td class="px-6 py-4 border-r border-gray-300">5</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Dr. Yogesh Deshpande</td>
-                    <td class="px-6 py-4 border-r border-gray-300">External Member</td>
-                    <td class="px-6 py-4">Professor, (Psychology & Management), VNIT Nagpur</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">5</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Dr. Yogesh Deshpande</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">External Member</td>
+                    <td class="md:px-6 px-2 py-4">Professor, (Psychology & Management), VNIT Nagpur</td>
                 </tr>
                 <tr class="border-b border-gray-300">
-                    <td class="px-6 py-4 border-r border-gray-300">6</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Dr. M. Devakar</td>
-                    <td class="px-6 py-4 border-r border-gray-300">External Member</td>
-                    <td class="px-6 py-4">Professor, (Mathematics), VNIT Nagpur</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">6</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Dr. M. Devakar</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">External Member</td>
+                    <td class="md:px-6 px-2 py-4">Professor, (Mathematics), VNIT Nagpur</td>
                 </tr>
                 <tr class="border-b border-gray-300">
-                    <td class="px-6 py-4 border-r border-gray-300">7</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Dr. R.S. Gedam</td>
-                    <td class="px-6 py-4 border-r border-gray-300">External Member</td>
-                    <td class="px-6 py-4">Professor, (Physics), VNIT Nagpur</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">7</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Dr. R.S. Gedam</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">External Member</td>
+                    <td class="md:px-6 px-2 py-4">Professor, (Physics), VNIT Nagpur</td>
                 </tr>
                 <tr class="border-b border-gray-300">
-                    <td class="px-6 py-4 border-r border-gray-300">8</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Dr. Bibhudatta Dash</td>
-                    <td class="px-6 py-4 border-r border-gray-300">External Member</td>
-                    <td class="px-6 py-4">Assistant Professor, (Language), VNIT Nagpur</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">8</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Dr. Bibhudatta Dash</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">External Member</td>
+                    <td class="md:px-6 px-2 py-4">Assistant Professor, (Language), VNIT Nagpur</td>
                 </tr>
                 <tr class="border-b border-gray-300">
-                    <td class="px-6 py-4 border-r border-gray-300">9</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Dr. Maithili Paikane</td>
-                    <td class="px-6 py-4 border-r border-gray-300">External Member</td>
-                    <td class="px-6 py-4">Assistant Professor, (Social Science)</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">9</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Dr. Maithili Paikane</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">External Member</td>
+                    <td class="md:px-6 px-2 py-4">Assistant Professor, (Social Science)</td>
                 </tr>
                 <tr class="border-b border-gray-300">
-                    <td class="px-6 py-4 border-r border-gray-300">10</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Shri Varun Pimplapure</td>
-                    <td class="px-6 py-4 border-r border-gray-300">External Member</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">10</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Shri Varun Pimplapure</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">External Member</td>
                     <td class="px-4 py-2">Industry Expert (Delivery) <br> (Ex. Army officer)</td>
                 </tr>
                 <tr class="border-b border-gray-300">
-                    <td class="px-6 py-4 border-r border-gray-300">11</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Dr. Kirti Dorshetwar</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Member</td>
-                    <td class="px-6 py-4">Assistant Professor</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">11</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Dr. Kirti Dorshetwar</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Member</td>
+                    <td class="md:px-6 px-2 py-4">Assistant Professor</td>
                 </tr>
                 <tr class="border-b border-gray-300">
-                    <td class="px-6 py-4 border-r border-gray-300">12</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Dr. Charu Goel</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Member</td>
-                    <td class="px-6 py-4">Assistant Professor</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">12</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Dr. Charu Goel</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Member</td>
+                    <td class="md:px-6 px-2 py-4">Assistant Professor</td>
                 </tr>
                 <tr class="border-b border-gray-300">
-                    <td class="px-6 py-4 border-r border-gray-300">13</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Dr. Aatish Daryapurkar</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Member</td>
-                    <td class="px-6 py-4">Assistant Professor</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">13</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Dr. Aatish Daryapurkar</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Member</td>
+                    <td class="md:px-6 px-2 py-4">Assistant Professor</td>
                 </tr>
                 <tr class="border-b border-gray-300">
-                    <td class="px-6 py-4 border-r border-gray-300">14</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Dr. Chandrashekhar Sakode</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Member</td>
-                    <td class="px-6 py-4">Assistant Professor</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">14</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Dr. Chandrashekhar Sakode</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Member</td>
+                    <td class="md:px-6 px-2 py-4">Assistant Professor</td>
                 </tr>
                 <tr class="border-b border-gray-300">
-                    <td class="px-6 py-4 border-r border-gray-300">15</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Dr. Kamaljeet</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Member</td>
-                    <td class="px-6 py-4">Assistant Professor</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">15</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Dr. Kamaljeet</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Member</td>
+                    <td class="md:px-6 px-2 py-4">Assistant Professor</td>
                 </tr>
                 <tr class="border-b border-gray-300">
-                    <td class="px-6 py-4 border-r border-gray-300">16</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Dr. Ujwal Warbe</td>
-                    <td class="px-6 py-4 border-r border-gray-300">Member</td>
-                    <td class="px-6 py-4">Assistant Professor</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">16</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Dr. Ujwal Warbe</td>
+                    <td class="md:px-6 px-2 py-4 border-r border-gray-300">Member</td>
+                    <td class="md:px-6 px-2 py-4">Assistant Professor</td>
                 </tr>
             </tbody>
         </table>
