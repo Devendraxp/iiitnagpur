@@ -35,7 +35,7 @@ router.route("/achievements").get(async (_, res) => {
   // Sort years in descending order
   const sortedYears = Object.keys(achievementsByYear).sort((a, b) => b - a);
 
-  res.render("cse/achievement.ejs", { achievementsByYear, sortedYears });
+  res.render("cse/achievements.ejs", { achievementsByYear, sortedYears });
 });
 
 router.route("/bos").get((_, res) => {

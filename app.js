@@ -11,7 +11,9 @@ import StudentTestimonial from "./models/studentTestimonial.model.js";
 import Research from "./models/research.model.js";
 import Patent from "./models/research/patent.model.js";
 import Publication from "./models/research/publication.model.js";
-
+import Club from "./models/club.model.js";
+import Faculty from "./models/faculty.model.js"; 
+import OrganizedEvent from "./models/organisedEvent.model.js";
 
 import adminRoute from "./routes/admin/index.routes.js";
 import studentRoute from "./routes/student.routes.js"
@@ -290,13 +292,24 @@ app.get("/rti/:page", (req, res) => {
 app.get("/search", async (req, res) => {
   const query = req.query.q;
   if (!query) {
-    return res.render("searchResult.ejs", { notices: [], notifications: [], achievements: [], researches: [] });
+    return res.render("searchResult.ejs", { 
+      notices: [], 
+      notifications: [], 
+      achievements: [], 
+      researches: [],
+      clubs: [],
+      faculty: [],
+      organizedEvents: [],
+      patents: [],
+      publications: []
+    });
   }
 
   try {
     // Use regex search instead of text index search
     const regex = new RegExp(query, 'i'); // case-insensitive search
     
+    // Search existing models
     const notices = await Notice.find({ 
       $or: [
         { title: { $regex: regex } },
@@ -325,11 +338,67 @@ app.get("/search", async (req, res) => {
       ]
     });
     
-    res.render("searchResult.ejs", { notices, notifications, achievements, researches });
+    // New model searches
+    // Club search
+    const clubs = await Club.find({
+      title: { $regex: regex }
+    });
+    
+    // Faculty search (complex with nested fields)
+    const faculty = await Faculty.find({
+      $or: [
+        { name: { $regex: regex } },
+        { department: { $regex: regex } },
+        { education: { $elemMatch: { $regex: regex } } },
+        { teaching: { $elemMatch: { $regex: regex } } },
+        { "research.areaofResearch": { $elemMatch: { $regex: regex } } },
+        { responsibility: { $elemMatch: { $regex: regex } } }
+        // Note: Searching in publication data is more complex and might need additional logic
+      ]
+    });
+    
+    // Organized Events search
+    const organizedEvents = await OrganizedEvent.find({
+      $or: [
+        { title: { $regex: regex } },
+        { description: { $regex: regex } },
+        { eventName: { $regex: regex } },
+        { clubName: { $regex: regex } }
+      ]
+    });
+    
+    // Patent search
+    const patents = await Patent.find({
+      $or: [
+        { inventor: { $elemMatch: { $regex: regex } } },
+        { title: { $regex: regex } },
+        { department: { $regex: regex } }
+      ]
+    });
+    
+    // Publication search
+    const publications = await Publication.find({
+      $or: [
+        { description: { $elemMatch: { $regex: regex } } },
+        { department: { $regex: regex } }
+      ]
+    });
+    
+    res.render("searchResult.ejs", { 
+      notices, 
+      notifications, 
+      achievements, 
+      researches,
+      clubs,
+      faculty,
+      organizedEvents,
+      patents,
+      publications
+    });
   } catch (err) {
     console.error("Search error:", err);
-    res.status(500).json({ error: "Internal Server Error" });
-}
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 });
 
 

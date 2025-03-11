@@ -4,28 +4,224 @@
     
     <%- include('./partials/nav') %>
 
-    <div class="w-full min-h-screen bg-gray-100 py-8">
+    <div class="w-full min-h-screen bg-gradient-to-br from-purple-100 to-blue-100 py-8">
         <div class="w-full lg:h-[100px] md:h-[80px]"></div>
    
         <div class="container mx-auto px-4">
             <h1 class="text-2xl md:text-3xl font-bold text-center text-[#00457b] mb-8">Search Results</h1>
             
+            <!-- Search Count Summary -->
+            <% 
+            const totalResults = notices.length + notifications.length + achievements.length + 
+                                researches.length + clubs.length + faculty.length + 
+                                organizedEvents.length + patents.length + publications.length;
+            %>
+            <p class="text-center text-gray-600 mb-8">Found <%= totalResults %> results for your search</p>
+            
+            <!-- Faculty Section -->
+            <% if (faculty && faculty.length > 0) { %>
+            <div class="mb-10">
+                <h2 class="text-xl font-bold mb-4 text-gray-800 border-b border-gray-300 pb-2">Faculty Members</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <% faculty.forEach(member => { %>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center p-4">
+                            <% if (member.image) { %>
+                            <img src="<%= member.image %>" alt="<%= member.name %>" class="w-20 h-20 rounded-full object-cover mr-4">
+                            <% } else { %>
+                            <div class="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center mr-4">
+                                <span class="text-2xl text-gray-500"><%= member.name ? member.name.charAt(0) : 'F' %></span>
+                            </div>
+                            <% } %>
+                            <div>
+                                <h3 class="text-lg font-semibold text-[#00457b]"><%= member.name %></h3>
+                                <p class="text-sm text-gray-600"><%= member.designation || 'Faculty Member' %></p>
+                                <span class="inline-block px-2 py-1 text-xs font-semibold bg-indigo-600 text-white rounded mt-1">
+                                    <%= member.department ? member.department.toUpperCase() : 'Department' %>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-100 p-4 bg-gray-50">
+                            <% if (member.research && member.research.areaofResearch && member.research.areaofResearch.length > 0) { %>
+                            <p class="text-sm text-gray-700 mb-2"><strong>Research Areas:</strong> <%= member.research.areaofResearch.slice(0, 2).join(', ') %><%= member.research.areaofResearch.length > 2 ? '...' : '' %></p>
+                            <% } %>
+                            <a href="/<%= member.department %>/Profile/<%= member._id %>" class="text-blue-600 hover:underline text-sm font-medium">View Profile</a>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+            <% } %>
+            
+            <!-- Clubs Section -->
+            <% if (clubs && clubs.length > 0) { %>
+            <div class="mb-10">
+                <h2 class="text-xl font-bold mb-4 text-gray-800 border-b border-gray-300 pb-2">Clubs</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <% clubs.forEach(club => { %>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                        <% if (club.logo) { %>
+                        <div class="h-40 overflow-hidden">
+                            <img src="<%= club.logo %>" alt="<%= club.title %>" class="w-full h-full object-cover">
+                        </div>
+                        <% } %>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start">
+                                <h3 class="text-lg font-semibold text-[#00457b] mb-2"><%= club.title %></h3>
+                                <span class="inline-block px-2 py-1 text-xs font-semibold bg-purple-600 text-white rounded">
+                                    <%= club.category === 'technical' ? 'Technical' : 'Cultural' %>
+                                </span>
+                            </div>
+                            <% if (club.Lead) { %>
+                            <p class="text-sm text-gray-600 mb-2"><strong>Lead:</strong> <%= club.Lead %></p>
+                            <% } %>
+                            <% if (club.description) { %>
+                            <p class="text-gray-700 text-sm mb-4 line-clamp-2"><%= club.description %></p>
+                            <% } %>
+                            <a href="/club/<%= club._id %>" class="text-blue-600 hover:underline text-sm font-medium">View Club</a>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+            <% } %>
+            
+            <!-- Organized Events Section -->
+            <% if (organizedEvents && organizedEvents.length > 0) { %>
+            <div class="mb-10">
+                <h2 class="text-xl font-bold mb-4 text-gray-800 border-b border-gray-300 pb-2">Events</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <% organizedEvents.forEach(event => { %>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                        <% if (event.images && event.images.length > 0) { %>
+                        <div class="h-48 overflow-hidden">
+                            <img src="<%= event.images[0] %>" alt="<%= event.title %>" class="w-full h-full object-cover">
+                        </div>
+                        <% } %>
+                        <div class="p-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <% if (event.eventName) { %>
+                                <span class="px-2 py-1 text-xs font-bold text-white rounded bg-green-600">
+                                    <%= event.eventName %>
+                                </span>
+                                <% } %>
+                                <% if (event.clubName) { %>
+                                <span class="px-2 py-1 text-xs font-bold text-white rounded bg-blue-600">
+                                    <%= event.clubName %>
+                                </span>
+                                <% } %>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2 text-[#00457b]"><%= event.title %></h3>
+                            <% if (event.description) { %>
+                            <p class="text-gray-700 text-sm mb-4 line-clamp-3"><%= event.description %></p>
+                            <% } %>
+                            <a href="/events/<%= event.eventName %>/<%= event._id %>" class="text-blue-600 hover:underline text-sm font-medium">View Event</a>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+            <% } %>
+
+            <!-- Patents Section -->
+            <% if (patents && patents.length > 0) { %>
+            <div class="mb-10">
+                <h2 class="text-xl font-bold mb-4 text-gray-800 border-b border-gray-300 pb-2">Patents</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <% patents.forEach(patent => { %>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                        <div class="p-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <% if (patent.department) { %>
+                                <span class="px-2 py-1 text-xs font-bold text-white rounded bg-indigo-600">
+                                    <%= patent.department.toUpperCase() %>
+                                </span>
+                                <% } %>
+                                <span class="px-2 py-1 text-xs font-bold text-white rounded bg-purple-600">
+                                    Patent (<%= patent.state %>)
+                                </span>
+                                <% if (patent.patentNo) { %>
+                                <span class="px-2 py-1 text-xs font-bold text-white rounded bg-gray-600">
+                                    <%= patent.patentNo %>
+                                </span>
+                                <% } %>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-3 text-[#00457b]"><%= patent.title %></h3>
+                            <% if (patent.inventor && patent.inventor.length > 0) { %>
+                            <p class="text-gray-700 text-sm mb-2">
+                                <strong>Inventors:</strong> <%= patent.inventor.join(', ') %>
+                            </p>
+                            <% } %>
+                            <a href="/research" class="text-blue-600 hover:underline text-sm font-medium">View Research</a>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+            <% } %>
+            
+            <!-- Publications Section -->
+            <% if (publications && publications.length > 0) { %>
+            <div class="mb-10">
+                <h2 class="text-xl font-bold mb-4 text-gray-800 border-b border-gray-300 pb-2">Research Publications</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <% publications.forEach(publication => { %>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                        <div class="p-4">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <!-- Year Badge -->
+                                <span class="px-2 py-1 text-xs font-bold text-white rounded bg-yellow-600">
+                                    <%= publication.year %>
+                                </span>
+                                
+                                <!-- Department Badge -->
+                                <span class="px-2 py-1 text-xs font-bold text-white rounded bg-indigo-600">
+                                    <%= publication.department.toUpperCase() %>
+                                </span>
+                                
+                                <!-- Type Badge -->
+                                <% if (publication.type === 'bookChapter') { %>
+                                <span class="px-2 py-1 text-xs font-bold text-white rounded bg-blue-600">
+                                    Book Chapter
+                                </span>
+                                <% } else if (publication.type === 'confrencePaper') { %>
+                                <span class="px-2 py-1 text-xs font-bold text-white rounded bg-green-600">
+                                    Conference Paper
+                                </span>
+                                <% } else if (publication.type === 'journal') { %>
+                                <span class="px-2 py-1 text-xs font-bold text-white rounded bg-red-600">
+                                    Journal Paper
+                                </span>
+                                <% } %>
+                            </div>
+                            
+                            <% if (publication.description && publication.description.length > 0) { %>
+                            <p class="text-gray-700 text-sm mb-4"><%= publication.description[0] %></p>
+                            <% } %>
+                            <a href="/research" class="text-blue-600 hover:underline text-sm font-medium">View Research</a>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+            <% } %>
+
             <!-- Notices Section -->
             <% if (notices.length > 0) { %>
             <div class="mb-10">
                 <h2 class="text-xl font-bold mb-4 text-gray-800 border-b border-gray-300 pb-2">Notices</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <% notices.forEach(notice => { %>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                         <% if (notice.image) { %>
                         <img src="<%= notice.image %>" alt="<%= notice.title %>" class="w-full h-40 object-cover">
                         <% } %>
                         <div class="p-4">
                             <span class="inline-block px-2 py-1 text-xs font-semibold bg-blue-500 text-white rounded mb-2"><%= notice.type %></span>
-                            <h3 class="text-lg font-semibold mb-2"><%= notice.title %></h3>
+                            <h3 class="text-lg font-semibold mb-2 text-[#00457b]"><%= notice.title %></h3>
                             <p class="text-gray-600 text-sm mb-4 line-clamp-2"><%= notice.description %></p>
                             <% if (notice.link) { %>
-                            <a href="<%= notice.link %>" class="text-blue-500 hover:underline text-sm">Read more</a>
+                            <a href="<%= notice.link %>" class="text-blue-600 hover:underline text-sm font-medium">Read more</a>
                             <% } %>
                         </div>
                     </div>
@@ -40,16 +236,16 @@
                 <h2 class="text-xl font-bold mb-4 text-gray-800 border-b border-gray-300 pb-2">Notifications</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <% notifications.forEach(notification => { %>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                         <% if (notification.image) { %>
-                        <img src="<%= notification.image %>" alt="<%= notification.title %>" class="w-full h-64 object-cover">
+                        <img src="<%= notification.image %>" alt="<%= notification.title %>" class="w-full h-48 object-cover">
                         <% } %>
                         <div class="p-4">
                             <span class="inline-block px-2 py-1 text-xs font-semibold bg-green-500 text-white rounded mb-2"><%= notification.type %></span>
-                            <h3 class="text-lg font-semibold mb-2"><%= notification.title %></h3>
+                            <h3 class="text-lg font-semibold mb-2 text-[#00457b]"><%= notification.title %></h3>
                             <p class="text-gray-600 text-sm mb-4 line-clamp-2"><%= notification.description %></p>
                             <% if (notification.link) { %>
-                            <a href="<%= notification.link %>" class="text-blue-500 hover:underline text-sm">Read more</a>
+                            <a href="<%= notification.link %>" class="text-blue-600 hover:underline text-sm font-medium">Read more</a>
                             <% } %>
                         </div>
                     </div>
@@ -64,16 +260,16 @@
                 <h2 class="text-xl font-bold mb-4 text-gray-800 border-b border-gray-300 pb-2">Achievements</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <% achievements.forEach(achievement => { %>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                         <% if (achievement.image) { %>
                         <img src="<%= achievement.image %>" alt="<%= achievement.title %>" class="w-full h-40 object-cover">
                         <% } %>
                         <div class="p-4">
                             <span class="inline-block px-2 py-1 text-xs font-semibold bg-purple-500 text-white rounded mb-2"><%= achievement.type %></span>
-                            <h3 class="text-lg font-semibold mb-2"><%= achievement.title %></h3>
+                            <h3 class="text-lg font-semibold mb-2 text-[#00457b]"><%= achievement.title %></h3>
                             <p class="text-gray-600 text-sm mb-4 line-clamp-2"><%= achievement.description %></p>
                             <% if (achievement.link) { %>
-                            <a href="<%= achievement.link %>" class="text-blue-500 hover:underline text-sm">Read more</a>
+                            <a href="<%= achievement.link %>" class="text-blue-600 hover:underline text-sm font-medium">Read more</a>
                             <% } %>
                         </div>
                     </div>
@@ -85,26 +281,20 @@
             <!-- Researches Section -->
             <% if (researches.length > 0) { %>
             <div class="mb-10">
-                <h2 class="text-xl font-bold mb-4 text-gray-800 border-b border-gray-300 pb-2">Research Publications</h2>
+                <h2 class="text-xl font-bold mb-4 text-gray-800 border-b border-gray-300 pb-2">Research</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <% researches.forEach(research => { %>
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                         <% if (research.image) { %>
                         <img src="<%= research.image %>" alt="<%= research.title %>" class="w-full h-40 object-cover">
                         <% } %>
                         <div class="p-4">
-                            <% if (research.category) { %>
-                            <span class="inline-block px-2 py-1 text-xs font-semibold bg-amber-500 text-white rounded mb-2"><%= research.category %></span>
-                            <% } %>
-                            <h3 class="text-lg font-semibold mb-2"><%= research.title %></h3>
-                            <% if (research.authors) { %>
-                            <p class="text-gray-600 text-sm mb-2"><strong>Authors:</strong> <%= research.authors %></p>
-                            <% } %>
+                            <h3 class="text-lg font-semibold mb-2 text-[#00457b]"><%= research.title %></h3>
                             <% if (research.description) { %>
                             <p class="text-gray-600 text-sm mb-4 line-clamp-2"><%= research.description %></p>
                             <% } %>
                             <% if (research.link) { %>
-                            <a href="<%= research.link %>" class="text-blue-500 hover:underline text-sm">View publication</a>
+                            <a href="<%= research.link %>" class="text-blue-600 hover:underline text-sm font-medium">View research</a>
                             <% } %>
                         </div>
                     </div>
@@ -114,10 +304,7 @@
             <% } %>
             
             <!-- No Results Message -->
-            <% if ((notices.length === 0) && 
-                   (notifications.length === 0) && 
-                   (achievements.length === 0) && 
-                   (researches.length === 0)) { %>
+            <% if (totalResults === 0) { %>
             <div class="text-center py-12">
                 <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -129,6 +316,33 @@
                         Back to Home
                     </a>
                 </div>
+                
+                <div class="mt-8">
+                    <h4 class="text-md font-medium text-gray-700 mb-3">Explore these popular pages:</h4>
+                    <div class="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
+                        <a href="/others/offcial-documents" class="px-4 py-2 bg-white border border-blue-400 rounded-md text-sm text-gray-700 hover:bg-gray-50 hover:border-blue-500 transition">
+                            Official Documents
+                        </a>
+                        <a href="/others/guest-house" class="px-4 py-2 bg-white border border-blue-400 rounded-md text-sm text-gray-700 hover:bg-gray-50 hover:border-blue-500 transition">
+                            Guest House
+                        </a>
+                        <a href="/student/scholarship" class="px-4 py-2 bg-white border border-blue-400 rounded-md text-sm text-gray-700 hover:bg-gray-50 hover:border-blue-500 transition">
+                            Scholarships
+                        </a>
+                        <a href="/student/hostel" class="px-4 py-2 bg-white border border-blue-400 rounded-md text-sm text-gray-700 hover:bg-gray-50 hover:border-blue-500 transition">
+                            Hostel
+                        </a>
+                        <a href="/student/download" class="px-4 py-2 bg-white border border-blue-400 rounded-md text-sm text-gray-700 hover:bg-gray-50 hover:border-blue-500 transition">
+                            Downloads
+                        </a>
+                        <a href="/student/fees" class="px-4 py-2 bg-white border border-blue-400 rounded-md text-sm text-gray-700 hover:bg-gray-50 hover:border-blue-500 transition">
+                            Fees
+                        </a>
+                        <a href="/placements/placement-statistics" class="px-4 py-2 bg-white border border-blue-400 rounded-md text-sm text-gray-700 hover:bg-gray-50 hover:border-blue-500 transition">
+                            Placement Statistics
+                        </a>
+                    </div>
+                </div>
             </div>
             <% } %>
         </div>
@@ -137,4 +351,4 @@
     <%- include('./partials/footer') %>
 </body>
     
-  <%- include('./partials/tail2') %>
+<%- include('./partials/tail2') %>
