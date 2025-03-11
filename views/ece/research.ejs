@@ -1,224 +1,214 @@
 <%- include('../partials/head2') %>
+
 <body>
   <%- include('../partials/nav') %>
   <div class="w-full min-h-screen bg-white text-black">
     <div class="w-full lg:h-[100px] md:h-[80px]"></div>
-    <div class="img w-full overflow-hidden">
-      <img
-        class="w-full h-76 object-cover object-center"
-        src="../images/ece/ECE.jpg"
-        alt="ECE Department"
-      />
-    </div>
 
     <div class="mainContent w-full">
       <div class="routes w-full px-4 md:px-44 flex items-center gap-4 bg-[#f6f6f6] py-5">
-        <a
-          class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500"
-          href="/"
-        >Home <i class="ri-arrow-right-s-line text-md"></i>
+        <a class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500" href="/">Home <i class="ri-arrow-right-s-line text-md"></i>
         </a>
-        <a
-          class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500"
-          href="/ece"
-        >ECE <i class="ri-arrow-right-s-line text-md"></i>
+        <a class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500" href="/ece">ECE <i class="ri-arrow-right-s-line text-md"></i>
         </a>
-        <a
-          class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500"
-          href="#"
-        >Research
+        <a class="text-sm font-medium hover:text-blue-400 uppercase inline-block text-zinc-500" href="#">Research
         </a>
       </div>
 
       <div class="content px-4 md:px-44 mt-16 mb-10">
         <h2 class="text-2xl uppercase font-bold text-black">Research</h2>
         <div class="w-full h-[1px] bg-zinc-300 mt-2"></div>
-        
+
         <h4 class="text-md mt-5 font-bold">
           The Department of Electronics and Communication Engineering has experienced Faculty members with diverse research interests.
         </h4>
-        
+
         <!-- Areas of Specialization -->
         <% if (areasOfSpecialization && areasOfSpecialization.length > 0) { %>
-          <h3 class="text-xl font-semibold mt-8 mb-4">Areas of Specialization</h3>
-          <div class="overflow-x-auto mt-4">
-            <table class="min-w-full border border-gray-300">
-              <thead>
-                <tr class="bg-gray-100">
-                  <th class="px-4 py-2 border-r border-gray-300 text-left">Name</th>
-                  <th class="px-4 py-2 border-r border-gray-300 text-left">Specialization</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% areasOfSpecialization.forEach(spec => { %>
-                  <tr class="border-b">
-                    <td class="px-4 py-2 border-r border-gray-300"><%= spec.name %></td>
-                    <td class="px-4 py-2 border-r border-gray-300"><%= spec.areaOfSpecialization %></td>
-                  </tr>
-                <% }); %>
-              </tbody>
-            </table>
-          </div>
+        <h3 class="text-xl font-semibold mt-8 mb-4">Areas of Specialization</h3>
+        <div class="overflow-x-auto mt-4">
+          <table class="min-w-full border border-gray-300">
+            <thead>
+              <tr class="bg-gray-100">
+                <th class="px-4 py-2 border-r border-gray-300 text-left">Name</th>
+                <th class="px-4 py-2 border-r border-gray-300 text-left">Specialization</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% areasOfSpecialization.forEach(spec => { %>
+              <tr class="border-b">
+                <td class="px-4 py-2 border-r border-gray-300"><%= spec.name %></td>
+                <td class="px-4 py-2 border-r border-gray-300"><%= spec.areaOfSpecialization %></td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
         <% } %>
 
         <!-- Research Areas -->
         <% if (researchAreas && researchAreas.length > 0) { %>
-          <h3 class="text-xl font-semibold mt-8 mb-4">Research Areas</h3>
-          <div class="mt-4 px-4">
-            <% researchAreas.forEach(area => { %>
-              <div class="mb-4">
-                <h4 class="text-lg font-semibold"><%= area.title %></h4>
-                <ul class="list-disc pl-6">
-                  <% area.description.forEach(desc => { %>
-                    <li><%= desc %></li>
-                  <% }); %>
-                </ul>
-              </div>
-            <% }); %>
+        <h3 class="text-xl font-semibold mt-8 mb-4">Research Areas</h3>
+        <div class="mt-4 px-4">
+          <% researchAreas.forEach(area => { %>
+          <div class="mb-4">
+            <h4 class="text-lg font-semibold"><%= area.title %></h4>
+            <ul class="list-disc pl-6">
+              <% area.description.forEach(desc => { %>
+              <li><%= desc %></li>
+              <% }); %>
+            </ul>
           </div>
+          <% }); %>
+        </div>
         <% } %>
 
         <!-- Research Fields -->
         <% if (researchFields && researchFields.length > 0) { %>
-              <% }); %>
-            </ol>
-          </div>
-        <% } %>
+        <h3 class="text-xl font-semibold mt-8 mb-4">Research Fields</h3>
+        <div class="mt-4 px-4">
+          <ol class="list-decimal">
+            <% researchFields.forEach(field => { %>
+              <li><%= field %></li>
+            <% }); %>
+          </ol>
+        </div>
+      <% } %>
 
-        <!-- Publication Areas -->
-        <% if (publicationAreas && publicationAreas.length > 0) { %>
-          <h4 class="text-md mt-8 font-bold">
-            The department faculty has research publications in journals of repute in the following areas:
-          </h4>
-          <div class="mt-8 px-20">
-            <ol class="list-disc">
-              <% publicationAreas.forEach(area => { %>
-                <% area.description.forEach(desc => { %>
-                <li>
-                  <p class="text-base font-normal leading-6"><%= desc %></p>
-                </li>
-                <% }); %>
-              <% }); %>
-            </ol>
-          </div>
-        <% } %>
+      <!-- Publication Areas -->
+      <% if (publicationAreas && publicationAreas.length > 0) { %>
+      <h4 class="text-md mt-8 font-bold">
+        The department faculty has research publications in journals of repute in the following areas:
+      </h4>
+      <div class="mt-8 px-20">
+        <ol class="list-disc">
+          <% publicationAreas.forEach(area => { %>
+          <% area.description.forEach(desc => { %>
+          <li>
+            <p class="text-base font-normal leading-6"><%= desc %></p>
+          </li>
+          <% }); %>
+          <% }); %>
+        </ol>
+      </div>
+      <% } %>
 
-        <!-- Patents -->
-        <% if (patents && patents.length > 0) { %>
-          <h4 class="text-lg mt-5 font-bold">Patents:</h4>
-          <div class="overflow-x-auto pl-4 md:pl-16 mt-10">
-            <table class="w-full border border-gray-300">
-              <thead>
-                <tr class="bg-gray-100 border-b border-gray-300">
-                  <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
-                    Sl. No.
-                  </th>
-                  <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
-                    Inventor/s Name
-                  </th>
-                  <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
-                    Patent Application No.
-                  </th>
-                  <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
-                    Filed/Published/Granted
-                  </th>
-                  <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
-                    Title of the Patent
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <% patents.forEach((patent, index) => { %>
-                <tr class="border-b border-gray-300">
-                  <td class="px-6 py-4 border-r border-gray-300"><%= index + 1 %></td>
-                  <td class="px-6 py-4 border-r border-gray-300"><%= patent.inventor.join(', ') %></td>
-                  <td class="px-6 py-4 border-r border-gray-300"><%= patent.patentNo %></td>
-                  <td class="px-6 py-4 border-r border-gray-300"><%= patent.state %></td>
-                  <td class="px-6 py-4 border-r border-gray-300"><%= patent.title %></td>
-                </tr>
-                <% }); %>
-              </tbody>
-            </table>
-          </div>
-        <% } %>
+      <!-- Patents -->
+      <% if (patents && patents.length > 0) { %>
+      <h4 class="text-lg mt-5 font-bold">Patents:</h4>
+      <div class="overflow-x-auto pl-4 md:pl-16 mt-10">
+        <table class="w-full border border-gray-300">
+          <thead>
+            <tr class="bg-gray-100 border-b border-gray-300">
+              <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
+                Sl. No.
+              </th>
+              <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
+                Inventor/s Name
+              </th>
+              <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
+                Patent Application No.
+              </th>
+              <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
+                Filed/Published/Granted
+              </th>
+              <th class="px-6 py-4 border-r border-gray-300 text-left font-semibold">
+                Title of the Patent
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% patents.forEach((patent, index) => { %>
+            <tr class="border-b border-gray-300">
+              <td class="px-6 py-4 border-r border-gray-300"><%= index + 1 %></td>
+              <td class="px-6 py-4 border-r border-gray-300"><%= patent.inventor.join(', ') %></td>
+              <td class="px-6 py-4 border-r border-gray-300"><%= patent.patentNo %></td>
+              <td class="px-6 py-4 border-r border-gray-300"><%= patent.state %></td>
+              <td class="px-6 py-4 border-r border-gray-300"><%= patent.title %></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+      <% } %>
 
-        <!-- Publications -->
-        <% if (publicationsByYear) { %>
-          <!-- Book Chapters -->
-          <% if (publicationsByYear.bookChapters && Object.keys(publicationsByYear.bookChapters).length > 0) { %>
-            <h4 class="text-lg mt-5 font-bold">Book Chapters:</h4>
-            <div class="mt-8 px-20">
-              <ol class="list-decimal">
-                <% Object.keys(publicationsByYear.bookChapters).forEach(year => {
+      <!-- Publications -->
+      <% if (publicationsByYear) { %>
+      <!-- Book Chapters -->
+      <% if (publicationsByYear.bookChapters && Object.keys(publicationsByYear.bookChapters).length > 0) { %>
+      <h4 class="text-lg mt-5 font-bold">Book Chapters:</h4>
+      <div class="mt-8 px-20">
+        <ol class="list-decimal">
+          <% Object.keys(publicationsByYear.bookChapters).forEach(year => {
                   publicationsByYear.bookChapters[year].forEach(pub => {
                     pub.description.forEach(desc => { %>
-                <li>
-                  <p class="text-base font-normal leading-6"><%= desc %></p>
-                </li>
-                <% });
+          <li>
+            <p class="text-base font-normal leading-6"><%= desc %></p>
+          </li>
+          <% });
                   });
                 }); %>
-              </ol>
-            </div>
-          <% } %>
+        </ol>
+      </div>
+      <% } %>
 
-          <!-- Conference Papers -->
-          <% if (publicationsByYear.conferencePapers && Object.keys(publicationsByYear.conferencePapers).length > 0) { %>
-            <h4 class="text-lg mt-5 font-bold">Conference Papers:</h4>
-            <div class="mt-8 px-20">
-              <ol class="list-decimal">
-                <% Object.keys(publicationsByYear.conferencePapers).forEach(year => {
+      <!-- Conference Papers -->
+      <% if (publicationsByYear.conferencePapers && Object.keys(publicationsByYear.conferencePapers).length > 0) { %>
+      <h4 class="text-lg mt-5 font-bold">Conference Papers:</h4>
+      <div class="mt-8 px-20">
+        <ol class="list-decimal">
+          <% Object.keys(publicationsByYear.conferencePapers).forEach(year => {
                   publicationsByYear.conferencePapers[year].forEach(pub => {
                     pub.description.forEach(desc => { %>
-                <li>
-                  <p class="text-base font-normal leading-6"><%= desc %></p>
-                </li>
-                <% });
+          <li>
+            <p class="text-base font-normal leading-6"><%= desc %></p>
+          </li>
+          <% });
                   });
                 }); %>
-              </ol>
-            </div>
-          <% } %>
+        </ol>
+      </div>
+      <% } %>
 
-          <!-- Journals -->
-          <% if (publicationsByYear.journals && Object.keys(publicationsByYear.journals).length > 0) { %>
-            <h4 class="text-lg mt-5 font-bold">Journal Publications:</h4>
-            <div class="mt-8 px-20">
-              <ol class="list-decimal">
-                <% Object.keys(publicationsByYear.journals).forEach(year => {
+      <!-- Journals -->
+      <% if (publicationsByYear.journals && Object.keys(publicationsByYear.journals).length > 0) { %>
+      <h4 class="text-lg mt-5 font-bold">Journal Publications:</h4>
+      <div class="mt-8 px-20">
+        <ol class="list-decimal">
+          <% Object.keys(publicationsByYear.journals).forEach(year => {
                   publicationsByYear.journals[year].forEach(pub => {
                     pub.description.forEach(desc => { %>
-                <li>
-                  <p class="text-base font-normal leading-6"><%= desc %></p>
-                </li>
-                <% });
+          <li>
+            <p class="text-base font-normal leading-6"><%= desc %></p>
+          </li>
+          <% });
                   });
                 }); %>
-              </ol>
-            </div>
-          <% } %>
-        <% } %>
-
-        <!-- Research Areas -->
-        <% if (researchAreas && researchAreas.length > 0) { %>
-          <h4 class="text-lg mt-5 font-bold">Research Areas:</h4>
-          <div class="mt-4 px-20">
-            <% researchAreas.forEach(area => { %>
-              <div class="mb-4">
-                <h5 class="text-lg font-semibold"><%= area.title %></h5>
-                <ul class="list-disc pl-6">
-                  <% area.description.forEach(desc => { %>
-                    <li><%= desc %></li>
-                  <% }); %>
-                </ul>
-              </div>
-            <% }); %>
-          </div>
-        <% } %>
-
-        <h4 class="text-lg mt-8 font-bold">More than 19 seminars/STTPs/workshops organized in last few years.</h4>
+        </ol>
       </div>
+      <% } %>
+      <% } %>
+
+      <!-- Research Areas -->
+      <% if (researchAreas && researchAreas.length > 0) { %>
+      <h4 class="text-lg mt-5 font-bold">Research Areas:</h4>
+      <div class="mt-4 px-20">
+        <% researchAreas.forEach(area => { %>
+        <div class="mb-4">
+          <h5 class="text-lg font-semibold"><%= area.title %></h5>
+          <ul class="list-disc pl-6">
+            <% area.description.forEach(desc => { %>
+            <li><%= desc %></li>
+            <% }); %>
+          </ul>
+        </div>
+        <% }); %>
+      </div>
+      <% } %>
+
+      <h4 class="text-lg mt-8 font-bold">More than 19 seminars/STTPs/workshops organized in last few years.</h4>
     </div>
+  </div>
   </div>
 
   <%- include('../partials/footer') %>
