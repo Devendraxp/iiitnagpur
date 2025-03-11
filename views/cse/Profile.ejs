@@ -6,76 +6,68 @@
     <div class="w-full lg:h-[100px] md:h-[80px]"></div>
 
     <div class="mainContent w-full">
-      <div
-        class="routes w-full px-44 flex items-center gap-4 bg-[#00457b] py-5"
-      >
-        <a
-          class="text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
-          href="/"
-          >Home <i class="ri-arrow-right-s-line text-md"></i>
+      <div class="routes w-full px-44 flex items-center gap-4 bg-[#00457b] py-5"></div>
+        <a class="text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white" href="/">
+          Home <i class="ri-arrow-right-s-line text-md"></i>
         </a>
-        <a
-          class="text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
-          href="#"
-          >Profile details
+        <a class="text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white" href="#">
+          Profile details
         </a>
       </div>
 
       <div class="content px-4 md:px-20 lg:px-44 mt-8 md:mt-16 mb-8 md:mb-10">
-        <h2 class="text-xl md:text-2xl uppercase font-bold text-[#00457b]">
-          Profile details
-        </h2>
+        <h2 class="text-xl md:text-2xl uppercase font-bold text-[#00457b]">Profile details</h2>
         <div class="w-full h-[1px] bg-[#00457b] mt-2"></div>
 
         <div class="max-w-5xl mx-auto p-8">
           <div class="bg-white shadow-lg rounded-lg p-8">
             <!-- Profile Header -->
-            <div
-              class="flex flex-col md:flex-row items-center md:items-start gap-6"
-            >
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
               <!-- Profile Image -->
+              <% if(faculty.image) { %>
               <div class="w-50 h-64">
-                <img
-                src="<%= faculty.image %>"
-                  alt="<%= faculty.name %>"
-                  class="rounded-lg shadow-md object-cover"
-                />
+                <img src="<%= faculty.image %>" alt="<%= faculty.name %>" 
+                     class="rounded-lg shadow-md object-cover">
               </div>
+              <% } %>
+              
               <!-- Profile Info -->
               <div class="text-center md:text-left">
-                <h1 class="text-3xl font-bold text-[#00457b]">
-                  <%= faculty.name %>
-                </h1>
+                <h1 class="text-3xl font-bold text-[#00457b]"><%= faculty.name %></h1>
                 <p class="text-gray-600 text-lg font-semibold">
                   <%= faculty.designation %><%= faculty.position === 'hod' ? ' & HOD' : '' %>
                 </p>
-                <p class="text-gray-700">
+                <% if(faculty.email) { %>
+                <p class="text-gray-700"></p>
                   <i class="ri-mail-line"></i> <%= faculty.email %>
                 </p>
+                <% } %>
 
                 <!-- Socials -->
+                <% if(faculty.socialLinks && Object.values(faculty.socialLinks).some(link => link)) { %>
                 <div class="flex justify-center md:justify-start gap-4 mt-4">
-                  <% if(faculty.socialLinks && faculty.socialLinks.facebook) { %>
-                    <a href="<%= faculty.socialLinks.facebook %>" class="text-gray-600 hover:text-blue-500"
-                      ><i class="ri-facebook-fill text-2xl"></i
-                    ></a>
+                  <% if(faculty.socialLinks.facebook) { %>
+                  <a href="<%= faculty.socialLinks.facebook %>" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-500">
+                    <i class="ri-facebook-fill text-2xl"></i>
+                  </a>
                   <% } %>
-                  <% if(faculty.socialLinks && faculty.socialLinks.twitter) { %>
-                    <a href="<%= faculty.socialLinks.twitter %>" class="text-gray-600 hover:text-blue-400"
-                      ><i class="ri-twitter-fill text-2xl"></i
-                    ></a>
+                  <% if(faculty.socialLinks.twitter) { %>
+                  <a href="<%= faculty.socialLinks.twitter %>" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-400">
+                    <i class="ri-twitter-fill text-2xl"></i>
+                  </a>
                   <% } %>
-                  <% if(faculty.socialLinks && faculty.socialLinks.linkedin) { %>
-                    <a href="<%= faculty.socialLinks.linkedin %>" class="text-gray-600 hover:text-blue-600"
-                      ><i class="ri-linkedin-fill text-2xl"></i
-                    ></a>
+                  <% if(faculty.socialLinks.linkedin) { %>
+                  <a href="<%= faculty.socialLinks.linkedin %>" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600">
+                    <i class="ri-linkedin-fill text-2xl"></i>
+                  </a>
                   <% } %>
-                  <% if(faculty.socialLinks && faculty.socialLinks.github) { %>
-                    <a href="<%= faculty.socialLinks.github %>" class="text-gray-600 hover:text-gray-800"
-                      ><i class="ri-github-fill text-2xl"></i
-                    ></a>
+                  <% if(faculty.socialLinks.github) { %>
+                  <a href="<%= faculty.socialLinks.github %>" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-800">
+                    <i class="ri-github-fill text-2xl"></i>
+                  </a>
                   <% } %>
                 </div>
+                <% } %>
               </div>
             </div>
 
@@ -89,9 +81,9 @@
                 <% if(faculty.education && faculty.education.length > 0) { %>
                 <div class="mb-6">
                   <h3 class="text-lg font-bold text-[#00457b]">EDUCATION</h3>
-                  <ul class="list-disc ml-6 text-gray-700 space-y-1">
+                  <ul class="list-disc ml-6 text-gray-700 space-y-1"></ul>
                     <% faculty.education.forEach(item => { %>
-                      <li><%= item %></li>
+                    <li><%= item %></li>
                     <% }); %>
                   </ul>
                 </div>
@@ -103,7 +95,7 @@
                   <h3 class="text-lg font-bold text-[#00457b]">EXPERIENCE</h3>
                   <ul class="list-disc ml-6 text-gray-700 space-y-1"></ul>
                     <% faculty.experience.forEach(item => { %>
-                      <li><%= item %></li>
+                    <li><%= item %></li>
                     <% }); %>
                   </ul>
                 </div>
@@ -113,9 +105,9 @@
                 <% if(faculty.teaching && faculty.teaching.length > 0) { %>
                 <div class="mb-6">
                   <h3 class="text-lg font-bold text-[#00457b]">TEACHING</h3>
-                  <ul class="list-disc ml-6 text-gray-700 space-y-1">
+                  <ul class="list-disc ml-6 text-gray-700 space-y-1"></ul>
                     <% faculty.teaching.forEach(item => { %>
-                      <li><%= item %></li>
+                    <li><%= item %></li>
                     <% }); %>
                   </ul>
                 </div>
@@ -125,24 +117,24 @@
               <!-- Right Section -->
               <div>
                 <!-- Research -->
-                <% if(faculty.research) { %>
+                <% if(faculty.research && (faculty.research.link || (faculty.research.areaofResearch && faculty.research.areaofResearch.length > 0) || (faculty.research.researchProject && faculty.research.researchProject.length > 0) || (faculty.research.patent && faculty.research.patent.length > 0) || (faculty.research.fundedProject && faculty.research.fundedProject.length > 0) || (faculty.research.reviewerofJournal && faculty.research.reviewerofJournal.length > 0))) { %>
                 <div class="mb-6">
                   <h3 class="text-lg font-bold text-[#00457b]">RESEARCH</h3>
 
                   <!-- Research Profile Link -->
                   <% if(faculty.research.link) { %>
-                  <a href="<%= faculty.research.link %>" class="text-blue-600 hover:underline"
-                    >Link to IRINS/Vidwan Research Profile</a
-                  >
+                  <a href="<%= faculty.research.link %>" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline"></a>
+                    Link to IRINS/Vidwan Research Profile
+                  </a>
                   <% } %>
 
                   <!-- Areas of Research -->
                   <% if(faculty.research.areaofResearch && faculty.research.areaofResearch.length > 0) { %>
-                  <div class="mt-2"></div>
+                  <div class="mt-2">
                     <p class="font-semibold">Area of Research:</p>
-                    <ul class="list-disc ml-6 text-gray-700">
+                    <ul class="list-disc ml-6 text-gray-700"></ul>
                       <% faculty.research.areaofResearch.forEach(area => { %>
-                        <li><%= area %></li>
+                      <li><%= area %></li>
                       <% }); %>
                     </ul>
                   </div>
@@ -152,12 +144,12 @@
                   <% if(faculty.research.researchProject && faculty.research.researchProject.length > 0) { %>
                   <div class="mt-4">
                     <p class="font-semibold">Research Projects:</p>
-                    <ul class="list-disc ml-6 text-gray-700">
+                    <ul class="list-disc ml-6 text-gray-700"></ul>
                       <% faculty.research.researchProject.forEach(project => { %>
-                        <li>
-                          <% if(project.year) { %><span class="font-semibold"><%= project.year %>: </span><% } %>
-                          <%= project.title %><% if(project.duration) { %> (<%= project.duration %>)<% } %>
-                        </li>
+                      <li>
+                        <% if(project.year) { %><span class="font-semibold"><%= project.year %>: </span><% } %>
+                        <%= project.title %><% if(project.duration) { %> (<%= project.duration %>)<% } %>
+                      </li>
                       <% }); %>
                     </ul>
                   </div>
@@ -167,9 +159,9 @@
                   <% if(faculty.research.patent && faculty.research.patent.length > 0) { %>
                   <div class="mt-4">
                     <p class="font-semibold">Patents:</p>
-                    <ul class="list-disc ml-6 text-gray-700">
+                    <ul class="list-disc ml-6 text-gray-700"></ul>
                       <% faculty.research.patent.forEach(patent => { %>
-                        <li><%= patent %></li>
+                      <li><%= patent %></li>
                       <% }); %>
                     </ul>
                   </div>
@@ -181,7 +173,7 @@
                     <p class="font-semibold">Funded Projects:</p>
                     <ul class="list-disc ml-6 text-gray-700">
                       <% faculty.research.fundedProject.forEach(project => { %>
-                        <li><%= project %></li>
+                      <li><%= project %></li>
                       <% }); %>
                     </ul>
                   </div>
@@ -191,9 +183,9 @@
                   <% if(faculty.research.reviewerofJournal && faculty.research.reviewerofJournal.length > 0) { %>
                   <div class="mt-4">
                     <p class="font-semibold">Reviewer for Journals / Conferences:</p>
-                    <ul class="list-disc ml-6 text-gray-700">
+                    <ul class="list-disc ml-6 text-gray-700"></ul>
                       <% faculty.research.reviewerofJournal.forEach(journal => { %>
-                        <li><%= journal %></li>
+                      <li><%= journal %></li>
                       <% }); %>
                     </ul>
                   </div>
@@ -206,7 +198,7 @@
             <hr class="border-[#00457b] my-6" />
 
             <!-- Publications -->
-            <% if(faculty.publication) { %>
+            <% if(faculty.publication && ((faculty.publication.journals && faculty.publication.journals.length > 0) || (faculty.publication.conferences && faculty.publication.conferences.length > 0) || (faculty.publication.books && faculty.publication.books.length > 0))) { %>
             <div class="mb-6">
               <h3 class="text-lg font-bold text-[#00457b]">PUBLICATIONS</h3>
 
@@ -215,14 +207,14 @@
               <div class="mt-4">
                 <h4 class="font-semibold">Journals:</h4>
                 <% faculty.publication.journals.forEach(yearEntry => { %>
-                  <div class="mb-3">
-                    <h5 class="font-medium"><%= yearEntry.year %></h5>
-                    <ul class="list-disc ml-6 text-gray-700">
-                      <% yearEntry.papers.forEach(paper => { %>
-                        <li><%= paper %></li>
-                      <% }); %>
-                    </ul>
-                  </div>
+                <div class="mb-3">
+                  <h5 class="font-medium"><%= yearEntry.year %></h5>
+                  <ul class="list-disc ml-6 text-gray-700">
+                    <% yearEntry.papers.forEach(paper => { %>
+                    <li><%= paper %></li>
+                    <% }); %>
+                  </ul>
+                </div>
                 <% }); %>
               </div>
               <% } %>
@@ -232,31 +224,31 @@
               <div class="mt-4">
                 <h4 class="font-semibold">Conferences:</h4>
                 <% faculty.publication.conferences.forEach(yearEntry => { %>
-                  <div class="mb-3">
-                    <h5 class="font-medium"><%= yearEntry.year %></h5>
-                    <ul class="list-disc ml-6 text-gray-700">
-                      <% yearEntry.papers.forEach(paper => { %>
-                        <li><%= paper %></li>
-                      <% }); %>
-                    </ul>
-                  </div>
+                <div class="mb-3">
+                  <h5 class="font-medium"><%= yearEntry.year %></h5>
+                  <ul class="list-disc ml-6 text-gray-700">
+                    <% yearEntry.papers.forEach(paper => { %>
+                    <li><%= paper %></li>
+                    <% }); %>
+                  </ul>
+                </div>
                 <% }); %>
               </div>
               <% } %>
 
               <!-- Books -->
               <% if(faculty.publication.books && faculty.publication.books.length > 0) { %>
-              <div class="mt-4">
+              <div class="mt-4"></div>
                 <h4 class="font-semibold">Books:</h4>
                 <% faculty.publication.books.forEach(yearEntry => { %>
-                  <div class="mb-3">
-                    <h5 class="font-medium"><%= yearEntry.year %></h5>
-                    <ul class="list-disc ml-6 text-gray-700">
-                      <% yearEntry.papers.forEach(book => { %>
-                        <li><%= book %></li>
-                      <% }); %>
-                    </ul>
-                  </div>
+                <div class="mb-3">
+                  <h5 class="font-medium"><%= yearEntry.year %></h5>
+                  <ul class="list-disc ml-6 text-gray-700">
+                    <% yearEntry.papers.forEach(book => { %>
+                    <li><%= book %></li>
+                    <% }); %>
+                  </ul>
+                </div>
                 <% }); %>
               </div>
               <% } %>
@@ -266,7 +258,7 @@
             <hr class="border-[#00457b] my-6" />
 
             <!-- Supervision -->
-            <% if(faculty.supervision) { %>
+            <% if(faculty.supervision && ((faculty.supervision.MTech && faculty.supervision.MTech.length > 0) || (faculty.supervision.BTech && faculty.supervision.BTech.length > 0) || (faculty.supervision.phd && faculty.supervision.phd.length > 0))) { %>
             <div class="mb-6">
               <h3 class="text-lg font-bold text-[#00457b]">SUPERVISION</h3>
 
@@ -276,7 +268,7 @@
                 <strong>M.E. / M.Tech:</strong>
                 <ul class="list-disc ml-6 text-gray-700">
                   <% faculty.supervision.MTech.forEach(item => { %>
-                    <li><%= item %></li>
+                  <li><%= item %></li>
                   <% }); %>
                 </ul>
               </p>
@@ -292,7 +284,7 @@
                 <strong>B.E. / B.Tech:</strong>
                 <ul class="list-disc ml-6 text-gray-700">
                   <% faculty.supervision.BTech.forEach(item => { %>
-                    <li><%= item %></li>
+                  <li><%= item %></li>
                   <% }); %>
                 </ul>
               </p>
@@ -336,10 +328,9 @@
             <hr class="border-[#00457b] my-6" />
             <div class="mb-6">
               <h3 class="text-lg font-bold text-[#00457b]">RESPONSIBILITIES</h3>
-
-              <ul class="list-disc list-inside text-gray-700"></ul>
+              <ul class="list-disc list-inside text-gray-700">
                 <% faculty.responsibility.forEach(item => { %>
-                  <li><%= item %></li>
+                <li><%= item %></li>
                 <% }); %>
               </ul>
             </div>
@@ -350,10 +341,9 @@
             <hr class="border-[#00457b] my-6" />
             <div class="mb-6">
               <h3 class="text-lg font-bold text-[#00457b]">ANY OTHER ACHIEVEMENTS</h3>
-
               <ul class="list-disc list-inside text-gray-700">
                 <% faculty.anyOther.forEach(item => { %>
-                  <li><%= item %></li>
+                <li><%= item %></li>
                 <% }); %>
               </ul>
             </div>

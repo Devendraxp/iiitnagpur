@@ -21,7 +21,7 @@ router.route("/aboutDepartment").get((_, res) => {
 });
 
 router.route("/achievements").get(async (_, res) => {
-  const data = await DeptAchievement.find({ department: "bs" });
+  const data = await DeptAchievement.find({ department: "cse" });
 
   // Group achievements by year
   const achievementsByYear = {};
@@ -35,7 +35,7 @@ router.route("/achievements").get(async (_, res) => {
   // Sort years in descending order
   const sortedYears = Object.keys(achievementsByYear).sort((a, b) => b - a);
 
-  res.render("cse/achievement.ejs", { achievementsByYear, sortedYears });
+  res.render("cse/achievements.ejs", { achievementsByYear, sortedYears });
 });
 
 router.route("/bos").get((_, res) => {
@@ -43,12 +43,12 @@ router.route("/bos").get((_, res) => {
 });
 
 router.route("/events").get(async (_, res) => {
-  const data = await DeptEvents.find({ department: "bs" });
+  const data = await DeptEvents.find({ department: "cse" });
   res.render("cse/events.ejs", { data });
 });
 
 router.route("/faculty").get(async (_, res) => {
-  const data = await Faculty.find({ department: "bs" });
+  const data = await Faculty.find({ department: "cse" });
   res.render("cse/faculty.ejs", { data });
 });
 
