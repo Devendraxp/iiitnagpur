@@ -2,42 +2,42 @@
   <body>
     <%- include('../partials/nav') %> 
     <div class="main2 w-full min-h-screen bg-white text-black">
-      <div class="w-full lg:h-[100px] md:h-[80px]"></div>
+      <div class="w-full lg:h-[100px] md:h-[70px] h-[85px]"></div>
      
 
       <div class="mainContent w-full">
         <div
-          class="routes w-full px-44 flex items-center gap-4 bg-[#00457b] py-5"
-        >
-          <a
-            class="text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
-            href="#"
-            >Home <i class="ri-arrow-right-s-line text-md"></i>
-          </a>
-          <a
-            class="text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
-            href="#"
-            >About Department
-          </a>
-        </div>
+        class="routes w-full px-6 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#00457b] py-3 md:py-5"
+      >
+        <a
+          class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+          href="#"
+          >Home <i class="ri-arrow-right-s-line text-md"></i>
+        </a>
+        <a
+          class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+          href="#"
+          >Department <i class="ri-arrow-right-s-line text-md"></i>
+        </a>
+      </div>
         <div class="container mx-auto py-4">
           <h1 class="text-3xl font-bold text-center text-[#00457b] mb-6">IIIT Nagpur Programs</h1>
-          <div class="flex justify-center gap-4">
-            <button onclick="changeDepartment('cse')" class="tab-btn2 border-2 border-[#00457b] cursor-pointer bg-[#00457b] text-white px-4 py-2 rounded-md">Computer Science &  Eng...</button>
-            <button onclick="changeDepartment('ece')" class="tab-btn2 border-2 border-[#00457b] cursor-pointer bg-[#00457b] text-white px-4 py-2 rounded-md">Electronics & Communication Eng...</button>
-            <button onclick="changeDepartment('basic_science')" class="tab-btn2 border-2 border-[#00457b] cursor-pointer bg-[#00457b] text-white px-4 py-2 rounded-md">Basic Science</button>
+          <div class="flex md:justify-center justify-evenly md:gap-4">
+            <button onclick="changeDepartment('cse')" class="tab-btn2 border-2 border-[#00457b] cursor-pointer md:px-4 px-2 py-2 lg:text-[1vw] md:text-[1.5vw] text-[2vw] rounded-md">Computer Science &  Eng...</button>
+            <button onclick="changeDepartment('ece')" class="tab-btn2 border-2 border-[#00457b] cursor-pointer md:px-4 px-2 py-2 lg:text-[1vw] md:text-[1.5vw] text-[2vw] rounded-md">Electronics & Communication Eng...</button>
+            <button onclick="changeDepartment('basic_science')" class="tab-btn2 border-2 border-[#00457b] cursor-pointer md:px-4 px-2 py-2 lg:text-[1vw] md:text-[1.5vw] text-[2vw] rounded-md">Basic Science</button>
         </div>
-    <div class="flex">
+    <div class="flex md:flex-row flex-col">
       
         <!-- About Section -->
-        <div class="about px-4 py-10">
+        <div class="about md:order-1 order-2">
           <p id="tab-description" class="text-gray-700"></p>
       </div>
   
       <!-- Explore Links -->
-  <div class="py-10">
-    <h1 class="px-4 font-bold text-2xl pb-4 text-[#00457b]">Explore :</h1>
-    <div id="explore-links" class="otherLinks flex gap-4 px-4 flex-col">
+  <div class="mt-10 md:m-0">
+    <h1 class="px-4 font-bold lg:text-[1.5vw] md:text-[2.5vw] text-[4vw] pb-4 text-[#00457b] ">Explore :</h1>
+    <div id="explore-links" class="otherLinks flex md:flex-col flex-wrap flex-row gap-4 px-4 justify-evenly lg:text-[1vw] md:text-[1.5vw] text-[2vw]">
         <!-- Links will be injected dynamically -->
     </div>
   </div>

@@ -2,86 +2,88 @@
     <body>
         <%- include('../partials/nav') %> 
         <div class="w-full min-h-screen bg-white text-black">
-                <div class="w-full lg:h-[100px] md:h-[80px]"></div>
+            <div class="w-full lg:h-[100px] md:h-[70px] h-[85px]"></div>
 
             <div class="mainContent w-full">
                 <div
-                    class="routes w-full px-44 flex items-center gap-4 bg-[#00508a] py-5"
-                >
-                    <a
-                        class="text-sm font-medium hover:text-orange-500 uppercase inline-block text-white"
-                        href="/"
-                        >Home <i class="ri-arrow-right-s-line text-md"></i>
+                    class="routes w-full px-6 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#00457b] py-3 md:py-5">
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Home <i class="ri-arrow-right-s-line text-md"></i>
                     </a>
-                    <a
-                        class="text-sm font-medium hover:text-orange-500 uppercase inline-block text-white"
-                        href="/basic_science"
-                        >Basic Sciences <i class="ri-arrow-right-s-line text-md"></i>
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Basic Science <i class="ri-arrow-right-s-line text-md"></i>
                     </a>
-                    <a
-                        class="text-sm font-medium hover:text-orange-500 uppercase inline-block text-white"
-                        href="#"
-                        >Faculty
+                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
+                        href="#">Faculty <i class="ri-arrow-right-s-line text-md"></i>
                     </a>
                 </div>
-
-                <div class="content px-44 mt-16 mb-10">
+                <div class="content lg:px-10 mt-16 mb-10">
 
                     <!-- HOD Section -->
-                    <div class="w-full p-10 ">
-                        <h1 class="text-3xl text-zinc-900/90 capitalize mb-3 font-extrabold">Head of Department</h1>
-                        <% 
-                          let hod = null;
-                          for(let i = 0; i < data.length; i++) {
-                            if(data[i].position === "hod") {
-                              hod = data[i];
-                              break;
-                            }
-                          }
-                        %>
-                        <% if (hod) { %>
-                            <a href="/basic_science/profile/<%= hod._id %>">
-                                <div class="text-white relative hover:drop-shadow-[0_10px_15px_rgba(0,0,0,0.3)] transition duration-300 ease-in-out h-[350px] w-[220px]">
-                                    <div class="card overflow-hidden rounded-t-md border-t-2 border-gray-200 w-full h-[250px]">
-                                        <img class="h-full w-full object-top object-cover" src="<%= hod.image || '../images/basicScience/HOD.jpg' %>" alt="<%= hod.name %>">
+                    <div class="w-full lg:p-10 p-6  pb-0 ">
+                        <h1 class="md:text-left text-center text-3xl text-zinc-900/90 capitalize mb-3 font-extrabold">Head of Department</h1>
+                        <% let hod=null; for(let i=0; i < data.length; i++) { if(data[i].position==="hod" ) {
+                            hod=data[i]; break; } } %>
+                            <% if (hod) { %>
+                                <div class="flex flex-wrap items-center md:justify-start justify-center">
+                                <div
+                                class="text-white relative  hover:drop-shadow-[0_10px_15px_rgba(0,0,0,0.3)] transition duration-300 ease-in-out h-[350px] w-[220px] ">
+                                <a href="/cse/profile/<%= hod._id %>">
+                                    <div
+                                        class="card overflow-hidden rounded-t-md border-t-2 border-gray-200 w-full h-[250px]">
+                                        <img class="h-full w-full object-top object-cover"
+                                            src="<%= hod.image || '../images/cse/HOD.jpg' %>"
+                                            alt="<%= hod.name %>">
                                     </div>
                                     <div class="bg-[#00508a] content-center rounded-b-md w-full h-[100px]">
-                                        <h2 class="text-sm text-center text-white font-bold uppercase"><%= hod.name %></h2>
-                                        <h3 class="capitalize text-center text-xs mt-2 font-bold"><%= hod.designation %></h3>
+                                        <h2 class="text-sm text-center text-white font-bold uppercase">
+                                            <%= hod.name %>
+                                        </h2>
+                                        <h3 class="capitalize text-center text-xs mt-2 font-bold">
+                                            <%= hod.designation %>
+                                        </h3>
                                     </div>
-                                </div>
-                        <% } %>
-                        
-                        <% 
-                            let facultyMembers = [];
-                            for(let i = 0; i < data.length; i++) {
-                                if(data[i].position === "faculty-member") {
-                                    facultyMembers.push(data[i]);
-                                }
-                            }
-                        %>
-                    
-                    <!-- Faculty Members Section -->
-                    <div class="w-full py-8 ">
-                        <h1 class="text-3xl text-zinc-900/90 capitalize mb-3 font-extrabold">Faculty members</h1>
-                        <div class="flex flex-wrap items-center justify-start ">
-                            <% 
-                                facultyMembers.forEach(faculty => { 
-                            %>
-                                <a href="/basic_science/profile/<%= faculty._id %>">
-                                    <div class="text-white hover:drop-shadow-[0_10px_15px_rgba(0,0,0,0.3)] transition duration-300 ease-in-out relative h-[350px] w-[220px] mr-8 mb-8">
-                                        <div class="card overflow-hidden rounded-t-md border-t-2 border-gray-200 w-full h-[250px]">
-                                            <img class="h-full w-full object-top object-cover" src="<%= faculty.image %>" alt="<%= faculty.name %>">
+                            </div>
+                            </div>
+                                <% } %>
+
+                                    <% let facultyMembers=[]; for(let i=0; i < data.length; i++) {
+                                        if(data[i].position==="faculty-member" ) { facultyMembers.push(data[i]); } }
+                                        %>
+
+                                        <!-- Faculty Members Section -->
+                                        <div class="w-full py-8 ">
+                                            <h1 class="md:text-left text-center text-3xl text-zinc-900/90 capitalize mb-3 font-extrabold">
+                                                Faculty members</h1>
+                                            <div class="flex flex-wrap items-center md:justify-start justify-center">
+                                                <% facultyMembers.forEach(faculty=> {
+                                                    %>
+                                                    <div
+                                                        class="text-white hover:drop-shadow-[0_10px_15px_rgba(0,0,0,0.3)] transition duration-300 ease-in-out relative md:h-[350px] w-[220px] lg:mr-8 mr-2 lg:mb-8 mb-2">
+                                                        <a href="/cse/profile/<%= faculty._id %>">
+                                                            <div
+                                                                class="card overflow-hidden rounded-t-md border-t-2 border-gray-200 w-full h-[250px]">
+                                                                <img class="h-full w-full object-top object-cover"
+                                                                    src="<%= faculty.image %>"
+                                                                    alt="<%= faculty.name %>">
+                                                            </div>
+                                                            <div
+                                                                class="bg-[#00508a] content-center rounded-b-md w-full h-[100px]">
+                                                                <h2
+                                                                    class="text-sm text-center text-white font-bold uppercase">
+                                                                    <%= faculty.name %>
+                                                                </h2>
+                                                                <h3
+                                                                    class="capitalize text-center text-xs mt-2 font-bold">
+                                                                    <%= faculty.designation %>
+                                                                </h3>
+                                                            </div>
+                                                    </div>
+                                                    </a>
+                                                    </a>
+                                                    <% }); %>
+                                            </div>
                                         </div>
-                                        <div class="bg-[#00508a] content-center rounded-b-md w-full h-[100px]">
-                                            <h2 class="text-sm text-center text-white font-bold uppercase"><%= faculty.name %></h2>
-                                            <h3 class="capitalize text-center text-xs mt-2 font-bold"><%= faculty.designation %></h3>
-                                        </div>
-                                    </div>
-                                </a>
-                                </a>
-                            <% }); %>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@ function swiper() {
         clickable: true,
     },
     breakpoints: {
-        640: { slidesPerView: 2 },
+      320: { slidesPerView: 2 },
         768: { slidesPerView: 3 },
         1024: { slidesPerView: 5 },
     }
@@ -815,7 +815,7 @@ function swiper() {
     const departments = {
       basic_science: {
           description: `
-            <div class="about px-4 pt-10 text-xl">
+            <div class="about px-4 md:py-10 py-4 lg:text-[1vw] md:text-[1.5vw] text-[2vw]">
     <p class="text-gray-700">
         The Department of Basic Sciences at <b>Indian Institute of Information Technology Nagpur</b> was established in 2016 and is currently headed by <b>Dr. Prasad V. Joshi</b>.
         The Department of Basic Sciences brings together the disciplines of Mathematics, Applied Sciences, Humanities, Social Sciences, Mechanical Engineering, and Electrical Engineering under one roof.
@@ -850,7 +850,7 @@ function swiper() {
       },
       cse: {
         description: `
-       <div class="about px-4 py-10 text-xl">
+       <div class="about px-4 md:py-10 py-4 lg:text-[1vw] md:text-[1.5vw] text-[2vw]">
     <p class="text-gray-700">
         The <b>Department of Computer Science and Engineering</b> at <b>IIIT Nagpur</b> was established in the year <b>2016</b>.
         Since then, it has grown into a <b>center for excellence, innovation, and research</b> with dedicated faculty and staff, highly motivated students, 
@@ -894,7 +894,7 @@ function swiper() {
       },
       ece: {
           description: `
-          <div class="about px-4 pt-10 text-xl">
+          <div class="about px-4 md:py-10 py-4 lg:text-[1vw] md:text-[1.5vw] text-[2vw]">
     <p class="text-gray-700">
         The <b>Department of Electronics & Communication Engineering (ECE)</b> was established in <b>2016</b>. It is currently headed by <b>Dr. Harsh Goud</b>. 
         The department offers two undergraduate programs:
@@ -934,7 +934,7 @@ function swiper() {
         </ul>
         <br>
         
-        <h2 class="font-bold text-xl text-[#00457b]">B.Tech. in Electronics & Communication Engineering</h2>
+        <h2 class="font-bold lg:text-[1vw] md:text-[1.5vw] text-[2vw] text-[#00457b]">B.Tech. in Electronics & Communication Engineering</h2>
         <br>
         The department offers a <b>B.Tech in Electronics and Communication Engineering</b>, focusing on:
         <ul class="list-disc pl-6">
@@ -964,7 +964,7 @@ function swiper() {
         </ul>
         <br>
 
-        <h2 class="font-bold text-xl text-[#00457b]">B.Tech. in ECE (Internet of Things)</h2>
+        <h2 class="font-bold lg:text-[1vw] md:text-[1.5vw] text-[2vw] text-[#00457b]">B.Tech. in ECE (Internet of Things)</h2>
         <br>
         The B.Tech program in <b>ECE (Internet of Things - IoT)</b> equips students with:
         <ul class="list-disc pl-6">
@@ -1111,3 +1111,17 @@ function swiper() {
     // Call filterItems() after setting the dropdown
     filterItems();
 });
+
+
+function openTab(evt, year) {
+    let tabcontent = document.getElementsByClassName("tabcontent");
+    for (let i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.add("hidden");
+    }
+    let tablinks = document.getElementsByClassName("tablinks");
+    for (let i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("border-b-2", "border-red-500");
+    }
+    document.getElementById(year).classList.remove("hidden");
+    evt.currentTarget.classList.add("border-b-2", "border-red-500");
+}

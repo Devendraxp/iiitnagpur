@@ -1,0 +1,90 @@
+<%- include('../partials/head2') %>
+
+    <body>
+        <%- include('../partials/nav') %>
+    <div class=" w-full bg-white text-[#00457b]">
+        <div class="w-full lg:h-[100px] md:h-[70px] h-[85px]"></div>
+
+      <div class="mainContent w-full bg-zinc-100/30">
+        <div class="routes w-full px-4 sm:px-6 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#00457b] py-3 md:py-5">
+          <a class="text-xs sm:text-sm md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white" href="#">
+            Home <i class="ri-arrow-right-s-line text-md"></i>
+          </a>
+          <a class="text-xs sm:text-sm md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white" href="#">
+            RTI Immutable Properties <i class="ri-arrow-right-s-line text-md"></i>
+          </a>
+        </div>
+        <div class="border-4 border-[#00457b] mx-4 sm:mx-6 md:mx-10 lg:mx-20 my-8 lg:py-8 ">
+            <div class="max-w-4xl mx-auto bg-white shadow-md rounded-md">
+                <div class="flex flex-wrap space-x-4 bg-[#00457b] text-white p-4">
+                    <button class="tablinks border-b-2 border-red-500 px-4 py-2 text-sm sm:text-base" onclick="openTab(event, '2019')">2019</button>
+                    <button class="tablinks px-4 py-2 text-sm sm:text-base" onclick="openTab(event, '2020')">2020</button>
+                    <button class="tablinks px-4 py-2 text-sm sm:text-base" onclick="openTab(event, '2021')">2021</button>
+                    <button class="tablinks px-4 py-2 text-sm sm:text-base" onclick="openTab(event, '2022')">2022</button>
+                    <button class="tablinks px-4 py-2 text-sm sm:text-base" onclick="openTab(event, '2023')">2023</button>
+                    <button class="tablinks px-4 py-2 text-sm sm:text-base" onclick="openTab(event, '2024')">2024</button>
+                </div>
+                
+                <div id="2019" class="tabcontent p-4 sm:p-6">
+                    <h2 class="text-xl font-bold">2019</h2>
+                    <h3 class="font-semibold mt-4">Basic Science:</h3>
+                    <ul class="list-disc pl-6 text-blue-600">
+                        <li>Dr. Aatish Daryapurkar</li>
+                        <li>Dr. Charu Goel</li>
+                        <li>Dr. Deepmala Baghel</li>
+                        <li>Dr. Anuradha Singh</li>
+                        <li>Dr. Kirti Dorshetwar</li>
+                    </ul>
+                    <h3 class="font-semibold mt-4">Computer Science & Engineering:</h3>
+                    <ul class="list-disc pl-6 text-blue-600">
+                        <li>Dr. Pooja Jain</li>
+                        <li>Dr. Tausif Diwan</li>
+                        <li>Dr. Milind Penurkar</li>
+                        <li>Dr. Nidhi Lal</li>
+                        <li>Dr. Jitendra Tembhurne</li>
+                        <li>Dr. Nishat Afshan Ansari</li>
+                        <li>Dr. Mayuri Digalwar</li>
+                    </ul>
+                    <h3 class="font-semibold mt-4">Electronics & Communication Engineering:</h3>
+                    <ul class="list-disc pl-6 text-blue-600">
+                        <li>Dr. Tapan Jain</li>
+                        <li>Dr. Chandrashekhar Sakode</li>
+                        <li>Dr. Vipin Kamble</li>
+                        <li>Dr. Prasad Joshi</li>
+                        <li>Dr. Mayur Parate</li>
+                        <li>Dr. Rashmi Pandhare</li>
+                    </ul>
+                    <h3 class="font-semibold mt-4">Officer:</h3>
+                    <ul class="list-disc pl-6 text-blue-600">
+                        <li>Dr. O. G. Kakde</li>
+                        <li>Shri. Kailas Dakhale</li>
+                    </ul>
+                </div>
+                
+                <div id="2020" class="tabcontent hidden p-4 sm:p-6">
+                    <h2 class="text-xl font-bold">2020</h2>
+                    <p>Content for 2020 will go here.</p>
+                </div>
+                <div id="2021" class="tabcontent hidden p-4 sm:p-6">
+                    <h2 class="text-xl font-bold">2021</h2>
+                    <p>Content for 2021 will go here.</p>
+                </div>
+                <div id="2022" class="tabcontent hidden p-4 sm:p-6">
+                    <h2 class="text-xl font-bold">2022</h2>
+                    <p>Content for 2022 will go here.</p>
+                </div>
+                <div id="2023" class="tabcontent hidden p-4 sm:p-6">
+                    <h2 class="text-xl font-bold">2023</h2>
+                    <p>Content for 2023 will go here.</p>
+                </div>
+                <div id="2024" class="tabcontent hidden p-4 sm:p-6">
+                    <h2 class="text-xl font-bold">2024</h2>
+                    <p>Content for 2024 will go here.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <%- include('../partials/footer') %>
+</body>
+<%- include('../partials/tail2') %>
