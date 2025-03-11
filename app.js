@@ -287,12 +287,11 @@ app.get("/readMore/clubsReadMore", (req, res) => {
 app.get("/readMore/club", (req, res) => {
   res.render("readMore/club");
 });
-app.get("/rti", (req, res) => {
-  res.redirect("/rti/others");
+app.get("/rti/rtidetails", (req, res) => {
+  res.render("rti/rtidetails");
 });
-app.get("/rti/:page", (req, res) => {
-  const { page } = req.params;
-  res.render(`rti/${page}`);
+app.get("/rti/rtiofficer", (req, res) => {
+  res.render("rti/rtiofficer");
 });
 
 app.get("/search", async (req, res) => {
