@@ -1,0 +1,201 @@
+<%- include('../partials/head2') %> 
+  <body>
+    <%- include('../partials/nav') %> 
+    <div class="w-full lg:h-[100px] md:h-[70px] h-[85px]"></div>
+
+    <!-- Hero Section -->
+    <header class="pt-24 pb-12 bg-gradient-to-br from-red-700 to-blue-900">
+        <div class="max-w-6xl mx-auto px-4 text-center text-white">
+            <div class="mb-8">
+                <span class="bg-white/20 px-4 py-1 rounded-full text-sm">29-31 January 2024</span>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">KSHITIJ Sports Fest</h1>
+            <p class="text-xl md:text-2xl mb-8 font-light">Gateway to Inter-IIIT Sports Championship</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#schedule" class="bg-white text-red-700 px-8 py-3 rounded-full font-semibold hover:bg-gray-100">
+                    Event Schedule
+                </a>
+                <a href="#about" class="border-2 border-white px-8 py-3 rounded-full hover:bg-white/10">
+                    About Inter-IIIT
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4 md:px-8 bg-white">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold text-gray-800 mb-6">About Kshitij</h2>
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    Kshitij is our annual inter-college sports festival that brings together athletes from various institutions 
+                    to compete in a spirit of sportsmanship and excellence. With over 20 sports disciplines and 100+ events, 
+                    it's a celebration of athleticism, teamwork, and competitive spirit.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5" alt="Sports" class="w-full h-64 object-cover rounded-lg shadow-lg">
+                <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b" alt="Sports" class="w-full h-64 object-cover rounded-lg shadow-lg mt-8">
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Timeline -->
+    <section class="py-20 bg-white" id="schedule">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Festival Timeline</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Day 1 -->
+                <div class="p-8 bg-gray-50 rounded-xl border-l-4 border-red-600">
+                    <div class="mb-4">
+                        <span class="text-sm text-gray-500">Day 1</span>
+                        <h3 class="text-xl font-bold">29 Jan - Inauguration</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-play-circle text-red-600 mr-2"></i>
+                            9:00 AM - Opening Ceremony
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-futbol text-blue-600 mr-2"></i>
+                            11:00 AM - Football Prelims
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="p-8 bg-gray-50 rounded-xl border-l-4 border-blue-600">
+                    <div class="mb-4">
+                        <span class="text-sm text-gray-500">Day 2</span>
+                        <h3 class="text-xl font-bold">30 Jan - Main Events</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-running text-green-600 mr-2"></i>
+                            Athletics Championships
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-basketball-ball text-orange-600 mr-2"></i>
+                            Basketball Semi-Finals
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="p-8 bg-gray-50 rounded-xl border-l-4 border-green-600">
+                    <div class="mb-4">
+                        <span class="text-sm text-gray-500">Day 3</span>
+                        <h3 class="text-xl font-bold">31 Jan - Finals</h3>
+                    </div>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-trophy text-yellow-600 mr-2"></i>
+                            3:00 PM - Championship Matches
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-fire text-red-600 mr-2"></i>
+                            6:00 PM - Closing Ceremony
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Sports Categories -->
+     <section class="py-16 bg-white px-8">
+        <h2 class="text-3xl font-bold text-center text-gray-800">Sports Categories</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
+            <div class="bg-white shadow-md p-4 rounded-lg text-center">Cricket 🏏</div>
+            <div class="bg-white shadow-md p-4 rounded-lg text-center">Football ⚽</div>
+            <div class="bg-white shadow-md p-4 rounded-lg text-center">Badminton 🏸</div>
+            <div class="bg-white shadow-md p-4 rounded-lg text-center">Basketball 🏀</div>
+            <div class="bg-white shadow-md p-4 rounded-lg text-center">Athletics 🏃‍♂️</div>
+            <div class="bg-white shadow-md p-4 rounded-lg text-center">Swimming 🏊‍♂️</div>
+            <div class="bg-white shadow-md p-4 rounded-lg text-center">Weightlifting💪</div>
+        </div>
+    </section>
+
+    <!-- Inter-IIIT Connection -->
+    <section class="py-20 bg-gray-100" id="iiit">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4">Road to Inter-IIIT Sports Meet</h2>
+                        <p class="text-gray-600 mb-6">
+                            Kshitij serves as the official qualifier for the Inter-IIIT Sports Championship. 
+                            Top performers will represent our institute in 15+ sports disciplines against 
+                            IIITs from across India.
+                        </p>
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h3 class="text-lg font-bold mb-2">Key Dates:</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li>• Kshitij Finals: 31 January</li>
+                                <li>• Team Selection: 5 February</li>
+                                <li>• Inter-IIIT Meet: 15-20 February</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 p-8 rounded-lg">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b" 
+                             alt="Team Sports" class="rounded-lg shadow-md">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Previous Champions -->
+    <section class="py-20 bg-white" id="past-events">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Past Champions</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="w-32 h-32 bg-red-100 rounded-full mx-auto mb-4 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12" 
+                             alt="Champion" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold mb-1">2023 Winners</h3>
+                    <p class="text-gray-600 text-sm">Team Phoenix</p>
+                    <p class="text-sm text-red-600 mt-2">8 Gold Medals</p>
+                </div>
+                <!-- Add more champion cards -->
+                <div class="text-center p-6">
+                    <div class="w-32 h-32 bg-red-100 rounded-full mx-auto mb-4 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12" 
+                             alt="Champion" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold mb-1">2023 Winners</h3>
+                    <p class="text-gray-600 text-sm">Team Phoenix</p>
+                    <p class="text-sm text-red-600 mt-2">8 Gold Medals</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-32 h-32 bg-red-100 rounded-full mx-auto mb-4 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12" 
+                             alt="Champion" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold mb-1">2023 Winners</h3>
+                    <p class="text-gray-600 text-sm">Team Phoenix</p>
+                    <p class="text-sm text-red-600 mt-2">8 Gold Medals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors & Partners -->
+    <!-- <section class="py-20 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Official Partners</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                <div class="bg-white p-6 rounded-xl flex items-center justify-center h-20">
+                    <img src="placeholder-partner.png" alt="Partner" class="max-h-12">
+                </div>
+                
+            </div>
+        </div>
+    </section> -->
+    
+    <%- include('../partials/footer') %>
+</body>
+<%- include('../partials/tail2') %>
