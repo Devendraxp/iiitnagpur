@@ -152,7 +152,7 @@ function swiper() {
   
     detsButtons.forEach((button, index) => {
       button.addEventListener("click", function () {
-        console.log("Clicked:", index);
+     
         detsBoxes[index].classList.toggle("active"); // Toggle the corresponding dets-box
       });
     });
@@ -266,7 +266,7 @@ function swiper() {
         });
   
         openBtn.addEventListener("click", () => {
-          console.log("fef");
+      
           menuAnimation.play();
         });
         document.addEventListener("click", (event) => {
@@ -425,9 +425,7 @@ function swiper() {
             <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
               <a href="admissions/pg-academic-rule-book">PG Academic Rule Book</a>
             </h1>
-              <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="admissions/recruitment">Recruitment</a>
-            </h1>
+         
           `,
           alumni: `
             <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
@@ -528,6 +526,9 @@ function swiper() {
             <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
               <a href="/others/rti">RTI</a>
             </h1>
+                 <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
+              <a href="admissions/recruitment">Recruitment</a>
+            </h1>
           `,
         };
         // Functions to update the top value for subheading div
@@ -552,7 +553,7 @@ function swiper() {
           const clampedNavHeight = Math.min(Math.max(navHeight, navMin), navMax);
           const ratio = (clampedNavHeight - navMin) / (navMax - navMin);
           const newTop = topMin + ratio * (topMax - topMin);
-          console.log("updateSecondBoxTop:", newTop);
+     
           gsap.to([secondBox, secondBox2], { duration: 0.3, top: newTop + "vw" });
         }
   
