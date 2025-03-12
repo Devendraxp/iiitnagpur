@@ -349,25 +349,25 @@ function nav() {
             <a href="#">Technical Clubs</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/technical/dotslash">Dotslash</a>
+            <a href="/club/dotslash">Dotslash</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/technical/elevate">Elevate</a>
+            <a href="/club/elevate">Elevate</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/technical/crispr">Crispr</a>
+            <a href="/club/crispr">Crispr</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/technical/udhyam">Udhyam</a>
+            <a href="/club/udhyam">Udhyam</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/technical/iotics">Iotics</a>
+            <a href="/club/iotics">Iotics</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/technical/strokes">Strokes</a>
+            <a href="/club/strokes">Strokes</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/technical/dimensions">Dimensions</a>
+            <a href="/club/dimensions">Dimensions</a>
           </h1>
         </div>
       
@@ -376,22 +376,22 @@ function nav() {
             <a href="#">Cultural Clubs</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/cultural/crescendo">Crescendo</a>
+            <a href="/club/crescendo">Crescendo</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/cultural/dtraxia">Dtraxia</a>
+            <a href="/club/dtraxia">Dtraxia</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/cultural/estoria">Estoria</a>
+            <a href="/club/estoria">Estoria</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/cultural/orator">Orator</a>
+            <a href="/club/orator">Orator</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/cultural/probe">Probe</a>
+            <a href="/club/probe">Probe</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/cultural/eklavya">Eklavya</a>
+            <a href="/club/eklavya">Eklavya</a>
           </h1>
         </div>
       
@@ -400,10 +400,10 @@ function nav() {
             <a href="#">Events</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/events/tantrafiesta">Tantrafiesta</a>
+            <a href="https://www.tantrafiesta.in/">Tantrafiesta</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/events/abhivyakti">Abhivyakti</a>
+            <a href="https://www.abhivyaktifest.in/">Abhivyakti</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
             <a href="/events/kshitij">Kshitij</a>
@@ -513,7 +513,7 @@ function nav() {
             <a href="/student/clinical-counselling">Clinical Counselling</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-            <a href="/student/scholarships">Scholarships</a>
+            <a href="/student/scholarship">Scholarships</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
             <a href="/student/hostel">Hostel</a>

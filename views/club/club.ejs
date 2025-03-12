@@ -5,9 +5,9 @@
     <!-- Spacer -->
     <div class="w-full lg:h-[100px] md:h-[70px] h-[85px]"></div>
     
-    <div class="bg-stone-200 pb-8">
+    <div class="bg-white pb-8">
     <!-- Club Header Banner -->
-    <section class="relative bg-stone-200 h-[300px] md:h-[350px] lg:h-[400px] bg-cover bg-center bg-no-repeat clip-right-slant"
+    <section class="relative bg-white h-[300px] md:h-[350px] lg:h-[400px] bg-cover bg-center bg-no-repeat clip-right-slant"
       style="background-image: url('<%= club.logo %>');">
       <div class="absolute inset-0 bg-black/70">
       <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-6">
@@ -17,11 +17,11 @@
 
     <!-- Club Description Section -->
    <!-- Club Description Section -->
-<section class="flex flex-col md:flex-row items-center justify-center bg-stone-200 px-[4vw] py-[4vw] lg:pl-20 lg:pl-40 lg:-pt-[2vw]">
+<section class="flex flex-col md:flex-row items-center justify-center bg-white px-[4vw] py-[4vw] lg:pl-20 lg:pl-40 lg:-pt-[2vw]">
   <!-- About Club Box -->
   <div class="w-full sm:w-[45vh] md:w-[40vw] lg:w-[30vw] min-h-[20vw] 
        text-left border border-gray-300 shadow-lg rounded-md p-[3vw] 
-       flex flex-col justify-between overflow-hidden bg-stone-200">
+       flex flex-col justify-between overflow-hidden bg-white">
     <h3 class="text-[5vw] md:text-[2.5vw] lg:text-[1.75vw] text-gray-800 pt-[1vw]">
       <%= club.title %>
     </h3>
@@ -44,7 +44,7 @@
     <h1 class="font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-5">
       Events Organised
     </h1>
-    <div class="lg:w-[90vw] lg:h-[95vh] w-[95%] h-[50%] mx-auto">
+    <div class="lg:w-[80vw] lg:h-[85vh] w-[95%] h-[50%] mx-auto">
       <div class="swiper mySwiper5 relative">
         <div class="swiper-wrapper">
           <% events.forEach(function(event){ %>
@@ -70,7 +70,7 @@
 
     <!-- Club Yearly Plans Section -->
     <% if(club.yearlyPlans && club.yearlyPlans.length > 0) { %>
-    <section class="bg-stone-200 px-[4vw] py-[4vw]">
+    <section class="bg-white px-[4vw] py-[4vw]">
       <h1 class="font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 pb-5">
         Yearly Plans
       </h1>

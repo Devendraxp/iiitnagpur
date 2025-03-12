@@ -124,16 +124,28 @@ html {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 }
-.page2b, #page3b {
+.page2b {
   width: 100%;
   background-image: url(../images/index/bg1.png);
   background: linear-gradient(#F6F6F7, rgba(255, 255, 255, 0)), url(../images/index/bg1.png);
 }
 
-#page4, #page6, #page7, #page7b, #page7b2 {
+#page4, #page6, #page7, #page7b, #page7b2, #page9, #page7c, #page8 {
   background-image: url("../images/index/bg2.avif");
   background-color: rgba(240, 241, 241, 0.9215686275);
   background-blend-mode: color;
+}
+
+#page10 {
+  width: 100%;
+  background-image: url(../images/index/bg1.png);
+  background: linear-gradient(rgba(255, 255, 255, 0), #F6F6F7), url(../images/index/bg1.png);
+}
+
+#page3b {
+  width: 100%;
+  background-image: url(../images/index/bg1.png);
+  background: linear-gradient(#F6F6F7, rgba(255, 255, 255, 0)), url(../images/index/bg1.png);
 }
 
 footer h2:hover, footer i:hover {
@@ -141,26 +153,6 @@ footer h2:hover, footer i:hover {
   transition: all ease-in-out 0.5s;
 }
 
-.marquee2 {
-  transform: translateX(-380px);
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-@keyframes marquee2 {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
 .swiper {
   width: 100%;
   height: 100%;
@@ -215,12 +207,6 @@ footer h2:hover, footer i:hover {
   background-color: rgba(0, 0, 0, 0.1647058824);
 }
 
-#page7c {
-  width: 100%;
-  background-image: url(../images/index/bg1.png);
-  background: linear-gradient(rgba(255, 255, 255, 0), #F6F6F7), url(../images/index/bg1.png);
-}
-
 .glow:hover {
   box-shadow: 0 0 50px rgba(0, 69, 123, 0.5); /* Blue glow effect */
   transform: scale(1.01); /* Scale up */
@@ -235,6 +221,29 @@ footer h2:hover, footer i:hover {
   #map {
     width: 85vw !important;
     margin-left: auto;
+  }
+  .marquee {
+    animation: marquee 10s linear infinite;
+  }
+  .marquee2 {
+    animation: marquee2 10s linear infinite;
+    transform: translateX(-380px);
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes marquee2 {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0%);
+    }
   }
 }
 #page4 img:hover {
@@ -273,106 +282,11 @@ footer h2:hover, footer i:hover {
   align-items: center;
 }
 
-.alumini {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.alumini-head {
-  font-size: 40px;
-  text-transform: capitalize;
-  color: #003153;
-}
-
-.alumini-head-underline {
-  height: 4px;
-  background: linear-gradient(to right, #b96969, #ffa502);
-  width: 20%;
-  margin-bottom: 2rem;
-}
-
-.alumini-container {
-  width: 100%;
-  height: 80%;
-  background-image: url("grad12.avif");
-  background-size: 100% 100%;
-  background-position: center;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-
-.alumini-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: inherit;
-  filter: blur(4px);
-  z-index: 1;
-}
-
 .swiper-container {
   width: 100%;
   height: 100%;
   position: relative;
   z-index: 10;
-}
-
-.alumini-content {
-  text-align: center;
-  color: white;
-  padding: 2rem;
-  border-radius: 20px;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.alumini-img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  margin: 0 auto 1rem;
-  background-size: cover;
-  background-position: center;
-  border: 3px solid white;
-}
-
-.alumini-name {
-  margin-top: 20px;
-  color: rgb(255, 255, 255);
-  font-weight: 900;
-  font-size: 1.7rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.alumini-branch {
-  color: orange;
-  font-size: 1.3rem;
-  font-weight: 550;
-  font-style: italic;
-}
-
-.alumini-speaks {
-  padding: 1rem;
-  color: white;
-  font-weight: 700;
-  text-align: center;
-  font-size: 1.2rem;
-  line-height: 24px;
 }
 
 .alumini {
