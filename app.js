@@ -141,6 +141,9 @@ app.get("/admin-login", (_, res) => {
 app.get("/aboutUs", (req, res) => {
   res.render("aboutUs");
 });
+app.get("/others/Kshitij", (req, res) => {
+  res.render("others/Kshitij");
+});
 
 // Basic Science Routes
 app.get("/department", (req, res) => {
