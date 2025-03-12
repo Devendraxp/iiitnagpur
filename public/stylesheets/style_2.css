@@ -243,3 +243,13 @@
 .icons2 i{
   color:#00457b
 }
+
+#map {
+  width: 30vw !important; /* Default for tablets and laptops */
+}
+@media (max-width: 768px) { /* For mobile screens */
+  #map {
+    width: 85vw !important;
+    margin-left: auto;
+  }
+}
