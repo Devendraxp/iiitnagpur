@@ -180,6 +180,15 @@ app.get("/admissions/:page", (req, res) => {
   res.render(`admissions/${page}`);
 });
 
+app.get("/Program/:page", (req, res) => {
+  const { page } = req.params;
+  res.render(`Program/${page}`);
+});
+app.get("/Doctor_Program/:page", (req, res) => {
+  const { page } = req.params;
+  res.render(`Doctor_Program/${page}`);
+});
+
 app.get("/nirf", (req, res) => {
   res.redirect("/nirf/2025");
 });

@@ -46,10 +46,10 @@ function swiper() {
     slidesPerView: 4,
     spaceBetween: 15,
     loop: true,
-    // autoplay: {
-    //   delay: 2500,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -767,7 +767,7 @@ function title() {
     gsap
     .timeline({ repeat: -1 }) // Infinite loop
     .to(".text-container", {
-      y: "-40%",
+      y: "-35%",
       duration: 1,
       ease: "power2.inOut",
       delay: 2,

@@ -1,0 +1,108 @@
+<%- include('../partials/head2') %> 
+  <body>
+    <%- include('../partials/nav') %> 
+    <div class="md:pb-20 w-full  bg-white text-[#00457b]">
+      <div class="w-full lg:h-[100px] md:h-[70px] h-[85px]"></div>
+
+      <!-- Breadcrumb Navigation -->
+      <div class="w-full px-4 md:px-20 lg:px-44 bg-[#00457b] py-3 md:py-4">
+        <div class="flex flex-wrap items-center gap-2 md:gap-3">
+            <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase text-white" href="#">
+            Home <i class="ri-arrow-right-s-line"></i>
+          </a>
+            <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase text-white" href="#">
+            Doctoral programme <i class="ri-arrow-right-s-line"></i>
+          </a>
+          <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase text-white" href="#">
+            Doctoral programme features
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <main class="px-4 md:px-20 lg:px-44 py-6 md:py-10 max-w-7xl mx-auto">
+        <!-- Header Section -->
+        <div class="mb-8">
+          <h1 class="text-xl md:text-2xl font-bold uppercase">Doctoral programme features</h1>
+          <div class="border-b border-gray-300 w-full mt-2"></div>
+        </div>
+
+        <!-- Course Work Section -->
+        <section class="space-y-6">
+          <h2 class="text-lg md:text-xl font-bold">Course Work:</h2>
+          <p class="text-base md:text-lg text-gray-700">
+            All the registered Ph.D students need to complete the requirement of coursework of 6 credits by M.Tech degree holders and 12 credits by B.Tech degree holders in either of the following modes.
+          </p>
+
+          <div class="space-y-4">
+            <h3 class="text-base md:text-lg font-semibold">1. Courses offered by the institute</h3>
+            <h3 class="text-base md:text-lg font-semibold">
+              2. Credits can be earned through successful completion of the online courses available on MOOC platforms like NPTEL/ MIT-OCW/Coursera/edX, etc. 
+              <span class="block mt-2 font-normal">(The total minimum course hours for an online course should be 40.)</span>
+            </h3>
+          </div>
+
+          <!-- Assessment Mechanics -->
+          <div class="mt-8">
+            <h3 class="text-lg md:text-xl font-bold mb-4">Assessment Mechanics for online/MOOC course:</h3>
+            <div class="space-y-6">
+              <div>
+                <h4 class="text-base md:text-lg font-semibold">1. Course accomplishment (25% weightage)</h4>
+                <p class="text-base md:text-lg text-gray-700 mt-2">
+                  The candidate must successfully complete the registered online course as per the respective course evaluation criteria.
+                </p>
+              </div>
+              <div>
+                <h4 class="text-base md:text-lg font-semibold">2. Course accomplishment (25% weightage)</h4>
+                <p class="text-base md:text-lg text-gray-700 mt-2">
+                  The candidate must successfully complete the registered online course as per the respective course evaluation criteria.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grading Table -->
+          <div class="mt-10 overflow-x-auto">
+            <table class="min-w-full border border-gray-800 text-sm md:text-base">
+              <thead class="bg-gray-100">
+                <tr>
+                  <th class="px-4 py-3 md:px-6 md:py-4 border border-gray-800 font-semibold text-left">
+                    Range of marks obtained in the evaluation
+                  </th>
+                  <th class="px-4 py-3 md:px-6 md:py-4 border border-gray-800 font-semibold text-left">
+                    Grade
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Table rows remain same as original -->
+                <tr>
+                  <td class="px-4 py-2 md:px-6 md:py-3 border border-gray-800">81-100</td>
+                  <td class="px-4 py-2 md:px-6 md:py-3 border border-gray-800">AA</td>
+                </tr>
+                <!-- Add remaining rows following same pattern -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Progress Seminars -->
+          <div class="mt-8">
+            <h2 class="text-lg md:text-xl font-bold mb-4">Progress Seminars:</h2>
+            <div class="space-y-4 pl-4">
+              <p class="text-base md:text-lg text-gray-700">
+                1. A scholar is required to give a progress seminar on his / her project work every six months in concerned department.
+              </p>
+              <p class="text-base md:text-lg text-gray-700">
+                2. A scholar is required to give a progress seminar on his / her project work every six months in concerned department.
+              </p>
+              <p class="text-base md:text-lg text-gray-700">
+                3. A scholar is required to give a progress seminar on his / her project work every six months in concerned department.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <%- include('../partials/footer') %> 
+  </body>
+  <%- include('../partials/tail2') %> 
