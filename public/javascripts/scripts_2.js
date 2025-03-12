@@ -337,7 +337,7 @@ function swiper() {
               <a href="#">Cultural Clubs</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-              <a href="/clubs/cultural/crescendo">Crescendo</a>
+              <a href="/club/crescendo">Crescendo</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
               <a href="/club/dtraxia">Dtraxia</a>
@@ -361,10 +361,10 @@ function swiper() {
               <a href="#">Events</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-              <a href="/events/tantrafiesta">Tantrafiesta</a>
+              <a href="https://www.tantrafiesta.in/">Tantrafiesta</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-              <a href="/events/abhivyakti">Abhivyakti</a>
+              <a href="https://www.abhivyaktifest.in/">Abhivyakti</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
               <a href="/events/kshitij">Kshitij</a>
@@ -414,19 +414,19 @@ function swiper() {
           `,
           admissions: `
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/admissions/undergraduate-btech">Undergraduate B.Tech</a>
+              <a href="admissions/undergraduate-btech">Undergraduate B.Tech</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/admissions/postgraduate">Postgraduate</a>
+              <a href="admissions/postgraduate">Postgraduate</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/admissions/ug-academic-rule-book">UG Academic Rule Book</a>
+              <a href="admissions/ug-academic-rule-book">UG Academic Rule Book</a>
             </h1>
             <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/admissions/pg-academic-rule-book">PG Academic Rule Book</a>
+              <a href="admissions/pg-academic-rule-book">PG Academic Rule Book</a>
             </h1>
               <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="/admissions/recruitment">Recruitment</a>
+              <a href="admissions/recruitment">Recruitment</a>
             </h1>
           `,
           alumni: `

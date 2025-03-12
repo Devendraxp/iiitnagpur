@@ -358,7 +358,7 @@ function nav() {
             <a href="/club/crispr">Crispr</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/clubs/technical/udhyam">Udhyam</a>
+            <a href="/club/udhyam">Udhyam</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
             <a href="/club/iotics">Iotics</a>
@@ -400,10 +400,10 @@ function nav() {
             <a href="#">Events</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/events/tantrafiesta">Tantrafiesta</a>
+            <a href="https://www.tantrafiesta.in/">Tantrafiesta</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/events/abhivyakti">Abhivyakti</a>
+            <a href="https://www.abhivyaktifest.in/">Abhivyakti</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
             <a href="/events/kshitij">Kshitij</a>
@@ -513,7 +513,7 @@ function nav() {
             <a href="/student/clinical-counselling">Clinical Counselling</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-            <a href="/student/scholarships">Scholarships</a>
+            <a href="/student/scholarship">Scholarships</a>
           </h1>
           <h1 class="lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
             <a href="/student/hostel">Hostel</a>
