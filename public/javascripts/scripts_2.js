@@ -351,9 +351,6 @@ function swiper() {
             <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
               <a href="/club/probe">Probe</a>
             </h1>
-            <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-              <a href="/club/eklavya">Eklavya</a>
-            </h1>
           </div>
         
           <div class="w-[30%]">
@@ -414,16 +411,16 @@ function swiper() {
           `,
           admissions: `
             <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="admissions/undergraduate-btech">Undergraduate B.Tech</a>
+              <a href="/admissions/undergraduate-btech">Undergraduate B.Tech</a>
             </h1>
             <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="admissions/postgraduate">Postgraduate</a>
+              <a href="/admissions/postgraduate">Postgraduate</a>
             </h1>
             <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="admissions/ug-academic-rule-book">UG Academic Rule Book</a>
+              <a href="/admissions/ug-academic-rule-book">UG Academic Rule Book</a>
             </h1>
             <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-              <a href="admissions/pg-academic-rule-book">PG Academic Rule Book</a>
+              <a href="/admissions/pg-academic-rule-book">PG Academic Rule Book</a>
             </h1>
          
           `,
