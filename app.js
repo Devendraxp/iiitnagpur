@@ -416,11 +416,19 @@ app.get("/more/:id", (req, res) => {
   res.render(`morePages/${id}`);
 });
 
-// Catch-all Route
-app.get("/:id", (req, res) => {
-  res.render("error404");
+
+// Add this catch-all middleware (for all non-existent routes)
+app.use((req, res) => {
+  res.status(404).render("error404");
 });
 
+// Add error handling middleware (for errors thrown in other routes)
+app.use((err, req, res, next) => {
+  console.error("Error:", err);
+  res.status(500).render("error404");
+});
+
+// Keep your existing app.listen code
 app.listen(PORT, () =>
   console.log(`server running on -> http://localhost:${PORT}`)
 );
