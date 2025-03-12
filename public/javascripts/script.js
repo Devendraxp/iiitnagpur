@@ -398,9 +398,6 @@ function nav() {
           <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
             <a href="/club/probe">Probe</a>
           </h1>
-          <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/club/eklavya">Eklavya</a>
-          </h1>
         </div>
       
         <div class="w-[30%]">
