@@ -200,7 +200,7 @@ function boxInfo() {
 
   detsButtons.forEach((button, index) => {
     button.addEventListener("click", function () {
-      console.log("Clicked:", index);
+  
       detsBoxes[index].classList.toggle("active"); // Toggle the corresponding dets-box
     });
   });
@@ -313,7 +313,7 @@ function nav() {
       });
 
       openBtn.addEventListener("click", () => {
-        console.log("fef");
+     
         menuAnimation.play();
       });
       document.addEventListener("click", (event) => {
@@ -472,9 +472,7 @@ function nav() {
           <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
             <a href="admissions/pg-academic-rule-book">PG Academic Rule Book</a>
           </h1>
-            <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-            <a href="admissions/recruitment">Recruitment</a>
-          </h1>
+       
         `,
         alumni: `
           <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
@@ -574,6 +572,9 @@ function nav() {
           </h1>
           <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
             <a href="/others/rti">RTI</a>
+          </h1>
+               <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
+            <a href="admissions/recruitment">Recruitment</a>
           </h1>
         `,
       };
@@ -765,68 +766,23 @@ function navMobile() {
 navMobile();
 
 function title() {
-  if(window.innerWidth > 425 ){
+ 
     gsap
     .timeline({ repeat: -1 }) // Infinite loop
     .to(".text-container", {
-      y: "-35%",
+      y: "-40%",
       duration: 1,
       ease: "power2.inOut",
       delay: 2,
     }) // Move 2nd h1 up
     .to(".text-container", {
-      y: "-75%",
-      duration: 1,
-      ease: "power2.inOut",
-      delay: 2,
-    }) // Move 3rd h1 up
-
-    gsap
-    .timeline({ repeat: -1 }) // Infinite loop
-    .to(".text-container2", {
-      y: "-35%",
-      duration: 1,
-      ease: "power2.inOut",
-      delay: 2,
-    }) // Move 2nd h1 up
-    .to(".text-container2", {
-      y: "-75%",
-      duration: 1,
-      ease: "power2.inOut",
-      delay: 2,
-    }) // Move 3rd h1 up
-  }
-  else{
-    gsap
-    .timeline({ repeat: -1 }) // Infinite loop
-    .to(".text-container", {
-      y: "-35%",
-      duration: 1,
-      ease: "power2.inOut",
-      delay: 2,
-    }) // Move 2nd h1 up
-    .to(".text-container", {
-      y: "-75%",
-      duration: 1,
-      ease: "power2.inOut",
-      delay: 2,
-    }) // Move 3rd h1 up
-
-    gsap
-    .timeline({ repeat: -1 }) // Infinite loop
-    .to(".text-container2", {
-      y: "-50%",
-      duration: 1,
-      ease: "power2.inOut",
-      delay: 2,
-    }) // Move 2nd h1 up
-    .to(".text-container2", {
       y: "-80%",
       duration: 1,
       ease: "power2.inOut",
       delay: 2,
     }) // Move 3rd h1 up
-  }
+
+  
 }
 title();
 
@@ -882,25 +838,31 @@ function announcement(){
   window.addEventListener('resize', handleResponsiveClass);  
 }
 announcement();
-
 const searchIcon = document.getElementById('searchIcon');
-    const searchForm = document.getElementById('searchForm');
-    const searchInput = searchForm.querySelector('input[name="q"]');
+const searchForm = document.getElementById('searchForm');
+const searchInput = searchForm.querySelector('input[name="q"]');
+const title2 = document.querySelector('.name'); // Get title2 element
 
-    searchIcon.addEventListener('click', function() {
-      // Toggle the active class to show or hide the search form
-      if (searchForm.classList.contains('active')) {
-        searchForm.classList.remove('active');
-      } else {
-        searchForm.classList.add('active');
-        searchInput.focus();
-      }
-    });
+searchIcon.addEventListener('click', function() {
+  if (searchForm.classList.contains('active')) {
+    searchForm.classList.remove('active');
+    if(window.innerWidth<1024)
+    title2.style.display = 'block'; // Show title2 when search is hidden
+  } else {
+    searchForm.classList.add('active');
+    searchInput.focus();
+    if(window.innerWidth<1024)
+    title2.style.display = 'none'; // Hide title2 when search is active
+  }
+});
+
 
     // Optionally, hide the search field if it loses focus and is empty
     searchInput.addEventListener('blur', function() {
       if (searchInput.value.trim() === '') {
         searchForm.classList.remove('active');
+        if(window.innerWidth<1024)
+        title2.style.display = 'block';
       }
     });
 
