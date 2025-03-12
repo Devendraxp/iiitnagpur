@@ -238,7 +238,7 @@
         <div
           class="flex md:flex-row flex-col justify-evenly border-b-2 border-t-2 border-black w-[90%] mx-auto py-10 my-10">
           <div class="pb-8 text-center category-heading cursor-pointer" data-category="research"
-            data-link="research?category=consultation">
+            data-link="research">
             <div class="flex text-center w-fit mx-auto">
               <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw]">Consultancy</h1>
             </div>
@@ -247,7 +247,7 @@
             </p>
           </div>
           <div class="pb-8 text-center category-heading cursor-pointer" data-category="research"
-            data-link="research?category=publications">
+            data-link="research?category=publication">
             <div class="flex text-center w-fit mx-auto">
               <h1 class="text-[#f26e32] font-bold md:text-[2vw] text-[6vw]">Publications</h1>
             </div>
@@ -439,7 +439,7 @@
 
           <div class="swiper mySwiper4">
             <div class="swiper-wrapper">
-              <% notification.forEach(notification=> { %>
+              <% notification.slice(0, 10).forEach(notification=> { %>
                 <div class="swiper-slide">
                   <div class="bg-zinc-100/80 w-full h-full mb-2 overflow-hidden rounded-md event-box">
                     <div class="w-full h-72">
@@ -458,10 +458,10 @@
                           Read Full Notification
                         </a>
                       </div>
-                      <% } %>
+                    <% } %>
                   </div>
                 </div>
-                <% }); %>
+              <% }); %>
             </div>
             <div class="swiper-pagination"></div>
           </div>
