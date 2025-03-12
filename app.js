@@ -300,11 +300,37 @@ app.get("/readMore/club", (req, res) => {
   res.render("readMore/club");
 });
 app.get("/rti/rtidetails", (req, res) => {
-  res.render("rti/rtidetails");
+  res.render("RTI/rtidetails");
 });
+
 app.get("/rti/rtiofficer", (req, res) => {
-  res.render("rti/rtiofficer");
+  res.render("RTI/rtiofficer");
 });
+
+app.get("/rti/others", (req, res) => {
+  res.render("RTI/others");
+});
+
+app.get("/rti/immoveable", (req, res) => {
+  res.render("RTI/Immoveable");
+});
+
+app.get("/rti/AnualReport", (req, res) => {
+  res.render("RTI/AnnualReport");
+});
+
+app.get("/rti/AnnualAccount", (req, res) => {
+  res.render("RTI/AnnualAccount");
+});
+
+app.get("/rti/Min_Meeting", (req, res) => {
+  res.render("RTI/Min_Meeting");
+});
+
+app.get("/rti/Rti_Reports", (req, res) => {
+  res.render("RTI/Rti_Reports");
+});
+
 
 app.get("/search", async (req, res) => {
   const query = req.query.q;
