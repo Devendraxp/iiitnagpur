@@ -289,6 +289,14 @@ footer h2:hover, footer i:hover {
   z-index: 10;
 }
 
+.swiper-button-next:after, .swiper-button-prev:after {
+  color: #00457b;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 5px 15px;
+  opacity: 70%;
+}
+
 .alumini {
   background-image: url("../images/index/grad12.avif");
 }/*# sourceMappingURL=style.css.map */
