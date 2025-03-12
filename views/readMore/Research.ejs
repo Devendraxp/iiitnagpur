@@ -240,48 +240,93 @@
                   <p class="text-lg text-gray-500">No research publications found.</p>
                 </div>
               <% } %>
+              
+              <!-- No results message for filtering -->
+              <div id="noResultsMsg" class="col-span-full text-center py-10" style="display: none;">
+                <p class="text-lg text-gray-500">No matching research publications found.</p>
+              </div>
           </div>
-      </div>
+        </div>
       </div>
     </div>
-    <%- include('../partials/footer') %>
-    
     <script>
-      // Initialize filters
-      document.addEventListener('DOMContentLoaded', function() {
-        const yearFilter = document.getElementById('yearFilter');
-        const deptFilter = document.getElementById('deptFilter');
-        const categoryFilter = document.getElementById('categoryFilter');
-        const items = document.querySelectorAll('.data-item');
+  // Initialize filters
+  document.addEventListener('DOMContentLoaded', function() {
+    const yearFilter = document.getElementById('yearFilter');
+    const deptFilter = document.getElementById('deptFilter');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const items = document.querySelectorAll('.data-item');
+    
+    // Get URL parameters or default to 'all'
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlYear = urlParams.get('year') || 'all';
+    const urlDept = urlParams.get('dept') || 'all';
+    const urlCategory = urlParams.get('category') || 'all';
+    
+    // Set initial filter values from URL
+    yearFilter.value = urlYear;
+    deptFilter.value = urlDept;
+    categoryFilter.value = urlCategory;
+    
+    // Filter function
+    function applyFilters() {
+      const selectedYear = yearFilter.value;
+      const selectedDept = deptFilter.value;
+      const selectedCategory = categoryFilter.value;
+      
+      // Update URL parameters
+      const params = new URLSearchParams();
+      if (selectedYear !== 'all') params.set('year', selectedYear);
+      if (selectedDept !== 'all') params.set('dept', selectedDept);
+      if (selectedCategory !== 'all') params.set('category', selectedCategory);
+      
+      const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+      history.replaceState({}, '', newUrl);
+      
+      let visibleCount = 0;
+      
+      items.forEach(item => {
+        const itemYear = item.getAttribute('data-year');
+        const itemDept = item.getAttribute('data-dept');
+        const itemCategory = item.getAttribute('data-category');
         
-        // Filter function
-        function applyFilters() {
-          const selectedYear = yearFilter.value;
-          const selectedDept = deptFilter.value;
-          const selectedCategory = categoryFilter.value;
-          
-          items.forEach(item => {
-            const itemYear = item.getAttribute('data-year');
-            const itemDept = item.getAttribute('data-dept');
-            const itemCategory = item.getAttribute('data-category');
-            
-            const yearMatch = selectedYear === 'all' || itemYear === selectedYear;
-            const deptMatch = selectedDept === 'all' || itemDept === selectedDept;
-            const categoryMatch = selectedCategory === 'all' || itemCategory === selectedCategory;
-            
-            if (yearMatch && deptMatch && categoryMatch) {
-              item.style.display = '';
-            } else {
-              item.style.display = 'none';
-            }
-          });
+        const yearMatch = selectedYear === 'all' || itemYear === selectedYear;
+        const deptMatch = selectedDept === 'all' || itemDept === selectedDept;
+        
+        // Special handling for publication category
+        let categoryMatch = selectedCategory === 'all';
+        if (!categoryMatch) {
+          if (selectedCategory === 'publication') {
+            categoryMatch = itemCategory === 'journal' || itemCategory === 'book' || itemCategory === 'conference';
+          } else {
+            categoryMatch = itemCategory === selectedCategory;
+          }
         }
         
-        // Add event listeners to filters
-        yearFilter.addEventListener('change', applyFilters);
-        deptFilter.addEventListener('change', applyFilters);
-        categoryFilter.addEventListener('change', applyFilters);
+        if (yearMatch && deptMatch && categoryMatch) {
+          item.style.display = '';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
       });
-    </script>
+      
+      // Show message if no items are visible
+      const noResultsMsg = document.getElementById('noResultsMsg');
+      if (noResultsMsg) {
+        noResultsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+    }
+    
+    // Add event listeners to filters
+    yearFilter.addEventListener('change', applyFilters);
+    deptFilter.addEventListener('change', applyFilters);
+    categoryFilter.addEventListener('change', applyFilters);
+    
+    // Apply filters on page load
+    applyFilters();
+  });
+</script>
+
   </body>
   <%- include('../partials/tail2') %>

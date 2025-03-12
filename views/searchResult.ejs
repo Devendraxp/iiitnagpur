@@ -45,7 +45,7 @@
                             <% if (member.research && member.research.areaofResearch && member.research.areaofResearch.length > 0) { %>
                             <p class="text-sm text-gray-700 mb-2"><strong>Research Areas:</strong> <%= member.research.areaofResearch.slice(0, 2).join(', ') %><%= member.research.areaofResearch.length > 2 ? '...' : '' %></p>
                             <% } %>
-                            <a href="/<%= member.department %>/Profile/<%= member._id %>" class="text-blue-600 hover:underline text-sm font-medium">View Profile</a>
+                            <a href="/cse/Profile/<%= member._id %>" class="text-blue-600 hover:underline text-sm font-medium">View Profile</a>
                         </div>
                     </div>
                     <% }); %>
