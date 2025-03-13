@@ -784,7 +784,7 @@ function title() {
       gsap
     .timeline({ repeat: -1 }) // Infinite loop
     .to(".text-container", {
-      y: "-42%",
+      y: "-45%",
       duration: 1,
       ease: "power2.inOut",
       delay: 2,

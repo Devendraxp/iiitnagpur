@@ -275,10 +275,10 @@ Programs
                     <img src="<%= item.image %>" alt="<%= item.title %>" class="w-full h-full object-cover" />
                   </div>
                   <div class="w-full h-fit">
-                    <h1 class="font-bold pt-4 pb-2 md:text-[1.1vw] text-[3.5vw] leading-none">
+                    <h1 class="pt-4  md:text-[1.1vw] text-[3.5vw] leading-none">
                       <%= item.title %>
                     </h1>
-                    <p class="text-blue-500 md:text-[1.2vw] text-[3vw] hover:text-[#f26e32] hover:underline">
+                    <p class="text-[#f26e32] md:text-[1.2vw] text-[3vw] hover:text-[#f26e32] hover:underline">
                       <a href="/research" target="_blank">checkout</a>
                     </p>
                   </div>
@@ -380,17 +380,20 @@ Programs
               class="main font-bold text-[#00457b] text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase pt-2 md:pb-5 uppercase">
               Flagship Events</h1>
           </div>
-          <div class="flex flex-wrap  justify-evenly gap-6 px-10 mt-6 text-center">
+          <div class="flex flex-wrap  justify-evenly gap-6 px-10 mt-6 text-[#00457b] ">
   
             <!-- Abhivyakti -->
-            <a href="https://www.abhivyaktifest.in/" target="_blank" class="w-64 md:w-56 lg:w-64">
+            <a href="https://www.abhivyaktifest.in/" target="_blank" class="w-64 md:w-56 lg:w-64 ">
                 <div class="w-full rounded-md overflow-hidden">
                     <div class="w-full md:h-64 h-full">
                         <img src="../images/index/abhivyakti.jpg" alt="Abhivyakti" class="w-full h-full object-contain" />
                     </div>
-                    <h1 class="font-bold pt-4 pb-2 md:text-lg text-sm leading-none">
-                        Abhivyakti
-                    </h1>
+                  <div class="bg-white border-l-[1px] border-r-[1px] border-b-[1px] border-[#00457b]  rounded-bl-md rounded-br-md ">
+                    <h1 class="font-semibold pt-4 px-2 md:text-3xl text-sm uppercase ">
+                      Abhivyakti
+                  </h1>
+                  <h1 class=" pb-4 px-2 md:text-lg text-sm tracking-tight">Cultural Fest</h1>
+                  </div>
                 </div>
             </a>
         
@@ -400,33 +403,42 @@ Programs
                     <div class="w-full md:h-64 h-full">
                         <img src="../images/index/tantrafiesta.jpg" alt="Tantrafiesta" class="w-full h-full object-contain" />
                     </div>
-                    <h1 class="font-bold pt-4 pb-2 md:text-lg text-sm leading-none">
+                  <div class="bg-white border-l-[1px] border-r-[1px] border-b-[1px] border-[#00457b]  rounded-bl-md rounded-br-md ">
+                      <h1 class="font-semibold pt-4 px-2 md:text-3xl text-sm uppercase ">
                         Tantrafiesta
                     </h1>
+                    <h1 class=" pb-4 px-2 md:text-lg text-sm tracking-tight">Tech Fest</h1>
+                    </div>
                 </div>
             </a>
         
             <!-- Kshitij -->
-            <a href="/others/Kshitij" target="_blank" class="w-64 md:w-56 lg:w-64">
+            <a href="/others/Kshitij" target="_blank" class="w-64 md:w-56 lg:w-64 ">
                 <div class="w-full rounded-md overflow-hidden">
                     <div class="w-full md:h-64 h-full">
                         <img src="../images/index/kshitij.jpg" alt="Kshitij" class="w-full h-full object-contain" />
                     </div>
-                    <h1 class="font-bold pt-4 pb-2 md:text-lg text-sm leading-none">
+                    <div class="bg-white border-l-[1px] border-r-[1px] border-b-[1px] border-[#00457b]  rounded-bl-md rounded-br-md ">
+                            <h1 class="font-semibold pt-4 px-2 md:text-3xl text-sm uppercase ">
                         Kshitij
                     </h1>
+                    <h1 class=" pb-4 px-2 md:text-lg text-sm tracking-tight">Sports Fest</h1>
+                    </div>
                 </div>
               </a>
         
             <!-- E-Summit -->
             <a href="https://esummitiiitn.in/" target="_blank" class="w-64 md:w-56 lg:w-64">
                 <div class="w-full rounded-md overflow-hidden">
-                    <div class="w-full md:h-64 h-full">
+                    <div class="w-full md:h-64 h-full ">
                         <img src="../images/index/e-summit.png" alt="E-Summit" class="w-full h-full object-contain" />
                     </div>
-                    <h1 class="font-bold pt-4 pb-2 md:text-lg text-sm leading-none">
+                  <div class="bg-white border-l-[1px] border-r-[1px] border-b-[1px] border-[#00457b]  rounded-bl-md rounded-br-md ">
+                      <h1 class="font-semibold pt-4 px-2 md:text-3xl text-sm uppercase ">
                         E-Summit
                     </h1>
+                    <h1 class=" pb-4 px-2 md:text-lg text-sm tracking-tight">Entrepreneurship Fest</h1>
+                    </div>
                 </div>
             </a>
         
@@ -457,7 +469,7 @@ Programs
                     </h1>
                     <% if (notification.link) { %>
                       <div class=" pb-2">
-                        <a href="<%= notification.link %>" target="_blank" class="text-blue-500 hover:text-[#f26e32] hover:underline">
+                        <a href="/readMore" target="_blank" class="text-blue-500 hover:text-[#f26e32] hover:underline">
                           Read Full Notification
                         </a>
                       </div>
@@ -544,7 +556,7 @@ Programs
           </div>
         </div>
 
-        <div id="page11" class="w-full h-full px-4 pt-10 pb-12 alumini">
+        <div id="page11" class="w-full  px-4 pt-10 pb-12 alumini">
           <h1
             class="main2 font-bold text-white text-center lg:text-[3vw] md:text-[4vw] text-[6vw] mb-2 uppercase  pb-6">
             STUDENT'S TESTIMONIAL
