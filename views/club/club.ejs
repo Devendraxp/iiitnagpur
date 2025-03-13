@@ -45,10 +45,10 @@
       Events Organised
     </h1>
     <div class="lg:w-[90vw] lg:h-[80vh] w-[95%] h-[50%] mx-auto">
-      <div class="swiper mySwiper5 relative">
+      <div class="swiper mySwiper5 relative overflow-hidden">
         <div class="swiper-wrapper">
           <% events.forEach(function(event){ %>
-            <div class="swiper-slide relative">
+            <div class="swiper-slide relative overflow-hidden">
               <div
                 class="dets-box bg-[black]/60 md:w-[300px] md:h-[300px] w-[150px] h-[150px] absolute lg:bottom-[40px] bottom-[25px] lg:right-[50px] right-[30px] z-[99] text-white p-[10px]">
                 <p class="md:py-8 md:py-2 md:text-[16px] text-[7.5px]">
@@ -60,7 +60,7 @@
                 class="dets flex items-center justify-center lg:w-[60px] w-[40px] lg:h-[60px] h-[40px] rounded-full bg-[black]/90 absolute lg:bottom-[30px] md:bottom-[15px] bottom-[10px] lg:right-[40px] md:right-[15px] right-[10px] z-[100] text-white">
                 <i class="ri-lightbulb-line bulb text-white lg:text-[25px] text-[15px]"></i>
               </div>
-              <img class="w-full h-full object-fit" src="<%= event.images[0] %>" alt="<%= event.title %>" loading="lazy"/>
+              <img class="w-full h-full object-cover" src="<%= event.images[0] %>" alt="<%= event.title %>" loading="lazy"/>
             </div>
           <% }) %>
         </div>
