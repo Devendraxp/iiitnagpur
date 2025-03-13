@@ -1,111 +1,141 @@
 <%- include('../partials/head2') %>
 
-    <body>
-        <%- include('../partials/nav') %>
-            <div class="bgin w-full bg-white text-[#00457b]">
-                <div class="w-full lg:h-[100px] md:h-[70px] h-[85px]"></div>
-                <div
-                    class="routes w-full px-6 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#00457b] py-3 md:py-5">
-                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
-                        href="#">Home <i class="ri-arrow-right-s-line text-md"></i>
-                    </a>
-                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
-                        href="#">Others <i class="ri-arrow-right-s-line text-md"></i>
-                    </a>
-                    <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
-                        href="#">B.TECH
-                    </a>
-                </div>
-                <!-- Main Content -->
-                <div class="border-4 border-[#00457b] md:m-10 m-8 pb-10 text-[#00457b]">
-                    <div class="px-4 md:px-20  mt-8 md:mt-16 mb-8 md:mb-10">
-                        <div class="content max-w-6xl mx-auto ">
-                            <!-- Title -->
-                            <h2 class="text-2xl sm:text-3xl uppercase font-bold text-[#00457b]">B.Tech. Degree Programs
-                            </h2>
-                            <div class="w-full h-[2px] bg-[#00457b] mt-2"></div>
+<body class="bg-gray-100 text-[#00457b]">
+    <%- include('../partials/nav') %>
 
-                         <p class="mt-4 text-lg uppercase font-bold text-[#00457b]" >Institute offers B.Tech. (Four Year) degree programme in:</p>
-                           <!-- Departments Section -->
-<div class="mt-4 space-y-10">
+    <div class="w-full bg-white">
+        <!-- Spacer for fixed navbar -->
+        <div class="w-full lg:h-[100px] md:h-[70px] h-[85px]"></div>
 
-    <!-- Computer Science & Engineering -->
-    <div>
-        <h3 class="text-xl sm:text-2xl font-bold text-[#00457b] mb-4">Department of Computer Science & Engineering</h3>
-        
+        <!-- Breadcrumbs -->
+        <div class="routes w-full px-6 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#00457b] py-3 md:py-5">
+            <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase text-white transition duration-200"
+                href="/">Home <i class="ri-arrow-right-s-line text-md"></i>
+            </a>
+            <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase text-white transition duration-200"
+                href="/admissions/undergraduate">Others <i class="ri-arrow-right-s-line text-md"></i>
+            </a>
+            <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase text-white transition duration-200"
+                href="#">B.TECH
+            </a>
+        </div>
 
-        <ul class="list-disc list-inside text-gray-700 space-y-4">
-            <li>
-                <strong>B.Tech. Computer Science & Engineering</strong>
-                <p class="mt-1 text-gray-700">
-                    Bachelor of Technology in Computer Science & Engineering is provided at IIIT Nagpur, computer science students follow an integrated curriculum that includes topics such as programming languages, computer architecture, operating systems, and theoretical foundation of computer science and mathematics. Artificial intelligence, natural language processing, computational complexity and algorithm analysis, computer communications, combinatorial methods, databases, optimization, and soft skills, etc. are among the courses covered in upper-level of curriculum. Students get the flexibility in a fast changing area as a result of this integrated approach; they are prepared to engage in both applied and theoretical breakthroughs in computer science.
-                </p>
-            </li>
-            
-            <li>
-                <strong>B.Tech. CSE (Artificial Intelligence & Machine Learning)</strong>  
-                <a href="#" class="text-[#f26e32] hover:underline">(Click Here for Scheme)</a>
-                <p class="mt-1 text-gray-700">
-                    A Bachelor of Technology in Computer Science Engineering (Artificial Intelligence & Machine Learning) is one of the most prestigious degrees available in this decade. The goal of the course is to build a solid foundation by using the ideas and technology of Artificial Intelligence, which include logic, knowledge representation, probabilistic models, and machine learning.
-<br><br>
-                    While artificial intelligence aims to simulate human intellect and behaviour, machine learning is a subset of AI that allows a computer system to make predictions or make judgments based on previous data without having to be explicitly programmed.
-                    <br><br>
-                    Students will learn how to analyse, create, and build knowledge-based and expert systems, as well as Artificial Life and robots, and systems that employ neural networks.
-                    <br><br>
-                    According to study, roughly 30% of all B2B organisations will use artificial intelligence to improve at least one of their sales processes. This shines light on a critical facet of this field: the market's job requirement. In relative to other traditional engineering professions, a B. Tech. in the subject should yield substantially larger returns.
-                </p>
-            </li>
+        <!-- Main Content -->
+        <div class="border-4 border-[#00457b] md:m-10 m-8 pb-10 text-[#00457b] bg-white shadow-xl rounded-lg overflow-hidden">
+            <div class="px-6 md:px-20 mt-8 md:mt-16 mb-8 md:mb-10">
+                <div class="content max-w-6xl mx-auto">
+                    <!-- Title -->
+                    <h2 class="text-3xl sm:text-4xl uppercase font-extrabold text-[#00457b] tracking-wide">B.Tech. Degree Programs</h2>
+                    <div class="w-24 h-[4px] bg-[#f26e32] mt-3"></div>
 
-            <li>
-                <strong>B.Tech. CSE (Data Science & Analytics)</strong>  
-                <a href="#" class="text-[#f26e32] hover:underline">(Click Here for Scheme)</a>
-                <p class="mt-1 text-gray-700">
-                    This curriculum is aimed to teach students the fundamentals of computer science and data analytics. It also teaches problem-solving and engineering abilities via the use of computational approaches. Students will get the chance to study ideas, tools, and approaches for modelling, analysing, and discovering usable information for a variety of real-world challenges. They are also urged to provide solutions that use appropriate data visualisation approaches to aid decision-making. Students will gain programming, statistical, mathematical reasoning, machine learning, knowledge finding, communication, and visualisation abilities as a result of this curriculum.To fulfil its goal, the department has highly skilled faculty, outstanding laboratories, and learning materials. The programmes are tailored to meet the industry's ever-changing needs and demands. The emphasis is on comprehensive learning and motivating students to participate meaningfully at all levels.
-                </p>
-            </li>
+                    <p class="mt-6 text-lg uppercase font-semibold text-[#00457b]">The Institute offers B.Tech. (Four Year) degree programs in:</p>
 
-            <li>
-                <strong>B.Tech. CSE (Human Computer Interaction & Gaming Technology)</strong>  
-                <a href="#" class="text-[#f26e32] hover:underline">(Click Here for Scheme)</a>
-                <p class="mt-1 text-gray-700">
-                    Human-Computer Interaction (HCI) is a multidimensional subject of study that focuses on the design of computer technology, specifically the interaction and interface between humans (users) and devices and systems that include or embed computing. HCI researches how people use technology artefacts as well as how those artefacts may be made to make them easier to use. To better understand and enhance the design, implementation, application, analysis, and assessment of interactive systems, computer scientists engage with specialists in engineering, psychology, linguistics, and social and system organisation in HCI research.
-<br><br>
-                    Computer games have progressed beyond their roots as amusement. Educational games, therapeutic games, simulation games, and gamification of utilitarian applications have all been used by researchers and practitioners in novel ways. Individuals and society gain from gaming researchers producing games and using gaming ideas. In the study of games, human-computer interaction (HCI) is crucial. HCI specialists aid in the design and development of better games by evaluating user characteristics, interactions during gaming, and behavioural consequences of gameplay.   </p>
-            </li>
-        </ul>
-    </div>
+                    <!-- Departments Section -->
+                    <div class="mt-8 space-y-12">
 
-    <!-- Electronics & Communication Engineering -->
-    <div>
-        <h3 class="text-xl sm:text-2xl font-bold text-[#00457b] mb-4">Department of Electronics & Communication Engineering</h3>
-        
+                        <!-- Department Card -->
+                        <div class="p-6 bg-white shadow-lg rounded-lg hover:shadow-2xl transition duration-300">
+                            <h3 class="text-2xl font-bold text-[#00457b] mb-4 border-l-4 border-[#f26e32] pl-3">Department of Computer Science & Engineering</h3>
 
-        <ul class="list-disc list-inside text-gray-700 space-y-4">
-            <li>
-                <strong>B.Tech. Electronics & Communication Engineering</strong>
-                <p class="mt-1 text-gray-700">
-                    Department of Electronics and Communication offers a Bachelor of Technology in Electronics and Communication Engineering. Spherical development of students is achieved by exposing them to the latest curriculum that includes flavors of Embedded systems, Internet of Things, Communication technologies, Control systems, Image and Computer Vision, CMOS design, Machine learning, Artificial Intelligence, etc. We always try to cope with the rapidly changing technologies by updating our curriculum every semester. We conduct rigorous lab sessions and projects to strengthen concepts and provide hands-on experience.
-                </p>
-            </li>
+                            <ul class="space-y-6">
+                                <li class="border-l-4 border-gray-300 pl-4">
+                                    <strong class="text-xl font-bold text-[#00457b] flex items-center">
+                                        <i class="ri-graduation-cap-fill text-[#f26e32] mr-2"></i> B.Tech. Computer Science & Engineering
+                                    </strong>
+                                    
+                                    <a href="https://res.cloudinary.com/dax4biuwf/image/upload/v1741842321/iiitn/c4d63v1uq2nxirck00zm.pdf"
+                                        class="text-[#f26e32] hover:underline font-semibold" target="_blank">(Click Here for syllabus)</a>
+                                    <p class="mt-2 text-gray-600 leading-relaxed">
+                                        Bachelor of Technology in Computer Science & Engineering is provided at IIIT Nagpur, computer science students follow an integrated curriculum that includes topics such as programming languages, 
+                                        computer architecture, operating systems, and theoretical foundation of computer science and mathematics. Artificial intelligence, natural language processing, computational complexity and algorithm analysis, computer communications, combinatorial methods, databases, optimization, and soft skills, etc. are among the courses covered in upper-level of curriculum. Students get the flexibility in a fast changing area as a result of this integrated approach; they are prepared to engage in both applied and theoretical breakthroughs in computer science.
 
-            <li>
-                <strong>B.Tech. ECE (Internet of Things)</strong>  
-                <a href="#" class="text-[#f26e32] hover:underline">(Click Here for Scheme)</a>
-                <p class="mt-1 text-gray-700">
-                    Internet of Things (IoT) applications enormously increased in the past few years since it has a vast scope of usage. IoT in general refers to a network of internet-connected devices that find various applications in engineering and day to day life. When objects are interconnected across the world, it allows people or things using those objects to be connected anytime. As an example, from urban transport to medical devices, home electronics and appliances to cars, heart monitoring implants and many more, all connected things ease human life.
-<br><br>
-B.Tech course in ECE (Internet of Things (IoT)) aims to equip students with a solid theoretical foundation, systematic professional knowledge and strong practical skills in the IoT field. Through this program, the students shall have a thorough knowledge of electronic engineering, computer science and a firm foundation into wireless communication, and computer networks. Moreover, deep knowledge on IoT devices, systems and networks is also included. The students will develop strong skills in sensors & instrumentation, chip-design, and privacy & security of IoT.
-                </p>
-            </li>
-        </ul>
-    </div>
+                                    </p>
+                                </li>
 
-</div>
+                                <li class="border-l-4 border-gray-300 pl-4">
+                               
+                                    <strong class="text-xl font-bold text-[#00457b] flex items-center">
+                                        <i class="ri-graduation-cap-fill text-[#f26e32] mr-2"></i> B.Tech. CSE (Artificial Intelligence & Machine Learning)
+                                    </strong>
+                                    <a href="https://res.cloudinary.com/dax4biuwf/image/upload/v1741841873/iiitn/q7jqt0fv1z6pare1mzwc.pdf"
+                                        class="text-[#f26e32] hover:underline font-semibold" target="_blank">(Click Here for syllabus)</a>
+                                    <p class="mt-2 text-gray-600 leading-relaxed">
+                                        A Bachelor of Technology in Computer Science Engineering (Artificial Intelligence & Machine Learning) is one of the most prestigious degrees available in this decade. The goal of the course is to build a solid foundation by using the ideas and technology of Artificial Intelligence, which include logic, knowledge representation, probabilistic models, and machine learning.
 
+                                        While artificial intelligence aims to simulate human intellect and behaviour, machine learning is a subset of AI that allows a computer system to make predictions or make judgments based on previous data without having to be explicitly programmed.
+                                        <br><br>
+                                        
+                                        Students will learn how to analyse, create, and build knowledge-based and expert systems, as well as Artificial Life and robots, and systems that employ neural networks.
+                                        
+                                        According to study, roughly 30% of all B2B organisations will use artificial intelligence to improve at least one of their sales processes. This shines light on a critical facet of this field: the market's job requirement. In relative to other traditional engineering professions, a B. Tech. in the subject should yield substantially larger returns.
+                                    </p>
+                                </li>
+                                <li class="border-l-4 border-gray-300 pl-4">
+                                    <strong class="text-xl font-bold text-[#00457b] flex items-center">
+                                    <i class="ri-graduation-cap-fill text-[#f26e32] mr-2"></i> B. Tech. CSE (Data Science & Analytics)
+                                </strong>
+                                    <a href="https://res.cloudinary.com/dax4biuwf/image/upload/v1741841960/iiitn/qeqtmedfbzw2jfpophgg.pdf"
+                                        class="text-[#f26e32] hover:underline font-semibold" target="_blank">(Click Here for syllabus)</a>
+                                    <p class="mt-2 text-gray-600 leading-relaxed">
+                                        This curriculum is aimed to teach students the fundamentals of computer science and data analytics. It also teaches problem-solving and engineering abilities via the use of computational approaches. Students will get the chance to study ideas, tools, and approaches for modelling, analysing, and discovering usable information for a variety of real-world challenges.
+                                         They are also urged to provide solutions that use appropriate data visualisation approaches to aid decision-making. <br><br>Students will gain programming, statistical, mathematical reasoning, machine learning, knowledge finding, communication, and visualisation abilities as a result of this curriculum.To fulfil its goal, the department has highly skilled faculty, outstanding laboratories, and learning materials. The programmes are tailored to meet the industry's ever-changing needs and demands. The emphasis is on comprehensive learning and motivating students to participate meaningfully at all levels.
+               </p>
+                                </li>
+                                <li class="border-l-4 border-gray-300 pl-4">
+                                    <strong class="text-xl font-bold text-[#00457b] flex items-center">
+                                        <i class="ri-graduation-cap-fill text-[#f26e32] mr-2"></i>B. Tech. CSE (Human Computer Interaction & Gaming Technology)
+                                    </strong>
+                                    
+                                    
+                                    <a href="https://res.cloudinary.com/dax4biuwf/image/upload/v1741842083/iiitn/gytq9hlfhjkbfbukthh8.pdf"
+                                        class="text-[#f26e32] hover:underline font-semibold" target="_blank">(Click Here for syllabus)</a>
+                                    <p class="mt-2 text-gray-600 leading-relaxed">
+                                        Human-Computer Interaction (HCI) is a multidimensional subject of study that focuses on the design of computer technology, specifically the interaction and interface between humans (users) and devices and systems that include or embed computing. HCI researches how people use technology artefacts as well as how those artefacts may be made to make them easier to use. To better understand and enhance the design, implementation, application, analysis, and assessment of interactive systems, computer scientists engage with specialists in engineering, psychology, linguistics, and social and system organisation in HCI research.
+                                        <br><br>
+
+                                        Computer games have progressed beyond their roots as amusement. Educational games, therapeutic games, simulation games, and gamification of utilitarian applications have all been used by researchers and practitioners in novel ways. Individuals and society gain from gaming researchers producing games and using gaming ideas. In the study of games, human-computer interaction (HCI) is crucial. HCI specialists aid in the design and development of better games by evaluating user characteristics, interactions during gaming, and behavioural consequences of gameplay.
+               </p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Electronics & Communication Engineering -->
+                        <div class="p-6 bg-white shadow-lg rounded-lg hover:shadow-2xl transition duration-300">
+                            <h3 class="text-2xl font-bold text-[#00457b] mb-4 border-l-4 border-[#f26e32] pl-3">Department of Electronics & Communication Engineering</h3>
+
+                            <ul class="space-y-6">
+                                <li class="border-l-4 border-gray-300 pl-4">
+                                    <strong class="text-xl font-bold text-[#00457b] flex items-center">
+                                        <i class="ri-graduation-cap-fill text-[#f26e32] mr-2"></i>B.Tech. Electronics & Communication Engineering
+                                    </strong>
+                                    <a href="https://res.cloudinary.com/dax4biuwf/image/upload/v1741844449/iiitn/gyficwpgzsnbymiasqjq.pdf"
+                                        class="text-[#f26e32] hover:underline font-semibold" target="_blank">(Click Here for syllabus)</a>
+                                    <p class="mt-2 text-gray-600 leading-relaxed">
+                                        Department of Electronics and Communication offers a Bachelor of Technology in Electronics and Communication Engineering. Spherical development of students is achieved by exposing them to the latest curriculum that includes flavors of Embedded systems, Internet of Things, Communication technologies, Control systems, Image and Computer Vision, CMOS design, Machine learning, Artificial Intelligence, etc. We always try to cope with the rapidly changing technologies by updating our curriculum every semester. We conduct rigorous lab sessions and projects to strengthen concepts and provide hands-on experience.
+                                    </p>
+                                </li>
+
+                                <li class="border-l-4 border-gray-300 pl-4">
+                                    <strong class="text-xl font-bold text-[#00457b] flex items-center">
+                                        <i class="ri-graduation-cap-fill text-[#f26e32] mr-2"></i>B.Tech. ECE (Internet of Things)
+                                    </strong>
+                                    <a href="https://res.cloudinary.com/dax4biuwf/image/upload/v1741842048/iiitn/j6ad9a5urttexmg6ogmj.pdf"
+                                        class="text-[#f26e32] hover:underline font-semibold" target="_blank">(Click Here for syllabus)</a>
+                                    <p class="mt-2 text-gray-600 leading-relaxed">
+                                        Internet of Things (IoT) applications enormously increased in the past few years since it has a vast scope of usage. IoT in general refers to a network of internet-connected devices that find various applications in engineering and day to day life. When objects are interconnected across the world, it allows people or things using those objects to be connected anytime. As an example, from urban transport to medical devices, home electronics and appliances to cars, heart monitoring implants and many more, all connected things ease human life.
+
+                                       <br><br> B.Tech course in ECE (Internet of Things (IoT)) aims to equip students with a solid theoretical foundation, systematic professional knowledge and strong practical skills in the IoT field. Through this program, the students shall have a thorough knowledge of electronic engineering, computer science and a firm foundation into wireless communication, and computer networks. Moreover, deep knowledge on IoT devices, systems and networks is also included. The students will develop strong skills in sensors & instrumentation, chip-design, and privacy & security of IoT.
+                                    </p>
+                                </li>
+                            </ul>
                         </div>
 
                     </div>
                 </div>
-                <%- include('../partials/footer') %>
-    </body>
-    <%- include('../partials/tail2') %>
+            </div>
+        </div>
+
+        <%- include('../partials/footer') %>
+    </div>
+</body>
+<%- include('../partials/tail2') %>

@@ -1,62 +1,80 @@
 <%- include('../partials/head2') %> 
-  <body>
-    <%- include('../partials/nav') %> 
-    <div class="bgin pb-20 w-full min-h-screen bg-white text-[#00457b]">
-      <div class="w-full lg:h-[100px] md:h-[70px] h-[85px]"></div>
-   
+<body>
+  <%- include('../partials/nav') %> 
+  <div class="pb-20 w-full min-h-screen bg-white text-[#00457b]">
+    
+    <!-- Spacer -->
+    <div class="w-full lg:h-[100px] md:h-[70px] h-[85px]"></div>
+    
+    <!-- Breadcrumb Navigation -->
+    <div class="w-full bg-[#00457b] py-3 md:py-5 px-6 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4">
+      <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase text-white" href="/">
+        Home <i class="ri-arrow-right-s-line text-md"></i>
+      </a>
+      <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase text-white" href="/">
+        Student <i class="ri-arrow-right-s-line text-md"></i>
+      </a>
+      <a class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase text-white" href="/student/fees">
+        Fees
+      </a>
+    </div>
 
-      <div class="mainContent w-full bg-zinc-100/30">
-        <div
-          class="routes w-full px-6 md:px-20 lg:px-44 flex flex-wrap items-center gap-2 md:gap-4 bg-[#00457b] py-3 md:py-5"
-        >
-          <a
-            class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
-            href="/"
-            >Home <i class="ri-arrow-right-s-line text-md"></i>
+    <!-- Main Content Section -->
+    <div class="max-w-5xl mx-auto mt-10 mb-10 px-6 sm:px-12 md:px-20">
+
+      <!-- Title Section -->
+      <h2 class="text-2xl md:text-3xl uppercase font-extrabold border-b-4 border-[#f26e32] inline-block pb-2">
+        Fee Structure
+      </h2>
+
+      <!-- Higher Semester Fees -->
+      <div class="mt-8 md:mt-12">
+        <h3 class="text-lg md:text-2xl font-semibold">Higher Semester Fees Details:</h3>
+      </div>
+
+      <!-- Fees Details -->
+      <div class="mt-8 space-y-6">
+        <div class="flex justify-between items-center border p-4 rounded-lg shadow-sm hover:shadow-md transition">
+          <h3 class="text-md md:text-xl font-semibold">Academic Fees</h3>
+          <a class="text-[#f26e32] font-medium text-md md:text-lg hover:underline" 
+            href="https://res.cloudinary.com/dax4biuwf/image/upload/v1741530303/iiitn/hfjrvansk4gvy8l3rntv.pdf">
+            View Details →
           </a>
-          <a
-            class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
-            href="/"
-            >Student <i class="ri-arrow-right-s-line text-md"></i>
-          </a>
-          <a
-          class="text-xs md:text-sm font-medium hover:text-[#f26e32] uppercase inline-block text-white"
-          href="/student/fees"
-          >FEES
-        </a>
         </div>
 
-      <!-- Content Section -->
-      <div class="border-4 border-[#00457b] md:m-10 m-8 pb-10">
-      <div class="max-w-5xl mx-auto px-6 sm:px-12 md:px-20 mt-8 md:mt-14 mb-8 md:mb-10">
-        <!-- Fees Section -->
-        <h2 class="text-xl sm:text-2xl uppercase font-bold">Fees</h2>
-        <div class="w-full h-[1px] bg-gray-300 mt-2"></div>
-        
-        <h3 class="mt-4 sm:mt-8 text-md md:text-2xl font-bold">For Higher Semester Fees Details :-</h3>
-
-        <div class="mt-10 space-y-5">
-          <h3 class="text-md md:text-2xl font-bold">
-            Academic Fees Details : <a class="text-[#f26e32] font-regular hover:underline" href="https://res.cloudinary.com/dax4biuwf/image/upload/v1741530303/iiitn/hfjrvansk4gvy8l3rntv.pdf">Click Here</a>
-          </h3>
-          <h3 class="text-md md:text-2xl font-bold">
-            Hostel Fees Details : <a class="text-[#f26e32] font-regular hover:underline" href="https://res.cloudinary.com/dax4biuwf/image/upload/v1741530317/iiitn/g2uxnshktiaxnrf1cw5l.pdf">Click Here</a>
-          </h3>
-        </div>
-
-        <h3 class="mt-10 text-md md:text-2xl font-bold">Payment Link :- </h3>
-
-        <div class="mt-5 space-y-5">
-          <h3 class="text-md md:text-2xl font-bold">
-            Academic : <a class="text-[#f26e32] font-regular hover:underline" href="/student/academic-payment">Click Here</a>
-          </h3>
-          <h3 class="text-md md:text-2xl font-bold">
-            Hostel : <a class="text-[#f26e32] font-regular hover:underline" href="/student/hostel-payment">Click Here</a>
-          </h3>
+        <div class="flex justify-between items-center border p-4 rounded-lg shadow-sm hover:shadow-md transition">
+          <h3 class="text-md md:text-xl font-semibold">Hostel Fees</h3>
+          <a class="text-[#f26e32] font-medium text-md md:text-lg hover:underline" 
+            href="https://res.cloudinary.com/dax4biuwf/image/upload/v1741530317/iiitn/g2uxnshktiaxnrf1cw5l.pdf">
+            View Details →
+          </a>
         </div>
       </div>
+
+      <!-- Payment Links -->
+      <div class="mt-10">
+        <h3 class="text-lg md:text-2xl font-semibold">Payment Links:</h3>
+      </div>
+
+      <div class="mt-5 space-y-6">
+        <div class="flex justify-between items-center border p-4 rounded-lg shadow-sm hover:shadow-md transition">
+          <h3 class="text-md md:text-xl font-semibold">Academic Payment</h3>
+          <a class="text-[#f26e32] font-medium text-md md:text-lg hover:underline" href="/student/academic-payment">
+            Pay Now →
+          </a>
+        </div>
+
+        <div class="flex justify-between items-center border p-4 rounded-lg shadow-sm hover:shadow-md transition">
+          <h3 class="text-md md:text-xl font-semibold">Hostel Payment</h3>
+          <a class="text-[#f26e32] font-medium text-md md:text-lg hover:underline" href="/student/hostel-payment">
+            Pay Now →
+          </a>
+        </div>
+      </div>
+
     </div>
-    </div>   </div>
-    <%- include('../partials/footer') %> 
-  </body>
-  <%- include('../partials/tail2') %> 
+  </div>
+
+  <%- include('../partials/footer') %> 
+</body>
+<%- include('../partials/tail2') %> 
