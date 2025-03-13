@@ -411,7 +411,7 @@ function nav() {
             <a href="https://www.abhivyaktifest.in/">Abhivyakti</a>
           </h1>
           <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border-b-2 border-[#00457b]/20">
-            <a href="/events/kshitij">Kshitij</a>
+               <a href="/others/Kshitij">Kshitij</a>
           </h1>
         </div>
       </div>
@@ -571,7 +571,7 @@ function nav() {
             <a href="/others/rti">RTI</a>
           </h1>
                <h1 class="hover:bg-[#00457b] hover:text-white lg:py-2 md:py-[2.5px] px-4 lg:text-[1vw] md:text-[1.2vw] font-regular text-[#00457b] border border-[#00457b]/20">
-            <a href="admissions/recruitment">Recruitment</a>
+            <a href="/others/recruitment">Recruitment</a>
           </h1>
         `,
       };

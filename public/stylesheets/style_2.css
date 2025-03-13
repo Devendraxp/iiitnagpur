@@ -253,3 +253,8 @@
     margin-left: auto;
   }
 }
+.bgin{
+  background-image: url("../images/index/bg2.avif");
+  background-color: rgba(240, 241, 241, 0.95);
+  background-blend-mode: color;
+}
