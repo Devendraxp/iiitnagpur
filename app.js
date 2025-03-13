@@ -35,6 +35,7 @@ import deptAchievementRoutes from "./routes/admin/deptAchievement.routes.js";
 import deptProjectRoutes from "./routes/admin/deptProject.routes.js";
 import deptEventRoutes from "./routes/admin/deptEvent.routes.js";
 import FacultyUser from "./models/facultyUser.model.js";
+import PhotoCarousel from "./models/photoCarousel.model.js";
 
 const PORT = 8080;
 const app = express();
@@ -108,6 +109,8 @@ app.get("/", async (_, res) => {
   const studentTestimonial = await StudentTestimonial.find({});
   const research = await Research.find({});
 
+  const campusLife = await PhotoCarousel.find({});
+
   res.render("index", {
     studentAchievement,
     studentNotice,
@@ -117,6 +120,7 @@ app.get("/", async (_, res) => {
     notification,
     studentTestimonial,
     research,
+    campusLife
   });
 });
 
