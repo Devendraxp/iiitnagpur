@@ -764,7 +764,8 @@ navMobile();
 
 function title() {
  
-    gsap
+    if(window.innerWidth>425){
+      gsap
     .timeline({ repeat: -1 }) // Infinite loop
     .to(".text-container", {
       y: "-35%",
@@ -778,7 +779,24 @@ function title() {
       ease: "power2.inOut",
       delay: 2,
     }) // Move 3rd h1 up
+    }
+    else{
+      gsap
+    .timeline({ repeat: -1 }) // Infinite loop
+    .to(".text-container", {
+      y: "-45%",
+      duration: 1,
+      ease: "power2.inOut",
+      delay: 2,
+    }) // Move 2nd h1 up
+    .to(".text-container", {
+      y: "-90%",
+      duration: 1,
+      ease: "power2.inOut",
+      delay: 2,
+    }) // Move 3rd h1 up
 
+    }
   
 }
 title();

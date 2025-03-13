@@ -36,6 +36,7 @@
      -moz-user-select: none;
           user-select: none;
           font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       
 }
 
 *::-webkit-scrollbar {
@@ -207,6 +208,12 @@ footer h2:hover, footer i:hover {
 #map {
   width: 30vw !important; /* Default for tablets and laptops */
 }
+@media (max-width: 768px) { /* For mobile screens */
+  #map {
+    width: 85vw !important;
+    margin-left: auto;
+  }
+  
 .marquee {
   animation: marquee 10s linear infinite;
 }
@@ -232,12 +239,6 @@ footer h2:hover, footer i:hover {
     transform: translateX(0%);
   }
 }
-@media (max-width: 768px) { /* For mobile screens */
-  #map {
-    width: 85vw !important;
-    margin-left: auto;
-  }
-  
 
 }
  #page4 img:hover{

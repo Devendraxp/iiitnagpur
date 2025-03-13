@@ -217,35 +217,33 @@ footer h2:hover, footer i:hover {
   width: 30vw !important; /* Default for tablets and laptops */
 }
 
-.marquee {
-  animation: marquee 10s linear infinite;
-}
-
-.marquee2 {
-  animation: marquee2 10s linear infinite;
-  transform: translateX(-380px);
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-@keyframes marquee2 {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
 @media (max-width: 768px) { /* For mobile screens */
   #map {
     width: 85vw !important;
     margin-left: auto;
+  }
+  .marquee {
+    animation: marquee 10s linear infinite;
+  }
+  .marquee2 {
+    animation: marquee2 10s linear infinite;
+    transform: translateX(-380px);
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes marquee2 {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0%);
+    }
   }
 }
 #page4 img:hover {
