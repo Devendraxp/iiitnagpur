@@ -176,9 +176,6 @@ Please ensure your code is clear, documented where necessary, and consistent wit
 
 ## License
 
-> Specify the actual license if you have one (e.g., MIT, Apache-2.0).  
-> If there is no license yet, you can either add one to the repo or leave this section as a placeholder.
-
 This project is currently not explicitly licensed.  
 If you plan to use or redistribute this code, please open an issue or contact the maintainer for clarification.
 
